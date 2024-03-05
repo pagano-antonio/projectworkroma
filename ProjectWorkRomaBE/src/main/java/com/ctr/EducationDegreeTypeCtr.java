@@ -14,6 +14,7 @@ import com.model.EducationDegreeType;
 @Controller  
 @RequestMapping
 public class EducationDegreeTypeCtr {
+	
 	@Autowired
 	private EducationDegreeTypeRepository EducationDegreeTypeRep;
 
@@ -30,4 +31,58 @@ public class EducationDegreeTypeCtr {
 		EducationDegreeTypeRep.save(edt); 
 		return "addSuccess";
 	}
+
+
+////////////////////////////////// SEARCH BY ID ///////////////////////////////////////////////////////////
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
