@@ -13,7 +13,9 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "employee")
+
 //@NamedQuery(name = "employee.findAll", query = "SELECT i FROM employee i")
+
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
