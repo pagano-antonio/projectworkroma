@@ -6,7 +6,7 @@ package com.dao;
 	import com.model.IdEmployee;
  
 	@Repository
-	public interface IdEmployeeRepository extends JpaRepository <IdEmployeeRepository, Integer> {
+	public interface IdEmployeeRepository extends JpaRepository <IdEmployee, Integer> {
 
 	} 
 
