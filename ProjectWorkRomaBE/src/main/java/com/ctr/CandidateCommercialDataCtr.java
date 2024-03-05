@@ -15,7 +15,7 @@ import com.model.CandidateCommercialData;
 @RequestMapping
 public class CandidateCommercialDataCtr {
 	@Autowired
-	private CandidateCommercialDataRepository CandidateCommercialDataRep;
+	private CandidateCommercialDataRepository candidateCommercialDataRep;
 
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ public class CandidateCommercialDataCtr {
 
 	@PostMapping("/addCandidateCommercialData") 
 	public String addCandidateCommercialData(Model model, CandidateCommercialData ccd) {
-		CandidateCommercialDataRep.save(ccd); 
+		candidateCommercialDataRep.save(ccd); 
 		return "addSuccess";
 	}
 }
