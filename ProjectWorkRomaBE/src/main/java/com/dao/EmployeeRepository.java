@@ -1,10 +1,12 @@
 package com.dao;
+
+
 	import org.springframework.data.jpa.repository.JpaRepository;
 	import org.springframework.stereotype.Repository;
-	import com.model.Employee;
+	import com.model.IdEmployee;
  
 	@Repository
-	public interface EmployeeRepository extends JpaRepository <Employee, Integer> {
+	public interface IdEmployeeRepository extends JpaRepository <IdEmployee, Integer> {
 
 	} 
 

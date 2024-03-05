@@ -9,3 +9,5 @@ import com.model.Candidate;
 public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
 } 
+
+
