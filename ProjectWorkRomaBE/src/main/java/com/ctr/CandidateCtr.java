@@ -15,7 +15,7 @@ import com.model.Candidate;
 @RequestMapping
 public class CandidateCtr {
 	@Autowired
-	private CandidateRepository CandidateRep;
+	private CandidateRepository candidateRep;
 
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ public class CandidateCtr {
 
 	@PostMapping("/addCandidate") 
 	public String addCandidate(Model model, Candidate c) {
-		CandidateRep.save(c); 
+		candidateRep.save(c); 
 		return "addSuccess";
 	}
 }

@@ -15,7 +15,7 @@ import com.model.CandidateSkill;
 @RequestMapping
 public class CandidateSkillCtr {
 	@Autowired
-	private CandidateSkillRepository CandidateSkillRep;
+	private CandidateSkillRepository candidateSkillRep;
 
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ public class CandidateSkillCtr {
 
 	@PostMapping("/addCandidateSkill") 
 	public String addCandidateSkill(Model model, CandidateSkill cs) {
-		CandidateSkillRep.save(cs); 
+		candidateSkillRep.save(cs); 
 		return "addSuccess";
 	}
 }
