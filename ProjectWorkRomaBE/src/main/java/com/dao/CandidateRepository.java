@@ -8,4 +8,5 @@ import com.model.Candidate;
 @Repository
 public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
-}
+} 
+
