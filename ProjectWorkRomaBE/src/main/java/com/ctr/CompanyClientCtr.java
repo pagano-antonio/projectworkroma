@@ -26,8 +26,8 @@ public class CompanyClientCtr {
 	}
 
 	@PostMapping("/addCompanyClient") 
-	public String addCompanyClient(Model model, CompanyClient edt) {
-		CompanyClientRep.save(edt); 
+	public String addCompanyClient(Model model, CompanyClient companyClient) {
+		CompanyClientRep.save(companyClient); 
 		return "addSuccess";
 	}
 }

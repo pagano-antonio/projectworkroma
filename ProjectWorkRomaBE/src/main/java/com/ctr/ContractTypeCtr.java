@@ -26,8 +26,8 @@ public class ContractTypeCtr {
 	}
 
 	@PostMapping("/addContractType") 
-	public String addContractType(Model model, ContractType edt) {
-		ContractTypeRep.save(edt); 
+	public String addContractType(Model model, ContractType contractType) {
+		ContractTypeRep.save(contractType); 
 		return "addSuccess";
 	}
 }
