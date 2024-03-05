@@ -8,38 +8,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.JobInterviewRepository;
-import com.model.JobInterview;
+import com.dao.CompanyClientRepository;
+import com.model.CompanyClient;
 
 @RestController
-@RequestMapping("JobInterviewRest")
-public class JobInterviewRest {
+@RequestMapping("CompanyClientRest")
+public class CompanyClientRest {
 	
 	@Autowired
-	private JobInterviewRepository jobInterviewRep;
+	private CompanyClientRepository companyClientRep;
 	
 /////////////////////////////////// ADD /////////////////////////////////////////////////////////////
 	
-	 @PostMapping("addJobInterview") 
-	 public String addJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-		 return "JobInterviewAdded"; 
+	 @PostMapping("addCompanyClient") 
+	 public String addCompanyClient(@RequestBody CompanyClient companyClient) {
+		 companyClientRep.save(companyClient);
+		 return "companyClientAdded"; 
 	 }
 	 
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
 	 
-	 @PutMapping("updateJobInterview") 
-		public String updateJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-			 return "JobInterviewUpdated"; 
+	 @PutMapping("updateCompanyClient") 
+		public String updateEducation(@RequestBody CompanyClient companyClient) {
+		 companyClientRep.save(companyClient);
+			 return "CompanyClientUpdated"; 
 		 }
 	 
 /////////////////////////////////// DELETE /////////////////////////////////////////////////////////////
 		
-	 @DeleteMapping("deleteJobInterview") 
-		public String deleteJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.delete(jobInter);
-			 return "JobInterviewDeleted"; 
+	 @DeleteMapping("deleteCompanyClient") 
+		public String deleteCompanyClient(@RequestBody CompanyClient companyClient) {
+		 companyClientRep.delete(companyClient);
+			 return "companyClient"; 
 		 }
 
 }

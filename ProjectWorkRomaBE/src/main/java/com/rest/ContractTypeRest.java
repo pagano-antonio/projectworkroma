@@ -8,38 +8,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.JobInterviewRepository;
-import com.model.JobInterview;
+import com.dao.ContractTypeRepository;
+import com.model.ContractType;
 
 @RestController
-@RequestMapping("JobInterviewRest")
-public class JobInterviewRest {
+@RequestMapping("ContractTypeRest")
+public class ContractTypeRest {
 	
 	@Autowired
-	private JobInterviewRepository jobInterviewRep;
+	private ContractTypeRepository contractTypeRep;
 	
 /////////////////////////////////// ADD /////////////////////////////////////////////////////////////
 	
-	 @PostMapping("addJobInterview") 
-	 public String addJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-		 return "JobInterviewAdded"; 
+	 @PostMapping("addContractType") 
+	 public String addContractType(@RequestBody ContractType contractType) {
+		 contractTypeRep.save(contractType);
+		 return "contractTypeAdded"; 
 	 }
 	 
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
 	 
-	 @PutMapping("updateJobInterview") 
-		public String updateJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-			 return "JobInterviewUpdated"; 
+	 @PutMapping("updateContractType") 
+		public String updateEducation(@RequestBody ContractType contractType) {
+		 contractTypeRep.save(contractType);
+			 return "contractTypeUpdated"; 
 		 }
 	 
 /////////////////////////////////// DELETE /////////////////////////////////////////////////////////////
 		
-	 @DeleteMapping("deleteJobInterview") 
-		public String deleteJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.delete(jobInter);
-			 return "JobInterviewDeleted"; 
+	 @DeleteMapping("deleteContractType") 
+		public String deleteContractType(@RequestBody ContractType contractType) {
+		 contractTypeRep.delete(contractType);
+			 return "ContractTypeDeleted"; 
 		 }
 
 }

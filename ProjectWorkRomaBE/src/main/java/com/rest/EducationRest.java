@@ -8,38 +8,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.JobInterviewRepository;
-import com.model.JobInterview;
+import com.dao.EducationRepository;
+import com.model.Education;
 
 @RestController
-@RequestMapping("JobInterviewRest")
-public class JobInterviewRest {
+@RequestMapping("EducationRest")
+public class EducationRest {
 	
 	@Autowired
-	private JobInterviewRepository jobInterviewRep;
+	private EducationRepository educationRep;
 	
 /////////////////////////////////// ADD /////////////////////////////////////////////////////////////
 	
-	 @PostMapping("addJobInterview") 
-	 public String addJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-		 return "JobInterviewAdded"; 
+	 @PostMapping("addEducation") 
+	 public String addEducation(@RequestBody Education education) {
+		 educationRep.save(education);
+		 return "educationAdded"; 
 	 }
 	 
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
 	 
-	 @PutMapping("updateJobInterview") 
-		public String updateJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-			 return "JobInterviewUpdated"; 
+	 @PutMapping("updateEducation") 
+		public String updateEducation(@RequestBody Education education) {
+		 educationRep.save(education);
+			 return "educationUpdated"; 
 		 }
 	 
 /////////////////////////////////// DELETE /////////////////////////////////////////////////////////////
 		
-	 @DeleteMapping("deleteJobInterview") 
-		public String deleteJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.delete(jobInter);
-			 return "JobInterviewDeleted"; 
+	 @DeleteMapping("deleteEducation") 
+		public String deleteEducation(@RequestBody Education education) {
+		 educationRep.delete(education);
+			 return "EducationDeleted"; 
 		 }
 
 }
