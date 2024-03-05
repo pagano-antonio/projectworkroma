@@ -41,5 +41,4 @@ public class JobInterviewRest {
 		 jobInterviewRep.delete(jobInter);
 			 return "JobInterviewDeleted"; 
 		 }
-
 }
