@@ -8,38 +8,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.JobInterviewRepository;
-import com.model.JobInterview;
+import com.dao.JobOfferRepository;
+import com.model.JobOffer;
 
 @RestController
-@RequestMapping("JobInterviewRest")
-public class JobInterviewRest {
+@RequestMapping("JobOfferRest")
+public class JobOfferRest {
 	
 	@Autowired
-	private JobInterviewRepository jobInterviewRep;
+	private JobOfferRepository jobOfferRep;
 	
 /////////////////////////////////// ADD /////////////////////////////////////////////////////////////
 	
-	 @PostMapping("addJobInterview") 
-	 public String addJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-		 return "JobInterviewAdded"; 
-	 }
-	 
+	@PostMapping("addJobOffer")
+	public String addJobOffer(@RequestBody JobOffer jobOffer) {
+		jobOfferRep.save(jobOffer);
+		return "JobOfferAdded"; 
+	}
+
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
-	 
-	 @PutMapping("updateJobInterview") 
-		public String updateJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.save(jobInter);
-			 return "JobInterviewUpdated"; 
-		 }
-	 
+	
+	@PutMapping("updateJobOffer") 
+	public String updateJobOffer(@RequestBody JobOffer jobOffer) {
+		jobOfferRep.save(jobOffer);
+		return "JobOfferUpdated"; 
+	}
+
 /////////////////////////////////// DELETE /////////////////////////////////////////////////////////////
-		
-	 @DeleteMapping("deleteJobInterview") 
-		public String deleteJobInterview(@RequestBody JobInterview jobInter) {
-		 jobInterviewRep.delete(jobInter);
-			 return "JobInterviewDeleted"; 
-		 }
+
+	@DeleteMapping("deleteJobOffer") 
+	public String deleteJobOffer(@RequestBody JobOffer jobOffer) {
+		jobOfferRep.delete(jobOffer);
+		return "JobOfferDeleted"; 
+	}
+
 
 }
