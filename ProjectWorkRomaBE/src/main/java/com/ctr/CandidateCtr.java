@@ -26,8 +26,8 @@ public class CandidateCtr {
 	}
 
 	@PostMapping("/addCandidate") 
-	public String addCandidate(Model model, Candidate edt) {
-		CandidateRep.save(edt); 
+	public String addCandidate(Model model, Candidate c) {
+		CandidateRep.save(c); 
 		return "addSuccess";
 	}
 }

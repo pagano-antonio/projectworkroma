@@ -26,8 +26,8 @@ public class CandidateCommercialDataCtr {
 	}
 
 	@PostMapping("/addCandidateCommercialData") 
-	public String addCandidateCommercialData(Model model, CandidateCommercialData edt) {
-		CandidateCommercialDataRep.save(edt); 
+	public String addCandidateCommercialData(Model model, CandidateCommercialData ccd) {
+		CandidateCommercialDataRep.save(ccd); 
 		return "addSuccess";
 	}
 }

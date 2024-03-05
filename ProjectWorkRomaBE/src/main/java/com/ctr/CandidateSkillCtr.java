@@ -26,8 +26,8 @@ public class CandidateSkillCtr {
 	}
 
 	@PostMapping("/addCandidateSkill") 
-	public String addCandidateSkill(Model model, CandidateSkill edt) {
-		CandidateSkillRep.save(edt); 
+	public String addCandidateSkill(Model model, CandidateSkill cs) {
+		CandidateSkillRep.save(cs); 
 		return "addSuccess";
 	}
 }
