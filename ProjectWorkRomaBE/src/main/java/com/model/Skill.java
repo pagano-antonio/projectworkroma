@@ -16,7 +16,7 @@ public class Skill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idSkill;
 
 	private String description;
 
@@ -25,12 +25,12 @@ public class Skill implements Serializable {
 	public Skill() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdSkill() {
+		return this.idSkill;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdSkill(int idSkill) {
+		this.idSkill = idSkill;
 	}
 
 	public String getDescription() {

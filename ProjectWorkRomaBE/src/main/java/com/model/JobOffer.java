@@ -1,16 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the job_offer database table.
@@ -23,28 +19,20 @@ public class JobOffer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idJobOffer;
 
 	private String description;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "end_date")
 	private Date endDate;
 
-	@Column(name = "id_company_client")
 	private int idCompanyClient;
 
-	@Column(name = "id_contract_type")
 	private int idContractType;
 
-	@Column(name = "max_ral")
-	private BigInteger maxRal;
+	private int maxRal;
 
-	@Column(name = "min_ral")
-	private BigInteger minRal;
+	private int minRal;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "start_date")
 	private Date startDate;
 
 	private String title;
@@ -52,12 +40,12 @@ public class JobOffer implements Serializable {
 	public JobOffer() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdJobOffer() {
+		return this.idJobOffer;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdJobOffer(int idJobOffer) {
+		this.idJobOffer = idJobOffer;
 	}
 
 	public String getDescription() {
@@ -92,19 +80,19 @@ public class JobOffer implements Serializable {
 		this.idContractType = idContractType;
 	}
 
-	public BigInteger getMaxRal() {
+	public int getMaxRal() {
 		return this.maxRal;
 	}
 
-	public void setMaxRal(BigInteger maxRal) {
+	public void setMaxRal(int maxRal) {
 		this.maxRal = maxRal;
 	}
 
-	public BigInteger getMinRal() {
+	public int getMinRal() {
 		return this.minRal;
 	}
 
-	public void setMinRal(BigInteger minRal) {
+	public void setMinRal(int minRal) {
 		this.minRal = minRal;
 	}
 

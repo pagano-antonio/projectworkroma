@@ -1,9 +1,6 @@
 package com.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -20,52 +17,46 @@ public class CandidateCommercialData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCandidateCommercial;
 
-	@Column(name = "business_cost")
-	private BigInteger businessCost;
+	private int businessCost;
 
-	@Column(name = "current_ral")
-	private BigInteger currentRal;
+	private int currentRal;
 
-	@Column(name = "id_candidate")
 	private int idCandidate;
 
-	@Column(name = "month_refund")
 	private int monthRefund;
 
 	private String notes;
 
-	@Column(name = "proposed_ral")
-	private BigInteger proposedRal;
+	private int proposedRal;
 
-	@Column(name = "subsidy_flag")
 	private byte subsidyFlag;
 
 	public CandidateCommercialData() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCandidateCommercial() {
+		return this.idCandidateCommercial;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCandidateCommercial(int idCandidateCommercial) {
+		this.idCandidateCommercial = idCandidateCommercial;
 	}
 
-	public BigInteger getBusinessCost() {
+	public int getBusinessCost() {
 		return this.businessCost;
 	}
 
-	public void setBusinessCost(BigInteger businessCost) {
+	public void setBusinessCost(int businessCost) {
 		this.businessCost = businessCost;
 	}
 
-	public BigInteger getCurrentRal() {
+	public int getCurrentRal() {
 		return this.currentRal;
 	}
 
-	public void setCurrentRal(BigInteger currentRal) {
+	public void setCurrentRal(int currentRal) {
 		this.currentRal = currentRal;
 	}
 
@@ -93,11 +84,11 @@ public class CandidateCommercialData implements Serializable {
 		this.notes = notes;
 	}
 
-	public BigInteger getProposedRal() {
+	public int getProposedRal() {
 		return this.proposedRal;
 	}
 
-	public void setProposedRal(BigInteger proposedRal) {
+	public void setProposedRal(int proposedRal) {
 		this.proposedRal = proposedRal;
 	}
 

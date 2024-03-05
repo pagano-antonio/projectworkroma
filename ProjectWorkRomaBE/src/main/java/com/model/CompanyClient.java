@@ -18,7 +18,7 @@ public class CompanyClient implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCompanyClient;
 
 	private String address;
 
@@ -29,12 +29,12 @@ public class CompanyClient implements Serializable {
 	public CompanyClient() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCompanyClient() {
+		return this.idCompanyClient;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCompanyClient(int idCompanyClient) {
+		this.idCompanyClient = idCompanyClient;
 	}
 
 	public String getAddress() {

@@ -18,7 +18,7 @@ public class StateJobInterview implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idStateInterview;
 
 	private String description;
 
@@ -27,12 +27,12 @@ public class StateJobInterview implements Serializable {
 	public StateJobInterview() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdStateInterview() {
+		return this.idStateInterview;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdStateInterview(int idStateInterview) {
+		this.idStateInterview = idStateInterview;
 	}
 
 	public String getDescription() {

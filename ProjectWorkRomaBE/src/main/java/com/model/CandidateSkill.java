@@ -2,7 +2,6 @@ package com.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -19,23 +18,21 @@ public class CandidateSkill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCandidateSkill;
 
-	@Column(name = "id_candidate")
 	private int idCandidate;
 
-	@Column(name = "id_skill")
 	private int idSkill;
 
 	public CandidateSkill() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCandidateSkill() {
+		return this.idCandidateSkill;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCandidateSkill(int idCandidateSkill) {
+		this.idCandidateSkill = idCandidateSkill;
 	}
 
 	public int getIdCandidate() {

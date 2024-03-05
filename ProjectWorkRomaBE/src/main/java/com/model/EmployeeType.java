@@ -18,7 +18,7 @@ public class EmployeeType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idEmployeeType;
 
 	private String description;
 
@@ -26,11 +26,11 @@ public class EmployeeType implements Serializable {
 	}
 
 	public int getId() {
-		return this.id;
+		return this.idEmployeeType;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idEmployeeType) {
+		this.idEmployeeType = idEmployeeType;
 	}
 
 	public String getDescription() {
