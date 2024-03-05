@@ -22,14 +22,14 @@ USE `gestionalefinale`;
 -- Dump della struttura di tabella gestionalefinale.candidate
 CREATE TABLE IF NOT EXISTS `candidate` (
   `idCandidate` int NOT NULL AUTO_INCREMENT,
-  `name` int DEFAULT NULL,
-  `surname` int DEFAULT NULL,
-  `birthday` int DEFAULT NULL,
-  `birthPlace` int DEFAULT NULL,
-  `address` int DEFAULT NULL,
-  `city` int DEFAULT NULL,
-  `email` int DEFAULT NULL,
-  `phone` int DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `birthPlace` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` bigint DEFAULT NULL,
   PRIMARY KEY (`idCandidate`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -69,9 +69,9 @@ CREATE TABLE IF NOT EXISTS `candidate_skill` (
 -- Dump della struttura di tabella gestionalefinale.company_client
 CREATE TABLE IF NOT EXISTS `company_client` (
   `idCompanyClient` int NOT NULL AUTO_INCREMENT,
-  `name` text,
-  `address` text,
-  `city` text,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `city` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idCompanyClient`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `company_client` (
 -- Dump della struttura di tabella gestionalefinale.contract_type
 CREATE TABLE IF NOT EXISTS `contract_type` (
   `idContractType` int NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idContractType`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -91,10 +91,10 @@ CREATE TABLE IF NOT EXISTS `contract_type` (
 CREATE TABLE IF NOT EXISTS `education` (
   `idEducation` int NOT NULL AUTO_INCREMENT,
   `idEducationDegreeType` int DEFAULT NULL,
-  `schoolName` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `place` text,
+  `schoolName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `place` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `finalGrade` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `finalGrade` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idEducation`) USING BTREE,
   KEY `id_education_degree_type` (`idEducationDegreeType`) USING BTREE,
   CONSTRAINT `FK4_idEducationDegreeType` FOREIGN KEY (`idEducationDegreeType`) REFERENCES `education_degree_type` (`idEducationDegreeType`)
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `education` (
 -- Dump della struttura di tabella gestionalefinale.education_degree_type
 CREATE TABLE IF NOT EXISTS `education_degree_type` (
   `idEducationDegreeType` int NOT NULL AUTO_INCREMENT,
-  `description` text,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idEducationDegreeType`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -115,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `education_degree_type` (
 CREATE TABLE IF NOT EXISTS `employee` (
   `idEmployee` int NOT NULL AUTO_INCREMENT,
   `idEmployeeType` int DEFAULT NULL,
-  `username` int DEFAULT NULL,
-  `password` int DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idEmployee`) USING BTREE,
   KEY `id_employee` (`idEmployeeType`) USING BTREE,
   CONSTRAINT `FK5_idEmployeeType` FOREIGN KEY (`idEmployeeType`) REFERENCES `employee_type` (`idEmployeeType`)
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 -- Dump della struttura di tabella gestionalefinale.employee_type
 CREATE TABLE IF NOT EXISTS `employee_type` (
   `idEmployeeType` int NOT NULL AUTO_INCREMENT,
-  `description` text,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idEmployeeType`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `job_interview` (
   `date` date DEFAULT NULL,
   `idStateJobInterview` int DEFAULT NULL,
   `outcome` int DEFAULT NULL,
-  `notes` text,
+  `notes` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `idEmployee` int DEFAULT NULL,
   PRIMARY KEY (`idJobInterview`) USING BTREE,
   KEY `id_candidate` (`idCandidate`) USING BTREE,
@@ -156,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `job_interview` (
 -- Dump della struttura di tabella gestionalefinale.job_offer
 CREATE TABLE IF NOT EXISTS `job_offer` (
   `idJobOffer` int NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `startDate` date DEFAULT NULL,
   `endDate` date DEFAULT NULL,
   `idCompanyClient` int DEFAULT NULL,
@@ -190,8 +190,8 @@ CREATE TABLE IF NOT EXISTS `job_offer_skill` (
 -- Dump della struttura di tabella gestionalefinale.skill
 CREATE TABLE IF NOT EXISTS `skill` (
   `idSkill` int NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idSkill`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -200,8 +200,8 @@ CREATE TABLE IF NOT EXISTS `skill` (
 -- Dump della struttura di tabella gestionalefinale.state_job_interview
 CREATE TABLE IF NOT EXISTS `state_job_interview` (
   `idStateJobInterview` int NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idStateJobInterview`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -211,12 +211,12 @@ CREATE TABLE IF NOT EXISTS `state_job_interview` (
 CREATE TABLE IF NOT EXISTS `work_experience` (
   `idWorkExperience` int NOT NULL AUTO_INCREMENT,
   `idCandidate` int DEFAULT NULL,
-  `title` text,
-  `description` text,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `startDate` date DEFAULT NULL,
   `endDate` date DEFAULT NULL,
-  `company` text,
-  `city` text,
+  `company` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `city` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`idWorkExperience`) USING BTREE,
   KEY `id_candidate` (`idCandidate`) USING BTREE,
   CONSTRAINT `FK13_idCandidate` FOREIGN KEY (`idCandidate`) REFERENCES `candidate` (`idCandidate`)
