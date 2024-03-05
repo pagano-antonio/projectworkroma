@@ -25,8 +25,8 @@ public class EducationCtr {
 		return "addEducation";
 	}
 
-	@PostMapping("/addContractType") 
-	public String addContractType(Model model, Education education) {
+	@PostMapping("/addEducation") 
+	public String addEducation(Model model, Education education) {
 		EducationRep.save(education); 
 		return "addSuccess";
 	}
