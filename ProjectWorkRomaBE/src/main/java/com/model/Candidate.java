@@ -3,7 +3,6 @@ package com.model;
 import java.io.Serializable;
 import java.math.BigInteger;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -18,11 +17,10 @@ public class Candidate implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idCandidate;
 
 	private String address;
 
-	@Column(name = "birth_place")
 	private String birthPlace;
 
 	private int birthday;
@@ -40,12 +38,12 @@ public class Candidate implements Serializable {
 	public Candidate() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdCandidate() {
+		return this.idCandidate;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCandidate(int idCandidate) {
+		this.idCandidate = idCandidate;
 	}
 
 	public String getAddress() {
