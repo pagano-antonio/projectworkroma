@@ -1,7 +1,7 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
