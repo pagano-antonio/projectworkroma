@@ -29,7 +29,7 @@ public class ContractTypeRest {
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
 	 
 	 @PutMapping("updateContractType") 
-		public String updateEducation(@RequestBody ContractType contractType) {
+		public String updateContractType(@RequestBody ContractType contractType) {
 		 contractTypeRep.save(contractType);
 			 return "contractTypeUpdated"; 
 		 }
@@ -39,7 +39,7 @@ public class ContractTypeRest {
 	 @DeleteMapping("deleteContractType") 
 		public String deleteContractType(@RequestBody ContractType contractType) {
 		 contractTypeRep.delete(contractType);
-			 return "ContractTypeDeleted"; 
+			 return "contractTypeDeleted"; 
 		 }
 
 }

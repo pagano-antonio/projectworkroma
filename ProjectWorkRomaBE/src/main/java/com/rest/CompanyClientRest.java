@@ -29,9 +29,9 @@ public class CompanyClientRest {
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
 	 
 	 @PutMapping("updateCompanyClient") 
-		public String updateEducation(@RequestBody CompanyClient companyClient) {
+		public String updateCompanyClient(@RequestBody CompanyClient companyClient) {
 		 companyClientRep.save(companyClient);
-			 return "CompanyClientUpdated"; 
+			 return "companyClientUpdated"; 
 		 }
 	 
 /////////////////////////////////// DELETE /////////////////////////////////////////////////////////////

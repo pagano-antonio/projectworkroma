@@ -39,7 +39,7 @@ public class EducationRest {
 	 @DeleteMapping("deleteEducation") 
 		public String deleteEducation(@RequestBody Education education) {
 		 educationRep.delete(education);
-			 return "EducationDeleted"; 
+			 return "educationDeleted"; 
 		 }
 
 }
