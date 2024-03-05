@@ -8,13 +8,13 @@ import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 /**
- * The persistent class for the id_employee database table.
+ * The persistent class for the employee database table.
  * 
  */
 @Entity
-@Table(name = "id_employee")
+@Table(name = "employee")
 @NamedQuery(name = "IdEmployee.findAll", query = "SELECT i FROM IdEmployee i")
-public class IdEmployee implements Serializable {
+public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -26,7 +26,7 @@ public class IdEmployee implements Serializable {
 
 	private String username;
 
-	public IdEmployee() {
+	public Employee() {
 	}
 
 	public int getIdEmployee() {
