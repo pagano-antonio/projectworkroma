@@ -14,6 +14,7 @@ import com.model.EducationDegreeType;
 @Controller  
 @RequestMapping
 public class EducationDegreeTypeCtr {
+	
 	@Autowired
 	private EducationDegreeTypeRepository EducationDegreeTypeRep;
 
