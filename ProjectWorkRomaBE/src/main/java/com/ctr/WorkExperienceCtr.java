@@ -25,7 +25,7 @@ public class WorkExperienceCtr {
 		return "AddWorkExperience";
 	}
 	
-	@PostMapping("/addSkill")
+	@PostMapping("/addWorkExperience")
 	public String addWorkExperience(Model model, WorkExperience workExperience) {
 		WorkExperienceRep.save(workExperience);
 		return "addSuccess";
