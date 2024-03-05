@@ -1,15 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the work_experience database table.
@@ -22,7 +19,7 @@ public class WorkExperience implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idWorkExperience;
 
 	private String city;
 
@@ -30,15 +27,10 @@ public class WorkExperience implements Serializable {
 
 	private String description;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "end_date")
 	private Date endDate;
 
-	@Column(name = "id_candidate")
 	private int idCandidate;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "start_date")
 	private Date startDate;
 
 	private String title;
@@ -46,12 +38,12 @@ public class WorkExperience implements Serializable {
 	public WorkExperience() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdWorkExperience() {
+		return this.idWorkExperience;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdWorkExperience(int idWorkExperience) {
+		this.idWorkExperience = idWorkExperience;
 	}
 
 	public String getCity() {

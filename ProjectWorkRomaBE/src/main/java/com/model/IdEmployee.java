@@ -2,7 +2,6 @@ package com.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -19,10 +18,9 @@ public class IdEmployee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
-
-	@Column(name = "id_employee")
 	private int idEmployee;
+
+	private int idEmployeeType;
 
 	private String password;
 
@@ -31,20 +29,20 @@ public class IdEmployee implements Serializable {
 	public IdEmployee() {
 	}
 
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public int getIdEmployee() {
 		return this.idEmployee;
 	}
 
 	public void setIdEmployee(int idEmployee) {
 		this.idEmployee = idEmployee;
+	}
+
+	public int getIdEmployeeType() {
+		return this.idEmployeeType;
+	}
+
+	public void setIdEmployeeType(int idEmployeeType) {
+		this.idEmployeeType = idEmployeeType;
 	}
 
 	public String getPassword() {

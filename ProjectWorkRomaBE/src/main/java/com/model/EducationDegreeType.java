@@ -18,19 +18,19 @@ public class EducationDegreeType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idEducationDegreeType;
 
 	private String description;
 
 	public EducationDegreeType() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdEducationDegreeType() {
+		return this.idEducationDegreeType;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdEducationDegreeType(int idEducationDegreeType) {
+		this.idEducationDegreeType = idEducationDegreeType;
 	}
 
 	public String getDescription() {

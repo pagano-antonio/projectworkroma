@@ -1,15 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the job_interview database table.
@@ -22,18 +19,14 @@ public class JobInterview implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private int idJobInterview;
 
-	@Temporal(TemporalType.DATE)
 	private Date date;
 
-	@Column(name = "id_candidate")
 	private int idCandidate;
 
-	@Column(name = "id_employee")
 	private int idEmployee;
 
-	@Column(name = "id_state_job_interview")
 	private int idStateJobInterview;
 
 	private String notes;
@@ -43,12 +36,12 @@ public class JobInterview implements Serializable {
 	public JobInterview() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdJobInterview() {
+		return this.idJobInterview;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdJobInterview(int idJobInterview) {
+		this.idJobInterview = idJobInterview;
 	}
 
 	public Date getDate() {
