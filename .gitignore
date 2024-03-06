@@ -7,3 +7,6 @@ ProjectWorkRomaBE/src/main/resources/application.yml
 ProjectWorkRomaBE/src/main/resources/application.properties
 *.yml
 *.properties
+
+.DS_Store
+**/.DS_Store

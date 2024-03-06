@@ -20,14 +20,14 @@ public class CandidateSkillCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddCandidateSkill")    
+	@GetMapping("/candidate/preAddCandidateSkill")    
 	public String preAddCandidateSkill(Model model) {
-		return "addCandidateSkill";
+		return "candidate/addCandidateSkill";
 	}
 
-	@PostMapping("/addCandidateSkill") 
+	@PostMapping("/candidate/addCandidateSkill") 
 	public String addCandidateSkill(Model model, CandidateSkill cs) {
 		candidateSkillRep.save(cs); 
-		return "addSuccess";
+		return "success";
 	}
 }

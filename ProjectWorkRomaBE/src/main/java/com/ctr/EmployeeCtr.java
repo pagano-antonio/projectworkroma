@@ -24,15 +24,15 @@ package com.ctr;
 		
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 		
-		@GetMapping("/preAddEmployee")    
+		@GetMapping("/company/preAddEmployee")    
 		public String preAddEmployee(Model model) {
-			return "addEmployee";
+			return "company/addEmployee";
 		}
 
-		@PostMapping("/addEmployee") 
+		@PostMapping("/company/addEmployee") 
 		public String addEmployee(Model model, Employee e) {
 			EmployeeRep.save(e); 
-			return "addSuccess";
+			return "success";
 		}
 	
 ////////////////////////////////// SEARCH BY ID ///////////////////////////////////////////////////////////

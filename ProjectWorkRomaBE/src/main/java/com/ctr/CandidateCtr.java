@@ -20,14 +20,14 @@ public class CandidateCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddCandidate")    
+	@GetMapping("/candidate/preAddCandidate")    
 	public String preAddCandidate(Model model) {
-		return "addCandidate";
+		return "candidate/addCandidate";
 	}
 
-	@PostMapping("/addCandidate") 
+	@PostMapping("/candidate/addCandidate") 
 	public String addCandidate(Model model, Candidate c) {
 		candidateRep.save(c); 
-		return "addSuccess";
+		return "success";
 	}
 }

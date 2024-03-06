@@ -19,15 +19,15 @@ public class JobInterviewCtr {
 	
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 	
-@GetMapping("/preAddJobInterview")    
+@GetMapping("/job/preAddJobInterview")    
 	public String preAddJobInterview(Model model) {
-	return "addJobInterview";
+	return "job/addJobInterview";
 }
 
-@PostMapping("/addJobInterview") 
+@PostMapping("/job/addJobInterview") 
 public String addJobInterview(Model model, JobInterview jobInter) {
 	jobInterviewRep.save(jobInter); 
-	return "addSuccess";
+	return "success";
 }
 
 }
