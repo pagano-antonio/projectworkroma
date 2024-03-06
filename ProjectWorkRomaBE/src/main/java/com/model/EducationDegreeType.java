@@ -1,10 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -21,6 +23,10 @@ public class EducationDegreeType implements Serializable {
 	private int idEducationDegreeType;
 
 	private String description;
+
+	// bi-directional many-to-one association to Education
+	@OneToMany(mappedBy = "educationDegreeType")
+	private List<Education> educations;
 
 	public EducationDegreeType() {
 	}
@@ -39,6 +45,28 @@ public class EducationDegreeType implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Education> getEducations() {
+		return this.educations;
+	}
+
+	public void setEducations(List<Education> educations) {
+		this.educations = educations;
+	}
+
+	public Education addEducation(Education education) {
+		getEducations().add(education);
+		education.setEducationDegreeType(this);
+
+		return education;
+	}
+
+	public Education removeEducation(Education education) {
+		getEducations().remove(education);
+		education.setEducationDegreeType(null);
+
+		return education;
 	}
 
 }

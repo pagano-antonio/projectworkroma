@@ -1,11 +1,15 @@
 package com.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the education database table.
@@ -19,15 +23,24 @@ public class Education implements Serializable {
 	@Id
 	private int idEducation;
 
+	@Temporal(TemporalType.DATE)
 	private Date date;
 
 	private String finalGrade;
 
-	private int idEducationDegreeType;
-
 	private String place;
 
 	private String schoolName;
+
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
+
+	// bi-directional many-to-one association to EducationDegreeType
+	@ManyToOne
+	@JoinColumn(name = "idEducationDegreeType")
+	private EducationDegreeType educationDegreeType;
 
 	public Education() {
 	}
@@ -56,14 +69,6 @@ public class Education implements Serializable {
 		this.finalGrade = finalGrade;
 	}
 
-	public int getIdEducationDegreeType() {
-		return this.idEducationDegreeType;
-	}
-
-	public void setIdEducationDegreeType(int idEducationDegreeType) {
-		this.idEducationDegreeType = idEducationDegreeType;
-	}
-
 	public String getPlace() {
 		return this.place;
 	}
@@ -78,6 +83,22 @@ public class Education implements Serializable {
 
 	public void setSchoolName(String schoolName) {
 		this.schoolName = schoolName;
+	}
+
+	public Candidate getCandidate() {
+		return this.candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
+
+	public EducationDegreeType getEducationDegreeType() {
+		return this.educationDegreeType;
+	}
+
+	public void setEducationDegreeType(EducationDegreeType educationDegreeType) {
+		this.educationDegreeType = educationDegreeType;
 	}
 
 }

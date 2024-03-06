@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
@@ -20,9 +22,15 @@ public class JobOfferSkill implements Serializable {
 	@Id
 	private int idJobOfferSkill;
 
-	private int idJobOffer;
+	// bi-directional many-to-one association to JobOffer
+	@ManyToOne
+	@JoinColumn(name = "idJobOffer")
+	private JobOffer jobOffer;
 
-	private int idSkill;
+	// bi-directional many-to-one association to Skill
+	@ManyToOne
+	@JoinColumn(name = "idSkill")
+	private Skill skill;
 
 	public JobOfferSkill() {
 	}
@@ -35,20 +43,20 @@ public class JobOfferSkill implements Serializable {
 		this.idJobOfferSkill = idJobOfferSkill;
 	}
 
-	public int getIdJobOffer() {
-		return this.idJobOffer;
+	public JobOffer getJobOffer() {
+		return this.jobOffer;
 	}
 
-	public void setIdJobOffer(int idJobOffer) {
-		this.idJobOffer = idJobOffer;
+	public void setJobOffer(JobOffer jobOffer) {
+		this.jobOffer = jobOffer;
 	}
 
-	public int getIdSkill() {
-		return this.idSkill;
+	public Skill getSkill() {
+		return this.skill;
 	}
 
-	public void setIdSkill(int idSkill) {
-		this.idSkill = idSkill;
+	public void setSkill(Skill skill) {
+		this.skill = skill;
 	}
 
 }

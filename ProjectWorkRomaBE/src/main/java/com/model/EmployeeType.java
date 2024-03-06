@@ -1,10 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -22,14 +24,18 @@ public class EmployeeType implements Serializable {
 
 	private String description;
 
+	// bi-directional many-to-one association to Employee
+	@OneToMany(mappedBy = "employeeType")
+	private List<Employee> employees;
+
 	public EmployeeType() {
 	}
 
-	public int getId() {
+	public int getIdEmployeeType() {
 		return this.idEmployeeType;
 	}
 
-	public void setId(int idEmployeeType) {
+	public void setIdEmployeeType(int idEmployeeType) {
 		this.idEmployeeType = idEmployeeType;
 	}
 
@@ -39,6 +45,28 @@ public class EmployeeType implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Employee> getEmployees() {
+		return this.employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public Employee addEmployee(Employee employee) {
+		getEmployees().add(employee);
+		employee.setEmployeeType(this);
+
+		return employee;
+	}
+
+	public Employee removeEmployee(Employee employee) {
+		getEmployees().remove(employee);
+		employee.setEmployeeType(null);
+
+		return employee;
 	}
 
 }

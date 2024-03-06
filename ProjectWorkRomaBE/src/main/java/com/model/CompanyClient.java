@@ -1,10 +1,12 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -25,6 +27,10 @@ public class CompanyClient implements Serializable {
 	private String city;
 
 	private String name;
+
+	// bi-directional many-to-one association to JobOffer
+	@OneToMany(mappedBy = "companyClient")
+	private List<JobOffer> jobOffers;
 
 	public CompanyClient() {
 	}
@@ -59,6 +65,28 @@ public class CompanyClient implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<JobOffer> getJobOffers() {
+		return this.jobOffers;
+	}
+
+	public void setJobOffers(List<JobOffer> jobOffers) {
+		this.jobOffers = jobOffers;
+	}
+
+	public JobOffer addJobOffer(JobOffer jobOffer) {
+		getJobOffers().add(jobOffer);
+		jobOffer.setCompanyClient(this);
+
+		return jobOffer;
+	}
+
+	public JobOffer removeJobOffer(JobOffer jobOffer) {
+		getJobOffers().remove(jobOffer);
+		jobOffer.setCompanyClient(null);
+
+		return jobOffer;
 	}
 
 }

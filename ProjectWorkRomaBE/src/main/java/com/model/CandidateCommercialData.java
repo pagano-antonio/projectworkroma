@@ -1,8 +1,11 @@
 package com.model;
 
 import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
@@ -23,8 +26,6 @@ public class CandidateCommercialData implements Serializable {
 
 	private int currentRal;
 
-	private int idCandidate;
-
 	private int monthRefund;
 
 	private String notes;
@@ -32,6 +33,11 @@ public class CandidateCommercialData implements Serializable {
 	private int proposedRal;
 
 	private byte subsidyFlag;
+
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
 
 	public CandidateCommercialData() {
 	}
@@ -58,14 +64,6 @@ public class CandidateCommercialData implements Serializable {
 
 	public void setCurrentRal(int currentRal) {
 		this.currentRal = currentRal;
-	}
-
-	public int getIdCandidate() {
-		return this.idCandidate;
-	}
-
-	public void setIdCandidate(int idCandidate) {
-		this.idCandidate = idCandidate;
 	}
 
 	public int getMonthRefund() {
@@ -98,6 +96,14 @@ public class CandidateCommercialData implements Serializable {
 
 	public void setSubsidyFlag(byte subsidyFlag) {
 		this.subsidyFlag = subsidyFlag;
+	}
+
+	public Candidate getCandidate() {
+		return this.candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 
 }

@@ -1,12 +1,16 @@
 package com.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the work_experience database table.
@@ -27,13 +31,18 @@ public class WorkExperience implements Serializable {
 
 	private String description;
 
+	@Temporal(TemporalType.DATE)
 	private Date endDate;
 
-	private int idCandidate;
-
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
 
 	private String title;
+
+	// bi-directional many-to-one association to Candidate
+	@ManyToOne
+	@JoinColumn(name = "idCandidate")
+	private Candidate candidate;
 
 	public WorkExperience() {
 	}
@@ -78,14 +87,6 @@ public class WorkExperience implements Serializable {
 		this.endDate = endDate;
 	}
 
-	public int getIdCandidate() {
-		return this.idCandidate;
-	}
-
-	public void setIdCandidate(int idCandidate) {
-		this.idCandidate = idCandidate;
-	}
-
 	public Date getStartDate() {
 		return this.startDate;
 	}
@@ -100,6 +101,14 @@ public class WorkExperience implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Candidate getCandidate() {
+		return this.candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 
 }
