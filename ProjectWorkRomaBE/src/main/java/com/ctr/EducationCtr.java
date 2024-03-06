@@ -20,14 +20,14 @@ public class EducationCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddEducation")    
+	@GetMapping("/candidate/preAddEducation")    
 	public String preEducation(Model model) {
-		return "addEducation";
+		return "candidate/addEducation";
 	}
 
-	@PostMapping("/addEducation") 
+	@PostMapping("/candidate/addEducation") 
 	public String addEducation(Model model, Education education) {
 		EducationRep.save(education); 
-		return "addSuccess";
+		return "success";
 	}
 }

@@ -19,15 +19,15 @@ public class JobOfferCtr {
 	
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 	
-@GetMapping("/preAddJobOffer")    
+@GetMapping("/job/preAddJobOffer")    
 	public String preAddJobOffer(Model model) {
-	return "addJobOffer";
+	return "job/addJobOffer";
 }
 
-@PostMapping("/addJobOffer") 
+@PostMapping("/job/addJobOffer") 
 public String addJobOffer(Model model, JobOffer jobOffer) {
 	jobOfferRep.save(jobOffer); 
-	return "addSuccess";
+	return "success";
 }
 
 }

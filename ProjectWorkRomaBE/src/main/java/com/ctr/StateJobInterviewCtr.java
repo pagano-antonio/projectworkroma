@@ -18,15 +18,15 @@ public class StateJobInterviewCtr {
 	
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/preAddStateJobInterview")
+	@GetMapping("/job/preAddStateJobInterview")
 	public String preAddStateJobInterview(Model model) {
-		return "addStateJobInterview";
+		return "job/addStateJobInterview";
 	}
 	
-	@PostMapping("/addStateJobInterview")
+	@PostMapping("/job/addStateJobInterview")
 	public String addStateJobInterview(Model model, StateJobInterview stateJobInterview) {
 		StateJobInterviewRep.save(stateJobInterview);
-		return "addSucces";
+		return "success";
 	}
 	
 	

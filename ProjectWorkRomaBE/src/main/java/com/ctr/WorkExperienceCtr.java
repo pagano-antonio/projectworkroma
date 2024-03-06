@@ -20,15 +20,15 @@ public class WorkExperienceCtr {
 	
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddWorkExperience")
+	@GetMapping("/candidate/preAddWorkExperience")
 	public String preAddWorkExperience(Model model) {
-		return "AddWorkExperience";
+		return "candidate/AddWorkExperience";
 	}
 	
-	@PostMapping("/addWorkExperience")
+	@PostMapping("/candidate/addWorkExperience")
 	public String addWorkExperience(Model model, WorkExperience workExperience) {
 		WorkExperienceRep.save(workExperience);
-		return "addSuccess";
+		return "success";
 	}
 	
 

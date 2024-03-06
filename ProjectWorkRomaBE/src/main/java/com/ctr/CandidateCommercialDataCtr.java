@@ -20,14 +20,14 @@ public class CandidateCommercialDataCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddCandidateCommercialData")    
+	@GetMapping("/candidate/preAddCandidateCommercialData")    
 	public String preAddCandidateCommercialData(Model model) {
-		return "addCandidateCommercialData";
+		return "candidate/addCandidateCommercialData";
 	}
 
-	@PostMapping("/addCandidateCommercialData") 
+	@PostMapping("/candidate/addCandidateCommercialData") 
 	public String addCandidateCommercialData(Model model, CandidateCommercialData ccd) {
 		candidateCommercialDataRep.save(ccd); 
-		return "addSuccess";
+		return "success";
 	}
 }

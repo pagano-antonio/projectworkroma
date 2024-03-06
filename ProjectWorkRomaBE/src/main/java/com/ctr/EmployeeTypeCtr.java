@@ -19,15 +19,15 @@ public class EmployeeTypeCtr {
 
 /////////////////////////////////// ADD METHOD ///////////////////////////////////////////////////////////	
 	
-	@GetMapping("/preAddEmployeeType")    
+	@GetMapping("/company/preAddEmployeeType")    
 	public String preAddEmployeeType(Model model) {
-		return "addEmployeeType";
+		return "company/addEmployeeType";
 	}
 
-	@PostMapping("/addEmployeeType") 
+	@PostMapping("/company/addEmployeeType") 
 	public String addEmployeeType(Model model, EmployeeType et) {
 		EmployeeTypeRep.save(et); 
-		return "addSuccess";
+		return "success";
 	}
 	
 //////////////////////////////// SEARCH BY ID ///////////////////////////////////////////////////////////	

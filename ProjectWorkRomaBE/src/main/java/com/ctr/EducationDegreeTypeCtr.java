@@ -21,15 +21,15 @@ public class EducationDegreeTypeCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddEducationDegreeType")    
+	@GetMapping("/candidate/preAddEducationDegreeType")    
 	public String preAddEducationDegreeType(Model model) {
-		return "addEducationDegreeType";
+		return "candidate/addEducationDegreeType";
 	}
 
-	@PostMapping("/addEducationDegreeType") 
+	@PostMapping("/candidate/addEducationDegreeType") 
 	public String addEducationDegreeType(Model model, EducationDegreeType edt) {
 		EducationDegreeTypeRep.save(edt); 
-		return "addSuccess";
+		return "success";
 	}
 
 

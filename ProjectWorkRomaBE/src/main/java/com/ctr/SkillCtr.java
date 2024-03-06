@@ -18,15 +18,15 @@ public class SkillCtr {
 	
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddSkill")
+	@GetMapping("/job/preAddSkill")
 	public String preAddSkill(Model model) {
-		return "addSkill";
+		return "job/addSkill";
 	}
 	
-	@PostMapping("/addSkill")
+	@PostMapping("/job/addSkill")
 	public String addSkill(Model model, Skill skill) {
 		SkillRep.save(skill);
-		return "addSuccess";
+		return "success";
 	}
 	
 

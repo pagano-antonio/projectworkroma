@@ -20,14 +20,14 @@ public class ContractTypeCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/preAddContractType")    
+	@GetMapping("/job/preAddContractType")    
 	public String preContractType(Model model) {
-		return "addContractType";
+		return "job/addContractType";
 	}
 
-	@PostMapping("/addContractType") 
+	@PostMapping("/job/addContractType") 
 	public String addContractType(Model model, ContractType contractType) {
 		ContractTypeRep.save(contractType); 
-		return "addSuccess";
+		return "success";
 	}
 }
