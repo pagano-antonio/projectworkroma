@@ -54,20 +54,21 @@ public class CompanyClientCtr {
 	}
 
 	@PostMapping("/company/SearchByIdCompanyClient")
-	public String searchIdCompanyClientPersona (Model model,CompanyClient companyClient) {
+	public String searchByIdCompanyClient (Model model,CompanyClient companyClient) {
 		companyClientRep.save(companyClient);
 		return "success"; 
 	}
 	
-//  --------------  DELETE BY ID  ---------------	
+//////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
 
+	
 	@GetMapping("/company/preDeleteByIdCompanyClient")
-	public String delete() {
+	public String preDeleteByIdCompanyClient() {
 		return "company/deleteByIdCompanyClient";
 	}
 
 	@GetMapping("/company/deleteByIdCompanyClient")
-	public String deleteCompanyClient(Model model, Integer idCompanyClient) {
+	public String deleteByIdCompanyClient(Model model, Integer idCompanyClient) {
 		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
 		if (companyClient != null) {
 			companyClientRep.delete(companyClient);
