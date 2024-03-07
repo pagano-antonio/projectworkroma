@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,58 +12,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CompanyClientRepository;
 import com.model.CompanyClient;
+;
 
-
-@Controller  
+@Controller
 @RequestMapping
 public class CompanyClientCtr {
 	@Autowired
 	private CompanyClientRepository companyClientRep;
 
-	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
-	
-	@GetMapping("/company/preAddCompanyClient")    
+
+	@GetMapping("/company/preAddCompanyClient")
 	public String preCompanyClient(Model model) {
 		return "company/addCompanyClient";
 	}
 
-	@PostMapping("/company/addCompanyClient") 
+	@PostMapping("/company/addCompanyClient")
 	public String addCompanyClient(Model model, CompanyClient companyClient) {
-		companyClientRep.save(companyClient); 
+		companyClientRep.save(companyClient);
 		return "success";
 	}
-	
-//////////////////////////////////////  SEARCH BY ID  //////////////////////////////////////////////////////////
 
-	
-	@GetMapping("/company/preSearchByIdCompanyClient")
-	public String preSearchByIdCompanyClient() {
-		return "company/SearchIdCompanyClient";	
-		}
-
-	@GetMapping("/company/SearchByIdCompanyClient")
-	public String searchByIdCompanyClient(Model model, @RequestParam int idCompanyClient) {
-		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
-		if (companyClient != null) {
-			model.addAttribute("idCompanyClient", companyClient);
-			return "company/SearchByIdCompanyClient";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
-
-	@PostMapping("/company/SearchByIdCompanyClient")
-	public String searchByIdCompanyClient (Model model,CompanyClient companyClient) {
-		companyClientRep.save(companyClient);
-		return "success"; 
-	}
-	
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
 
-	
 	@GetMapping("/company/preDeleteByIdCompanyClient")
 	public String preDeleteByIdCompanyClient() {
 		return "company/deleteByIdCompanyClient";
@@ -79,5 +52,71 @@ public class CompanyClientCtr {
 			return "errore";
 		}
 	}
+
+//////////////////////////////////////  UPDATE   ////////////////////////////////////
+
+	@GetMapping("/company/preUpdateByIdCompanyClient")
+	public String preUpdateByIdCompanyClient() {
+		return "company/updateIdCompanyClient";
+	}
+
+	@GetMapping("/company/updateByIdCompanyClient")
+	public String updateByIdCompanyClient(Model model, @RequestParam int idCompanyClient) {
+		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
+		if (companyClient != null) {
+			model.addAttribute("idCompanyClient", companyClient);
+			return "company/updateCompanyClient";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
+////////////////////////////////////// FIND BY ID  //////////////////////////////////////////////////////////
+
+	@GetMapping("/company/preFindByIdCompanyClient")
+	public String preFindByIdCompanyClient() {
+		return "company/findIdCompanyClient";
+	}
+
+	@GetMapping("/company/findByIdCompanyClient")
+	public String findByIdCompanyClient(Model model, @RequestParam int idCompanyClient) {
+		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
+		if (companyClient != null) {
+			model.addAttribute("idCompanyClient", companyClient);
+			return "company/findByIdCompanyClient";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
+
+	@PostMapping("/company/updateCompanyClient")
+	public String updateCompanyClient(Model model, CompanyClient companyClient) {
+		companyClientRep.save(companyClient);
+		return "success";
+	}
+
+////////////////////////////////////// FIND BY ADDRESS //////////////////////////////////////////////////////////
+
 	
+	@GetMapping("/company/preFindByAddressInCompanyClient")
+	public String preFindByAddressInCompanyClient() {
+		return "company/findByAddressInCompanyClient";   
+	}
+
+	@GetMapping("/company/findByAddressInCompanyClient")
+	public String findByAddressInCompanyClient(Model model, @RequestParam String address) {
+		List<CompanyClient> companyClient = companyClientRep.findByAddressInCompanyClient(address);
+		model.addAttribute("CompanyClient", companyClient);
+		if (companyClient != null) {
+			return "company/resultsByAddressInCompanyClient";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		} 
+	}
+
 }
