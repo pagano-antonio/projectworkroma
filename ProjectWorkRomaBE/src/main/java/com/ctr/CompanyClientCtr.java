@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CompanyClientRepository;
 import com.model.CompanyClient;
-;
 
 @Controller
 @RequestMapping
@@ -98,17 +97,16 @@ public class CompanyClientCtr {
 		return "success";
 	}
 
-////////////////////////////////////// FIND BY ADDRESS //////////////////////////////////////////////////////////
+//////////////////////////////////////FIND BY NAME //////////////////////////////////////////////////////////
 
-	
-	@GetMapping("/company/preFindByAddressInCompanyClient")
-	public String preFindByAddressInCompanyClient() {
-		return "company/findByAddressInCompanyClient";   
+	@GetMapping("/company/preFindByNameInCompanyClient")
+	public String preFindByNameInCompanyClient() {
+		return "company/findByNameInCompanyClient";
 	}
 
-	@GetMapping("/company/findByAddressInCompanyClient")
-	public String findByAddressInCompanyClient(Model model, @RequestParam String address) {
-		List<CompanyClient> companyClient = companyClientRep.findByAddressInCompanyClient(address);
+	@GetMapping("/company/findByNameInCompanyClient")
+	public String findByNameInCompanyClient(Model model, @RequestParam String name) {
+		List<CompanyClient> companyClient = companyClientRep.findByNameInCompanyClient(name);
 		model.addAttribute("CompanyClient", companyClient);
 		if (companyClient != null) {
 			return "company/resultsByAddressInCompanyClient";
@@ -116,7 +114,9 @@ public class CompanyClientCtr {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "errore";
-		} 
+		}
 	}
+////////////////////////////////////// FIND BY CITY //////////////////////////////////////////////////////////
+
 
 }

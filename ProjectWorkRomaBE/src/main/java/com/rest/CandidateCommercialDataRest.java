@@ -20,10 +20,10 @@ public class CandidateCommercialDataRest {
 	
 /////////////////////////////////// ADD /////////////////////////////////////////////////////////////
 	
-	 @PostMapping("addCandidateCommercialData") //metodo post
+	 @PostMapping("addCandidateCommercialData") 
 	 public String addCandidateCommercialData(@RequestBody CandidateCommercialData ccd) {
 		 candidateCommercialDataRep.save(ccd);
-		 return "CandidateCommercialDataAdded"; //su postman mi stampa OK
+		 return "CandidateCommercialDataAdded"; 
 	 }
 	 
 /////////////////////////////////// UPDATE /////////////////////////////////////////////////////////////
