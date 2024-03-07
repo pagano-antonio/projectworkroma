@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateSkillRepository;
+import com.model.CandidateCommercialData;
 import com.model.CandidateSkill;
 
 
@@ -25,9 +26,55 @@ public class CandidateSkillCtr {
 		return "candidate/addCandidateSkill";
 	}
 
-	@PostMapping("/candidate/addCandidateSkill") 
-	public String addCandidateSkill(Model model, CandidateSkill cs) {
-		candidateSkillRep.save(cs); 
+	@PostMapping("/candidate/addCandidateSkill")  
+	public String addCandidateSkill(Model model, CandidateSkill candidateSkill) {
+		candidateSkillRep.save(candidateSkill); 
 		return "success";
 	}
+
+
+//////////////////////////////////////DELETE BY ID  ////////////////////////////////////
+
+@GetMapping("/candidate/preDeleteByIdCandidateSkill")
+public String preDeleteByIdCandidateSkill() {
+return "candidate/deleteByIdCandidateSkill";
+}
+
+@GetMapping("/candidate/deleteByIdCandidateSkill")
+public String deleteByIdCandidateSkill(Model model, Integer idCandidateSkill) {
+	CandidateSkill candidateSkill = (CandidateSkill) candidateSkillRep.findById(idCandidateSkill).orElse(null);
+if (candidateSkill != null) {
+	candidateSkillRep.delete(candidateSkill);
+return "success";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
+
+
+//////////////////////////////////////UPDATE //////////////////////////////////////////////////////
+
+@GetMapping("/candidate/preUpdateByIdCandidateSkill")
+public String preUpdateByIdCandidateSkill() {
+return "candidate/updateIdCandidateSkill";
+}
+
+@GetMapping("/candidate/updateByIdCandidateSkill")
+public String updateByIdCandidateSkill(Model model, int idCandidateSkill) {
+	CandidateSkill candidateSkill = (CandidateSkill) candidateSkillRep.findById(idCandidateSkill).orElse(null);
+if (candidateSkill != null) {
+model.addAttribute("idCandidateSkill", candidateSkill);
+return "candidate/updateIdCandidateSkill"; 
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore"; 
+}
+}
+
+
+//////////////////////////////////////FIND BY ID //////////////////////////////////
+
 }
