@@ -33,56 +33,46 @@ public class EducationDegreeTypeCtr {
 	}
 
 
-////////////////////////////////// SEARCH BY ID ///////////////////////////////////////////////////////////
+//////////////////////////////////////  DELETE BY ID  ////////////////////////////////////
+
+	@GetMapping("/candidate/preDeleteByIdEducationDegreeType")
+	public String preDeleteByIdEducationDegreeType() {
+		return "candidate/deleteByIdEducationDegreeType";
+	}
+	
+	@GetMapping("/candidate/deleteByIdEducationDegreeType")
+	public String deleteByIdEducationDegreeType(Model model, Integer idEducationDegreeType) {
+		EducationDegreeType educationDegreeType = (EducationDegreeType) EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+		if (educationDegreeType != null) {
+			EducationDegreeTypeRep.delete(educationDegreeType);
+			return "success";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
+
+//////////////////////////////////////  UPDATE   ////////////////////////////////////
+
+	@GetMapping("/candidate/preUpdateByIdEducationDegreeType")
+	public String preUpdateByIdEducationDegreeType() {
+		return "candidate/updateIdEducationDegreeType";
+		}
+	
+	@GetMapping("/candidate/updateByIdEducationDegreeType")
+	public String updateByIdIdEducationDegreeType(Model model, int idEducationDegreeType) {
+		EducationDegreeType educationDegreeType = (EducationDegreeType) EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+		if (educationDegreeType != null) {
+			model.addAttribute("idEducationDegreeType", educationDegreeType);
+			return "candidate/updateIdEducationDegreeType";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
