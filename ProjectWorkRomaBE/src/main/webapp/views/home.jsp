@@ -26,6 +26,13 @@
 	tasto con educazione
 	tasto con dati commerciali (CandidateCommercialData)
 	
+	<!-- menu.jsp - Solo il menu laterale, senza <jsp:include> per la home -->
+<div class="sidebar">
+    <a href="home.jsp">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
 	<jsp:include page="menu.jsp" />
 
 <div class="content">
