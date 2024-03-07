@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateRepository;
 import com.model.Candidate;
+import com.model.Education;
 
 
 @Controller  
@@ -26,14 +27,52 @@ public class CandidateCtr {
 	}
 
 	@PostMapping("/candidate/addCandidate") 
-	public String addCandidate(Model model, Candidate c) {
-		candidateRep.save(c); 
+	public String addCandidate(Model model, Candidate candidate) {
+		candidateRep.save(candidate); 
 		return "success";
 	}
 	
-////////////////////////////////////// DELETE BY ID ////////////////////////////////
+//////////////////////////////////////DELETE BY ID  ////////////////////////////////////
 
-////////////////////////////////////// UPDATE ////////////////////////////////////
+@GetMapping("/candidate/preDeleteByIdCandidate")
+public String preDeleteByIdCandidate() {
+return "candidate/deleteByIdCandidate";
+}
+
+@GetMapping("/candidate/deleteByIdCandidate")
+public String deleteByIdCandidate(Model model, Integer idCandidate) {
+	Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
+if (candidate != null) {
+	candidateRep.delete(candidate);
+return "success";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
+
+
+////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
+
+@GetMapping("/candidate/preUpdateByIdCandidate")
+public String preUpdateByIdCandidate() {
+return "candidate/updateIdCandidate";
+}
+
+@GetMapping("/candidate/updateByIdCandidate")
+public String updateByIdIdCandidate(Model model, int idCandidate) {
+Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
+if (candidate != null) {
+model.addAttribute("idCandidate", candidate);
+return "candidate/updateIdCandidate";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
+
 
 ////////////////////////////////////// FIND BY ID //////////////////////////////////
 
