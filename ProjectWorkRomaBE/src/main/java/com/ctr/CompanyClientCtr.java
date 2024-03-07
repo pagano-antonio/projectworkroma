@@ -109,7 +109,7 @@ public class CompanyClientCtr {
 		List<CompanyClient> companyClient = companyClientRep.findByName(name);
 		model.addAttribute("CompanyClient", companyClient);
 		if (companyClient != null) {
-			return "company/resultsByAddressInCompanyClient";
+			return "company/resultsByNameCompanyClient";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
@@ -118,5 +118,22 @@ public class CompanyClientCtr {
 	}
 	
 ////////////////////////////////////// FIND BY CITY ////////////////////////////////////////
+	
+	@GetMapping("/company/preFindByCityCompanyClient")
+	public String preFindByCityCompanyClient() {
+		return "company/findByCityCompanyClient";
+	}
 
+	@GetMapping("/company/findByCityCompanyClient")
+	public String findByCity(Model model, @RequestParam String city) {
+		List<CompanyClient> companyClient = companyClientRep.findByCity(city);
+		model.addAttribute("CompanyClient", companyClient);
+		if (companyClient != null) {
+			return "company/resultsByCityCompanyClient";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
 }

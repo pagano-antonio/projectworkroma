@@ -13,4 +13,6 @@ public interface CompanyClientRepository extends JpaRepository<CompanyClient, In
 	
 	List<CompanyClient> findByName(String name);
 
+	List<CompanyClient> findByCity(String city);
+
 }
