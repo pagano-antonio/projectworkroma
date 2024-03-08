@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateRepository;
 import com.model.Candidate;
-import com.model.Education;
 
 
 @Controller  
