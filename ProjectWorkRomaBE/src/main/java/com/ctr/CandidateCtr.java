@@ -35,7 +35,7 @@ public class CandidateCtr {
 		return "success"; 
 	}
 	
-//////////////////////////////////////DELETE BY ID  ////////////////////////////////////
+//////////////////////////////////////DELETE BY ID  //////////////////////////////////////////////////////
 
 @GetMapping("/candidate/preDeleteByIdCandidate")
 public String preDeleteByIdCandidate() {
@@ -62,7 +62,7 @@ return "errore";
 public String preUpdateByIdCandidate() {
 return "candidate/updateIdCandidate";
 }
-
+ 
 @GetMapping("/candidate/updateByIdCandidate")
 public String updateByIdIdCandidate(Model model, int idCandidate) {
 Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
