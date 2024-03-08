@@ -64,7 +64,7 @@ public class CompanyClientCtr {
 		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
 		if (companyClient != null) {
 			model.addAttribute("idCompanyClient", companyClient);
-			return "company/updateCompanyClient";
+			return "company/sucess";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
@@ -83,7 +83,7 @@ public class CompanyClientCtr {
 		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
 		if (companyClient != null) {
 			model.addAttribute("idCompanyClient", companyClient);
-			return "company/findByIdCompanyClient";
+			return "company/resultsByIdCompanyClient";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
