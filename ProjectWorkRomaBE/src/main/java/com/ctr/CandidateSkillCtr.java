@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateSkillRepository;
-import com.model.CandidateCommercialData;
 import com.model.CandidateSkill;
 
 
