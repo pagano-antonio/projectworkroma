@@ -88,7 +88,14 @@ public String preFindByIdCandidate(Model model) {
 public String findByIdCandidate(Model model, Integer idCandidate) {
 	List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
 	model.addAttribute("idCandidate", candidate);
-	return "resultsFindByIdCandidate";   
+	if (idCandidate != null) {
+		return "candidate/resultsFindByIdCandidate";
+	}else {
+		String errorMessage = "ops!";
+		model.addAttribute("errorMessage", errorMessage);
+		return "errore";
+		}
+	   
 }
 ////////////////////////////////////// FIND BY SURNAME /////////////////////////////
 
@@ -101,7 +108,14 @@ public String preFindBySurname(Model model) {
 public String findBySurname(Model model, String surname) {
 	List<Candidate> candidate = candidateRep.findBySurname(surname);
 	model.addAttribute("surnameCandidate", candidate);
-	return "resultsFindBySurname";  
+	if (surname != null) {
+		return "candidate/resultsFindBySurname";
+	}else {
+		String errorMessage = "ops!";
+		model.addAttribute("errorMessage", errorMessage);
+		return "errore";
+		}
+	   
 }
 ////////////////////////////////////// FIND BY CITY ////////////////////////////////
 
@@ -114,7 +128,14 @@ public String preFindByCity(Model model) {
 public String findByCity(Model model, String city) {
 	List<Candidate> candidate = candidateRep.findByCity(city);
 	model.addAttribute("city", candidate);
-	return "resultsFindByCity"; 
+	if (city != null) {
+		return "candidate/resultsFindByCity"; 
+	}else {
+		String errorMessage = "ops!";
+		model.addAttribute("errorMessage", errorMessage);
+		return "errore";
+		}
+	   
 }
 ////////////////////////////////////// FIND BY PHONE NUMBER ////////////////////////
 
