@@ -45,7 +45,7 @@ public class EmployeeTypeCtr {
 	public String deleteByIdEmployeeType(Model model, Integer idEmployeeType) {
 		EmployeeType employeeType = (EmployeeType) employeeTypeRep.findById(idEmployeeType).orElse(null);
 		if(idEmployeeType != null) {
-			employeeTypeRep.delete(idEmployeeType);
+			employeeTypeRep.delete(employeeType);
 			return "sucess";
 		} else {
 			String errorMessage = "ops!";
