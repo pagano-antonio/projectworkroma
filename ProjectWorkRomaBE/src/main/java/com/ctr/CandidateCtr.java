@@ -1,6 +1,5 @@
 package com.ctr;
 import java.math.BigInteger;
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.dao.CandidateRepository;
 import com.model.Candidate;
+import com.model.JobInterview;
 import com.model.Skill;
 
 
@@ -200,20 +201,46 @@ return "errore";
 ////////////////////////////////////// FIND BY YEARS OF EXPERIENCE //////////////////
 @GetMapping("/candidate/preFindByYearsOfExperienceCandidate")
 public String preFindByYearsOfExperienceCandidate() {
-return "candidate/findByYearsOfExperienceCandidate";
+    return "candidate/findByYearsOfExperienceCandidate";
 }
 
-@GetMapping("/candidate/findByYearsOfExperienceCandidate") 
-public String findByYearsOfExperienceCandidate(Model model, String yearsOfExperienceCandidate) {
-	List<Candidate> candidate = candidateRep.findByYearsOfExperienceCandidate(yearsOfExperienceCandidate);
-	model.addAttribute("yearsOfExperienceCandidate", candidate);
-	return "candidate/findByYearsOfExperienceCandidate"; 
-}  
+//@GetMapping("/candidate/findByYearsOfExperienceCandidate")
+//public String findByYearsOfExperienceCandidate(Model model,
+//                                               @RequestParam("startDate") LocalDate startDate,
+//                                               @RequestParam("endDate") LocalDate endDate) {
+//    List<Candidate> candidateList = candidateRep.findAll(); // Retrieve all candidates
+//
+//    List<Candidate> experiencedCandidates = new ArrayList<>();
+//
+//    for (Candidate candidate : candidateList) {
+//       
+//        List<WorkExperience> workExperience = candidateRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
+//        model.addAttribute("WorkExperience", workExperience);
+//        model.addAttribute("WorkExperience", startDate);
+//        model.addAttribute("WorkExperience", endDate);
+//
+//   
+//    return "candidate/resultsByYearsOfExperienceCandidate";
+//}
 
+////////////////////////////////////// FIND BY ID JOB INTERVIEW FOR OUTCOME //////////////////
+@GetMapping("/candidate/preFindByOutcomeJobInterviewCandidate")
+public String preFindByOutcomeJobInterviewCandidate() {
+return "candidate/findByOutcomeJobInterviewCandidate";
+}
 
-
-////////////////////////////////////// FIND BY ID STATE JOB INTERVIEW FOR OUTCOME //////////////////
-
+@GetMapping("/candidate/findByOutcomeJobInterviewCandidate") 
+public String findByOutcomeJobInterviewCandidate(Model model, Integer outcome) {
+List<JobInterview> candidate = candidateRep.findByOutcome(outcome);
+model.addAttribute("OutcomeCandidate", candidate);
+if (candidate != null) {
+return "candidate/resultsByOutcomeJobInterviewCandidate";
+} else { 
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
 
 
 }
