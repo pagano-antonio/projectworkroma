@@ -19,7 +19,6 @@ import com.model.JobInterview;
 import com.model.Skill;
 
 
-
 @Controller  
 @RequestMapping
 public class CandidateCtr {
