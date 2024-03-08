@@ -29,8 +29,8 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
 //	List<WorkExperience> findByWorkExperiences_WorkExperience_StartDateAfterAndEndDateBefore(Date startDate, Date endDate );
 	
-	@Query(value ="SELECT c FROM Candidate c WHERE c.jobInterviews.outcome=:outcome")
-	List<JobInterview> findByOutcome(Integer outcome); 
+	
+	List<JobInterview> findByJobInterviews_StateJobInterview_IdStateJobInterview(Integer idStateJobInterview); 
 }  
 
 

@@ -1,5 +1,7 @@
 package com.ctr;
 import java.math.BigInteger;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -230,8 +232,9 @@ return "candidate/findByOutcomeJobInterviewCandidate";
 }
 
 @GetMapping("/candidate/findByOutcomeJobInterviewCandidate") 
-public String findByOutcomeJobInterviewCandidate(Model model, Integer outcome) {
-List<JobInterview> candidate = candidateRep.findByOutcome(outcome);
+public String findByOutcomeJobInterviewCandidate(Model model, Integer idStateJobInterview, Integer outcome) {
+List<Candidate> candidate = candidateRep.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
+Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
 model.addAttribute("OutcomeCandidate", candidate);
 if (candidate != null) {
 return "candidate/resultsByOutcomeJobInterviewCandidate";
