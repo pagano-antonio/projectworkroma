@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h2>Add Candidate</h2>
+    
     <form action="${pageContext.request.contextPath}/candidate/addCandidate" method="POST">  
         <table>
             <tr> 

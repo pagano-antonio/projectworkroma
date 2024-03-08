@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
+
 	<form
 		action="${pageContext.request.contextPath}/candidate/deleteByIdCandidate"
 		method="GET">
