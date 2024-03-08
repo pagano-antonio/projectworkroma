@@ -99,23 +99,41 @@ public class CompanyClientCtr {
 
 ////////////////////////////////////// FIND BY NAME ///////////////////////////////////////
 
-	@GetMapping("/company/preFindByNameInCompanyClient")
-	public String preFindByNameInCompanyClient() {
-		return "company/findByNameInCompanyClient";
+	@GetMapping("/company/preFindByNameCompanyClient")
+	public String preFindByNameCompanyClient() {
+		return "company/findByNameCompanyClient";
 	}
 
-	@GetMapping("/company/findByNameInCompanyClient")
-	public String findByNameInCompanyClient(Model model, @RequestParam String name) {
-		List<CompanyClient> companyClient = companyClientRep.findByNameInCompanyClient(name);
+	@GetMapping("/company/findByNameCompanyClient")
+	public String findByName(Model model, @RequestParam String name) {
+		List<CompanyClient> companyClient = companyClientRep.findByName(name);
 		model.addAttribute("CompanyClient", companyClient);
 		if (companyClient != null) {
-			return "company/resultsByAddressInCompanyClient";
+			return "company/resultsByNameCompanyClient";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "errore";
 		}
 	}
+	
 ////////////////////////////////////// FIND BY CITY ////////////////////////////////////////
+	
+	@GetMapping("/company/preFindByCityCompanyClient")
+	public String preFindByCityCompanyClient() {
+		return "company/findByCityCompanyClient";
+	}
 
+	@GetMapping("/company/findByCityCompanyClient")
+	public String findByCity(Model model, @RequestParam String city) {
+		List<CompanyClient> companyClient = companyClientRep.findByCity(city);
+		model.addAttribute("CompanyClient", companyClient);
+		if (companyClient != null) {
+			return "company/resultsByCityCompanyClient";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
 }

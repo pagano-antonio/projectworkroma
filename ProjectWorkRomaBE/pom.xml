@@ -53,7 +53,13 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!--  dipendenze per jstl sotto spring boot -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
