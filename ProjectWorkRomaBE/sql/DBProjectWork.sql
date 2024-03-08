@@ -96,8 +96,11 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE IF NOT EXISTS `employee` (
   `idEmployee` int NOT NULL AUTO_INCREMENT,
   `idEmployeeType` int DEFAULT NULL,
-  `username` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idEmployee`) USING BTREE,
   KEY `id_employee` (`idEmployeeType`) USING BTREE,
   CONSTRAINT `FK5_idEmployeeType` FOREIGN KEY (`idEmployeeType`) REFERENCES `employee_type` (`idEmployeeType`)
