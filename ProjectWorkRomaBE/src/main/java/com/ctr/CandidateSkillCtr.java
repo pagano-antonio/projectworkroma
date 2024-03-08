@@ -64,7 +64,7 @@ return "candidate/updateIdCandidateSkill";
 }
 
 @GetMapping("/candidate/updateByIdCandidateSkill")
-public String updateByIdCandidateSkill(Model model, int idCandidateSkill) {
+public String updateByIdCandidateSkill(Model model, Integer idCandidateSkill) {
 	CandidateSkill candidateSkill = (CandidateSkill) candidateSkillRep.findById(idCandidateSkill).orElse(null);
 if (candidateSkill != null) {
 model.addAttribute("idCandidateSkill", candidateSkill);
@@ -79,17 +79,17 @@ return "errore";
 
 //////////////////////////////////////FIND BY ID //////////////////////////////////
 
-@GetMapping("/candidateSkill/preFindByIdCandidateSkill") 
+@GetMapping("/candidate/preFindByIdCandidateSkill") 
 public String preFindByIdCandidateSkill(Model model) {
 	return "findByIdCandidateSkill";
 }
 
-@GetMapping("/candidateSkill/preFindByIdCandidateSkill") 
-public String findByCity(Model model, String idCandidateSkill) {
+@GetMapping("/candidate/preFindByIdCandidateSkill")  
+public String findByCity(Model model, Integer idCandidateSkill) {
 	List<Candidate> candidate = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
 	model.addAttribute("city", candidate);
 	if (idCandidateSkill != null) {
-		return "candidateSkill/resultsFindByIdCandidateSkill"; 
+		return "candidate/resultsFindByIdCandidateSkill"; 
 	}else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);
