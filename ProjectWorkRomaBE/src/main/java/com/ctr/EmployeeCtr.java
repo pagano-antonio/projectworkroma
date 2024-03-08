@@ -78,7 +78,7 @@ import com.dao.EmployeeRepository;
 		
 ////////////////////////////////// FIND BY ID ///////////////////////////////////////////////////////////
 		
-		@GetMapping("/company/preFindhByIdEmployee")
+		@GetMapping("/company/preFindByIdEmployee")
 		public String preFindByIdEmployee() {
 			return "company/findByIdEmployee";
 		}
