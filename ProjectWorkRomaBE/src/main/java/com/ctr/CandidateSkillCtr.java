@@ -84,7 +84,7 @@ public String preFindByIdCandidateSkill(Model model) {
 	return "findByIdCandidateSkill";
 }
 
-@GetMapping("/candidate/preFindByIdCandidateSkill")  
+@GetMapping("/candidate/FindByIdCandidateSkill")  
 public String findByCity(Model model, Integer idCandidateSkill) {
 	List<Candidate> candidate = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
 	model.addAttribute("city", candidate);
