@@ -1,4 +1,6 @@
 package com.ctr;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateSkillRepository;
-import com.model.CandidateCommercialData;
+import com.model.Candidate;
 import com.model.CandidateSkill;
 
 
@@ -62,7 +64,7 @@ return "candidate/updateIdCandidateSkill";
 }
 
 @GetMapping("/candidate/updateByIdCandidateSkill")
-public String updateByIdCandidateSkill(Model model, int idCandidateSkill) {
+public String updateByIdCandidateSkill(Model model, Integer idCandidateSkill) {
 	CandidateSkill candidateSkill = (CandidateSkill) candidateSkillRep.findById(idCandidateSkill).orElse(null);
 if (candidateSkill != null) {
 model.addAttribute("idCandidateSkill", candidateSkill);
@@ -77,4 +79,22 @@ return "errore";
 
 //////////////////////////////////////FIND BY ID //////////////////////////////////
 
+@GetMapping("/candidate/preFindByIdCandidateSkill") 
+public String preFindByIdCandidateSkill(Model model) {
+	return "findByIdCandidateSkill";
+}
+
+@GetMapping("/candidate/FindByIdCandidateSkill")  
+public String findByCity(Model model, Integer idCandidateSkill) {
+	List<Candidate> candidate = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
+	model.addAttribute("city", candidate);
+	if (idCandidateSkill != null) {
+		return "candidate/resultsFindByIdCandidateSkill"; 
+	}else {
+		String errorMessage = "ops!";
+		model.addAttribute("errorMessage", errorMessage);
+		return "errore";
+		}
+	   
+}
 }
