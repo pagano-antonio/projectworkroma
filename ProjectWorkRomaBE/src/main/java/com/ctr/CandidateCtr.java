@@ -1,5 +1,6 @@
 package com.ctr;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -190,13 +191,26 @@ List<Candidate> candidate = candidateRep.findByEducations_EducationDegreeType_Id
 model.addAttribute("EducationDegreeTypeCandidate", candidate);
 if (candidate != null) {
 return "candidate/resultsByEducationDegreeTypeCandidate";
-} else {
+} else { 
 String errorMessage = "ops!";
 model.addAttribute("errorMessage", errorMessage);
 return "errore";
 }
 }
 ////////////////////////////////////// FIND BY YEARS OF EXPERIENCE //////////////////
+@GetMapping("/candidate/preFindByYearsOfExperienceCandidate")
+public String preFindByYearsOfExperienceCandidate() {
+return "candidate/findByYearsOfExperienceCandidate";
+}
+
+@GetMapping("/candidate/findByYearsOfExperienceCandidate") 
+public String findByYearsOfExperienceCandidate(Model model, String yearsOfExperienceCandidate) {
+	List<Candidate> candidate = candidateRep.findByYearsOfExperienceCandidate(yearsOfExperienceCandidate);
+	model.addAttribute("yearsOfExperienceCandidate", candidate);
+	return "candidate/findByYearsOfExperienceCandidate"; 
+}  
+
+
 
 ////////////////////////////////////// FIND BY ID STATE JOB INTERVIEW FOR OUTCOME //////////////////
 
