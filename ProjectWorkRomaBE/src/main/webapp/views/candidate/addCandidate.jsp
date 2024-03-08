@@ -23,14 +23,14 @@
                 <td>Phone Number:</td>
             </tr>
             <tr>
-                <td><input type="text" id="name" name="name"></td>
-                <td><input type="text" id="surname" name="surname"></td>
-                <td><input type="date" id="birthday" name="birthday"></td>
-                <td><input type="text" id="birthPlace" name="birthPlace"></td>
-                <td><input type="text" id="city" name="city"></td>
-                <td><input type="text" id="address" name="address"></td>
-                <td><input type="text" id="email" name="email"></td>
-                <td><input type="number" id="phone" name="phone"></td>
+                <th><input type="text" id="name" name="name"></th>
+                <th><input type="text" id="surname" name="surname"></th>
+                <th><input type="date" id="birthday" name="birthday"></th>
+                <th><input type="text" id="birthPlace" name="birthPlace"></th>
+                <th><input type="text" id="city" name="city"></th>
+                <th><input type="text" id="address" name="address"></th>
+                <th><input type="text" id="email" name="email"></th>
+                <th><input type="number" id="phone" name="phone"></th>
             </tr>
         </table>
         <h4>Select</h4>
