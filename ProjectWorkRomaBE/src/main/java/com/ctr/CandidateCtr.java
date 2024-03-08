@@ -39,7 +39,7 @@ public class CandidateCtr {
 		return "success"; 
 	}
 	
-//////////////////////////////////////DELETE BY ID  //////////////////////////////////////////////////////
+////////////////////////////////////// DELETE BY ID  //////////////////////////////////////////////////////
 
 @GetMapping("/candidate/preDeleteByIdCandidate")
 public String preDeleteByIdCandidate() {
@@ -55,7 +55,7 @@ return "success";
 } else {
 String errorMessage = "ops!";
 model.addAttribute("errorMessage", errorMessage);
-return "errore";
+return "errore"; 
 }
 }
 

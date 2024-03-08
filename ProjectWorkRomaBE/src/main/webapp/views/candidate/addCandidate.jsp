@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Candidate</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
