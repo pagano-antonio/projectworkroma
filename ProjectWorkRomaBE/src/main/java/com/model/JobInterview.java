@@ -37,15 +37,15 @@ public class JobInterview implements Serializable {
 	@JoinColumn(name = "idCandidate")
 	private Candidate candidate;
 
-	// bi-directional many-to-one association to StateJobInterview
-	@ManyToOne
-	@JoinColumn(name = "idStateJobInterview")
-	private StateJobInterview stateJobInterview;
-
 	// bi-directional many-to-one association to Employee
 	@ManyToOne
 	@JoinColumn(name = "idEmployee")
 	private Employee employee;
+
+	// bi-directional many-to-one association to StateJobInterview
+	@ManyToOne
+	@JoinColumn(name = "idStateJobInterview")
+	private StateJobInterview stateJobInterview;
 
 	public JobInterview() {
 	}
@@ -90,20 +90,20 @@ public class JobInterview implements Serializable {
 		this.candidate = candidate;
 	}
 
-	public StateJobInterview getStateJobInterview() {
-		return this.stateJobInterview;
-	}
-
-	public void setStateJobInterview(StateJobInterview stateJobInterview) {
-		this.stateJobInterview = stateJobInterview;
-	}
-
 	public Employee getEmployee() {
 		return this.employee;
 	}
 
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
+	}
+
+	public StateJobInterview getStateJobInterview() {
+		return this.stateJobInterview;
+	}
+
+	public void setStateJobInterview(StateJobInterview stateJobInterview) {
+		this.stateJobInterview = stateJobInterview;
 	}
 
 }
