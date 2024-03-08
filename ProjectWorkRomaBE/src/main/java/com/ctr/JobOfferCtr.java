@@ -192,7 +192,7 @@ public class JobOfferCtr {
 
     @GetMapping("/findByJobOfferSkillJobOffer")
     public String findByJobOfferSkillJobOffer(Model model, @RequestParam Integer IdJobOfferSkill) {
-        List<JobOfferSkill> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
+        List<JobOffer> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
         model.addAttribute("JobOfferSkillJobOffer", jobOffer);
         if (jobOffer != null) {
             return "job/resultsFindByJobOfferSkillJobOffer";

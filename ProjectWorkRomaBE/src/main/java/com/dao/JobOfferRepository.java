@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.model.JobOffer;
@@ -23,13 +24,12 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer>{
 	
 	List<JobOffer> findByMaxRal(Integer maxRal);
 
-	@Query(value = "SELECT c FROM CompanyClient c WHERE c.companyClient.idCompanyClient=:idCompanyClient")
-	List<CompanyClient> findByIdCompanyClient(Integer idCompanyClient);
+	@Query(value ="SELECT j FROM JobOffer j WHERE j.companyClient.idCompanyClient=:idCompanyClient")
+	List<CompanyClient> findByIdCompanyClient(@Param("idCompanyClient")Integer idCompanyClient);
 	
-	@Query(value = "SELECT c FROM ContractType c WHERE c.contractType.idContractType=:idContractType")
-	List<ContractType> findByIdContractType(Integer idContractType);
+	@Query(value ="SELECT j FROM JobOffer j WHERE j.contractType.idContractType=:idContractType")
+	List<ContractType> findByIdContractType(@Param("idContractType")Integer idContractType);
 	
-	@Query(value = "SELECT j FROM JobOffer j  WHERE j.jobOfferSkill.idJobOfferSkill=: idJobOfferSkill")	
-	List<JobOfferSkill> findByIdJobOfferSkill(Integer idJobOfferSkill);
-
+	@Query(value = "SELECT j FROM JobOffer j JOIN j.jobOfferSkills s WHERE s.idJobOfferSkill = :idJobOfferSkill")
+	List<JobOffer> findByIdJobOfferSkill(@Param("idJobOfferSkill") Integer idJobOfferSkill);
 }
