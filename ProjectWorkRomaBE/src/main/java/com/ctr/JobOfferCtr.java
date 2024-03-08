@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.JobOfferRepository;
 import com.model.CompanyClient;
 import com.model.ContractType;
-import com.model.JobOfferSkill;
 import com.model.JobOffer;
 
 @Controller
@@ -24,7 +23,7 @@ public class JobOfferCtr {
     @Autowired
     private JobOfferRepository jobOfferRep;
 
-    //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
+//////////////////////////////////////  ADD METHOD //////////////////////////////////////////////////////////
 
     @GetMapping("/preAddJobOffer")
     public String preAddJobOffer(Model model) {
@@ -37,7 +36,7 @@ public class JobOfferCtr {
         return "success";
     }
 
-    //////////////////////////////////////UPDATE METHOD //////////////////////////////////////////////////////////
+//////////////////////////////////////  UPDATE METHOD //////////////////////////////////////////////////////////
 
     @GetMapping("/preUpdateByIdJobOffer")
     public String preUpdateByIdIdJobOffer() {
@@ -57,7 +56,7 @@ public class JobOfferCtr {
         }
     }
 
-    //////////////////////////////////////DELETE BY ID //////////////////////////////////////////////////////////
+//////////////////////////////////////  DELETE BY ID  //////////////////////////////////////////////////////////
 
     @GetMapping("/preDeleteByIdJobOffer")
     public String preDeleteByIdJobOffer() {
@@ -77,7 +76,7 @@ public class JobOfferCtr {
         }
     }
 
-    //////////////////////////////////////FIND BY TITLE /////////////////////////////
+//////////////////////////////////////  FIND BY TITLE ///////////////////////////////////////////////////////////
 
     @GetMapping("/preFindByTitleJobOffer")
     public String preFindByTitleJobOffer() {
@@ -97,7 +96,7 @@ public class JobOfferCtr {
         }
     }
 
-    //////////////////////////////////////FIND BY START AND END DATE ////////////////
+ ////////////////////////////////////////////  FIND BY START AND END DATE  ////////////////////////////////////////
 
     @GetMapping("/preFindByStartDateAndEndDate")
     public String preFindByStartDateAndEndDate() {
@@ -110,10 +109,16 @@ public class JobOfferCtr {
         model.addAttribute("JobOffer", jobOffer);
         model.addAttribute("startDateJobOffer", startDate);
         model.addAttribute("endDateJobOffer", endDate);
-        return "job/resultsfindByStartDateAndEndDate";
-    }
+		if (jobOffer != null) {
+			return "job/resultsfindByStartDateAndEndDate";
+		} else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+		}
+	}
 
-    //////////////////////////////////////FIND BY ID COMPANY CLIENT /////////////////
+////////////////////////////////////////////  FIND BY ID COMPANY CLIENT  ////////////////////////////////////////////
 
     @GetMapping("/preFindByIdCompanyClientJobOffer")
     public String preFindByIdCompanyClientJobOffer() {
@@ -133,7 +138,7 @@ public class JobOfferCtr {
         }
     }
 
-    //////////////////////////////////////FIND BY MIN RAL //////////////////
+////////////////////////////////////////////  FIND BY MIN RAL  //////////////////////////////////////////////////////////
 
     @GetMapping("/preFindByMinRalJobOffer")
     public String preFindByMinRalJobOffer() {
@@ -145,10 +150,16 @@ public class JobOfferCtr {
         List<JobOffer> jobOffer = jobOfferRep.findByMinRal(minRal);
         model.addAttribute("jobOffer", jobOffer);
         model.addAttribute("minRalJobOffer", minRal);
-        return "job/resultsFindByMinRalJobOffer";
+        if (jobOffer != null) {
+        	return "job/resultsFindByMinRalJobOffer";
+        }else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
     }
 
-    //////////////////////////////////////FIND BY MAX RAL //////////////////
+////////////////////////////////////////////////  FIND BY MAX RAL  /////////////////////////////////////////////////////////
 
     @GetMapping("/preFindByMaxRalJobOffer")
     public String preFindByMaxRalJobOffer() {
@@ -160,10 +171,16 @@ public class JobOfferCtr {
         List<JobOffer> jobOffer = jobOfferRep.findByMaxRal(maxRal);
         model.addAttribute("jobOffer", jobOffer);
         model.addAttribute("maxRalJobOffer", maxRal);
-        return "job/resultsFindByMaxRalJobOffer";
+        if (jobOffer != null) {
+        	return "job/resultsFindByMaxRalJobOffer";
+        }else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
     }
 
-    //////////////////////////////////////FIND BY CONTRACT TYPE ////////////////////
+////////////////////////////////////////////////////  FIND BY CONTRACT TYPE  /////////////////////////////////////////////
 
     @GetMapping("/preFindByContractTypeJobOffer")
     public String preFindByContractTypeJobOffer() {
@@ -183,7 +200,7 @@ public class JobOfferCtr {
         }
     }
 
-    //////////////////////////////////////FIND BY SKILL ////////////////////////////
+/////////////////////////////////////////////////  FIND BY SKILL /////////////////////////////////////////////////////
 
     @GetMapping("/preFindByJobOfferSkillJobOffer")
     public String preFindByJobOfferSkillJobOffer() {
