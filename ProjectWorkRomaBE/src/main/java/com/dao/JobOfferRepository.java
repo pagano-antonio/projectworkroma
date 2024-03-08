@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.model.JobOffer;
-import com.model.JobOfferSkill;
 import com.model.CompanyClient;
 import com.model.ContractType;
 
