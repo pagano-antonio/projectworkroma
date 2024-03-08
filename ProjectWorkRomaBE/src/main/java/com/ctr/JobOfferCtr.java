@@ -21,196 +21,185 @@ import com.model.JobOffer;
 @RequestMapping
 public class JobOfferCtr {
 
-	@Autowired
-	private JobOfferRepository jobOfferRep;
+    @Autowired
+    private JobOfferRepository jobOfferRep;
 
-//////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
+    //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/job/preAddJobOffer")
-	public String preAddJobOffer(Model model) {
-		return "job/addJobOffer";
-	}
+    @GetMapping("/preAddJobOffer")
+    public String preAddJobOffer(Model model) {
+        return "job/addJobOffer";
+    }
 
-	@PostMapping("/job/addJobOffer")
-	public String addJobOffer(Model model, JobOffer jobOffer) {
-		jobOfferRep.save(jobOffer);
-		return "success";
-	}
+    @PostMapping("/addJobOffer")
+    public String addJobOffer(Model model, JobOffer jobOffer) {
+        jobOfferRep.save(jobOffer);
+        return "success";
+    }
 
-//////////////////////////////////////UPDATE METHOD //////////////////////////////////////////////////////////
+    //////////////////////////////////////UPDATE METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/job/preUpdateByIdJobOffer")
-	public String preUpdateByIdIdJobOffer() {
-		return "job/updateIdJobOffer";
-	}
+    @GetMapping("/preUpdateByIdJobOffer")
+    public String preUpdateByIdIdJobOffer() {
+        return "job/updateIdJobOffer";
+    }
 
-	@GetMapping("/job/updateByIdJobOffer")
-	public String updateByIdJobOffer(Model model, Integer idJobOffer) {
-		JobOffer jobOffer = (JobOffer) jobOfferRep.findById(idJobOffer).orElse(null);
-		if (jobOffer != null) {
-			model.addAttribute("idJobOffer", jobOffer);
-			return "job/updateJobOffer";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/updateByIdJobOffer")
+    public String updateByIdJobOffer(Model model, @RequestParam Integer idJobOffer) {
+        JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
+        if (jobOffer != null) {
+            model.addAttribute("idJobOffer", jobOffer);
+            return "job/updateJobOffer";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 
-//////////////////////////////////////DELETE BY ID //////////////////////////////////////////////////////////
+    //////////////////////////////////////DELETE BY ID //////////////////////////////////////////////////////////
 
-	@GetMapping("/job/preDeleteByIdJobOffer")
-	public String preDeleteByIdJobOffer() {
-		return "job/deleteByIdJobOffer";
-	}
+    @GetMapping("/preDeleteByIdJobOffer")
+    public String preDeleteByIdJobOffer() {
+        return "job/deleteByIdJobOffer";
+    }
 
-	@GetMapping("/job/deleteByIdJobOffer")
-	public String deleteByIdJobOffer(Model model, Integer idJobOffer) {
-		JobOffer jobOffer = (JobOffer) jobOfferRep.findById(idJobOffer).orElse(null);
-		if (jobOffer != null) {
-			jobOfferRep.delete(jobOffer);
-			return "success";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/deleteByIdJobOffer")
+    public String deleteByIdJobOffer(Model model, @RequestParam Integer idJobOffer) {
+        JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
+        if (jobOffer != null) {
+            jobOfferRep.delete(jobOffer);
+            return "success";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 
-//////////////////////////////////////FIND BY TITLE /////////////////////////////
+    //////////////////////////////////////FIND BY TITLE /////////////////////////////
 
-	@GetMapping("/job/preFindByTitleJobOffer")
-	public String preFindByTitleJobOffer() {
-		return "job/findByTitleJobOffer";
-	}
+    @GetMapping("/preFindByTitleJobOffer")
+    public String preFindByTitleJobOffer() {
+        return "job/findByTitleJobOffer";
+    }
 
-	@GetMapping("/job/findByTitleJobOffer")
-	public String findByTitle(Model model, String title) {
-		List<JobOffer> jobOffer = jobOfferRep.findByTitle(title);
-		model.addAttribute("JobOffer", jobOffer);
-		if (jobOffer != null) {
-			return "company/resultsfindByTitleJobOffer";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/findByTitleJobOffer")
+    public String findByTitle(Model model, @RequestParam String title) {
+        List<JobOffer> jobOffer = jobOfferRep.findByTitle(title);
+        model.addAttribute("JobOffer", jobOffer);
+        if (jobOffer != null) {
+            return "company/resultsfindByTitleJobOffer";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 
-//////////////////////////////////////FIND BY START AND END DATE ////////////////
+    //////////////////////////////////////FIND BY START AND END DATE ////////////////
 
-	@GetMapping("/job/preFindByStartDateAndEndDate")
-	public String preFindByStartDateAndEndDate() {
-		return "job/findByStartDateAndEndDate";
-	}
+    @GetMapping("/preFindByStartDateAndEndDate")
+    public String preFindByStartDateAndEndDate() {
+        return "job/findByStartDateAndEndDate";
+    }
 
-	@GetMapping("/job/findByStartDateAndEndDate")
-	public String findByStartDateAndEndDate(Model model, Date startDate, Date endDate) {
-		List<JobOffer> jobOffer = jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
-		model.addAttribute("JobOffer", jobOffer);
-		model.addAttribute("startDateJobOffer", startDate);
-		model.addAttribute("endDateJobOffer", endDate);
-		return "job/resultsfindByStartDateAndEndDate";
-	}
+    @GetMapping("/findByStartDateAndEndDate")
+    public String findByStartDateAndEndDate(Model model, @RequestParam Date startDate, @RequestParam Date endDate) {
+        List<JobOffer> jobOffer = jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
+        model.addAttribute("JobOffer", jobOffer);
+        model.addAttribute("startDateJobOffer", startDate);
+        model.addAttribute("endDateJobOffer", endDate);
+        return "job/resultsfindByStartDateAndEndDate";
+    }
 
-//////////////////////////////////////FIND BY ID COMPANY CLIENT /////////////////
+    //////////////////////////////////////FIND BY ID COMPANY CLIENT /////////////////
 
-	@GetMapping("/job/preFindByIdCompanyClientJobOffer")
-	public String preFindByIdCompanyClientJobOffer() {
-		return "job/findByIdCompanyClientJobOffer";
-	}
+    @GetMapping("/preFindByIdCompanyClientJobOffer")
+    public String preFindByIdCompanyClientJobOffer() {
+        return "job/findByIdCompanyClientJobOffer";
+    }
 
-	@GetMapping("/job/findByIdCompanyClientJobOffer")
-	public String findByIdCompanyClient(Model model, Integer idCompanyClient) {
-		List<CompanyClient> jobOffer = jobOfferRep.findById(idCompanyClient);
-		model.addAttribute("idCompanyClientJobOffer", jobOffer);
-		if (jobOffer != null) {
-			return "job/resultsfindByIdCompanyClientJobOffer";
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/findByCompanyClientJobOffer")
+    public String findByCompanyClient(Model model, @RequestParam Integer idCompanyClient) {
+        List<CompanyClient> jobOffer = jobOfferRep.findByIdCompanyClient(idCompanyClient);
+        model.addAttribute("idCompanyClientJobOffer", jobOffer);
+        if (jobOffer != null) {
+            return "job/resultsfindByCompanyClientJobOffer";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 
-//////////////////////////////////////FIND BY MIN RAL/ MAX RAL RANGE //////////////////
+    //////////////////////////////////////FIND BY MIN RAL //////////////////
 
-	@GetMapping("/job/preFindByMinRalMaxRalRangeJobOffer")
-	public String preFindByMinRalMaxRalRangeJobOffer() {
-		return "job/preFindByMinRalMaxRalRangeJobOffer";
-	}
+    @GetMapping("/preFindByMinRalJobOffer")
+    public String preFindByMinRalJobOffer() {
+        return "job/preFindByMinRalJobOffer";
+    }
 
-	@GetMapping("/job/findByMinRalMaxRalRangeJobOffer")
-	public String findByMinRalMaxRalRangeJobOffer(Model model, Integer minRal, Integer maxRal) {
-		List<JobOffer> jobOffer = jobOfferRep.findByRalBetween(minRal, maxRal);
-		model.addAttribute("jobOffer", jobOffer);
-		model.addAttribute("minRalJobOffer", minRal);
-		model.addAttribute("maxRalJobOffer", maxRal);
-		return "job/resultsFindByMinRalMaxRalRangeJobOffer";
-	}
+    @GetMapping("/findByMinRalJobOffer")
+    public String findByMinRalJobOffer(Model model, @RequestParam Integer minRal) {
+        List<JobOffer> jobOffer = jobOfferRep.findByMinRal(minRal);
+        model.addAttribute("jobOffer", jobOffer);
+        model.addAttribute("minRalJobOffer", minRal);
+        return "job/resultsFindByMinRalJobOffer";
+    }
 
-//////////////////////////////////////FIND BY MIN RAL //////////////////
+    //////////////////////////////////////FIND BY MAX RAL //////////////////
 
-	@GetMapping("/job/preFindByMinRalJobOffer")
-	public String preFindByMinRalJobOffer() {
-		return "job/preFindByMinRalJobOffer";
-	}
+    @GetMapping("/preFindByMaxRalJobOffer")
+    public String preFindByMaxRalJobOffer() {
+        return "job/preFindByMaxRalJobOffer";
+    }
 
-	@GetMapping("/job/findByMinRalJobOffer")
-	public String findByMinRalJobOffer(Model model, Integer minRal) {
-		List<JobOffer> jobOffer = jobOfferRep.findByMinRal(minRal);
-		model.addAttribute("jobOffer", jobOffer);
-		model.addAttribute("minRalJobOffer", minRal);
-		return "job/resultsFindByMinRalJobOffer";
-	}
+    @GetMapping("/findByMaxRalJobOffer")
+    public String findByMaxRalJobOffer(Model model, @RequestParam Integer maxRal) {
+        List<JobOffer> jobOffer = jobOfferRep.findByMaxRal(maxRal);
+        model.addAttribute("jobOffer", jobOffer);
+        model.addAttribute("maxRalJobOffer", maxRal);
+        return "job/resultsFindByMaxRalJobOffer";
+    }
 
-//////////////////////////////////////FIND BY MIN RAL //////////////////
+    //////////////////////////////////////FIND BY CONTRACT TYPE ////////////////////
 
-	@GetMapping("/job/preFindByMaxRalJobOffer")
-	public String preFindByMaxRalJobOffer() {
-		return "job/preFindByMaxRalJobOffer";
-	}
+    @GetMapping("/preFindByContractTypeJobOffer")
+    public String preFindByContractTypeJobOffer() {
+        return "job/findByContractTypeJobOffer";
+    }
 
-	@GetMapping("/job/findByMaxRalJobOffer")
-	public String findByMaxRalJobOffer(Model model, Integer maxRal) {
-		List<JobOffer> jobOffer = jobOfferRep.findByMaxRal(maxRal);
-		model.addAttribute("jobOffer", jobOffer);
-		model.addAttribute("maxRalJobOffer", maxRal);
-		return "job/resultsFindByMaxRalJobOffer";
-	}
-//////////////////////////////////////FIND BY CONTRACT TYPE ////////////////////
+    @GetMapping("/findByContractTypeJobOffer")
+    public String findByContractTypeJobOffer(Model model, @RequestParam Integer IdContractType) {
+        List<ContractType> jobOffer = jobOfferRep.findByIdContractType(IdContractType);
+        model.addAttribute("JobOffer", jobOffer);
+        if (jobOffer != null) {
+            return "job/resultsFindByContractTypeJobOffer";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 
-	@GetMapping("/job/preFindByContractTypeJobOffer")
-	public String preFindByContractTypeJobOffer() {
-		return "job/findByContractTypeJobOffer";
-	}
+    //////////////////////////////////////FIND BY SKILL ////////////////////////////
 
-	@GetMapping("/job/findByContractTypeJobOffer")
-	public String findByContractTypeJobOffer(Model model, Integer IdContractType) {
-		List<ContractType> jobOffer = jobOfferRep.findById(IdContractType);
-		model.addAttribute("JobOffer", jobOffer);
-		if (jobOffer != null) {
-			return "job/resultsFindByContractTypeJobOffer";
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
-//////////////////////////////////////FIND BY SKILL ////////////////////////////
+    @GetMapping("/preFindByJobOfferSkillJobOffer")
+    public String preFindByJobOfferSkillJobOffer() {
+        return "job/findByJobOfferSkillJobOffer";
+    }
 
-	@GetMapping("/job/preFindByJobOfferSkillJobOffer")
-	public String preFindByJobOfferSkillJobOffer() {
-		return "job/findByJobOfferSkillJobOffer";
-	}
-
-	@GetMapping("/job/findByJobOfferSkillJobOffer")
-	public String findByJobOfferSkillJobOffer(Model model, Integer IdJobOfferSkill) {
-		List<JobOfferSkill> jobOffer = jobOfferRep.findById(IdJobOfferSkill);
-		model.addAttribute("JobOfferSkillJobOffer", jobOffer);
-		if (jobOffer != null) {
-			return "job/resultsFindByJobOfferSkillJobOffer";
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/findByJobOfferSkillJobOffer")
+    public String findByJobOfferSkillJobOffer(Model model, @RequestParam Integer IdJobOfferSkill) {
+        List<JobOfferSkill> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
+        model.addAttribute("JobOfferSkillJobOffer", jobOffer);
+        if (jobOffer != null) {
+            return "job/resultsFindByJobOfferSkillJobOffer";
+        } else {
+            String errorMessage = "ops!";
+            model.addAttribute("errorMessage", errorMessage);
+            return "errore";
+        }
+    }
 }
