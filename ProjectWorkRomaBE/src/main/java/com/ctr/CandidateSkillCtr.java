@@ -1,4 +1,6 @@
 package com.ctr;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CandidateSkillRepository;
+import com.model.Candidate;
 import com.model.CandidateSkill;
 
 
@@ -76,4 +79,22 @@ return "errore";
 
 //////////////////////////////////////FIND BY ID //////////////////////////////////
 
+@GetMapping("/candidateSkill/preFindByIdCandidateSkill") 
+public String preFindByIdCandidateSkill(Model model) {
+	return "findByIdCandidateSkill";
+}
+
+@GetMapping("/candidateSkill/preFindByIdCandidateSkill") 
+public String findByCity(Model model, String idCandidateSkill) {
+	List<Candidate> candidate = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
+	model.addAttribute("city", candidate);
+	if (idCandidateSkill != null) {
+		return "candidateSkill/resultsFindByIdCandidateSkill"; 
+	}else {
+		String errorMessage = "ops!";
+		model.addAttribute("errorMessage", errorMessage);
+		return "errore";
+		}
+	   
+}
 }

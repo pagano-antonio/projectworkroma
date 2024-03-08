@@ -1,4 +1,5 @@
 package com.ctr;
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateRepository;
 import com.model.Candidate;
+import com.model.Skill;
 
 
 
@@ -137,15 +139,67 @@ public String findByCity(Model model, String city) {
 		}
 	   
 }
-////////////////////////////////////// FIND BY PHONE NUMBER ////////////////////////
+//////////////////////////////////////FIND BY PHONE NUMBER ////////////////////////
 
-////////////////////////////////////// FIND BY SKILL ///////////////////////////////
+@GetMapping("/candidate/preFindByPhoneCandidate")
+public String preFindByPhoneCandidate() {
+return "candidate/findByPhoneCandidate";
+}
 
-////////////////////////////////////// FIND BY ID EDUCATION DEGREE /////////////////
+@GetMapping("/candidate/findByPhoneCandidate")
+public String findByPhoneCandidate(Model model, BigInteger phone) {
+List<Candidate> candidate = candidateRep.findByPhone(phone);
+model.addAttribute("PhoneCandidate", candidate);
+if (candidate != null) {
+return "candidate/resultsByPhoneCandidate";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
+//////////////////////////////////////FIND BY SKILL ///////////////////////////////
 
+@GetMapping("/candidate/preFindBySkillCandidate")
+public String preFindBySkillCandidate() {
+return "candidate/findBySkillCandidate";
+}
+
+@GetMapping("/candidate/findBySkillCandidate")
+public String findBySkillCandidate(Model model, Skill skill) {
+List<Candidate> candidate = candidateRep.findByCandidateSkills_Skill(skill);
+model.addAttribute("SkillCandidate", candidate);
+if (candidate != null) {    
+return "candidate/resultsBySkillCandidate";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
+
+//////////////////////////////////////FIND BY ID EDUCATION DEGREE TYPE /////////////////
+
+@GetMapping("/candidate/preFindByEducationDegreeTypeCandidate")
+public String preFindByEducationDegreeTypeCandidate() {
+return "candidate/findByEducationDegreeTypeCandidate";
+}
+
+@GetMapping("/candidate/findByEducationDegreeTypeCandidate") 
+public String findByEducationDegreeTypeCandidate(Model model, Integer idEducationDegreeType) {
+List<Candidate> candidate = candidateRep.findByEducations_EducationDegreeType_IdEducationDegreeType(idEducationDegreeType);
+model.addAttribute("EducationDegreeTypeCandidate", candidate);
+if (candidate != null) {
+return "candidate/resultsByEducationDegreeTypeCandidate";
+} else {
+String errorMessage = "ops!";
+model.addAttribute("errorMessage", errorMessage);
+return "errore";
+}
+}
 ////////////////////////////////////// FIND BY YEARS OF EXPERIENCE //////////////////
 
-////////////////////////////////////// FIND BY ID STATE JOB INTERVIEW FOR OUTCOME//////////////////
+////////////////////////////////////// FIND BY ID STATE JOB INTERVIEW FOR OUTCOME //////////////////
 
 
 
