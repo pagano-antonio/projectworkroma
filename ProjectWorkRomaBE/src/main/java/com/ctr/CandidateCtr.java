@@ -29,7 +29,7 @@ public class CandidateCtr {
 	@PostMapping("/candidate/addCandidate") 
 	public String addCandidate(Model model, Candidate candidate) {
 		candidateRep.save(candidate); 
-		return "success";
+		return "success"; 
 	}
 	
 //////////////////////////////////////DELETE BY ID  ////////////////////////////////////
