@@ -48,7 +48,7 @@ public class JobOfferCtr {
         JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
         if (jobOffer != null) {
             model.addAttribute("idJobOffer", jobOffer);
-            return "/job/updateJobOffer";
+            return "job/updateByIdJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -60,7 +60,7 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preDeleteByIdJobOffer")
     public String preDeleteByIdJobOffer() {
-        return "/job/deleteByIdJobOffer";
+        return "job/deleteByIdJobOffer";
     }
 
     @GetMapping("/job/deleteByIdJobOffer")
@@ -78,7 +78,7 @@ public class JobOfferCtr {
 
 //////////////////////////////////////  FIND BY TITLE ///////////////////////////////////////////////////////////
 
-    @GetMapping("/preFindByTitleJobOffer")
+    @GetMapping("/job/preFindByTitleJobOffer")
     public String preFindByTitleJobOffer() {
         return "job/findByTitleJobOffer";
     }
@@ -86,9 +86,9 @@ public class JobOfferCtr {
     @GetMapping("/job/findByTitleJobOffer")
     public String findByTitle(Model model, @RequestParam String title) {
         List<JobOffer> jobOffer = jobOfferRep.findByTitle(title);
-        model.addAttribute("JobOffer", jobOffer);
+        model.addAttribute("JobOfferTitle", jobOffer);
         if (jobOffer != null) {
-            return "company/resultsfindByTitleJobOffer";
+            return "job/resultsFindByTitleJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -100,7 +100,7 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preFindByStartDateAndEndDate")
     public String preFindByStartDateAndEndDate() {
-        return "/job/findByStartDateAndEndDate";
+        return "job/findByStartDateAndEndDate";
     }
 
     @GetMapping("/job/findByStartDateAndEndDate")
@@ -110,7 +110,7 @@ public class JobOfferCtr {
         model.addAttribute("startDateJobOffer", startDate);
         model.addAttribute("endDateJobOffer", endDate);
 		if (jobOffer != null) {
-			return "/job/resultsfindByStartDateAndEndDate";
+			return "job/resultsfindByStartDateAndEndDate";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
@@ -122,7 +122,7 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preFindByIdCompanyClientJobOffer")
     public String preFindByIdCompanyClientJobOffer() {
-        return "/job/findByIdCompanyClientJobOffer";
+        return "job/findByIdCompanyClientJobOffer";
     }
 
     @GetMapping("/job/findByCompanyClientJobOffer")
@@ -130,7 +130,7 @@ public class JobOfferCtr {
         List<CompanyClient> jobOffer = jobOfferRep.findByIdCompanyClient(idCompanyClient);
         model.addAttribute("idCompanyClientJobOffer", jobOffer);
         if (jobOffer != null) {
-            return "/job/resultsfindByCompanyClientJobOffer";
+            return "job/resultsfindByCompanyClientJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -151,7 +151,7 @@ public class JobOfferCtr {
         model.addAttribute("jobOffer", jobOffer);
         model.addAttribute("minRalJobOffer", minRal);
         if (jobOffer != null) {
-        	return "/job/resultsFindByMinRalJobOffer";
+        	return "job/resultsFindByMinRalJobOffer";
         }else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -163,7 +163,7 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preFindByMaxRalJobOffer")
     public String preFindByMaxRalJobOffer() {
-        return "/job/preFindByMaxRalJobOffer";
+        return "job/preFindByMaxRalJobOffer";
     }
 
     @GetMapping("/job/findByMaxRalJobOffer")
@@ -172,7 +172,7 @@ public class JobOfferCtr {
         model.addAttribute("jobOffer", jobOffer);
         model.addAttribute("maxRalJobOffer", maxRal);
         if (jobOffer != null) {
-        	return "/job/resultsFindByMaxRalJobOffer";
+        	return "job/resultsFindByMaxRalJobOffer";
         }else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -192,7 +192,7 @@ public class JobOfferCtr {
         List<ContractType> jobOffer = jobOfferRep.findByIdContractType(IdContractType);
         model.addAttribute("JobOffer", jobOffer);
         if (jobOffer != null) {
-            return "/job/resultsFindByContractTypeJobOffer";
+            return "job/resultsFindByContractTypeJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
@@ -212,7 +212,7 @@ public class JobOfferCtr {
         List<JobOffer> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
         model.addAttribute("JobOfferSkillJobOffer", jobOffer);
         if (jobOffer != null) {
-            return "/job/resultsFindByJobOfferSkillJobOffer";
+            return "job/resultsFindByJobOfferSkillJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);

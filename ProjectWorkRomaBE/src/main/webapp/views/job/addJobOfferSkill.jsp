@@ -14,7 +14,6 @@
     <span>ADD JOB OFFER SKILL</span>
 </div>
 
-    <h2>Add Job Offer Skill</h2>
     <form action="${pageContext.request.contextPath}/job/addJobOfferSkill" method="POST">  
         <table>
             <tr> 

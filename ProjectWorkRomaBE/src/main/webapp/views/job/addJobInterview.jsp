@@ -14,8 +14,7 @@
     <span>ADD JOB INTERVIEW</span>
 </div>
 
-    <h2>Add Job Interview</h2>
-    <form action="${pageContext.request.contextPath}/job/addJobInterview" method="POST">  
+  <form action="${pageContext.request.contextPath}/job/addJobInterview" method="POST">  
         <table>
             <tr> 
                 <td>ID Candidate:</td>

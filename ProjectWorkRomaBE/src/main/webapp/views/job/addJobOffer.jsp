@@ -14,7 +14,6 @@
     <span>ADD JOB OFFER</span>
 </div>
 
-    <h2>Add Job Offer</h2>
     <form action="${pageContext.request.contextPath}/job/addJobOffer" method="POST">  
         <table>
             <tr> 
