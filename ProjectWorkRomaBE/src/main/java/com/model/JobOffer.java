@@ -1,7 +1,7 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -11,8 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+
 
 /**
  * The persistent class for the job_offer database table.
@@ -29,14 +28,13 @@ public class JobOffer implements Serializable {
 
 	private String description;
 
-	@Temporal(TemporalType.DATE)
+	
 	private Date endDate;
 
 	private int maxRal;
 
 	private int minRal;
 
-	@Temporal(TemporalType.DATE)
 	private Date startDate;
 
 	private String title;

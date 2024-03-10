@@ -2,15 +2,13 @@ package com.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 /**
  * The persistent class for the candidate database table.
@@ -26,7 +24,7 @@ public class Candidate implements Serializable {
 
 	private String address;
 
-	@Temporal(TemporalType.DATE)
+	
 	private Date birthday;
 
 	private String birthPlace;

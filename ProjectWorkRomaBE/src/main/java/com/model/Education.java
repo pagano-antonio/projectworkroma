@@ -1,15 +1,14 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+
 
 /**
  * The persistent class for the education database table.
@@ -23,7 +22,7 @@ public class Education implements Serializable {
 	@Id
 	private int idEducation;
 
-	@Temporal(TemporalType.DATE)
+	
 	private Date date;
 
 	private String finalGrade;
