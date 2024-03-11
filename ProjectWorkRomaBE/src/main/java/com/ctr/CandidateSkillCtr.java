@@ -76,7 +76,7 @@ public String preUpdateByIdCandidateSkill(Model model,@RequestParam Integer idCa
         List<Skill> skill = skillRep.findAll();
         model.addAttribute("listIdSkill", skill);
         return "candidate/updateByIdCandidateSkill";     
-      
+       
 }   
 
 @PostMapping("/candidate/updateByIdCandidateSkill")
