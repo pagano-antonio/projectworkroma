@@ -9,13 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateRepository;
 import com.model.Candidate;
+import com.model.CompanyClient;
+import com.model.ContractType;
 import com.model.JobInterview;
+import com.model.JobOffer;
 import com.model.Skill;
 
 
@@ -63,23 +67,20 @@ return "errore";
 ////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
 
 @GetMapping("/candidate/preUpdateByIdCandidate")
-public String preUpdateByIdCandidate() {
-return "candidate/updateIdCandidate";
-}
- 
-@GetMapping("/candidate/updateByIdCandidate")
-public String updateByIdIdCandidate(Model model, Integer idCandidate) {
-Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
-if (candidate != null) {
-model.addAttribute("idCandidate", candidate);
-candidateRep.save(candidate);
-return "candidate/updateIdCandidate";
-} else {
-String errorMessage = "ops!";
-model.addAttribute("errorMessage", errorMessage);
-return "errore";
-}
-}
+public String preUpdateByIdIdCandidate(Model model,@RequestParam Integer idCandidate) {
+	Candidate candidate = candidateRep.findById(idCandidate).orElse(null);
+        model.addAttribute("candidate", candidate); 
+        return "candidate/updateByIdCandidate";     
+  
+}   
+
+@PostMapping("/candidate/updateByIdCandidate")
+public String updateByIdCandidate(Model model, Candidate candidate) { 
+        candidateRep.save(candidate);
+        return "success";   
+  
+}  
+
 
 
 ////////////////////////////////////// FIND BY ID //////////////////////////////////

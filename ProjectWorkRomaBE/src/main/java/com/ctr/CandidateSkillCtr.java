@@ -8,9 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateSkillRepository;
 import com.model.Candidate;
+import com.model.CandidateCommercialData;
 import com.model.CandidateSkill;
 
 
@@ -58,23 +60,21 @@ return "errore";
 
 //////////////////////////////////////UPDATE //////////////////////////////////////////////////////
 
-@GetMapping("/candidate/preUpdateByIdCandidateSkill")
-public String preUpdateByIdCandidateSkill() {
-return "candidate/updateIdCandidateSkill";
-}
 
-@GetMapping("/candidate/updateByIdCandidateSkill")
-public String updateByIdCandidateSkill(Model model, Integer idCandidateSkill) {
-	CandidateSkill candidateSkill = (CandidateSkill) candidateSkillRep.findById(idCandidateSkill).orElse(null);
-if (candidateSkill != null) {
-model.addAttribute("idCandidateSkill", candidateSkill);
-return "candidate/updateIdCandidateSkill"; 
-} else {
-String errorMessage = "ops!";
-model.addAttribute("errorMessage", errorMessage);
-return "errore"; 
-}
-}
+@GetMapping("/candidate/preUpdateByIdCandidateSkill")
+public String preUpdateByIdCandidateSkill(Model model,@RequestParam Integer idCandidateSkill) {
+	CandidateSkill candidateSkill = candidateSkillRep.findById(idCandidateSkill).orElse(null);
+        model.addAttribute("candidateSkill", candidateSkill); 
+        return "candidate/updateByIdCandidateSkill";     
+     
+}   
+
+@PostMapping("/candidate/updateByIdCandidateSkill")
+public String updateByIdCandidateSkill(Model model, CandidateSkill candidateSkill) { 
+        candidateSkillRep.save(candidateSkill);
+        return "success";    
+  
+} 
 
 
 //////////////////////////////////////FIND BY ID //////////////////////////////////
