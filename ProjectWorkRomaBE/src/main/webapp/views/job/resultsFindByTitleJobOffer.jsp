@@ -43,11 +43,12 @@
 				<th>${jobOffer.getContractType().getIdContractType()}</th>
 
 				<th><a
-					href="${pageContext.request.contextPath}/job/updateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+					href="${pageContext.request.contextPath}updateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+<!-- 					qua non bisogna specificare la cartella -->
 						<button type="button">Update</button>
 				</a></th>		
 				<th><a
-					href="${pageContext.request.contextPath}job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+					href="${pageContext.request.contextPath}deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 						<button type="button">Delete</button>
 				</a></th>
 			</tr>

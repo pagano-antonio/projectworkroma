@@ -44,7 +44,7 @@ public class JobOfferCtr {
     }
 
     @GetMapping("/job/updateByIdJobOffer")
-    public String updateByIdJobOffer(Model model, @RequestParam Integer idJobOffer) {
+    public String updateByIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
         JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
         if (jobOffer != null) {
             model.addAttribute("idJobOffer", jobOffer);
