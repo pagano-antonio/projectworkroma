@@ -48,24 +48,21 @@ public class JobOfferCtr {
     @GetMapping("/job/preUpdateByIdJobOffer")
     public String preUpdateByIdIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
     	JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
-//        if (jobOffer != null) {
             model.addAttribute("idJobOffer", jobOffer);
             List<CompanyClient> companyClient = companyClientRep.findAll();
             List<ContractType> contractType = contractTypeRep.findAll();
             model.addAttribute("listIdCompanyClient", companyClient);
             model.addAttribute("listIdContractType", contractType); 
-            return "job/updateByIdJobOffer";    
-//        } else {
-//            String errorMessage = "ops!";
-//            model.addAttribute("errorMessage", errorMessage);
-//            return "error";
-//        }  
+            return "job/updateByIdJobOffer";     
       
     }   
 
     @PostMapping("/job/updateByIdJobOffer")
-    public String updateByIdJobOffer(Model model,@ModelAttribute ("jobOffer") JobOffer jobOffer) {
-      
+    public String updateByIdJobOffer(Model model,@ModelAttribute ("jobOffer") JobOffer jobOffer, Integer  idCompanyClient, Integer idContractType) {
+    	CompanyClient companyClient = (CompanyClient)companyClientRep.findById(idCompanyClient).orElse(null);
+    	ContractType contractType = (ContractType)contractTypeRep.findById(idContractType).orElse(null);
+      jobOffer.setCompanyClient(companyClient);
+      jobOffer.setContractType(contractType); 
             jobOfferRep.save(jobOffer);
             
             return "success";   
