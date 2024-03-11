@@ -1,37 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Add Candidate</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+<html lang="en">
+<head>   
+  <meta charset="UTF-8">
+  <title>Add Candidate</title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
-
 <body>
 <div class="container">
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
     <span>ADD CONTRACT TYPE</span>
 </div>
-  
-    <form action="${pageContext.request.contextPath}/job/addContractType" method="POST">  
-        <table>
-            <tr> 
-                <td>Description:</td>
-                <td>Title:</td>                 
-            </tr>
-            <tr>
-                <th><input type="text" id="description" name="description"></th>
-                <th><input type="text" id="title" name="title"></th>              
-            </tr>
-        </table>
-        <h4>Select</h4>
-        <table>
-            <tr>
-                <td><input type="submit" value="Submit"></td>
-                <td><input type="reset" value="Reset"></td>
-            </tr>
-        </table>
-    </form>
+<form action="${pageContext.request.contextPath}/job/addContractType" method="POST">  
+    <div class="data-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+    </div>
+    <div class="data-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+    </div>
+    <div class="submit">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</form>
 </body>
 </html>
