@@ -1,5 +1,7 @@
 package com.ctr;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,29 +48,21 @@ public class StateJobInterviewCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
 	@GetMapping("/job/preUpdateByIdStateJobInterview")
-	public String preUpdateByIdStateJobInterview() {
-		return "job/updateIdStateJobInterview";
-	}
-
-	@GetMapping("/job/updateByIdStateJobInterview")
-	public String updateByIdStateJobInterview(Model model, @RequestParam int idStateJobInterview) {
-		StateJobInterview stateJobInterview = (StateJobInterview) stateJobInterviewRep.findById(idStateJobInterview)
-				.orElse(null);
-		if (stateJobInterview != null) {
+	public String preUpdateByIdStateJobInterview(Model model,@RequestParam Integer idStateJobInterview) {
+		StateJobInterview stateJobInterview = stateJobInterviewRep.findById(idStateJobInterview).orElse(null);
 			model.addAttribute("idStateJobInterview", stateJobInterview);
-			return "job/updateStateJobInterview";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
+			return "job/updateByIdStateJobInterview";
 	}
-
-}
+	@PostMapping("/job/updateByIdStateJobInterview")		
+	public String updateByIdStateJobInterview(Model model,StateJobInterview stateJobInterview) {
+		stateJobInterviewRep.save(stateJobInterview);	        
+	        return "success";  
+	}
+}  
