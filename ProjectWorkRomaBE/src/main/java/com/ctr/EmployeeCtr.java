@@ -62,21 +62,20 @@ public class EmployeeCtr {
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
 	@GetMapping("/company/preUpdateByIdEmployee")
-	public String preUpdateByIdJEmployee(Model model, @RequestParam Integer idEmployee) {
-		Employee employee = employeeRep.findById(idEmployee).orElse(null);
-		model.addAttribute("idEmployee", employee);
-		List<EmployeeType> employeeType = employeeTypeRep.findAll();
-		model.addAttribute("listIdEmployeeType", employeeType);
-		return "company/updateByIdEmployee";
-
+	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
+	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
+	    model.addAttribute("idEmployee", employee); 
+	    List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
+	    model.addAttribute("listIdEmployeeType", employeeType);
+	    return "company/updateByIdEmployee";
 	}
 
 	@PostMapping("/company/updateByIdEmployee")
-	public String updateByIdEmployee(Model model, @ModelAttribute("employee") Employee employee, Integer idEmployeeType) {
-		EmployeeType employeeType = (EmployeeType) employeeTypeRep.findById(idEmployeeType).orElse(null);
-		employee.setEmployeeType(employee);
-		employeeRep.save(employee);
-		return "success";
+	public String updateByIdEmployee(Model model, @ModelAttribute("employee") Employee employee, @RequestParam Integer idEmployeeType) { // Aggiunto "@RequestParam" per idEmployeeType
+	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
+	    employee.setEmployeeType(employeeType); 
+	    employeeRep.save(employee);
+	    return "success";
 	}
 ////////////////////////////////// FIND BY ID ///////////////////////////////////////////////////////////
 
@@ -86,7 +85,7 @@ public class EmployeeCtr {
 	}
 
 	@GetMapping("/company/findByIdEmployee")
-	public String findByIdEmployee(Model model, @RequestParam int idEmployee) {
+	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
 		if (employee != null) {
 			model.addAttribute("idEmployee", employee);
