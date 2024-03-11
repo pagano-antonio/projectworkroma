@@ -200,30 +200,6 @@ model.addAttribute("errorMessage", errorMessage);
 return "errore";
 }
 }
-////////////////////////////////////// FIND BY YEARS OF EXPERIENCE //////////////////
-@GetMapping("/candidate/preFindByYearsOfExperienceCandidate")
-public String preFindByYearsOfExperienceCandidate() {
-    return "candidate/findByYearsOfExperienceCandidate";
-}
-
-//@GetMapping("/candidate/findByYearsOfExperienceCandidate")
-//public String findByYearsOfExperienceCandidate(Model model,
-//                                               @RequestParam("startDate") LocalDate startDate,
-//                                               @RequestParam("endDate") LocalDate endDate) {
-//    List<Candidate> candidateList = candidateRep.findAll(); // Retrieve all candidates
-//
-//    List<Candidate> experiencedCandidates = new ArrayList<>();
-//
-//    for (Candidate candidate : candidateList) {
-//       
-//        List<WorkExperience> workExperience = candidateRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
-//        model.addAttribute("WorkExperience", workExperience);
-//        model.addAttribute("WorkExperience", startDate);
-//        model.addAttribute("WorkExperience", endDate);
-//
-//   
-//    return "candidate/resultsByYearsOfExperienceCandidate";
-//}
 
 ////////////////////////////////////// FIND BY ID JOB INTERVIEW FOR OUTCOME //////////////////
 	@GetMapping("/candidate/preFindByOutcomeJobInterviewCandidate")

@@ -138,10 +138,10 @@ button:hover {
 	padding: 8px;
 }
 
-
-.results-group {
-	
-}
+.dropdown-item{}
+.dropdown-menu{}
+.container-fluid{}
+.results-group {}
 .data-group{}
 .action{}
 .submit{}
