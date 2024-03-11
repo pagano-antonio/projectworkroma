@@ -13,23 +13,30 @@
     <span>ADD EMPLOYEE</span>
 </div>
 <form action="${pageContext.request.contextPath}/company/addEmployee" method="POST">
-	<table>
-		<tr>
-		<td>Name:</td>
-        <td>Surname:</td>  
-        <td>Email:</td>
-        <td>Username:</td>
-        <td>Password:</td>
-		</tr>
-		<tr>
-		<th>
-		<input type="text" id="name" name="name"></th>
-        <th><input type="text" id="surname" name="surname"></th>
-        <th><input type="text" id="email" name="email"></th>
-        <th><input type="text" id="username" name="username"></th>
-        <th><input type="text" id="password" name="password"></th>
-		</tr>
-	</table>
+	 <div class="data-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Insert your name" required minlength="3" maxlength="15">
+    </div>
+    <div class="data-group">
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" placeholder="Insert your surname" required minlength="3" maxlength="15">
+    </div>
+    <div class="data-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Insert your email">
+    </div>
+    <div class="data-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Insert your username">
+    </div>
+     <div class="data-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Insert your password">
+    </div>
+	  <div class="submit">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
 </form>
 
 </body>

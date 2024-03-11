@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeCtr {
 	
 	
-//  --------------HOME---------------
+//////////////////// HOME ///////////////////////
 
 	@GetMapping("/home")
 	public String vaiAllaHome() {

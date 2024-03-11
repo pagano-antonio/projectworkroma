@@ -1,57 +1,60 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="java.util.ArrayList"%>
 <%@ page import="com.model.JobOffer"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Results Find Job Offer by Title</title>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Find Job Offer by Title</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
 <div class="container">
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
     <span>YOUR DATA</span>
 </div>
-<div class="data-group">
-    <div class="data-group">
-        <div class="data-group ">Job Offer ID</div>
-        <div class="data-group">Title</div>
-        <div class="data-group">Description</div>
-        <div class="data-group">Start Date</div>
-        <div class="data-group">End Date</div>
-        <div class="data-group">Min Ral</div>
-        <div class="data-group">Max Ral</div>
-        <div class="data-group">Company Client ID</div>
-        <div class="data-group">Contract Type ID</div>
-        <div class="data-group">Update</div>
-        <div class="data-group">Delete</div>
-    </div>
-    <c:forEach var="jobOffer" items="${JobOfferTitle}">
-        <div class="results-group ">
-            <div class="results-group ">${jobOffer.idJobOffer}</div>
-            <div class="results-group ">${jobOffer.title}</div>
-            <div class="results-group ">${jobOffer.description}</div>
-            <div class="results-group ">${jobOffer.startDate}</div>
-            <div class="results-group ">${jobOffer.endDate}</div>
-            <div class="results-group ">${jobOffer.minRal}</div>
-            <div class="results-group ">${jobOffer.maxRal}</div>
-            <div class="results-group ">${jobOffer.getCompanyClient().getIdCompanyClient()}</div>
-            <div class="results-group  ">${jobOffer.getContractType().getIdContractType()}</div>
-            <div class="action">
-                <a href="${pageContext.request.contextPath}updateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
-                    <button type="button">Update</button>
-                </a>
-            </div>
-            <div class="action">
-                <a href="${pageContext.request.contextPath}deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
-                    <button type="button">Delete</button>
-                </a>
-            </div>
-        </div>
-    </c:forEach>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>Job Offer ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Min Ral</th>
+            <th>Max Ral</th>
+            <th>Company Client ID</th>
+            <th>Contract Type ID</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach var="jobOffer" items="${JobOfferTitle}">
+            <tr>
+                <td>${jobOffer.idJobOffer}</td>
+                <td>${jobOffer.title}</td>
+                <td>${jobOffer.description}</td>
+                <td>${jobOffer.startDate}</td>
+                <td>${jobOffer.endDate}</td>
+                <td>${jobOffer.minRal}</td>
+                <td>${jobOffer.maxRal}</td>
+                <td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
+                <td>${jobOffer.getContractType().getIdContractType()}</td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/updateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                        <button type="button">Update</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                        <button type="button">Delete</button>
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
 </body>
 </html>
