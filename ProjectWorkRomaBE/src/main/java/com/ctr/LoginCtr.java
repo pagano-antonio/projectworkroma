@@ -11,7 +11,6 @@ import com.dao.EmployeeRepository;
 import com.model.Employee;
 
 @Controller
-@RequestMapping ("loginCtr")
 public class LoginCtr {
 
 	@Autowired
