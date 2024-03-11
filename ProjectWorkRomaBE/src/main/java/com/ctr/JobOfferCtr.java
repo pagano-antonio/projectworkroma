@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CompanyClientRepository;
@@ -46,7 +45,7 @@ public class JobOfferCtr {
 //////////////////////////////////////  UPDATE METHOD //////////////////////////////////////////////////////////
 
     @GetMapping("/job/preUpdateByIdJobOffer")
-    public String preUpdateByIdIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
+    public String preUpdateByIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
     	JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
             model.addAttribute("idJobOffer", jobOffer);
             List<CompanyClient> companyClient = companyClientRep.findAll();

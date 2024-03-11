@@ -55,22 +55,17 @@ public class CompanyClientCtr {
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
 	@GetMapping("/company/preUpdateByIdCompanyClient")
-	public String preUpdateByIdCompanyClient() {
-		return "company/updateIdCompanyClient";
-	}
-
-	@GetMapping("/company/updateByIdCompanyClient")
-	public String updateByIdCompanyClient(Model model, @RequestParam int idCompanyClient) {
-		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
-		if (companyClient != null) {
+	public String preUpdateByIdCompanyClient (Model model,@RequestParam Integer idCompanyClient) {
+		CompanyClient companyClient = companyClientRep.findById(idCompanyClient).orElse(null);
 			model.addAttribute("idCompanyClient", companyClient);
-			return "company/sucess";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
+			return "company/updateByIdCompanyClient";
 	}
+	@PostMapping("/company/updateByIdCompanyClient")		
+	public String updateByIdCompanyClient(Model model,CompanyClient companyClient) {
+		companyClientRep.save(companyClient);	        
+	        return "success";  
+	}
+ 
 ////////////////////////////////////// FIND BY ID  ///////////////////////////////////////
 
 	@GetMapping("/company/preFindByIdCompanyClient")

@@ -49,31 +49,24 @@ public class EmployeeTypeCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
-//////////////////////////////////////UPDATE   /////////////////////////////////////////
+//////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
-	@GetMapping("/company/preupdateByIdEmployeeType")
-	public String preupdateByIdEmployeeType() {
-		return "company/updateByIdEmployeeType";
-	}
-	
-	@GetMapping("/company/updateByIdEmployeeType")
-	public String updateByIdEmployeeType(Model model, @RequestParam int idEmployeeType) {
-		EmployeeType employeeType = (EmployeeType) employeeTypeRep.findById(idEmployeeType).orElse(null);
-		if(employeeType != null) {
+	@GetMapping("/company/preUpdateByIdEmployeeType")
+	public String preUpdateByIdEmployeeType(Model model,@RequestParam Integer idEmployeeType) {
+		EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 			model.addAttribute("idEmployeeType", employeeType);
-			return "company/sucess";
-		}else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-		
+			return "company/updateByIdEmployeeType";
 	}
-	
+	@PostMapping("/company/updateByIdEmployeeType")		
+	public String updateByIdEmployeeType(Model model,EmployeeType employeeType) {
+		employeeTypeRep.save(employeeType);	        
+	        return "success";  
+	}
+		
 //////////////////////////////// FIND BY ID ///////////////////////////////////////////////////////////	
 	
 	@GetMapping("/company/preFindByIdEmployeeType")
