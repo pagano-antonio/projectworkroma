@@ -68,10 +68,11 @@ return "candidate/updateIdCandidate";
 }
  
 @GetMapping("/candidate/updateByIdCandidate")
-public String updateByIdIdCandidate(Model model, int idCandidate) {
+public String updateByIdIdCandidate(Model model, Integer idCandidate) {
 Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
 if (candidate != null) {
 model.addAttribute("idCandidate", candidate);
+candidateRep.save(candidate);
 return "candidate/updateIdCandidate";
 } else {
 String errorMessage = "ops!";

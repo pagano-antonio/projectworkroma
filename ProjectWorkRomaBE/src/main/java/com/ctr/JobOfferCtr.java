@@ -8,20 +8,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.dao.CompanyClientRepository;
+import com.dao.ContractTypeRepository;
 import com.dao.JobOfferRepository;
 import com.model.CompanyClient;
 import com.model.ContractType;
 import com.model.JobOffer;
 
 @Controller
-@RequestMapping
 public class JobOfferCtr {
 
     @Autowired
     private JobOfferRepository jobOfferRep;
+    @Autowired
+    private CompanyClientRepository companyClientRep;
+    @Autowired
+    private ContractTypeRepository contractTypeRep;
 
 //////////////////////////////////////  ADD METHOD //////////////////////////////////////////////////////////
 
@@ -39,28 +46,37 @@ public class JobOfferCtr {
 //////////////////////////////////////  UPDATE METHOD //////////////////////////////////////////////////////////
 
     @GetMapping("/job/preUpdateByIdJobOffer")
-    public String preUpdateByIdIdJobOffer() {
-        return "job/updateIdJobOffer";
-    }
-
-    @GetMapping("/job/updateByIdJobOffer")
-    public String updateByIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
-        JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
-        if (jobOffer != null) {
+    public String preUpdateByIdIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
+    	JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
+//        if (jobOffer != null) {
             model.addAttribute("idJobOffer", jobOffer);
-            return "job/updateByIdJobOffer";
-        } else {
-            String errorMessage = "ops!";
-            model.addAttribute("errorMessage", errorMessage);
-            return "errore";
-        }
-    }
+            List<CompanyClient> companyClient = companyClientRep.findAll();
+            List<ContractType> contractType = contractTypeRep.findAll();
+            model.addAttribute("listIdCompanyClient", companyClient);
+            model.addAttribute("listIdContractType", contractType); 
+            return "job/updateByIdJobOffer";    
+//        } else {
+//            String errorMessage = "ops!";
+//            model.addAttribute("errorMessage", errorMessage);
+//            return "error";
+//        }  
+      
+    }   
+
+    @PostMapping("/job/updateByIdJobOffer")
+    public String updateByIdJobOffer(Model model,@ModelAttribute ("jobOffer") JobOffer jobOffer) {
+      
+            jobOfferRep.save(jobOffer);
+            
+            return "success";   
+      
+    }  
 
 //////////////////////////////////////  DELETE BY ID  //////////////////////////////////////////////////////////
 
     @GetMapping("/job/preDeleteByIdJobOffer")
     public String preDeleteByIdJobOffer() {
-        return "job/deleteByIdJobOffer";
+        return "job/deleteByIdJobOffer"; 
     }
 
     @GetMapping("/job/deleteByIdJobOffer")
@@ -72,7 +88,7 @@ public class JobOfferCtr {
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error"; 
         }
     }
 
@@ -92,7 +108,7 @@ public class JobOfferCtr {
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 
@@ -114,7 +130,7 @@ public class JobOfferCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
@@ -134,7 +150,7 @@ public class JobOfferCtr {
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 
@@ -155,7 +171,7 @@ public class JobOfferCtr {
         }else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 
@@ -176,7 +192,7 @@ public class JobOfferCtr {
         }else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 
@@ -196,7 +212,7 @@ public class JobOfferCtr {
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 
@@ -216,7 +232,7 @@ public class JobOfferCtr {
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
-            return "errore";
+            return "error";
         }
     }
 }

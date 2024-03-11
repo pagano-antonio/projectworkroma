@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.model.JobOffer"%>
+<%@ page import="com.model.CompanyClient"%>
+<%@ page import="com.model.ContractType"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>   
@@ -16,7 +18,7 @@
 </div>
 <% JobOffer jobOffer = (JobOffer) request.getAttribute("idJobOffer"); %>
 
-<form action="${pageContext.request.contextPath}/job/updateByIdJobOffer" method="GET">  
+<form action="${pageContext.request.contextPath}/job/updateByIdJobOffer" method="POST">  
     <div class="data-group">
         <label for="IdJobOffer">ID Job Offer:</label>
         <input type="number" id="IdJobOffer" name="IdJobOffer" value="<%=request.getParameter("idJobOffer")%>" readonly>
@@ -39,8 +41,12 @@
     </div>
     <div class="data-group">
         <label for="idCompanyClient">ID Company Client:</label>
-        <input type="number" id="idCompanyClient" name="idCompanyClient" value="<%=jobOffer.getCompanyClient().getIdCompanyClient()%>">
-    </div>
+         <select name="idCompanyClient">
+     <c:forEach var="listIdCompanyClient" items="${listIdCompanyClient}">
+        <option value="${listIdCompanyClient.idCompanyClient}">${listIdCompanyClient.name} ${listIdCompanyClient.city} - ${listIdCompanyClient.address} </option>
+    </c:forEach>
+  </select></div>
+       
     <div class="data-group">
         <label for="minRal">Min Ral:</label>
         <input type="number" id="minRal" name="minRal" value="<%=jobOffer.getMinRal()%>">
@@ -49,10 +55,13 @@
         <label for="maxRal">Max Ral:</label>
         <input type="number" id="maxRal" name="maxRal" value="<%=jobOffer.getMaxRal()%>">
     </div>
-    <div class="data-group">
+     <div class="data-group">
         <label for="idContractType">ID Contract Type:</label>
-        <input type="number" id="idContractType" name="idContractType" value="<%=jobOffer.getContractType().getIdContractType()%>">
-    </div>
+         <select name="idContractType">
+     <c:forEach var="listIdContractType" items="${listIdContractType}">
+        <option value="${listIdContractType.idContractType}">${listIdContractType.title} ${listIdContractType.description} </option>
+    </c:forEach>
+  </select></div>
     <div class="submit">
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">

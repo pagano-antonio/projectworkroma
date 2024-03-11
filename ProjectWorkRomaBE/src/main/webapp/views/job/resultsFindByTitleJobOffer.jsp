@@ -43,13 +43,13 @@
                 <td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
                 <td>${jobOffer.getContractType().getIdContractType()}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/updateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                    <a href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
                         <button type="button">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
-                        <button type="button">Delete</button>
+                    <a href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                        <button type="button">Delete</button>  
                     </a>
                 </td>
             </tr>
@@ -58,3 +58,4 @@
 </table>
 </body>
 </html>
+ 
