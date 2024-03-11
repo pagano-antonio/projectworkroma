@@ -1,19 +1,35 @@
 package com.ctr;
 
+import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.JobOfferSkillRepository;
+import com.dao.JobOfferRepository;
+import com.dao.SkillRepository;
+import com.model.CompanyClient;
+import com.model.ContractType;
+import com.model.JobOffer;
 import com.model.JobOfferSkill;
+import com.model.Skill;
 
 public class JobOfferSkillCtr {
 
 	@Autowired
 	private JobOfferSkillRepository jobOfferSkillRep;
+	
+	@Autowired
+	private JobOfferRepository jobOfferRep;
+	
+	@Autowired
+	private SkillRepository skillRep;
 
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 
@@ -30,23 +46,30 @@ public class JobOfferSkillCtr {
 
 //////////////////////////////////////UPDATE METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/job/preUpdateByIdJobOfferSkill")
-	public String preUpdateByIdIdJobOfferSkill() {
-		return "job/updateIdJobOfferSkill";
-	}
+	  @GetMapping("/job/preUpdateByIdJobOfferSkill")
+	    public String preUpdateByIdIdJobOfferSkill(Model model,@RequestParam Integer idJobOfferSkill) {
+	    	JobOfferSkill jobOfferSkill = jobOfferSkillRep.findById(idJobOfferSkill).orElse(null);
+	            model.addAttribute("idJobOfferSkill", jobOfferSkill);
+	            List<JobOffer> jobOffer = jobOfferRep.findAll();
+	            List<Skill> skill = skillRep.findAll();
+	            model.addAttribute("listIdJobOffer", jobOffer);
+	            model.addAttribute("listIdSkill", skill); 
+	            return "job/updateByIdJobOfferSkill";     
+	      
+	    }   
 
-	@GetMapping("/job/updateByIdJobOfferSkill")
-	public String updateByIdJobOfferSkill(Model model, @RequestParam int idJobOfferSkill) {
-		JobOfferSkill jobOfferSkill = (JobOfferSkill) jobOfferSkillRep.findById(idJobOfferSkill).orElse(null);
-		if (jobOfferSkill != null) {
-			model.addAttribute("idJobOfferSkill", jobOfferSkill);
-			return "job/updateJobOfferSkill";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+	    @PostMapping("/job/updateByIdJobOfferSkill")
+	    public String updateByIdJobOfferSkill(Model model,@ModelAttribute ("jobOfferSkill") JobOfferSkill jobOfferSkill, Integer  idJobOffer, Integer idSkill) {
+	    	JobOffer jobOffer = (JobOffer)jobOfferRep.findById(idJobOffer).orElse(null);
+	    	Skill skill = (Skill)skillRep.findById(idSkill).orElse(null);
+	      jobOfferSkill.setJobOffer(jobOffer);
+	      jobOfferSkill.setSkill(skill); 
+	            jobOfferSkillRep.save(jobOfferSkill);
+	            return "success";   
+	      
+	    }  
+
+	
 
 //////////////////////////////////////DELETE BY ID //////////////////////////////////////////////////////////
 
