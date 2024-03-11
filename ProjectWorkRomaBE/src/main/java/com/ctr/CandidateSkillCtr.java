@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+import com.dao.CandidateRepository;
 import com.dao.CandidateSkillRepository;
+import com.dao.SkillRepository;
 import com.model.Candidate;
-import com.model.CandidateCommercialData;
 import com.model.CandidateSkill;
+import com.model.Skill;
 
 
 @Controller  
@@ -21,7 +24,10 @@ import com.model.CandidateSkill;
 public class CandidateSkillCtr {
 	@Autowired
 	private CandidateSkillRepository candidateSkillRep;
-
+	@Autowired
+	private SkillRepository skillRep;
+	 @Autowired
+	    private CandidateRepository candidateRep;
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
@@ -65,8 +71,12 @@ return "errore";
 public String preUpdateByIdCandidateSkill(Model model,@RequestParam Integer idCandidateSkill) {
 	CandidateSkill candidateSkill = candidateSkillRep.findById(idCandidateSkill).orElse(null);
         model.addAttribute("candidateSkill", candidateSkill); 
+        List<Candidate> candidate = candidateRep.findAll();
+        model.addAttribute("listIdCandidate", candidate);
+        List<Skill> skill = skillRep.findAll();
+        model.addAttribute("listIdSkill", skill);
         return "candidate/updateByIdCandidateSkill";     
-     
+      
 }   
 
 @PostMapping("/candidate/updateByIdCandidateSkill")

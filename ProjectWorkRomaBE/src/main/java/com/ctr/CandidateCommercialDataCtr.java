@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -10,15 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateCommercialDataRepository;
+import com.dao.CandidateRepository;
 import com.model.Candidate;
 import com.model.CandidateCommercialData;
+;
 
 @Controller
 @RequestMapping
 public class CandidateCommercialDataCtr {
 	@Autowired
 	private CandidateCommercialDataRepository candidateCommercialDataRep;
-
+	 @Autowired
+	    private CandidateRepository candidateRep;
+	  
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preAddCandidateCommercialData")
@@ -58,6 +64,8 @@ public class CandidateCommercialDataCtr {
 	@GetMapping("/candidate/preUpdateByIdCandidateCommercialData")
 	public String preUpdateByIdCandidateCommercialData(Model model,@RequestParam Integer idCandidateCommercilData) {
 		CandidateCommercialData candidateCommercialData = candidateCommercialDataRep.findById(idCandidateCommercilData).orElse(null);
+		 List<Candidate> candidate = candidateRep.findAll();
+	        model.addAttribute("listIdCandidate", candidate);
 	        model.addAttribute("candidateCommercialData", candidateCommercialData); 
 	        return "candidate/updateByIdCandidateCommercialData";     
 	     
