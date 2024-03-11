@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
 /* Regole comuni per input e select */
-input[type=text], input[type=date], input[type=number], input[type=email],input[type=tel], select {
+input[type=text], input[type=date], input[type=number], input[type=email],input[type=tel],input[type=password], select {
 	width: 80%;
 	padding: 12px 20px;
 	margin: 8px 0;

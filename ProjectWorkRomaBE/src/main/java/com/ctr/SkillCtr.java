@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.SkillRepository;
 import com.model.Skill;
 
+
 @Controller
 @RequestMapping
 public class SkillCtr {
@@ -46,28 +47,22 @@ public class SkillCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
 	@GetMapping("/job/preUpdateByIdSkill")
-	public String preUpdateByIdSkill() {
-		return "job/updateIdSkill";
-	}
-
-	@GetMapping("/job/updateByIdSkill")
-	public String updateByIdSkill(Model model, @RequestParam int idSkill) {
-		Skill skill = (Skill) skillRep.findById(idSkill).orElse(null);
-		if (skill != null) {
+	public String preUpdateByIdSkill(Model model,@RequestParam Integer idSkill) {
+		Skill skill = skillRep.findById(idSkill).orElse(null);
 			model.addAttribute("idSkill", skill);
-			return "job/updateSkill";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
+			return "job/updateByIdSkill";
 	}
+	@PostMapping("/job/updateByIdSkill")		
+	public String updateByIdSkill(Model model,Skill skill) {
+		skillRep.save(skill);	        
+	        return "success";  
+	}
+}  
 
-}

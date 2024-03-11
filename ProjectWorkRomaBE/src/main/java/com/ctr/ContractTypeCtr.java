@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.ContractTypeRepository;
 import com.model.ContractType;
 
+
 @Controller
 @RequestMapping
 public class ContractTypeCtr {
@@ -46,27 +47,21 @@ public class ContractTypeCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
 //////////////////////////////////////   UPDATE   /////////////////////////////////////////
 
 	@GetMapping("/job/preUpdateByIdContractType")
-	public String preUpdateByIdContractType() {
-		return "job/updateIdContractType";
-	}
-
-	@GetMapping("/job/updateByIdContractType")
-	public String updateByIdContractType(Model model, @RequestParam int idContractType) {
-		ContractType contractType = (ContractType) contractTypeRep.findById(idContractType).orElse(null);
-		if (contractType != null) {
+	public String preUpdateByIdContractType(Model model,@RequestParam Integer idContractType) {
+		ContractType contractType = contractTypeRep.findById(idContractType).orElse(null);
 			model.addAttribute("idContractType", contractType);
-			return "job/updateContractType";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
+			return "job/updateByIdContractType";
+	}
+	@PostMapping("/job/updateByIdContractType")		
+	public String updateByIdContractType(Model model,ContractType contractType) {
+		contractTypeRep.save(contractType);	        
+	        return "success";  
 	}
 }
