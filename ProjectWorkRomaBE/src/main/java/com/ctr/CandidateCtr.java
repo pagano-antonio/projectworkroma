@@ -225,23 +225,23 @@ public String preFindByYearsOfExperienceCandidate() {
 //}
 
 ////////////////////////////////////// FIND BY ID JOB INTERVIEW FOR OUTCOME //////////////////
-@GetMapping("/candidate/preFindByOutcomeJobInterviewCandidate")
-public String preFindByOutcomeJobInterviewCandidate() {
-return "candidate/findByOutcomeJobInterviewCandidate";
-}
-
-@GetMapping("/candidate/findByOutcomeJobInterviewCandidate") 
-public String findByOutcomeJobInterviewCandidate(Model model, Integer idStateJobInterview, Integer outcome) {
-	List<JobInterview> candidate = candidateRep.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
-Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
-model.addAttribute("OutcomeCandidate", candidate);
-if (candidate != null) {
-return "candidate/resultsByOutcomeJobInterviewCandidate";
-} else {  
-String errorMessage = "ops!";
-model.addAttribute("errorMessage", errorMessage);
-return "errore";
-}
+	@GetMapping("/candidate/preFindByOutcomeJobInterviewCandidate")
+	public String preFindByOutcomeJobInterviewCandidate() {
+	return "candidate/findByOutcomeJobInterviewCandidate";
+	}
+	
+	@GetMapping("/candidate/findByOutcomeJobInterviewCandidate") 
+	public String findByOutcomeJobInterviewCandidate(Model model, Integer idStateJobInterview, Integer outcome) {
+		List<JobInterview> candidate = candidateRep.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
+	Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
+	model.addAttribute("OutcomeCandidate", candidate);
+	if (candidate != null) {
+	return "candidate/resultsByOutcomeJobInterviewCandidate";
+	} else {  
+	String errorMessage = "ops!";
+	model.addAttribute("errorMessage", errorMessage);
+	return "errore";
+	}
 }
 
 
