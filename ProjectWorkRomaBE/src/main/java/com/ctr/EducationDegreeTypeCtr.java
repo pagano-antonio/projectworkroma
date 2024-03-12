@@ -34,6 +34,24 @@ public class EducationDegreeTypeCtr {
 		EducationDegreeTypeRep.save(edt); 
 		return "success";
 	}
+	
+//////////////////////////////////////  UPDATE   ////////////////////////////////////
+
+	@GetMapping("/candidate/preUpdateByIdEducationDegreeType")
+	public String preUpdateByIdEducationDegreeType(Model model,@RequestParam Integer idEducationDegreeType) {
+		EducationDegreeType educationDegreeType = EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+		model.addAttribute("idEducationDegreeType", educationDegreeType);
+		return "candidate/updateByIdEducationDegreeType";     
+	
+	}   
+	
+	@PostMapping("/candidate/updateByIdEducationDegreeType")
+	public String updateByIdEducationDegreeType(Model model,@ModelAttribute ("educationDegreeType") EducationDegreeType educationDegreeType) { 
+		EducationDegreeTypeRep.save(educationDegreeType);
+		
+		return "success";   
+	
+	}
 
 
 //////////////////////////////////////  DELETE BY ID  ////////////////////////////////////
@@ -54,25 +72,7 @@ public class EducationDegreeTypeCtr {
 			model.addAttribute("errorMessage", errorMessage);
 			return "errore";
 		}
-	}
-
-//////////////////////////////////////  UPDATE   ////////////////////////////////////
-
-    @GetMapping("/candidate/preUpdateByIdEducationDegreeType")
-    public String preUpdateByIdEducationDegreeType(Model model,@RequestParam Integer idEducationDegreeType) {
-    	EducationDegreeType educationDegreeType = EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
-            model.addAttribute("idEducationDegreeType", educationDegreeType);
-            return "candidate/updateByIdEducationDegreeType";     
-      
-    }   
-
-    @PostMapping("/candidate/updateByIdEducationDegreeType")
-    public String updateByIdEducationDegreeType(Model model,@ModelAttribute ("educationDegreeType") EducationDegreeType educationDegreeType) { 
-            EducationDegreeTypeRep.save(educationDegreeType);
-            
-            return "success";   
-      
-    } 
+	} 
 
 
 }

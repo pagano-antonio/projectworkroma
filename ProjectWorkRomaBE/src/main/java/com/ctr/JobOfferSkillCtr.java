@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.JobOfferSkillRepository;
 import com.dao.JobOfferRepository;
 import com.dao.SkillRepository;
-import com.model.CompanyClient;
-import com.model.ContractType;
 import com.model.JobOffer;
 import com.model.JobOfferSkill;
 import com.model.Skill;

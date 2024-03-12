@@ -36,6 +36,26 @@ public class WorkExperienceCtr {
 		WorkExperienceRep.save(workExperience);
 		return "success";
 	}
+	
+	//////////////////////////////////////  UPDATE   ////////////////////////////////////
+	
+    @GetMapping("/candidate/preUpdateByIdWorkExperience")
+    public String preUpdateByIdWorkExperience(Model model,@RequestParam Integer idWorkExperience) {
+    	WorkExperience workExperience = WorkExperienceRep.findById(idWorkExperience).orElse(null);
+            model.addAttribute("idWorkExperience", workExperience);
+            return "candidate/updateByIdWorkExperience";     
+      
+    }   
+
+    @PostMapping("/candidate/updateByIdWorkExperience")
+    public String updateByIdWorkExperience(Model model,@ModelAttribute ("workExperience") WorkExperience workExperience, Integer idCandidate) {
+    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
+      workExperience.setCandidate(candidate); 
+            WorkExperienceRep.save(workExperience);
+            
+            return "success";   
+      
+    } 
 
 //////////////////////////////////////  DELETE BY ID  ////////////////////////////////////
 
@@ -56,26 +76,6 @@ public class WorkExperienceCtr {
 			return "errore";
 		}
 	}
-
-//////////////////////////////////////  UPDATE   ////////////////////////////////////
-	
-    @GetMapping("/candidate/preUpdateByIdWorkExperience")
-    public String preUpdateByIdWorkExperience(Model model,@RequestParam Integer idWorkExperience) {
-    	WorkExperience workExperience = WorkExperienceRep.findById(idWorkExperience).orElse(null);
-            model.addAttribute("idWorkExperience", workExperience);
-            return "candidate/updateByIdWorkExperience";     
-      
-    }   
-
-    @PostMapping("/candidate/updateByIdWorkExperience")
-    public String updateByIdWorkExperience(Model model,@ModelAttribute ("workExperience") WorkExperience workExperience, Integer idCandidate) {
-    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
-      workExperience.setCandidate(candidate); 
-            WorkExperienceRep.save(workExperience);
-            
-            return "success";   
-      
-    } 
 	
 
 }
