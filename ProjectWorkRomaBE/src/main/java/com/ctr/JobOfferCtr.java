@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.CompanyClientRepository;
 import com.dao.ContractTypeRepository;
 import com.dao.JobOfferRepository;
+import com.dao.JobOfferSkillRepository;
 import com.model.Candidate;
 import com.model.CompanyClient;
 import com.model.ContractType;
 import com.model.JobOffer;
+import com.model.JobOfferSkill;
 
 @Controller
 public class JobOfferCtr {
@@ -29,6 +31,8 @@ public class JobOfferCtr {
     private CompanyClientRepository companyClientRep;
     @Autowired
     private ContractTypeRepository contractTypeRep;
+    @Autowired
+    private JobOfferSkillRepository jobOfferSkillRep;
     
 //////////////////////////////////////  ADD METHOD //////////////////////////////////////////////////////////
 
@@ -218,16 +222,19 @@ public class JobOfferCtr {
         return "job/findByIdJobOfferSkillJobOffer";
     }
 
-    @GetMapping("/job/findByIdJobOfferSkillJobOffer")
-    public String findByIdJobOfferSkillJobOffer(Model model, @RequestParam Integer IdJobOfferSkill) {
-        List<JobOffer> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
-        model.addAttribute("JobOfferSkillJobOffer", jobOffer);
-        if (jobOffer != null) {
-            return "job/resultsFindByIdJobOfferSkillJobOffer";
-        } else {
-            String errorMessage = "ops!";
-            model.addAttribute("errorMessage", errorMessage);
-            return "error";
-        }
-    }
-}
+	@GetMapping("/job/findByIdJobOfferSkillJobOffer")
+	public String findByIdJobOfferSkillJobOffer(Model model,@RequestParam Integer idJobOfferSkill) {
+		List<JobOffer> jobOfferTrovate = jobOfferRep.findByJobOfferSkills_skill_idSkill(idJobOfferSkill);
+		System.out.println("JobOffer"+jobOfferTrovate.size());
+		model.addAttribute("JobOfferSkillJobOffer", jobOfferTrovate);
+		if (jobOfferTrovate != null) {
+			System.out.println("JobOffer1"+jobOfferTrovate.size());
+			return "job/resultsFindByIdJobOfferSkillJobOffer";
+		}
+		System.out.println("JobOffer2"+jobOfferTrovate.size());
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "error";
+		}
+	}
+

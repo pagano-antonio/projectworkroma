@@ -27,8 +27,6 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer>{
 
 	List<JobOffer> findByCompanyClient_IdCompanyClient(Integer idCompanyClient);
 
-	@Query(value = "SELECT j FROM JobOffer j JOIN j.jobOfferSkills s WHERE s.idJobOfferSkill = :idJobOfferSkill")
-	List<JobOffer> findByIdJobOfferSkill(@Param("idJobOfferSkill") Integer idJobOfferSkill);
-
+	List<JobOffer> findByJobOfferSkills_skill_idSkill(Integer idSkill);
 
 }
