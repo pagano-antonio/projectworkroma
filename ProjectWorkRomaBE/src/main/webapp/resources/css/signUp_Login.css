@@ -9,6 +9,5 @@
 
 .dimension{
     margin: 0 auto;
-    max-width: 540px;
-    align-items: center;
+    padding: 0px;
 }

@@ -22,13 +22,13 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer>{
 	List<JobOffer> findByMinRal(Integer minRal);
 	
 	List<JobOffer> findByMaxRal(Integer maxRal);
+	
+	List<JobOffer> findByContractType_IdContractType(Integer idContractType);
 
-	@Query(value ="SELECT j FROM JobOffer j WHERE j.companyClient.idCompanyClient=:idCompanyClient")
-	List<CompanyClient> findByIdCompanyClient(@Param("idCompanyClient")Integer idCompanyClient);
-	
-	@Query(value ="SELECT j FROM JobOffer j WHERE j.contractType.idContractType=:idContractType")
-	List<ContractType> findByIdContractType(@Param("idContractType")Integer idContractType);
-	
+	List<JobOffer> findByCompanyClient_IdCompanyClient(Integer idCompanyClient);
+
 	@Query(value = "SELECT j FROM JobOffer j JOIN j.jobOfferSkills s WHERE s.idJobOfferSkill = :idJobOfferSkill")
 	List<JobOffer> findByIdJobOfferSkill(@Param("idJobOfferSkill") Integer idJobOfferSkill);
+
+
 }

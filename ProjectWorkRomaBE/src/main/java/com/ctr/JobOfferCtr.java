@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.CompanyClientRepository;
 import com.dao.ContractTypeRepository;
 import com.dao.JobOfferRepository;
+import com.model.Candidate;
 import com.model.CompanyClient;
 import com.model.ContractType;
 import com.model.JobOffer;
@@ -139,7 +140,7 @@ public class JobOfferCtr {
 
     @GetMapping("/job/findByCompanyClientJobOffer")
     public String findByCompanyClient(Model model, @RequestParam Integer idCompanyClient) {
-        List<CompanyClient> jobOffer = jobOfferRep.findByIdCompanyClient(idCompanyClient);
+        List<JobOffer> jobOffer = jobOfferRep.findByCompanyClient_IdCompanyClient(idCompanyClient);
         model.addAttribute("idCompanyClientJobOffer", jobOffer);
         if (jobOffer != null) {
             return "job/resultsfindByCompanyClientJobOffer";
@@ -152,16 +153,15 @@ public class JobOfferCtr {
 
 ////////////////////////////////////////////  FIND BY MIN RAL  //////////////////////////////////////////////////////////
 
-    @GetMapping("/preFindByMinRalJobOffer")
+    @GetMapping("/job/preFindByMinRalJobOffer")
     public String preFindByMinRalJobOffer() {
-        return "job/preFindByMinRalJobOffer";
+        return "job/findByMinRalJobOffer";
     }
 
     @GetMapping("/job/findByMinRalJobOffer")
     public String findByMinRalJobOffer(Model model, @RequestParam Integer minRal) {
         List<JobOffer> jobOffer = jobOfferRep.findByMinRal(minRal);
-        model.addAttribute("jobOffer", jobOffer);
-        model.addAttribute("minRalJobOffer", minRal);
+        model.addAttribute("minRalJobOffer", jobOffer);
         if (jobOffer != null) {
         	return "job/resultsFindByMinRalJobOffer";
         }else {
@@ -175,14 +175,13 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preFindByMaxRalJobOffer")
     public String preFindByMaxRalJobOffer() {
-        return "job/preFindByMaxRalJobOffer";
+        return "job/findByMaxRalJobOffer";
     }
 
     @GetMapping("/job/findByMaxRalJobOffer")
     public String findByMaxRalJobOffer(Model model, @RequestParam Integer maxRal) {
         List<JobOffer> jobOffer = jobOfferRep.findByMaxRal(maxRal);
-        model.addAttribute("jobOffer", jobOffer);
-        model.addAttribute("maxRalJobOffer", maxRal);
+        model.addAttribute("maxRalJobOffer", jobOffer);
         if (jobOffer != null) {
         	return "job/resultsFindByMaxRalJobOffer";
         }else {
@@ -200,9 +199,9 @@ public class JobOfferCtr {
     }
 
     @GetMapping("/job/findByContractTypeJobOffer")
-    public String findByContractTypeJobOffer(Model model, @RequestParam Integer IdContractType) {
-        List<ContractType> jobOffer = jobOfferRep.findByIdContractType(IdContractType);
-        model.addAttribute("JobOffer", jobOffer);
+    public String findByContractTypeJobOffer(Model model, @RequestParam Integer idContractType) {
+        List<JobOffer> jobOffer = jobOfferRep.findByContractType_IdContractType(idContractType);
+        model.addAttribute("JobOfferContractType", jobOffer);
         if (jobOffer != null) {
             return "job/resultsFindByContractTypeJobOffer";
         } else {
@@ -210,21 +209,21 @@ public class JobOfferCtr {
             model.addAttribute("errorMessage", errorMessage);
             return "error";
         }
-    }
+	}
 
 /////////////////////////////////////////////////  FIND BY SKILL /////////////////////////////////////////////////////
 
-    @GetMapping("/job/preFindByJobOfferSkillJobOffer")
-    public String preFindByJobOfferSkillJobOffer() {
-        return "job/findByJobOfferSkillJobOffer";
+    @GetMapping("/job/preFindByIdJobOfferSkillJobOffer")
+    public String preFindByIdJobOfferSkillJobOffer() {
+        return "job/findByIdJobOfferSkillJobOffer";
     }
 
-    @GetMapping("/job/findByJobOfferSkillJobOffer")
-    public String findByJobOfferSkillJobOffer(Model model, @RequestParam Integer IdJobOfferSkill) {
+    @GetMapping("/job/findByIdJobOfferSkillJobOffer")
+    public String findByIdJobOfferSkillJobOffer(Model model, @RequestParam Integer IdJobOfferSkill) {
         List<JobOffer> jobOffer = jobOfferRep.findByIdJobOfferSkill(IdJobOfferSkill);
         model.addAttribute("JobOfferSkillJobOffer", jobOffer);
         if (jobOffer != null) {
-            return "job/resultsFindByJobOfferSkillJobOffer";
+            return "job/resultsFindByIdJobOfferSkillJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
