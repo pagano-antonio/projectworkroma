@@ -75,7 +75,7 @@ public class EmployeeTypeCtr {
 	public String findByIdEmployeeType(Model model, @RequestParam int idEmployeeType) {
 		EmployeeType employeeType = (EmployeeType) employeeTypeRep.findById(idEmployeeType).orElse(null);
 		if(employeeType != null) {
-			model.addAttribute("idEmployeeType", employeeType);
+			model.addAttribute("idEmployeeType", employeeType); 
 			return "company/resultsFindByIdEmployeeType";
 		}else {
 			String errorMessage = "ops!";

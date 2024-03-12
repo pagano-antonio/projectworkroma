@@ -88,9 +88,9 @@ public class EmployeeCtr {
 	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
 		if (employee != null) {
-			model.addAttribute("idEmployee", employee);
+			model.addAttribute("idEmployee", idEmployee);
 			return "company/resultsFindByIdEmployee";
-		} else {
+		} else { 
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";
