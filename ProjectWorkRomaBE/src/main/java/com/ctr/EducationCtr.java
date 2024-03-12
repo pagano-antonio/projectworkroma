@@ -45,6 +45,32 @@ public class EducationCtr {
 		return "success";
 	}
 	
+//////////////////////////////////////UPDATE   ////////////////////////////////////
+	
+	@GetMapping("/candidate/preUpdateByIdEducation")
+	public String preUpdateByIdEducation(Model model,@RequestParam Integer idEducation) {
+		Education education = EducationRep.findById(idEducation).orElse(null);
+		model.addAttribute("idEducation", education);
+		List<EducationDegreeType> educationDegreeType = EducationDegreeTypeRep.findAll();
+		List<Candidate> candidate = candidateRep.findAll();
+		model.addAttribute("listIdEducationDegreeType", educationDegreeType);
+		model.addAttribute("listIdCandidate", candidate); 
+		return "candidate/updateByIdEducation";     
+		
+		}   
+	
+	@PostMapping("/candidate/updateByIdEducation")
+	public String updateByIdEducation(Model model,@ModelAttribute ("education") Education education, Integer  idEducationDegreeType, Integer idCandidate) {
+		EducationDegreeType educationDegreeType = (EducationDegreeType)EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
+		education.setEducationDegreeType(educationDegreeType);
+		education.setCandidate(candidate); 
+		EducationRep.save(education);
+		
+		return "success";   
+	
+	} 
+	
 ////////////////////////////////////// DELETE BY ID  ////////////////////////////////////
 
 	@GetMapping("/candidate/preDeleteByIdEducation")
@@ -65,32 +91,7 @@ public class EducationCtr {
 		}
 	}
 	
-//////////////////////////////////////  UPDATE   ////////////////////////////////////
-	
-    @GetMapping("/candidate/preUpdateByIdEducation")
-    public String preUpdateByIdEducation(Model model,@RequestParam Integer idEducation) {
-    	Education education = EducationRep.findById(idEducation).orElse(null);
-            model.addAttribute("idEducation", education);
-            List<EducationDegreeType> educationDegreeType = EducationDegreeTypeRep.findAll();
-            List<Candidate> candidate = candidateRep.findAll();
-            model.addAttribute("listIdEducationDegreeType", educationDegreeType);
-            model.addAttribute("listIdCandidate", candidate); 
-            return "candidate/updateByIdEducation";     
-      
-    }   
 
-    @PostMapping("/candidate/updateByIdEducation")
-    public String updateByIdEducation(Model model,@ModelAttribute ("education") Education education, Integer  idEducationDegreeType, Integer idCandidate) {
-    	EducationDegreeType educationDegreeType = (EducationDegreeType)EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
-    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
-      education.setEducationDegreeType(educationDegreeType);
-      education.setCandidate(candidate); 
-            EducationRep.save(education);
-            
-            return "success";   
-      
-    } 
-	
 	
 }
 
