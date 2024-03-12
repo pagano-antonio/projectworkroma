@@ -80,4 +80,22 @@ public class CandidateCommercialDataCtr {
 
 ////////////////////////////////////// FIND BY ID //////////////////////////////////
 
-}
+	@GetMapping ("/candidate/preFindByIdCandidateCommercialData")
+	public String preFindByIdCandidateCommercialData(Model model) {
+		return "findByIdCandidateCommercialData";
+	}
+	
+	@GetMapping("/candidate/FindByIdCandidateCommercialData")  
+	public String findByCity(Model model, Integer idCandidateCommercialData) {
+		List<CandidateCommercialData> candidateCommercialData = candidateCommercialDataRep.findByIdCandidateCommercialData(idCandidateCommercialData);
+		model.addAttribute("candidateCommercialData", candidateCommercialData);
+		if (idCandidateCommercialData != null) {
+			return "candidate/resultsFindByIdCandidateCommercialData"; 
+		}else {
+			String errorMessage = "ops!";
+			model.addAttribute("errorMessage", errorMessage);
+			return "errore";
+			}
+		   
+	}
+	}
