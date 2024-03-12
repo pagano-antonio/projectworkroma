@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.dao.CandidateRepository;
 import com.dao.WorkExperienceRepository;
+import com.model.Candidate;
 import com.model.WorkExperience;
 
 
@@ -17,6 +20,9 @@ import com.model.WorkExperience;
 public class WorkExperienceCtr {
 	@Autowired
 	private WorkExperienceRepository WorkExperienceRep;
+	
+	@Autowired
+	private CandidateRepository candidateRep;
 	
 //////////////////////////////////////  ADD METHOD //////////////////////////////////////////////////////////
 	
@@ -52,24 +58,24 @@ public class WorkExperienceCtr {
 	}
 
 //////////////////////////////////////  UPDATE   ////////////////////////////////////
-
-	@GetMapping("/candidate/preUpdateByIdWorkExperience")
-	public String preUpdateByIdWorkExperience() {
-		return "candidate/updateIdWorkExperience";
-		}
 	
-	@GetMapping("/candidate/updateByIdWorkExperience")
-	public String updateByIdIdWorkExperience(Model model, int idWorkExperience) {
-		WorkExperience workExperience = (WorkExperience) WorkExperienceRep.findById(idWorkExperience).orElse(null);
-		if (workExperience != null) {
-			model.addAttribute("idWorkExperience", workExperience);
-			return "candidate/updateIdWorkExperience";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/candidate/preUpdateByIdWorkExperience")
+    public String preUpdateByIdWorkExperience(Model model,@RequestParam Integer idWorkExperience) {
+    	WorkExperience workExperience = WorkExperienceRep.findById(idWorkExperience).orElse(null);
+            model.addAttribute("idWorkExperience", workExperience);
+            return "candidate/updateByIdWorkExperience";     
+      
+    }   
+
+    @PostMapping("/candidate/updateByIdWorkExperience")
+    public String updateByIdWorkExperience(Model model,@ModelAttribute ("workExperience") WorkExperience workExperience, Integer idCandidate) {
+    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
+      workExperience.setCandidate(candidate); 
+            WorkExperienceRep.save(workExperience);
+            
+            return "success";   
+      
+    } 
 	
 
 }

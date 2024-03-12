@@ -1,11 +1,14 @@
 package com.ctr;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.EducationDegreeTypeRepository;
 import com.model.EducationDegreeType;
@@ -55,23 +58,21 @@ public class EducationDegreeTypeCtr {
 
 //////////////////////////////////////  UPDATE   ////////////////////////////////////
 
-	@GetMapping("/candidate/preUpdateByIdEducationDegreeType")
-	public String preUpdateByIdEducationDegreeType() {
-		return "candidate/updateIdEducationDegreeType";
-		}
-	
-	@GetMapping("/candidate/updateByIdEducationDegreeType")
-	public String updateByIdIdEducationDegreeType(Model model, int idEducationDegreeType) {
-		EducationDegreeType educationDegreeType = (EducationDegreeType) EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
-		if (educationDegreeType != null) {
-			model.addAttribute("idEducationDegreeType", educationDegreeType);
-			return "candidate/updateIdEducationDegreeType";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-		}
-	}
+    @GetMapping("/candidate/preUpdateByIdEducationDegreeType")
+    public String preUpdateByIdEducationDegreeType(Model model,@RequestParam Integer idEducationDegreeType) {
+    	EducationDegreeType educationDegreeType = EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+            model.addAttribute("idEducationDegreeType", educationDegreeType);
+            return "candidate/updateByIdEducationDegreeType";     
+      
+    }   
+
+    @PostMapping("/candidate/updateByIdEducationDegreeType")
+    public String updateByIdEducationDegreeType(Model model,@ModelAttribute ("educationDegreeType") EducationDegreeType educationDegreeType) { 
+            EducationDegreeTypeRep.save(educationDegreeType);
+            
+            return "success";   
+      
+    } 
 
 
 }

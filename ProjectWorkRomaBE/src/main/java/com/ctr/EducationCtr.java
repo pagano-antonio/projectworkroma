@@ -1,14 +1,22 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dao.CandidateRepository;
+import com.dao.EducationDegreeTypeRepository;
 import com.dao.EducationRepository;
+import com.model.Candidate;
 import com.model.Education;
+import com.model.EducationDegreeType;
 
 
 @Controller  
@@ -16,6 +24,12 @@ import com.model.Education;
 public class EducationCtr {
 	@Autowired
 	private EducationRepository EducationRep;
+	
+	@Autowired
+	private EducationDegreeTypeRepository EducationDegreeTypeRep;
+	
+	@Autowired
+	private CandidateRepository candidateRep;
 
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
@@ -52,24 +66,30 @@ public class EducationCtr {
 	}
 	
 //////////////////////////////////////  UPDATE   ////////////////////////////////////
-
-	@GetMapping("/candidate/preUpdateByIdEducation")
-	public String preUpdateByIdEducation() {
-	     return "candidate/updateIdEducation";
-	 }
 	
-	@GetMapping("/candidate/updateByIdEducation")
-	public String updateByIdIdEducation(Model model, int idEducation) {
-			Education education = (Education) EducationRep.findById(idEducation).orElse(null);
-		if (education != null) {
-			model.addAttribute("idEducation", education);
-			return "candidate/updateIdEducation";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-			}
-		}
+    @GetMapping("/candidate/preUpdateByIdEducation")
+    public String preUpdateByIdEducation(Model model,@RequestParam Integer idEducation) {
+    	Education education = EducationRep.findById(idEducation).orElse(null);
+            model.addAttribute("idEducation", education);
+            List<EducationDegreeType> educationDegreeType = EducationDegreeTypeRep.findAll();
+            List<Candidate> candidate = candidateRep.findAll();
+            model.addAttribute("listIdEducationDegreeType", educationDegreeType);
+            model.addAttribute("listIdCandidate", candidate); 
+            return "candidate/updateByIdEducation";     
+      
+    }   
+
+    @PostMapping("/candidate/updateByIdEducation")
+    public String updateByIdEducation(Model model,@ModelAttribute ("education") Education education, Integer  idEducationDegreeType, Integer idCandidate) {
+    	EducationDegreeType educationDegreeType = (EducationDegreeType)EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
+    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
+      education.setEducationDegreeType(educationDegreeType);
+      education.setCandidate(candidate); 
+            EducationRep.save(education);
+            
+            return "success";   
+      
+    } 
 	
 	
 }
