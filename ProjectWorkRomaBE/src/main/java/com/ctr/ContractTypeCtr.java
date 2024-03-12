@@ -13,7 +13,6 @@ import com.model.ContractType;
 
 
 @Controller
-@RequestMapping
 public class ContractTypeCtr {
 	@Autowired
 	private ContractTypeRepository contractTypeRep;

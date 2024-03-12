@@ -17,7 +17,7 @@ import com.model.Employee;
 import com.model.EmployeeType;
 
 @Controller
-@RequestMapping
+
 public class EmployeeCtr {
 
 	@Autowired

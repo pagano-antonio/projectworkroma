@@ -15,7 +15,6 @@ import com.model.EducationDegreeType;
 
 
 @Controller  
-@RequestMapping
 public class EducationDegreeTypeCtr {
 	
 	@Autowired
@@ -47,10 +46,8 @@ public class EducationDegreeTypeCtr {
 	
 	@PostMapping("/candidate/updateByIdEducationDegreeType")
 	public String updateByIdEducationDegreeType(Model model,@ModelAttribute ("educationDegreeType") EducationDegreeType educationDegreeType) { 
-		EducationDegreeTypeRep.save(educationDegreeType);
-		
-		return "success";   
-	
+		EducationDegreeTypeRep.save(educationDegreeType);		
+		return "success";   	
 	}
 
 
@@ -70,10 +67,8 @@ public class EducationDegreeTypeCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	} 
-
-
 }
 

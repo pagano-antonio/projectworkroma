@@ -28,7 +28,7 @@ public class JobOfferCtr {
     private CompanyClientRepository companyClientRep;
     @Autowired
     private ContractTypeRepository contractTypeRep;
-
+    
 //////////////////////////////////////  ADD METHOD //////////////////////////////////////////////////////////
 
     @GetMapping("/job/preAddJobOffer")

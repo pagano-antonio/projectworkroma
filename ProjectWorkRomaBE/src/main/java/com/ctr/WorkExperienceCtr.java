@@ -16,7 +16,6 @@ import com.model.WorkExperience;
 
 
 @Controller
-@RequestMapping
 public class WorkExperienceCtr {
 	@Autowired
 	private WorkExperienceRepository WorkExperienceRep;
@@ -73,9 +72,7 @@ public class WorkExperienceCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
-	
-
 }

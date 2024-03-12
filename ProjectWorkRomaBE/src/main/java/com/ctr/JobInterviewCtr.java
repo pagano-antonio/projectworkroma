@@ -21,7 +21,6 @@ import com.model.JobInterview;
 import com.model.StateJobInterview;
 
 @Controller
-@RequestMapping
 public class JobInterviewCtr {
 
 	@Autowired
@@ -94,7 +93,7 @@ public class JobInterviewCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 }

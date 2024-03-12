@@ -14,7 +14,6 @@ import com.dao.CompanyClientRepository;
 import com.model.CompanyClient;
 
 @Controller
-@RequestMapping
 public class CompanyClientCtr {
 	@Autowired
 	private CompanyClientRepository companyClientRep;
@@ -48,7 +47,7 @@ public class CompanyClientCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
@@ -82,7 +81,7 @@ public class CompanyClientCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 
@@ -108,7 +107,7 @@ public class CompanyClientCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 	
@@ -120,7 +119,7 @@ public class CompanyClientCtr {
 	}
 
 	@GetMapping("/company/findByCityCompanyClient")
-	public String findByCity(Model model, @RequestParam String city) {
+	public String findByCityCompanyClient(Model model, @RequestParam String city) {
 		List<CompanyClient> companyClient = companyClientRep.findByCity(city);
 		model.addAttribute("CompanyClient", companyClient);
 		if (companyClient != null) {
@@ -128,7 +127,7 @@ public class CompanyClientCtr {
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
+			return "error";
 		}
 	}
 }

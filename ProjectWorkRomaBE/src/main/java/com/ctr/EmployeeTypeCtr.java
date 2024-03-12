@@ -12,7 +12,6 @@ import com.dao.EmployeeTypeRepository;
 import com.model.EmployeeType;
 
 @Controller
-@RequestMapping
 public class EmployeeTypeCtr {
 
 	@Autowired
@@ -30,8 +29,6 @@ public class EmployeeTypeCtr {
 		employeeTypeRep.save(et); 
 		return "success";
 	}
-	
-	
 	
 //////////////////////////////////////DELETE BY ID   ////////////////////////////////////
 
@@ -84,24 +81,6 @@ public class EmployeeTypeCtr {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";
-		}
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		}		
+	}		
 }

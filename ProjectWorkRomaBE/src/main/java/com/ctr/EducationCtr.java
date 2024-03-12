@@ -20,7 +20,6 @@ import com.model.EducationDegreeType;
 
 
 @Controller  
-@RequestMapping
 public class EducationCtr {
 	@Autowired
 	private EducationRepository EducationRep;
@@ -87,12 +86,7 @@ public class EducationCtr {
 	} else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);
-		return "errore";
+		return "error";
 		}
-	}
-	
-
-	
+	}	
 }
-
-
