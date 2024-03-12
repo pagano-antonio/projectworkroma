@@ -1,1 +1,13 @@
 @charset "ISO-8859-1";
+/*css reset*/
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.dimension{
+    margin: 0 auto;
+    max-width: 540px;
+    align-items: center;
+}
