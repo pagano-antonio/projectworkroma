@@ -20,7 +20,7 @@ public class CandidateCommercialData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int idCandidateCommercial; 
+	private int idCandidateCommercialData; 
 
 	private int businessCost;
 
@@ -42,12 +42,12 @@ public class CandidateCommercialData implements Serializable {
 	public CandidateCommercialData() {
 	}
 
-	public int getIdCandidateCommercial() {
-		return this.idCandidateCommercial;
+	public int getIdCandidateCommercialData() {
+		return this.idCandidateCommercialData;
 	}
 
-	public void setIdCandidateCommercial(int idCandidateCommercial) {
-		this.idCandidateCommercial = idCandidateCommercial;
+	public void setIdCandidateCommercialData(int idCandidateCommercialData) {
+		this.idCandidateCommercialData = idCandidateCommercialData;
 	}
 
 	public int getBusinessCost() {

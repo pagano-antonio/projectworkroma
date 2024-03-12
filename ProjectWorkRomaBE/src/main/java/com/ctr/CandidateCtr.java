@@ -59,7 +59,7 @@ return "success";
 } else {
 String errorMessage = "ops!";
 model.addAttribute("errorMessage", errorMessage);
-return "errore"; 
+return "error"; 
 }
 }
 
@@ -86,20 +86,20 @@ public String updateByIdCandidate(Model model, Candidate candidate) {
 ////////////////////////////////////// FIND BY ID //////////////////////////////////
 
 @GetMapping("/candidate/preFindByIdCandidate") 
-public String preFindByIdCandidate(Model model) {
-	return "findByIdCandidate";
+public String preFindByIdCandidate() {
+	return "candidate/findByIdCandidate";
 }
 
 @GetMapping("/candidate/findByIdCandidate") 
 public String findByIdCandidate(Model model, Integer idCandidate) {
 	List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
 	model.addAttribute("idCandidate", candidate);
-	if (idCandidate != null) {
+	if (candidate != null) {
 		return "candidate/resultsFindByIdCandidate";
 	}else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);
-		return "errore";
+		return "error";
 		}
 	   
 }
@@ -119,7 +119,7 @@ public String findBySurname(Model model, String surname) {
 	}else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);
-		return "errore";
+		return "error";
 		}
 	   
 }
@@ -139,7 +139,7 @@ public String findByCity(Model model, String city) {
 	}else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);
-		return "errore";
+		return "error";
 		}
 	   
 }
@@ -159,7 +159,7 @@ return "candidate/resultsByPhoneCandidate";
 } else {
 String errorMessage = "ops!";
 model.addAttribute("errorMessage", errorMessage);
-return "errore";
+return "error";
 }
 }
 //////////////////////////////////////FIND BY SKILL ///////////////////////////////
@@ -198,7 +198,7 @@ return "candidate/resultsByEducationDegreeTypeCandidate";
 } else { 
 String errorMessage = "ops!";
 model.addAttribute("errorMessage", errorMessage);
-return "errore";
+return "error";
 }
 }
 
@@ -218,7 +218,7 @@ return "errore";
 	} else {  
 	String errorMessage = "ops!";
 	model.addAttribute("errorMessage", errorMessage);
-	return "errore";
+	return "error";
 	}
 }
 

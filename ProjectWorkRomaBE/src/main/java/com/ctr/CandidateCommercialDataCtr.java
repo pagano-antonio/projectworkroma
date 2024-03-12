@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateCommercialDataRepository;
@@ -18,12 +17,12 @@ import com.model.CandidateCommercialData;
 ;
 
 @Controller
-@RequestMapping
 public class CandidateCommercialDataCtr {
+	
 	@Autowired
 	private CandidateCommercialDataRepository candidateCommercialDataRep;
-	 @Autowired
-	    private CandidateRepository candidateRep;
+    @Autowired
+	private CandidateRepository candidateRep;
 	  
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
@@ -62,14 +61,14 @@ public class CandidateCommercialDataCtr {
 ////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preUpdateByIdCandidateCommercialData")
-	public String preUpdateByIdCandidateCommercialData(Model model,@RequestParam Integer idCandidateCommercilData) {
+	public String preUpdateByIdCandidateCommercialData(Model model, @RequestParam Integer idCandidateCommercilData) {
 		CandidateCommercialData candidateCommercialData = candidateCommercialDataRep.findById(idCandidateCommercilData).orElse(null);
-		 List<Candidate> candidate = candidateRep.findAll();
-	        model.addAttribute("listIdCandidate", candidate);
-	        model.addAttribute("candidateCommercialData", candidateCommercialData); 
-	        return "candidate/updateByIdCandidateCommercialData";     
-	     
-	}   
+		model.addAttribute("candidateCommercialData", candidateCommercialData);
+		List<Candidate> candidate = candidateRep.findAll();
+		model.addAttribute("listIdCandidate", candidate);
+		return "candidate/updateByIdCandidateCommercialData";
+
+	}  
 
 	@PostMapping("/candidate/updateByIdCandidateCommercialData")
 	public String updateByIdCandidateCommercialData(Model model, CandidateCommercialData candidateCommercialData) { 
@@ -80,22 +79,21 @@ public class CandidateCommercialDataCtr {
 
 ////////////////////////////////////// FIND BY ID //////////////////////////////////
 
-	@GetMapping ("/candidate/preFindByIdCandidateCommercialData")
-	public String preFindByIdCandidateCommercialData(Model model) {
-		return "findByIdCandidateCommercialData";
-	}
-	
-	@GetMapping("/candidate/FindByIdCandidateCommercialData")  
-	public String findByCity(Model model, Integer idCandidateCommercialData) {
-		List<CandidateCommercialData> candidateCommercialData = candidateCommercialDataRep.findByIdCandidateCommercialData(idCandidateCommercialData);
-		model.addAttribute("candidateCommercialData", candidateCommercialData);
-		if (idCandidateCommercialData != null) {
-			return "candidate/resultsFindByIdCandidateCommercialData"; 
-		}else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "errore";
-			}
-		   
-	}
+	 @GetMapping("/candidate/preFindByIdCandidateCommercialData")
+	    public String preFindByIdCandidateCommercialData() {
+	        return "candidate/findByIdCandidateCommercialData";
+	    }
+
+	    @GetMapping("/candidate/findByIdCandidateCommercialData")
+	    public String findByIdCandidateCommercialData(Model model, @RequestParam Integer idCandidateCommercialData) {
+	        List<CandidateCommercialData> candidateCommercialData = candidateCommercialDataRep.findByIdCandidateCommercialData(idCandidateCommercialData);
+	        model.addAttribute("idCandidateCommercialData", candidateCommercialData);
+	        if (candidateCommercialData != null) {
+	            return "candidate/resultsFindByIdCandidateCommercialData";
+	        } else {
+	            String errorMessage = "ops!";
+	            model.addAttribute("errorMessage", errorMessage);
+	            return "error";
+	        }
+	    }
 	}

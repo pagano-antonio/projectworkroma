@@ -25,11 +25,9 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 	List<Candidate> findByCandidateSkills_Skill(Skill skill);
 
 	List<Candidate> findByPhone(BigInteger phone);
+	
+	List<JobInterview> findByJobInterviews_StateJobInterview_IdStateJobInterview(Integer idStateJobInterview);
 
-//	List<WorkExperience> findByWorkExperiences_WorkExperience_StartDateAfterAndEndDateBefore(Date startDate, Date endDate );
-	
-	
-	List<JobInterview> findByJobInterviews_StateJobInterview_IdStateJobInterview(Integer idStateJobInterview); 
 }  
 
 
