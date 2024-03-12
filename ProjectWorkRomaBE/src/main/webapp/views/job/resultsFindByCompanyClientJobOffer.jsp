@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.model.Employee"%>
+<%@ page import="com.model.JobOffer"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results Find Employee ID</title>
+    <title>Results Find Job Offer by Id Company Client</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
@@ -17,30 +17,38 @@
 <table>
     <thead>
         <tr>
-            <th>Employee ID</th>
-            <th>Employee Type ID</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Username</th>
+            <th>Job Offer ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Min Ral</th>
+            <th>Max Ral</th>
+            <th>Company Client ID</th>
+            <th>Contract Type ID</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="employee" items="${Employee}">
+        <c:forEach var="jobOffer" items="${JobOfferCompanyClient}">
             <tr>
-                <td>${employee.idEmployee}</td>
-                <td>${employee.getEmployeeType().getIdEmployeeType()}</td>
-                <td>${employee.name}</td>
-                <td>${employee.surname}</td>
-                <td>${employee.username}</td>
+                <td>${jobOffer.idJobOffer}</td>
+                <td>${jobOffer.title}</td>
+                <td>${jobOffer.description}</td>
+                <td>${jobOffer.startDate}</td>
+                <td>${jobOffer.endDate}</td>
+                <td>${jobOffer.minRal}</td>
+                <td>${jobOffer.maxRal}</td>
+                <td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
+                <td>${jobOffer.getContractType().getIdContractType()}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/company/preUpdateByIdEmployee?idEmployee=${employee.idEmployee}">
+                    <a href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
                         <button type="button">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${employee.idEmployee}">
+                    <a href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
                         <button type="button">Delete</button>  
                     </a>
                 </td>

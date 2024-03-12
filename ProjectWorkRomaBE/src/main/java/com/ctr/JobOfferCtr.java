@@ -137,23 +137,24 @@ public class JobOfferCtr {
 
 ////////////////////////////////////////////  FIND BY ID COMPANY CLIENT  ////////////////////////////////////////////
 
-    @GetMapping("/job/preFindByIdCompanyClientJobOffer")
-    public String preFindByIdCompanyClientJobOffer() {
-        return "job/findByIdCompanyClientJobOffer";
+    @GetMapping("/job/preFindByCompanyClientJobOffer")
+    public String preFindByCompanyClientJobOffer() {
+        return "job/findByCompanyClientJobOffer";
     }
 
     @GetMapping("/job/findByCompanyClientJobOffer")
-    public String findByCompanyClient(Model model, @RequestParam Integer idCompanyClient) {
+    public String findByCompanyClientJobOffer(Model model, @RequestParam Integer idCompanyClient) {
         List<JobOffer> jobOffer = jobOfferRep.findByCompanyClient_IdCompanyClient(idCompanyClient);
-        model.addAttribute("idCompanyClientJobOffer", jobOffer);
+        model.addAttribute("JobOfferCompanyClient", jobOffer);
         if (jobOffer != null) {
-            return "job/resultsfindByCompanyClientJobOffer";
+            return "job/resultsFindByCompanyClientJobOffer";
         } else {
             String errorMessage = "ops!";
             model.addAttribute("errorMessage", errorMessage);
             return "error";
         }
     }
+   
 
 ////////////////////////////////////////////  FIND BY MIN RAL  //////////////////////////////////////////////////////////
 

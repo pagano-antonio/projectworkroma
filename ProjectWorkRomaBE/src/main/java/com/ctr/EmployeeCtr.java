@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.EmployeeRepository;
@@ -87,8 +86,8 @@ public class EmployeeCtr {
 	@GetMapping("/company/findByIdEmployee")
 	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
+		model.addAttribute("Employee", employee);
 		if (employee != null) {
-			model.addAttribute("idEmployee", idEmployee);
 			return "company/resultsFindByIdEmployee";
 		} else { 
 			String errorMessage = "ops!";
