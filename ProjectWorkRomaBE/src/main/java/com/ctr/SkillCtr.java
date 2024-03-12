@@ -13,7 +13,7 @@ import com.model.Skill;
 
 
 @Controller
-@RequestMapping
+
 public class SkillCtr {
 	@Autowired
 	private SkillRepository skillRep;

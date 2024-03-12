@@ -13,7 +13,7 @@ public class HomeCtr {
 
 	@GetMapping("/home")
 	public String vaiAllaHome() {
-		return "home"; // views/home.jsp
+		return "home"; 
 	}
 
 }
