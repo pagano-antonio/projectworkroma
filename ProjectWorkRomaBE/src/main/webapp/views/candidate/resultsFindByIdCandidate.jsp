@@ -37,7 +37,7 @@
                 <td>${candidate.name}</td>
                 <td>${candidate.surname}</td>
                 <td>${candidate.birthday}</td>
-                <td>${candidate.birthplace}</td>
+                <td>${candidate.birthPlace}</td>
                 <td>${candidate.address}</td>
                 <td>${candidate.city}</td>
                 <td>${candidate.email}</td>
