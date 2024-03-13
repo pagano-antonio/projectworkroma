@@ -14,8 +14,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/candidate/findByCityCandidate" method="GET">  
     <div class="data-group">
-        <label for="cityCandidate">Title:</label>
-        <input type="text" id="cityCandidate" name="cityCandidate">
+        <label for="city">Città:</label>
+        <input type="text" id="city" name="city">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">

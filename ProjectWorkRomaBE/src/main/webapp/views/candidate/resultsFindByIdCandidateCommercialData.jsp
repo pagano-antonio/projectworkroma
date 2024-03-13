@@ -30,9 +30,9 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="candidateCommercialData" items="${IdCandidateCommercialData}">
+        <c:forEach var="candidateCommercialData" items="${IdCandidateCommercial}">
             <tr>
-                <td>${candidateCommercialData.idCandidateCommercialData}</td>
+                <td>${candidateCommercialData.idCandidateCommercial}</td>
                 <td>${candidateCommercialData.getCandidate().getIdCandidate()}</td>
                 <td>${candidateCommercialData.currentRal}</td>
                 <td>${candidateCommercialData.proposedRal}</td>
