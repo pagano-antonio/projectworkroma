@@ -13,8 +13,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/candidate/findBySkillCandidate" method="GET">  
     <div class="data-group">
-        <label for="idSkill">ID Skill:</label>
-        <input type="text" id="idSkill" name="idSkill">
+        <label for="title">Title Skill:</label>
+        <input type="text" id="title" name="title">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">

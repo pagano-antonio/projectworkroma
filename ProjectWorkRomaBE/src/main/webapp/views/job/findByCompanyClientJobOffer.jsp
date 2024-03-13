@@ -16,8 +16,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/job/findByCompanyClientJobOffer" method="GET">  
     <div class="data-group">
-        <label for="idCompanyClient">Company Client ID:</label>
-        <input type="number" id="idCompanyClient" name="idCompanyClient"value="<%=request.getParameter("idCompanyClient") %>">
+        <label for="name">Company Client:</label>
+        <input type="text" id="name" name="name">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">

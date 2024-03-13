@@ -13,7 +13,6 @@
 	href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-<h1>Ciao</h1>
 	<div class="container">
 		<img
 			src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif"
@@ -31,7 +30,6 @@
 				<th>Max Ral</th>
 				<th>Company Client ID</th>
 				<th>Contract Type ID</th>
-				<th>JobOfferSkill ID</th>
 				<th>Skill ID</th>
 				<th>Update</th>
 				<th>Delete</th>
@@ -49,7 +47,9 @@
 					<td>${jobOffer.maxRal}</td>
 					<td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
 					<td>${jobOffer.getContractType().getIdContractType()}</td>
-<%-- 					<td>${jobOffer.getJobOfferSkills().getSkill()}</td> --%>
+<%-- 					<c:forEach var="skill" items="${jobOffer.getJobOfferSkills()}"> --%>
+<%--     <td>${skill.getIdSkill()}</td> --%>
+<%-- </c:forEach> --%>
 					<td><a
 						href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 							<button type="button">Update</button>

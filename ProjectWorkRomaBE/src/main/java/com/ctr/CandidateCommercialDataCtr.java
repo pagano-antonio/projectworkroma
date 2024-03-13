@@ -86,7 +86,7 @@ public class CandidateCommercialDataCtr {
 
 	    @GetMapping("/candidate/findByIdCandidateCommercialData")
 	    public String findByIdCandidateCommercialData(Model model, @RequestParam Integer idCandidateCommercialData) {
-	        List<CandidateCommercialData> candidateCommercialData = candidateCommercialDataRep.findByIdCandidateCommercialData(idCandidateCommercialData);
+	        CandidateCommercialData candidateCommercialData = (CandidateCommercialData) candidateCommercialDataRep.findById(idCandidateCommercialData).orElse(null);
 	        model.addAttribute("idCandidateCommercialData", candidateCommercialData);
 	        if (candidateCommercialData != null) {
 	            return "candidate/resultsFindByIdCandidateCommercialData";

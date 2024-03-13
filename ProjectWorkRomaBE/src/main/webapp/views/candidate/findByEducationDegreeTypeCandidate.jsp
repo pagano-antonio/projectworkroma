@@ -13,8 +13,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/candidate/findByEducationDegreeTypeCandidate" method="GET">  
     <div class="data-group">
-        <label for="idEducationDegreeType">ID Education Degree Type:</label>
-        <input type="number" id="idEducationDegreetype" name="idEducationDegreetype">
+        <label for="description">Description Education Degree Type:</label>
+        <input type="text" id="description" name="description">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">

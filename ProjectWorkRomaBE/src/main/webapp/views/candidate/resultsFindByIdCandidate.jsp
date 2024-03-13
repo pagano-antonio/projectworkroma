@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.model.JobOffer"%>
+<%@ page import="com.model.Candidate"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results Find Job Offer by Id Company Client</title>
+    <title>Results Find Candidate By Id Candidate</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
@@ -17,38 +17,38 @@
 <table>
     <thead>
         <tr>
-            <th>Job Offer ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Min Ral</th>
-            <th>Max Ral</th>
-            <th>Company Client ID</th>
-            <th>Contract Type ID</th>
+            <th>ID Candidate</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Birthday</th>
+            <th>Birthplace</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="jobOffer" items="${JobOfferCompanyClient}">
+        <c:forEach var="candidate" items="${IdCandidate}">
             <tr>
-                <td>${jobOffer.idJobOffer}</td>
-                <td>${jobOffer.title}</td>
-                <td>${jobOffer.description}</td>
-                <td>${jobOffer.startDate}</td>
-                <td>${jobOffer.endDate}</td>
-                <td>${jobOffer.minRal}</td>
-                <td>${jobOffer.maxRal}</td>
-                <td>${jobOffer.getCompanyClient().getName()}</td>
-                <td>${jobOffer.getContractType().getTitle()}</td>
+                <td>${candidate.idCandidate}</td>
+                <td>${candidate.name}</td>
+                <td>${candidate.surname}</td>
+                <td>${candidate.birthday}</td>
+                <td>${candidate.birthPlace}</td>
+                <td>${candidate.address}</td>
+                <td>${candidate.city}</td>
+                <td>${candidate.email}</td>
+                <td>${candidate.phone}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                    <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
                         <button type="button">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
                         <button type="button">Delete</button>  
                     </a>
                 </td>

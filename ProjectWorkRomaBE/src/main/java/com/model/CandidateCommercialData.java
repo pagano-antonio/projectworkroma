@@ -2,6 +2,7 @@ package com.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -20,6 +21,7 @@ public class CandidateCommercialData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column(name = "idCandidateCommercial")
 	private int idCandidateCommercialData; 
 
 	private int businessCost;

@@ -25,7 +25,7 @@
             <th>Min Ral</th>
             <th>Max Ral</th>
             <th>Company Client ID</th>
-            <th>Contract Type ID</th>
+            <th>Contract Type</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
@@ -40,8 +40,8 @@
                 <td>${jobOffer.endDate}</td>
                 <td>${jobOffer.minRal}</td>
                 <td>${jobOffer.maxRal}</td>
-                <td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
-                <td>${jobOffer.getContractType().getIdContractType()}</td>
+                <td>${jobOffer.getCompanyClient().getName()}</td>
+                <td>${jobOffer.getContractType().getTitle()}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
                         <button type="button">Update</button>

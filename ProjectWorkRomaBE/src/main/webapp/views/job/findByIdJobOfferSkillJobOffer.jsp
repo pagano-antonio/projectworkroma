@@ -6,7 +6,7 @@
 <head>   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Job Offer by ID Job Offer Skill</title>
+  <title>Find Job Offer by Skill</title>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/job/findByIdJobOfferSkillJobOffer" method="GET">  
     <div class="data-group">
-        <label for="idSkill">Skill ID:</label>
-        <input type="number" id="idSkill" name="idSkill">
+        <label for="title">Skill:</label>
+        <input type="text" id="title" name="title">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">
