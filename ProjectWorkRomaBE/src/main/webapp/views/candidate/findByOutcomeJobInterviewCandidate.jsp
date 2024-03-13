@@ -14,8 +14,8 @@
 </div>
 <form action="${pageContext.request.contextPath}/candidate/findByOutcomeJobInterviewCandidate" method="GET">  
     <div class="data-group">
-        <label for="idStateJobInterview">ID Job State Interview:</label>
-        <input type="number" id="idStateJobInterview" name="idStateJobInterview">
+        <label for="title">Job State Interview:</label>
+        <input type="text" id="title" name="title">
     </div>
     <div class="submit">
         <input type="submit" value="Submit">

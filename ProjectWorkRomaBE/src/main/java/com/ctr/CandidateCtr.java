@@ -160,8 +160,8 @@ public class CandidateCtr {
 	}
 
 	@GetMapping("/candidate/findBySkillCandidate")
-	public String findBySkillCandidate(Model model, Integer idSkill) {
-		List<Candidate> candidate = candidateRep.findByCandidateSkills_Skill_IdSkill(idSkill);
+	public String findBySkillCandidate(Model model, String title) {
+		List<Candidate> candidate = candidateRep.findByCandidateSkills_Skill_Title(title);
 		model.addAttribute("SkillCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsBySkillCandidate";
@@ -180,9 +180,9 @@ public class CandidateCtr {
 	}
 
 	@GetMapping("/candidate/findByEducationDegreeTypeCandidate")
-	public String findByEducationDegreeTypeCandidate(Model model, Integer idEducationDegreeType) {
+	public String findByEducationDegreeTypeCandidate(Model model, String description) {
 		List<Candidate> candidate = candidateRep
-				.findByEducations_EducationDegreeType_IdEducationDegreeType(idEducationDegreeType);
+				.findByEducations_EducationDegreeType_Description(description);
 		model.addAttribute("EducationDegreeTypeCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsByEducationDegreeTypeCandidate";
@@ -201,8 +201,8 @@ public class CandidateCtr {
 	}
 
 	@GetMapping("/candidate/findByOutcomeJobInterviewCandidate")
-	public String findByOutcomeJobInterviewCandidate(Model model, Integer idStateJobInterview, Integer outcome) {
-		List<Candidate> candidate = candidateRep.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
+	public String findByOutcomeJobInterviewCandidate(Model model, String title, Integer outcome) {
+		List<Candidate> candidate = candidateRep.findByJobInterviews_StateJobInterview_Title(title);
 		//Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
 		model.addAttribute("OutcomeCandidate", candidate);
 		if (candidate != null) {

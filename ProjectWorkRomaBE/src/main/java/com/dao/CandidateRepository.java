@@ -20,13 +20,13 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
 	List<Candidate> findByCity(String city);
 
-	List<Candidate> findByEducations_EducationDegreeType_IdEducationDegreeType(Integer idEducationDegreeType);
+	List<Candidate> findByEducations_EducationDegreeType_Description(String description);
 
-	List<Candidate> findByCandidateSkills_Skill_IdSkill(Integer idSkill);
+	List<Candidate> findByCandidateSkills_Skill_Title(String title);
 
 	List<Candidate> findByPhone(BigInteger phone);
 	
-	List<Candidate> findByJobInterviews_StateJobInterview_IdStateJobInterview(Integer idStateJobInterview);
+	List<Candidate> findByJobInterviews_StateJobInterview_Title(String title);
 
 }  
 
