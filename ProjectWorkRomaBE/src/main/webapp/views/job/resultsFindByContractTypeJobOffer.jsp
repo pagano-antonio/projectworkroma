@@ -40,7 +40,7 @@
                 <td>${jobOffer.endDate}</td>
                 <td>${jobOffer.minRal}</td>
                 <td>${jobOffer.maxRal}</td>
-                <td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
+                <td>${jobOffer.getCompanyClient().getName()}</td>
                 <td>${jobOffer.getContractType().getTitle()}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
