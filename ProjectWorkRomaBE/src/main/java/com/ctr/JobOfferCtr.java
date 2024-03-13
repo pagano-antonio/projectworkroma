@@ -137,8 +137,8 @@ public class JobOfferCtr {
     }
 
     @GetMapping("/job/findByCompanyClientJobOffer")
-    public String findByCompanyClientJobOffer(Model model, @RequestParam Integer idCompanyClient) {
-        List<JobOffer> jobOffer = jobOfferRep.findByCompanyClient_IdCompanyClient(idCompanyClient);
+    public String findByCompanyClientJobOffer(Model model, @RequestParam String name) {
+        List<JobOffer> jobOffer = jobOfferRep.findByCompanyClient_Name(name);
         model.addAttribute("JobOfferCompanyClient", jobOffer);
         if (jobOffer != null) {
             return "job/resultsFindByCompanyClientJobOffer";
@@ -198,8 +198,8 @@ public class JobOfferCtr {
     }
 
     @GetMapping("/job/findByContractTypeJobOffer")
-    public String findByContractTypeJobOffer(Model model, @RequestParam Integer idContractType) {
-        List<JobOffer> jobOffer = jobOfferRep.findByContractType_IdContractType(idContractType);
+    public String findByContractTypeJobOffer(Model model, @RequestParam String title) {
+        List<JobOffer> jobOffer = jobOfferRep.findByContractType_Title(title);
         model.addAttribute("JobOfferContractType", jobOffer);
         if (jobOffer != null) {
             return "job/resultsFindByContractTypeJobOffer";
@@ -218,11 +218,10 @@ public class JobOfferCtr {
     }
 
 	@GetMapping("/job/findByIdJobOfferSkillJobOffer")
-	public String findByIdJobOfferSkillJobOffer(Model model,@RequestParam Integer idSkill) {
-		List<JobOffer> jobOffer = jobOfferRep.findByJobOfferSkills_skill_idSkill(idSkill);
+	public String findByIdJobOfferSkillJobOffer(Model model,@RequestParam String title) {
+		List<JobOffer> jobOffer = jobOfferRep.findByJobOfferSkills_skill_Title(title);
 		model.addAttribute("JobOfferSkillJobOffer", jobOffer);
 		if ( jobOffer.size()>0) {
-			System.out.println("JobOffer1"+jobOffer.size());
 			return "job/resultsFindBySkill";
 		}else {
 			String errorMessage = "ops!";
