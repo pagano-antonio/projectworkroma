@@ -16,7 +16,7 @@
 </div>
 <form action="${pageContext.request.contextPath}/job/findByIdJobOfferSkillJobOffer" method="GET">  
     <div class="data-group">
-        <label for="idSkill">ID Job Offer Skill:</label>
+        <label for="idSkill">Skill ID:</label>
         <input type="number" id="idSkill" name="idSkill">
     </div>
     <div class="submit">
