@@ -58,7 +58,7 @@
 						href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 							<button type="button">Delete</button>
 					</a></td>
-				</tr>
+			</tr>
 			</c:forEach>
 		</tbody>
 	</table>
