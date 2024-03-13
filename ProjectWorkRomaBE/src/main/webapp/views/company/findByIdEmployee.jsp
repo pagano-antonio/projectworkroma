@@ -17,12 +17,12 @@
     <div class="data-group">
     	
         <label for="idEmployee">Employee ID:</label>
-       <input type="number" id="idEmployee" name="idEmployee" value="<%=request.getParameter("idEmployee") %>">
+       <input type="number" id="idEmployee" name="idEmployee" >
     </div>
     <div class="submit">
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </div>
-</form>
+</form> 
 </body>  
 </html>
