@@ -18,8 +18,6 @@
             <th>Candidate ID</th>
             <th>Name</th>
             <th>Surname</th>
-            <th>Title</th>
-            <th>State Job Interview</th>
             <th>Address</th>
             <th>City</th>
             <th>Email</th>
@@ -34,7 +32,6 @@
                 <td>${candidate.idCandidate}</td>
                 <td>${candidate.name}</td>
                 <td>${candidate.surname}</td>
-                <td>${candidate.getEducationDegreeType().getDescription()}</td>
                 <td>${candidate.birthday}</td>
                 <td>${candidate.birthPlace}</td>
                 <td>${candidate.address}</td>

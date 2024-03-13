@@ -18,7 +18,6 @@
             <th>Candidate ID</th>
             <th>Name</th>
             <th>Surname</th>
-            <th>Education Degree Type</th>
             <th>Birthday</th>
             <th>Birth Place</th>
             <th>Address</th>
@@ -35,7 +34,6 @@
                 <td>${candidate.idCandidate}</td>
                 <td>${candidate.name}</td>
                 <td>${candidate.surname}</td>
-                <td>${candidate.getEducationDegreeType().getDescription()}</td>
                 <td>${candidate.birthday}</td>
                 <td>${candidate.birthPlace}</td>
                 <td>${candidate.address}</td>
