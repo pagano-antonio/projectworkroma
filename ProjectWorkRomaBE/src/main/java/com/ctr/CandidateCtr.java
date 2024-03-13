@@ -160,8 +160,8 @@ public class CandidateCtr {
 	}
 
 	@GetMapping("/candidate/findBySkillCandidate")
-	public String findBySkillCandidate(Model model, Skill skill) {
-		List<Candidate> candidate = candidateRep.findByCandidateSkills_Skill(skill);
+	public String findBySkillCandidate(Model model, Integer idSkill) {
+		List<Candidate> candidate = candidateRep.findByCandidateSkills_Skill_IdSkill(idSkill);
 		model.addAttribute("SkillCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsBySkillCandidate";
