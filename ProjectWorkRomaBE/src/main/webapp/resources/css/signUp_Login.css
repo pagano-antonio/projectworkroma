@@ -2,12 +2,100 @@
 /*css reset*/
 
 *{
-    margin: 0;
-    padding:0;
     box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
 }
 
-.dimension{
-    margin: 0 auto;
-    padding: 0px;
+body{
+	background-color: #d8cdf3;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.card{
+	background-color: #ffffff;
+	font-family: "Poppins";
+	height:600px;
+	width: 800px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:25px;
+}
+.boxLogin{
+	
+	justify-content: center;
+}
+
+.loginTitle{
+	font-size: 24px;
+  	margin-bottom: 20px;
+  	}
+
+.formLogin{
+	width: 300px;
+  	text-align: left;
+}
+
+.inputField{
+	width: 100%;
+  	padding: 10px;
+  	margin-bottom: 15px;
+  	border: 1px solid #ccc;
+  	border-radius: 5px;
+}
+
+.buttonLogin{
+	width: 40%;
+  	padding: 10px;
+  	background-color: #d8cdf3;
+  	border: none;
+  	border-radius: 3px;
+  	color: #fff;
+}
+
+.buttonRegister{
+	width: 40%;
+  	padding: 10px;
+  	margin-top: 15px;
+  	background-color: transparent;
+  	border: none;
+  	border-radius: 3px;
+  	color: black;
+  	text-decoration: underline;	
+}
+
+.boxTitle{
+	width: 300px;
+}
+
+.title{
+	text-align: left;
+	text-wrap: wrap;
+}
+
+.imageLogin{
+	width: 250px;
+	height: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
