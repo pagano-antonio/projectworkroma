@@ -42,7 +42,7 @@ public class EmployeeCtr {
 
 	@GetMapping("/company/preDeleteByIdEmployee")
 	public String deleteByIdEmployee() {
-		return "company/deleteByInEmployee";
+		return "company/deleteByIdEmployee";
 	}
 
 	@GetMapping("/company/deleteByIdEmployee")
