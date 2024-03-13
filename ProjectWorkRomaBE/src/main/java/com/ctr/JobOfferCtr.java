@@ -121,19 +121,13 @@ public class JobOfferCtr {
     }
 
     @GetMapping("/job/findByStartDateAndEndDate")
-    public String findByStartDateAndEndDate(Model model, @RequestParam Date startDate, @RequestParam Date endDate) {
-        List<JobOffer> jobOffer = jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
-        model.addAttribute("JobOffer", jobOffer);
-        model.addAttribute("startDateJobOffer", startDate);
-        model.addAttribute("endDateJobOffer", endDate);
-		if (jobOffer != null) {
-			return "job/resultsfindByStartDateAndEndDate";
-		} else {
-			String errorMessage = "ops!";
-			model.addAttribute("errorMessage", errorMessage);
-			return "error";
-		}
-	}
+    public String findByStartDateAndEndDate(Model model,Date startDate, Date endDate) {
+        List<JobOffer> jobOffers = jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
+        model.addAttribute("JobOfferDate", jobOffers);
+        model.addAttribute("startDate", startDate);
+        model.addAttribute("endDate", endDate);
+        return "job/resultsFindByStartDateAndEndDate";
+    }
 
 ////////////////////////////////////////////  FIND BY ID COMPANY CLIENT  ////////////////////////////////////////////
 

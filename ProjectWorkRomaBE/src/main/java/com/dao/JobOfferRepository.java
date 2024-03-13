@@ -17,8 +17,9 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer>{
 
 	List<JobOffer> findByTitle(String title);
 
+	@Query("SELECT j FROM JobOffer j WHERE  j.startDate >= :startDate AND j.endDate <= :endDate")
 	List<JobOffer> findByStartDateAfterAndEndDateBefore(Date startDate, Date endDate);
-
+	
 	List<JobOffer> findByMinRal(Integer minRal);
 	
 	List<JobOffer> findByMaxRal(Integer maxRal);
