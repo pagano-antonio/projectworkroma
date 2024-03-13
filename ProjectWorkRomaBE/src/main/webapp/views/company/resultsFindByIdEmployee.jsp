@@ -14,6 +14,8 @@
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
     <span>YOUR DATA</span>
 </div>
+<%Employee employee = (Employee) request.getAttribute("EmployeeId");%>
+
 <table>
     <thead>
         <tr>
@@ -27,7 +29,7 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="employee" items="${Employee}">
+        <c:forEach var="employee" items="${EmployeeId}">
             <tr>
                 <td>${employee.idEmployee}</td>
                 <td>${employee.getEmployeeType().getIdEmployeeType()}</td>

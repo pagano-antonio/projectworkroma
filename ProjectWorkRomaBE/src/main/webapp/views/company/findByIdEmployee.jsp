@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="com.model.Employee" %>
 <html lang="en">
 <head>   
   <meta charset="UTF-8">
@@ -14,6 +15,7 @@
 </div>
 <form action="${pageContext.request.contextPath}/company/findByIdEmployee" method="GET">  
     <div class="data-group">
+    	
         <label for="idEmployee">Employee ID:</label>
        <input type="number" id="idEmployee" name="idEmployee" value="<%=request.getParameter("idEmployee") %>">
     </div>

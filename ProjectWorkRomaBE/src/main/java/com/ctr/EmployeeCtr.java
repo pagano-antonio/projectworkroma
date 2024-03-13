@@ -86,7 +86,7 @@ public class EmployeeCtr {
 	@GetMapping("/company/findByIdEmployee")
 	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
-		model.addAttribute("Employee", employee);
+		model.addAttribute("EmployeeId", employee);
 		if (employee != null) {
 			return "company/resultsFindByIdEmployee";
 		} else { 
