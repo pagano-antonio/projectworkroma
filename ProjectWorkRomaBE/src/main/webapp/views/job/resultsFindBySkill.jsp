@@ -12,6 +12,7 @@
 	href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
+<h1>Ciao</h1>
 	<div class="container">
 		<img
 			src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif"
@@ -47,8 +48,7 @@
 					<td>${jobOffer.maxRal}</td>
 					<td>${jobOffer.getCompanyClient().getIdCompanyClient()}</td>
 					<td>${jobOffer.getContractType().getIdContractType()}</td>
-					<td>${jobOffer.getJobOfferSkills().getIdJobOffer()}</td>
-					<td>${jobOffer.getJobOfferSkills().getIdSkill()}</td>
+<%-- 					<td>${jobOffer.getJobOfferSkills().getSkill()}</td> --%>
 					<td><a
 						href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 							<button type="button">Update</button>

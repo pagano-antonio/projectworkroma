@@ -8,7 +8,7 @@
   <title>My Page</title>
   </head>
 <body>
-   <span>Errore di sistema!</span>
+ ??  <span>Errore di sistema!</span>
 
 <%String error = (String)request.getAttribute("ErrorMessage"); %>
  <h1><%=error %></h1>

@@ -224,18 +224,16 @@ public class JobOfferCtr {
     }
 
 	@GetMapping("/job/findByIdJobOfferSkillJobOffer")
-	public String findByIdJobOfferSkillJobOffer(Model model,@RequestParam Integer idJobOfferSkill) {
-		List<JobOffer> jobOffer = jobOfferRep.findByJobOfferSkills_skill_idSkill(idJobOfferSkill);
-		System.out.println("JobOffer"+jobOffer.size());
+	public String findByIdJobOfferSkillJobOffer(Model model,@RequestParam Integer idSkill) {
+		List<JobOffer> jobOffer = jobOfferRep.findByJobOfferSkills_skill_idSkill(idSkill);
 		model.addAttribute("JobOfferSkillJobOffer", jobOffer);
-		if (jobOffer != null) {
+		if ( jobOffer.size()>0) {
 			System.out.println("JobOffer1"+jobOffer.size());
-			return "job/resultsFindByIdJobOfferSkillJobOffer";
-		}
-		System.out.println("JobOffer2"+jobOffer.size());
+			return "job/resultsFindBySkill";
+		}else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";
 		}
 	}
-
+}
