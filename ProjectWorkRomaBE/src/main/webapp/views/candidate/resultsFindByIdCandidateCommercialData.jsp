@@ -14,10 +14,14 @@
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
     <span>YOUR DATA</span>
 </div>
+	<%
+	CandidateCommercialData candidateCommercialData = (CandidateCommercialData) request.getAttribute("idCandidateCommercialData");
+	%>
+
 <table>
     <thead>
         <tr>
-            <th>ID Candidate Cpmmercial Data</th>
+            <th>ID Candidate Commercial Data</th>
             <th>ID Candidate</th>
             <th>Current Ral</th>
             <th>Proposed Ral</th>
@@ -30,16 +34,15 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="candidateCommercialData" items="${IdCandidateCommercial}">
-            <tr>
-                <td>${candidateCommercialData.idCandidateCommercial}</td>
-                <td>${candidateCommercialData.getCandidate().getIdCandidate()}</td>
-                <td>${candidateCommercialData.currentRal}</td>
-                <td>${candidateCommercialData.proposedRal}</td>
-                <td>${candidateCommercialData.monthRefund}</td>
-                <td>${candidateCommercialData.businessCost}</td>
-                <td>${candidateCommercialData.subsidyFlag}</td>
-                <td>${candidateCommercialData.notes}</td>
+       <tr>
+       			<td><%=candidateCommercialData.getIdCandidateCommercialData()%></td>
+                <td><%=candidateCommercialData.getCandidate().getIdCandidate()%></td>
+                <td><%=candidateCommercialData.getCurrentRal()%></td>
+                <td><%=candidateCommercialData.getProposedRal()%></td>
+                <td><%=candidateCommercialData.getMonthRefund()%></td>
+                <td><%=candidateCommercialData.getBusinessCost()%></td>
+                <td><%=candidateCommercialData.getSubsidyFlag()%></td>
+                <td><%=candidateCommercialData.getNotes()%></td>
                 <td>
                     <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidateCommercialData?idCandidateCommercialData=${candidateCommercialData.idCandidateCommercialData}">
                         <button type="button">Update</button>
@@ -51,7 +54,6 @@
                     </a>
                 </td>
             </tr>
-        </c:forEach>
     </tbody>
 </table>
 </body>
