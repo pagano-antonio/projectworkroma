@@ -18,8 +18,6 @@
             <th>Candidate ID</th>
             <th>Name</th>
             <th>Surname</th>
-            <th>Skill</th>
-            <th>Description</th>
             <th>Birthday</th>
             <th>Birth Place</th>
             <th>Address</th>
@@ -36,8 +34,6 @@
                 <td>${candidate.idCandidate}</td>
                 <td>${candidate.name}</td>
                 <td>${candidate.surname}</td>
-                <td>${candidate.getCandidateSkills().title}</td>
-                <td>${candidate.getCandidateSkills().description}</td>
                 <td>${candidate.birthday}</td>
                 <td>${candidate.birthPlace}</td>
                 <td>${candidate.address}</td>

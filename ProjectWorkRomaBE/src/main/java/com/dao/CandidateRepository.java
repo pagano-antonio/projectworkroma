@@ -22,7 +22,7 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
 	List<Candidate> findByEducations_EducationDegreeType_IdEducationDegreeType(Integer idEducationDegreeType);
 
-	List<Candidate> findByCandidateSkills_Skill(Skill skill);
+	List<Candidate> findByCandidateSkills_Skill_IdSkill(Integer idSkill);
 
 	List<Candidate> findByPhone(BigInteger phone);
 	
