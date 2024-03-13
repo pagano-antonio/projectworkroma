@@ -48,7 +48,9 @@ public class JobOfferCtr {
     }
 
 //////////////////////////////////////  UPDATE METHOD //////////////////////////////////////////////////////////
-
+    
+ 
+    
     @GetMapping("/job/preUpdateByIdJobOffer")
     public String preUpdateByIdJobOffer(Model model,@RequestParam Integer idJobOffer) {
     	JobOffer jobOffer = jobOfferRep.findById(idJobOffer).orElse(null);
