@@ -14,12 +14,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dao.CandidateCommercialDataRepository;
 import com.dao.CandidateRepository;
+import com.dao.EducationDegreeTypeRepository;
 import com.dao.EducationRepository;
+import com.dao.JobInterviewRepository;
+import com.dao.SkillRepository;
+import com.dao.WorkExperienceRepository;
+
 import com.model.Candidate;
+import com.model.CandidateCommercialData;
 import com.model.Education;
+import com.model.EducationDegreeType;
 import com.model.JobInterview;
 import com.model.Skill;
+import com.model.WorkExperience;
 
 @Controller
 
@@ -28,7 +37,17 @@ public class CandidateCtr {
 	private CandidateRepository candidateRep;
 	@Autowired
 	private EducationRepository educationRep;
-
+	@Autowired
+	private WorkExperienceRepository workExperienceRep;
+	@Autowired
+	private JobInterviewRepository jobInterviewRep;
+	@Autowired
+	private CandidateCommercialDataRepository candidateCommercialDataRep;
+	@Autowired
+	private SkillRepository skillRep;
+	@Autowired
+	private EducationDegreeTypeRepository educationDegreeTypeRep;
+	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preAddCandidateForm")
@@ -37,9 +56,16 @@ public class CandidateCtr {
 	}
 
 	@PostMapping("/candidate/addCandidateForm")
-	public String addCandidateForm(Model model, Candidate candidate, Education education) {
+	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
+		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,EducationDegreeType educationDegreeType) {
+		List<EducationDegreeType> educationDegree = educationDegreeTypeRep.findAll();
+		model.addAttribute("educationDegreeType", educationDegree);
 		candidateRep.save(candidate);
 		educationRep.save(education);
+		workExperienceRep.save(workExperience);
+		jobInterviewRep.save(jobInterview);
+		candidateCommercialDataRep.save(candidateCommercialData);
+		skillRep.save(skill);
 		return "success";
 	}
 

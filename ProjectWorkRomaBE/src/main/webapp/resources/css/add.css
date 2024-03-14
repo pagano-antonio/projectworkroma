@@ -50,7 +50,7 @@ body{
   	color: black;
   	text-decoration: underline;	
 }
-input,textarea{
+input,textarea, select{
 	padding:20px;
 	border-radius:16px;
 	border:3px;

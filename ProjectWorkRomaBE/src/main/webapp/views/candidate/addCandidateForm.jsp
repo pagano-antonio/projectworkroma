@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="com.model.EducationDegreeType" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,12 +58,16 @@
 		</div>
 		<br>
 		<div>
-			<label for="date">Graduation:</label> <input type="date" id="date"
-				name="date"> <label for="finalGrade">Final Grade:</label> <input
-				type="text" id="finalGrade" name="finalGrade"> <label
-				for="description">Description education degree type:</label>
-			<%--  <select><option value="<%=educationDegreeType.getDescription()%>"></option> --%>
-			<!--  </select> -->
+			<label for="date">Graduation Date:</label> 
+			<input type="date" id="date"name="date"> 
+			<label for="finalGrade">Final Grade:</label> 
+			<input type="text" id="finalGrade" name="finalGrade"> 
+			<label for="description">Description education degree type:</label>
+			 <select name="educationDegreeType.description">
+            <c:forEach var="educationDegreeType" items="${educationDegreeType}">
+                <option value="${educationDegreeType.Description}">${educationDegreeType.Description}</option>
+            </c:forEach>
+        </select>
 		</div>
 		<br>
 		<div class="submit">
@@ -104,9 +110,15 @@
 			<input type="date" id="date"name="date"> 
 			<label for="outcome">Outcome:</label> 
 			<input type="number" id="outcome" name="outcome">
-			<%--         <select><option value="${ employee.getIdEmployeeUsernameNmae }</option></select> --%>
-			<%--          <select><option value="<%=contractType.getDescription %></option></select> --%>
-			<%--         <select><option value="<%=stateJobInterview.getTitle()&&getDescription %></option></select> --%>
+			<label for="text">Employee:</label> 
+			<select name="employee">
+			<option value="${employee.getIdEmployee} - ${employee.getName}"></option></select> 
+			<label for="text">Contract Type:</label> 
+			 <select name="contractType">
+			 <option value="${contractType.getDescription()}"></option></select> 
+			<label for="text">State Job Interview:</label> 
+			<select name="stateJobInterview">
+			<option value="${stateJobInterview.getTitle()}"></option></select> 
 		</div>
 		<br>
 		<div>
