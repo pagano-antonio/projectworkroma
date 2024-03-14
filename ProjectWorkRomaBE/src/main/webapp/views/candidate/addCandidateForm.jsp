@@ -10,22 +10,19 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/add.css">
 </head>
 <body>
-<div>
+<div class="box1">
 <form class="formAdd" action="${pageContext.request.contextPath}/candidate/addCandidateForm" method="POST"> 
 	
 	<div class="box">
 	<h1>ANAGRAFICA</h1>
 		<div>
-			<label for="name">Name:</label> <input type="text" id="name"name="name"> 
+			<label for="name">Name:</label> 
+			<input type="text" id="name"name="name"> 
 			<label for="surname">Surname:</label> 
 			<input type="text" id="surname"name="surname"> 
 			<label for="birthday">Birthday:</label> 
 			<input type="date" id="birthday" name="birthday">
-			</div><br>
-        <div class="submit">
-			<button class="buttonSubmit"type="submit">Submit</button>
-			<button class="buttonReset"type="reset">Reset</button>
-		</div>
+			</div>
 		<br>
 		<div>
 			<label for="birthPlace">Birth Place:</label> 
@@ -33,7 +30,7 @@
 			<label for="city">City:</label>
 			<input type="text" id="city" name="city"> 
 			<label for="address">Address:</label> 
-			<input type="text" id="address"bname="address">
+			<input type="text" id="address"name="address">
 		</div>
 		<br>
 		<div>

@@ -11,11 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateRepository;
+import com.dao.EducationRepository;
 import com.model.Candidate;
+import com.model.Education;
 import com.model.JobInterview;
 import com.model.Skill;
 
@@ -24,6 +26,8 @@ import com.model.Skill;
 public class CandidateCtr {
 	@Autowired
 	private CandidateRepository candidateRep;
+	@Autowired
+	private EducationRepository educationRep;
 
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
@@ -33,8 +37,9 @@ public class CandidateCtr {
 	}
 
 	@PostMapping("/candidate/addCandidateForm")
-	public String addCandidateForm(Model model, Candidate candidate) {
+	public String addCandidateForm(Model model, Candidate candidate, Education education) {
 		candidateRep.save(candidate);
+		educationRep.save(education);
 		return "success";
 	}
 

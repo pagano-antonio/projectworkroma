@@ -33,17 +33,17 @@ public class EducationCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@GetMapping("/candidate/preAddEducation")    
-	public String preEducation(Model model) {
-		return "candidate/addEducation";
-	}
-
-	@PostMapping("/candidate/addEducation") 
-	public String addEducation(Model model, Education education) {
-		EducationRep.save(education); 
-		return "success";
-	}
-	
+//	@PostMapping("/candidate/preAddCandidateForm")   
+//	public String preEducation(Model model) {
+//		return "candidate/addCandidateForm";
+//	}
+//
+//	@PostMapping("/candidate/addEducation") 
+//	public String addEducation(Model model, Education education) {
+//		EducationRep.save(education); 
+//		return "success";
+//	}
+//	
 //////////////////////////////////////UPDATE   ////////////////////////////////////
 	
 	@GetMapping("/candidate/preUpdateByIdEducation")
