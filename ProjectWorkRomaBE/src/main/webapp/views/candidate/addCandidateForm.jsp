@@ -1,15 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Candidate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/add.css">
 </head>
 <body>
 <div>
-	<h1>ANAGRAFICA</h1>
+<form class="formAdd" action="${pageContext.request.contextPath}/candidate/addCandidateForm" method="POST"> 
+	
 	<div class="box">
+	<h1>ANAGRAFICA</h1>
 		<div>
 			<label for="name">Name:</label> <input type="text" id="name"name="name"> 
 			<label for="surname">Surname:</label> 
@@ -18,9 +23,9 @@
 			<input type="date" id="birthday" name="birthday">
 			</div><br>
         <div class="submit">
-				<button type="submit">Submit</button>
-				<button type="reset">Reset</button>	
-	   </div>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
+		</div>
 		<br>
 		<div>
 			<label for="birthPlace">Birth Place:</label> 
@@ -39,13 +44,13 @@
 		</div>
 		<br>
 		<div class="submit">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 	</div>
-	
+
+	<div class="box">	
 	<h1>EDUCATION</h1>
-	<div class="box">
 		<div>
 			<label for="schoolName">School Name:</label> 
 			<input type="text" id="schoolName" name="schoolName"> 
@@ -63,13 +68,14 @@
 		</div>
 		<br>
 		<div class="submit">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 	</div>
 
-	<h1>WORKEXPERIENCE</h1>
+	
 	<div class="box">
+	<h1>WORKEXPERIENCE</h1>
 		<div>
 			<label for="title">Title:</label> 
 			<input type="text" id="title"name="title" > 
@@ -89,12 +95,13 @@
 		</div>
 		<br>
 		<div class="submit">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 	</div>
-	<h1>JOB INTERVIEW</h1>
+	
 	<div class="box">
+	<h1>JOB INTERVIEW</h1>
 		<div>
 			<label for="date">Date:</label> 
 			<input type="date" id="date"name="date"> 
@@ -110,20 +117,21 @@
 			<textarea name="notes" row="8" cols="80">></textarea>
 		</div>
 		<div class="submit">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 	</div>
-	<h1>CANDIDATE COMMERCIAL DATA</h1>
+	
 	<div class="box">
+	<h1>CANDIDATE COMMERCIAL DATA</h1>
 		<div>
-			<label for="businessCost">Business Cost:</label> 
+			<p><label for="businessCost">Business Cost:</label> </p>
 			<input type="number"id="businessCost" name="businessCost"> 
-			<label for="currentRal">CurrentRal:</label> 
+			<p><label for="currentRal">CurrentRal:</label></p> 
 			<input type="number"id="currentRal" name="currentRal"> 
-			<label for="monthRefund">Month Refund:</label> 
+			<p><label for="monthRefund">Month Refund:</label></p>
 			<input type="number" id="monthRefund" name="monthRefund">
-			<label for="proposedRal">ProposedRal:</label> 
+			<p><label for="proposedRal">ProposedRal:</label> </p>
 			<input type="number" id="proposedRal" name="proposedRal"> 
 			<label for="subsidyFlag">Subsidy Flag:</label> 
 			<input type="number" id="subsidyFlag" name="subsidyFlag">
@@ -131,15 +139,18 @@
 		<br>
 		<div>
 			<label for="notes">Notes:</label>
-			<textarea name="notes" row="8" cols="80"></textarea>
-		</div><br>
+			<textarea name="notes" row="40" cols="80"></textarea>
+		</div>
+		<br>
 		<div class="submit">
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 	</div>
+	
+	<div class="box">
+	<div class="table">
 	<h1>SKILL</h1>
-	<div>
 		<table>
 			<thead>
 				<td>Title: </td>
@@ -147,9 +158,15 @@
 			</thead><tbody>
 				<th><input type="text" id="title" name="title"></th>
 				<th><input type="text" id="description" name="description"></th>
-			</tbody>
+			</tbody>		
 		</table>
+		<div class="submit">
+			<button class="buttonSubmit"type="submit">Submit</button>
+			<button class="buttonReset"type="reset">Reset</button>
+		</div>
 	</div>
 	</div>
+	</form>
+	</div>	
 </body>
 </html>

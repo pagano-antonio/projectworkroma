@@ -28,12 +28,12 @@ public class CandidateCtr {
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preAddCandidateForm")
-	public String preAddCandidate(Model model) {
+	public String preAddCandidateForm(Model model) {
 		return "candidate/addCandidateForm";
 	}
 
 	@PostMapping("/candidate/addCandidateForm")
-	public String addCandidate(Model model, Candidate candidate) {
+	public String addCandidateForm(Model model, Candidate candidate) {
 		candidateRep.save(candidate);
 		return "success";
 	}
