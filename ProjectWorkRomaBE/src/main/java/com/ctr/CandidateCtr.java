@@ -55,9 +55,9 @@ public class CandidateCtr {
 
 	@PostMapping("/addCandidateForm")
 	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
-		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,EducationDegreeType educationDegreeType) {
-		List<EducationDegreeType> educationDegree = educationDegreeTypeRep.findAll();
-		model.addAttribute("educationDegreeType", educationDegree);
+		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill, String description) {
+//		List<EducationDegreeType> educationDegree = educationDegreeTypeRep.findByDescription(description);
+//	    model.addAttribute("educationDegreeType", educationDegree);
 		candidateRep.save(candidate);
 		educationRep.save(education);
 		workExperienceRep.save(workExperience);

@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Add Candidate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/add.css">
 <script>
@@ -42,8 +42,8 @@ function toggleSection() {
 <%-- <jsp:include page="sidebar.jsp" /> --%>
 <div class="container">
 <div class="card">
-<form class="formAdd" action="${pageContext.request.contextPath}/candidate/addCandidateForm" method="POST"> 
-	
+<form class="formAdd" action="${pageContext.request.contextPath}/addCandidateForm" method="POST"> 
+
 	<div class="box">
 	<h1>Sign Up</h1>
 		<div>
@@ -98,12 +98,13 @@ function toggleSection() {
 			<p><label for="finalGrade">Final Grade:</label></p>  
 			<input type="text" id="finalGrade" name="finalGrade"> </div>
 			<div class="inline-p">
-			<p><label for="description">Education degree type:</label></p> 
-			 <select name="educationDegreeType.description">
+			<p><label for="description">Education degree type:</label></p>
+            <select name="educationDegreeType">
             <c:forEach var="educationDegreeType" items="${educationDegreeType}">
-                <option value="${educationDegreeType.Description}">${educationDegreeType.Description}</option>
+            <option value="${educationDegreeType.Description}">
+            ${educationDegreeType.Description}</option>
             </c:forEach>
-        </select></div>
+            </select></div>
 		</div>
 		<br>
 		<div class="submit">
@@ -113,7 +114,7 @@ function toggleSection() {
 	</div>
 <hr>
 	<div class="box">
-	<h1>Work Expercience</h1>
+	<h1>Work Experience</h1>
 		<div>
 		<div class="inline-p">
 			<p><label for="title">Title:</label> </p> 
@@ -153,17 +154,17 @@ function toggleSection() {
 			<p><label for="outcome">Outcome:</label></p> 
 			<input type="number" id="outcome" name="outcome"></div>
 			<div class="inline-p">
-			<p><label for="text">Employee:</label></p> 
-			<select name="employee">
-			<option value="${employee.getIdEmployee} - ${employee.getName}"></option></select> </div>
-			<div><div class="inline-p">
-			<p><label for="text">Contract Type:</label></p> 
-			 <select name="contractType">
-			 <option value="${contractType.getDescription()}"></option></select> </div>
-			<div class="inline-p">
-			<p><label for="text">State Job Interview:</label></p> 
-			<select name="stateJobInterview">
-			<option value="${stateJobInterview.getTitle()}"></option></select></div> 
+<!-- 			<p><label for="text">Employee:</label></p>  -->
+<!-- 			<select name="employee"> -->
+<%-- 			<option value="${employee.getIdEmployee} - ${employee.getName}"></option></select> </div> --%>
+<!-- 			<div><div class="inline-p"> -->
+<!-- 			<p><label for="text">Contract Type:</label></p>  -->
+<!-- 			 <select name="contractType"> -->
+<%-- 			 <option value="${contractType.getDescription()}"></option></select> </div> --%>
+<!-- 			<div class="inline-p"> -->
+<!-- 			<p><label for="text">State Job Interview:</label></p>  -->
+<!-- 			<select name="stateJobInterview"> -->
+<%-- 			<option value="${stateJobInterview.getTitle()}"></option></select></div>  --%>
 		</div>
 		<br>
 		<div class="inline-p">
@@ -233,6 +234,6 @@ function toggleSection() {
 </div>
 	</form>
 	</div>	
-		</div>	</div>
+		</div>	
 </body>
 </html>
