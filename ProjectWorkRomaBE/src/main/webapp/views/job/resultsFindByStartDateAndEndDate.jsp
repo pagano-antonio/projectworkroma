@@ -45,7 +45,7 @@
 					<td>${jobOffer.getCompanyClient().getName()}</td>
 					<td>${jobOffer.getContractType().getTitle()}</td>
 					<td><a
-						href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+						href="${pageContext.request.contextPath}/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 							<button type="button">Update</button>
 					</a></td>
 					<td><a

@@ -53,13 +53,13 @@ public class CompanyClientCtr {
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
-	@GetMapping("/company/preUpdateByIdCompanyClient")
+	@GetMapping("/preUpdateByIdCompanyClient")
 	public String preUpdateByIdCompanyClient (Model model,@RequestParam Integer idCompanyClient) {
 		CompanyClient companyClient = companyClientRep.findById(idCompanyClient).orElse(null);
 			model.addAttribute("idCompanyClient", companyClient);
-			return "company/updateByIdCompanyClient";
+			return "updateByIdCompanyClient";
 	}
-	@PostMapping("/company/updateByIdCompanyClient")		
+	@PostMapping("/updateByIdCompanyClient")		
 	public String updateByIdCompanyClient(Model model,CompanyClient companyClient) {
 		companyClientRep.save(companyClient);	        
 	        return "success";  

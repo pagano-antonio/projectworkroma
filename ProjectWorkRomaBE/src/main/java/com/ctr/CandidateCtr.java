@@ -89,13 +89,13 @@ public class CandidateCtr {
 
 ////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
 
-	@GetMapping("/candidate/preUpdateByIdCandidate")
+	@GetMapping("/preUpdateByIdCandidate")
 	public String preUpdateByIdIdCandidate(Model model, @RequestParam Integer idCandidate) {
 		Candidate candidate = candidateRep.findById(idCandidate).orElse(null);
 		model.addAttribute("Candidate", candidate);
-		return "candidate/updateByIdCandidate";
+		return "updateByIdCandidate";
 	}
-	@PostMapping("/candidate/updateByIdCandidate")
+	@PostMapping("/updateByIdCandidate")
 	public String updateByIdCandidate(Model model, Candidate candidate) {
 		candidateRep.save(candidate);
 		return "success";

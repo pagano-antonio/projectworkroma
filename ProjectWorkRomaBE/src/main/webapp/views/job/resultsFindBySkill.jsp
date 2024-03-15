@@ -51,7 +51,7 @@
 <%--     <td>${skill.getIdSkill()}</td> --%>
 <%-- </c:forEach> --%>
 					<td><a
-						href="${pageContext.request.contextPath}/job/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
+						href="${pageContext.request.contextPath}/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
 							<button type="button">Update</button>
 					</a></td>
 					<td><a

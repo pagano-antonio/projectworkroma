@@ -60,7 +60,7 @@ public class EmployeeCtr {
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
-	@GetMapping("/company/preUpdateByIdEmployee")
+	@GetMapping("/preUpdateByIdEmployee")
 	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
 	    model.addAttribute("idEmployee", employee); 
@@ -69,7 +69,7 @@ public class EmployeeCtr {
 	    return "company/updateByIdEmployee";
 	}
 
-	@PostMapping("/company/updateByIdEmployee")
+	@PostMapping("/updateByIdEmployee")
 	public String updateByIdEmployee(Model model, @ModelAttribute("employee") Employee employee, @RequestParam Integer idEmployeeType) { // Aggiunto "@RequestParam" per idEmployeeType
 	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 	    employee.setEmployeeType(employeeType); 

@@ -43,7 +43,7 @@
               <li><a class="dropdown-item" href="/candidate/preFindBySkillCandidate">Find Candidate by Skill</a></li>
               <li><a class="dropdown-item" href="/candidate/preFindByOutcomeJobInterviewCandidate">Find Candidate by Outcome Job Interview </a></li>              
               <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Candidate</a></li>  
-              <li><a class="dropdown-item" href="/candidate/preDeleteIdCandidate">Delete Candidate</a></li>
+              <li><a class="dropdown-item" href="/candidate/preDeleteByIdCandidate">Delete Candidate</a></li>
               <li>
                 <hr class="dropdown-divider">
             </ul>
@@ -57,12 +57,11 @@
               <li><a class="dropdown-item" href="/job/preFindByTitleJobOffer">Find Job Offer by Title</a></li>
               <li><a class="dropdown-item" href="/job/preFindByCompanyClientJobOffer">Find Job Offer by Company Client</a></li>
               <li><a class="dropdown-item" href="/job/preFindByContractTypeJobOffer">Find Job Offer by Contract Type</a></li>
-              <li><a class="dropdown-item" href="/job/preFindByIdJobOfferSkillJobOffer">Find Job Offer by Id Job Skill</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByIdJobOfferSkillJobOffer">Find Job Offer by Skill</a></li>
               <li><a class="dropdown-item" href="/job/preFindByMaxRalJobOffer">Find Job Offer by Max Ral</a></li>
               <li><a class="dropdown-item" href="/job/preFindByMinRalJobOffer">Find Job Offer by Min Ral</a></li>
               <li><a class="dropdown-item" href="/job/preFindByStartDateAndEndaDateJobOffer">Find Job Offer by Start Date and End Date</a></li>
-              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Job Offer</a></li>
-              <li><a class="dropdown-item" href="/job/preDeleteIdJobOffer">Delete Job Offer</a></li>
+              <li><a class="dropdown-item" href="/job/preDeleteByIdJobOffer">Delete Job Offer</a></li>
               <li>
             </ul>  
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
