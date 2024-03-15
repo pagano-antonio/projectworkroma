@@ -48,12 +48,12 @@ public class CandidateCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/candidate/preAddCandidateForm")
+	@GetMapping("/preAddCandidateForm")
 	public String preAddCandidateForm(Model model) {
-		return "candidate/addCandidateForm";
+		return "addCandidateForm";
 	}
 
-	@PostMapping("/candidate/addCandidateForm")
+	@PostMapping("/addCandidateForm")
 	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
 		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,EducationDegreeType educationDegreeType) {
 		List<EducationDegreeType> educationDegree = educationDegreeTypeRep.findAll();

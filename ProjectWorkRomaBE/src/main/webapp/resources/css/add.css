@@ -1,58 +1,115 @@
 @charset "ISO-8859-1";
 /*css reset*/
-
-*{
-    box-sizing: border-box;
+* {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	
 }
 
-body{
-	background-image: url('Immagini/backgroundimg.png');
-	background-color: #d8cdf3;
+.container {
+	margin: 0 auto;
+	max-width: 740px;
+}
+
+body {
+    background-color: #d8cdf3;
+/* 	background: url("Immagini/backgroundimg.png"); */
 	display: flex;
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
-.box1{
-	background-color:rgba(255, 255, 255, 0.6);
+h1 {
+	font-family: "Poppins", sans-serif;
+	font-size: 30px;
+	padding: 16px;
+	cursor: pointer;
+}
+
+hr  {
+	border: none;
+	height: 2px;
+	background-color: #dcdced;
+	margin: 30px 0;
+}
+
+.inline-p {
+        display: inline-block;  
+        margin-right: 10px;  
+    }
+.card {
+	background-color: rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 50px;
-    border-radius: 20px;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:25px;
-    
-}
-    
-.buttonSubmit{
-	width: 40%;
-  	padding: 10px;
-  	background-color: #d8cdf3;
-  	border: none;
-  	border-radius: 6px;
-  	color: #fff;
+	padding: 50px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 50px;
 }
 
-.buttonReset{
-	width: 40%;
-  	padding: 10px;
-  	margin-top: 15px;
-  	background-color: transparent;
-  	border: none;
-  	border-radius: 3px;
-  	color: black;
-  	text-decoration: underline;	
-}
-input,textarea, select{
-	padding:20px;
-	border-radius:16px;
-	border:3px;
+.box {
+	justify-content: space-around;
+	justify-content: center;
 }
 
+.box1 {
+	justify-content: space-around;
+	justify-content: flex-end;
+}
+
+.buttonSubmit {
+	width: 40%;
+	padding: 10px;
+	background-color: #d8cdf3;
+	border: none;
+	border-radius: 6px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.buttonReset {
+	width: 40%;
+	padding: 10px;
+	margin-top: 15px;
+	background-color: transparent;
+	border: none;
+	border-radius: 3px;
+	color: #808080;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+input, textarea, select {
+	padding: 20px;
+	border-radius: 16px;
+	border: 3px;
+	justify-content: space-around;
+}
+
+label, input, select {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+thead {
+	color: #ffffff;
+	background-color: #d8cdf3;;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 20px;
+}
+
+tbody {
+	background-color: #ffffff;
+	border: 6px;
+	border-radius: 20px;
+}
