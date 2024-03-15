@@ -13,7 +13,7 @@
 
 body {
     background-color: #d8cdf3;
-/* 	background: url("Immagini/backgroundimg.png"); */
+	background-image: url("Immagini/backgroundimg.png");
 	display: flex;
 	flex-direction: column;
 	align-items: center;
