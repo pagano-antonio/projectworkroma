@@ -10,7 +10,7 @@
 
 body{
 	background-image: url('Immagini/backgroundimg.png');
-	background-color: #d8cdf3;
+	
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
