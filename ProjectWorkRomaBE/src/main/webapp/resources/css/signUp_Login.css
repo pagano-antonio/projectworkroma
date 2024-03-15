@@ -10,7 +10,6 @@
 
 body{
 	background-image: url('Immagini/backgroundimg.png');
-	
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -71,7 +70,7 @@ body{
   	background-color: transparent;
   	border: none;
   	border-radius: 3px;
-  	color: black;
+  	color: #666666;
   	text-decoration: underline;	
 }
 
