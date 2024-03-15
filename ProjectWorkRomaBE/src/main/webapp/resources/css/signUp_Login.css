@@ -82,13 +82,14 @@ body{
 .title{
 	text-align: left;
 	text-wrap: wrap;
+	color:#8000ff;
+	font-family: "Poppins";
 }
 
 .imageLogin{
 	width: 250px;
 	height: 250px;
 }
-
 
 
 

@@ -17,19 +17,20 @@ public class LoginCtr {
 	
 //////////////////// LOGIN ///////////////////////////////////////////
 	
-	@GetMapping("/preLogin")    
+	@GetMapping("/preLogin")
 	public String preLogin(Model model) {
 		return "preLogin";
 	}
-@GetMapping("/login")
-public String vaiAlLogin(@RequestParam String username, @RequestParam String password) {
-	Employee employee = employeeRep.findByUsernameAndPassword(username, password);
-	if (employee != null) {
-		return "home";
-	} else {
-		return "error"; 
+
+	@GetMapping("/login")
+	public String vaiAlLogin(@RequestParam String username, @RequestParam String password) {
+		Employee employee = employeeRep.findByUsernameAndPassword(username, password);
+		if (employee != null) {
+			return "home";
+		} else {
+			return "error";
+		}
+
 	}
-  
-}
 
 }
