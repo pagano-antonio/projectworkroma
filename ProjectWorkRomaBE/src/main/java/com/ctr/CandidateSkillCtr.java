@@ -85,14 +85,14 @@ public class CandidateSkillCtr {
 
 	@GetMapping("/candidate/preFindByIdCandidateSkill")
 	public String preFindByIdCandidateSkill(Model model) {
-		return "findByIdCandidateSkill";
+		return "candidate/findByIdCandidateSkill";
 	}
 
 	@GetMapping("/candidate/findByIdCandidateSkill")
-	public String findByCity(Model model, Integer idCandidateSkill) {
-		List<Candidate> candidate = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
-		model.addAttribute("city", candidate);
-		if (idCandidateSkill != null) {
+	public String findByIdCandidateSkill(Model model, Integer idCandidateSkill) {
+		List<CandidateSkill> candidateSkill = candidateSkillRep.findByIdCandidateSkill(idCandidateSkill);
+		model.addAttribute("idCandidateSkill", candidateSkill);
+		if (candidateSkill != null) {
 			return "candidate/resultsFindByIdCandidateSkill";
 		} else {
 			String errorMessage = "ops!";
