@@ -36,42 +36,44 @@ function toggleSection() {
             section.style.display = "none";
         }
     }
+    
+ 
 </script>
 </head>
 <body>
-<%-- <jsp:include page="sidebar.jsp" /> --%>
-<div class="container">
-<div class="card">
+<jsp:include page="sidebar.jsp" />
+<div class="container1">
+<div class="card1">
 <form class="formAdd" action="${pageContext.request.contextPath}/addCandidateForm" method="POST"> 
 
-	<div class="box">
-	<h1>Sign Up</h1>
+	<div class="box1">
+	<h1>Candidate</h1>
 		<div>
-	    <div class="inline-p">
+	    <div class="inline-p1">
         <p><label for="name">Name:</label></p>
         <input type="text" id="name" name="name"></div>
-        <div class="inline-p">
+        <div class="inline-p1">
         <p><label for="surname">Surname:</label></p>
         <input type="text" id="surname" name="surname"></div>
-        <div class="inline-p">
+        <div class="inline-p1">
         <p><label for="birthday">Birthday:</label></p>
         <input type="date" id="birthday" name="birthday"></div>
 		<br>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="birthPlace">Birth Place:</label> </p>
 			<input type="text"id="birthPlace" name="birthPlace"> </div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="city">City:</label></p>
 			<input type="text" id="city" name="city"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="address">Address:</label> </p>
 			<input type="text" id="address"name="address"></div>
 		</div>
 		<br>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="email">Email:</label></p> 
 			<input type="email" id="email" name="email"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="phone">Phone Number:</label></p> 
 			<input type="tel" id="phone" name="phone"></div>
 		</div>
@@ -81,23 +83,23 @@ function toggleSection() {
 			<button class="buttonReset"type="reset">Reset</button>
 		</div>
 <hr>
-	<div class="box">	
+	<div class="box1">	
 	<h1>Education</h1>
 	<div>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="schoolName">School Name:</label></p>  
 			<input type="text" id="schoolName" name="schoolName"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="place">Place:</label></p> 
 			<input type="text" id="place" name="place"></div>
 		<br>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="date">Graduation Date:</label></p>  
 			<input type="date" id="date"name="date"></div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="finalGrade">Final Grade:</label></p>  
 			<input type="text" id="finalGrade" name="finalGrade"> </div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="description">Education degree type:</label></p>
             <select name="educationDegreeType">
             <c:forEach var="educationDegreeType" items="${educationDegreeType}">
@@ -113,27 +115,27 @@ function toggleSection() {
 		</div>
 	</div>
 <hr>
-	<div class="box">
+	<div class="box1">
 	<h1>Work Experience</h1>
 		<div>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="title">Title:</label> </p> 
 			<input type="text" id="title"name="title" > </div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="description">Description:</label> </p> 
 			<input type="text"id="description" name="description"></div>
-			<div class="inline-p"> 
+			<div class="inline-p1"> 
 			<p><label for="company">Company:</label></p>  
 			<input type="text" id="company"name="company"></div> 
 			</div>
 			<div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="startDate">StartDate:</label> </p> 
 			<input type="date" id="startDate" name="startDate"> </div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="endDate">End Date:</label> </p> 
 			<input type="date" id="endDate"	name="endDate"></div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="city">City:</label> </p> 
 			<input type="text" id="city" name="city"></div>
 		</div>
@@ -144,16 +146,16 @@ function toggleSection() {
 		</div>
 	</div>
 	<hr>
-	<div class="box">
+	<div class="box1">
 	<h1 onclick="toggleSection()"> Job Interview    &#129171;</h1>
 <div class="hidden" id="jobInterview">
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="date">Date:</label></p> 
 			<input type="date" id="date"name="date"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="outcome">Outcome:</label></p> 
 			<input type="number" id="outcome" name="outcome"></div>
-			<div class="inline-p">
+			<div class="inline-p1">
 <!-- 			<p><label for="text">Employee:</label></p>  -->
 <!-- 			<select name="employee"> -->
 <%-- 			<option value="${employee.getIdEmployee} - ${employee.getName}"></option></select> </div> --%>
@@ -167,9 +169,9 @@ function toggleSection() {
 <%-- 			<option value="${stateJobInterview.getTitle()}"></option></select></div>  --%>
 		</div>
 		<br>
-		<div class="inline-p">
+		<div class="inline-p1">
 			<p><label for="notes">Notes:</label></p>
-			<textarea name="notes" row="8" cols="80">></textarea>
+			<textarea name="notes" row="8" cols="80"></textarea>
 		</div>
 		<div class="submit">
 			<button class="buttonSubmit"type="submit">Submit</button>
@@ -180,20 +182,20 @@ function toggleSection() {
 	<hr>
 <h1 onclick="toggleSection1()"> Commercial Data    &#129171;</h1>
 <div class="hidden" id="commercialData">
-		<div class="box">
-		<div class="inline-p">
+		<div class="box1">
+		<div class="inline-p1">
 			<p><label for="businessCost">Business Cost:</label></p>
 			<input type="number"id="businessCost" name="businessCost"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="currentRal">CurrentRal:</label></p>
 			<input type="number"id="currentRal" name="currentRal"></div> 
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="monthRefund">Month Refund:</label></p>
 			<input type="number" id="monthRefund" name="monthRefund"></div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="proposedRal">ProposedRal:</label> </p>
 			<input type="number" id="proposedRal" name="proposedRal"> </div>
-			<div class="inline-p">
+			<div class="inline-p1">
 			<p><label for="subsidyFlag">Subsidy Flag:</label> </p>
 			<input type="number" id="subsidyFlag" name="subsidyFlag"></div>
 		</div>
@@ -209,7 +211,7 @@ function toggleSection() {
 		</div>
 	</div>
 	<hr>
-	<div class="box">
+	<div class="box1">
 <h1 onclick="toggleSection2()">SKill &#129171;</h1>
 <div class="hidden" id="skill">
     <table>

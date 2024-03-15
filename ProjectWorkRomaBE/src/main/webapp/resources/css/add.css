@@ -6,9 +6,9 @@
 	padding: 0;
 }
 
-.container {
+.container1 {
 	margin: 0 auto;
-	max-width: 740px;
+	max-width: 800px;
 }
 
 body {
@@ -34,11 +34,11 @@ hr  {
 	margin: 30px 0;
 }
 
-.inline-p {
+.inline-p1 {
         display: inline-block;  
         margin-right: 10px;  
     }
-.card {
+.card1 {
 	background-color: rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -51,15 +51,11 @@ hr  {
 	gap: 50px;
 }
 
-.box {
+.box1 {
 	justify-content: space-around;
 	justify-content: center;
 }
 
-.box1 {
-	justify-content: space-around;
-	justify-content: flex-end;
-}
 
 .buttonSubmit {
 	width: 40%;
@@ -93,11 +89,13 @@ input, textarea, select {
 label, input, select {
 	display: inline-block;
 	vertical-align: middle;
+	width:220px;
 }
 
 table {
 	width: 100%;
 	margin-bottom: 20px;
+	border-radius: 20px;
 }
 
 thead {
@@ -105,7 +103,7 @@ thead {
 	background-color: #d8cdf3;;
 	font-size: 16px;
 	text-align: center;
-	border-radius: 20px;
+	
 }
 
 tbody {

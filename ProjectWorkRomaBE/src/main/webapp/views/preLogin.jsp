@@ -21,8 +21,10 @@
     <p>Password:</p> 
     <input type="password" name="password" class="inputField"/>
     <input type="submit" value="Login" class="buttonLogin"/>
-    <button class="buttonRegister">Register</button>
+    
 </form>
+<a href="${pageContext.request.contextPath}/preAddEmployee">
+    <button class="buttonRegister">Sign up</button>
 </div>
 <div class="boxTitle">
 	<h2 class="title">

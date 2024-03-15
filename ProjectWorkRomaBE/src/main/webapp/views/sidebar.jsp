@@ -24,20 +24,25 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bisogna Decidere</a>
-          </li>
-          
-          
+           
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Candidate
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/candidate/preAddCandidate">Add Candidate</a></li>
-              <li><a class="dropdown-item" href="/candidate/preFindByIdCandidate">Find Candidate </a></li>
+              <li><a class="dropdown-item" href="/preAddCandidateForm">Add Candidate</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByIdCandidate">Find Candidate by ID </a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindBySurnameCandidate">Find Candidate by Surname </a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByPhoneCandidate">Find Candidate by Phone Number</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByCityCandidate">Find Candidate by City</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByEducationDegreeTypeCandidate">Find Candidate by Education Degree Type</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByIdCandidateCommercialData">Find Candidate by Commercial Data</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByIdCandidateSkill">Find Candidate by ID Skill</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindBySkillCandidate">Find Candidate by Skill</a></li>
+              <li><a class="dropdown-item" href="/candidate/preFindByOutcomeJobInterviewCandidate">Find Candidate by Outcome Job Interview </a></li>              
+              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Candidate</a></li>  
               <li><a class="dropdown-item" href="/candidate/preDeleteIdCandidate">Delete Candidate</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -47,7 +52,16 @@
             </a>
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/job/preAddJobOffer">Add Job Offers</a></li>
+              
               <li><a class="dropdown-item" href="/job/preFindByIdJobOffer">Find Job Offer</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByTitleJobOffer">Find Job Offer by Title</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByCompanyClientJobOffer">Find Job Offer by Company Client</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByContractTypeJobOffer">Find Job Offer by Contract Type</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByIdJobOfferSkillJobOffer">Find Job Offer by Id Job Skill</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByMaxRalJobOffer">Find Job Offer by Max Ral</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByMinRalJobOffer">Find Job Offer by Min Ral</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByStartDateAndEndaDateJobOffer">Find Job Offer by Start Date and End Date</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Job Offer</a></li>
               <li><a class="dropdown-item" href="/job/preDeleteIdJobOffer">Delete Job Offer</a></li>
               <li>
             </ul>  
@@ -56,8 +70,22 @@
             </a>
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/company/preAddCompanyClient">Add Company</a></li>
-              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Find Company</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Find Company by ID</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByNameCompanyClient">Find Company by name</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByCityCompanyClient">Find Company by city</a></li>
+             <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Company</a></li>
               <li><a class="dropdown-item" href="/company/preDeleteIdCompanyClient">Delete Company</a></li>
+              <li>
+                </ul>  
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Employee
+            </a>
+                <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/preAddEmployee">Add Employee</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByIdEmployee">Find Employee by ID</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByIdEmployeeType">Find Employee by type</a></li>
+              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Employee</a></li>
+              <li><a class="dropdown-item" href="/company/preDeleteByIdEmployee">Delete Employee</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>

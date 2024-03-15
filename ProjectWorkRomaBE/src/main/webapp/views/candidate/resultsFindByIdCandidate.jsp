@@ -7,13 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results Find Candidate By Id Candidate</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<div class="container">
-    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
-    <span>YOUR DATA</span>
-</div>
+<div class="container1">
+<div class="card">
 <table>
     <thead>
         <tr>
@@ -56,5 +54,7 @@
         </c:forEach>
     </tbody>
 </table>
+</div>
+</div>
 </body>
 </html>

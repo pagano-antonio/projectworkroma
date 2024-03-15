@@ -27,15 +27,15 @@ public class EmployeeCtr {
 
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/company/preAddEmployee")
+	@GetMapping("/preAddEmployee")
 	public String preAddEmployee(Model model) {
-		return "company/addEmployee";
+		return "addEmployee";
 	}
 
-	@PostMapping("/company/addEmployee")
+	@PostMapping("/addEmployee")
 	public String addEmployee(Model model, Employee e) {
 		employeeRep.save(e);
-		return "success";
+		return "preLogin";
 	}
 
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
