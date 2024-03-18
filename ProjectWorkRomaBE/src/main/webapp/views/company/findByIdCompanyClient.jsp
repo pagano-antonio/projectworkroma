@@ -15,7 +15,7 @@
 <form action="${pageContext.request.contextPath}/company/findByIdCompanyClient" method="GET">
 	<div class="data-group">
 		<label for="idCompanyClient">Id Company Client:</label>
-		<input type="number" id="idCompanyClientl" name="idCompanyClient">
+		<input type="number" id="idCompanyClient" name="idCompanyClient">
 	</div>
 	<div>
 		<input type="submit" value="Submit">

@@ -71,7 +71,7 @@
               <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Find Company by ID</a></li>
               <li><a class="dropdown-item" href="/company/preFindByNameCompanyClient">Find Company by name</a></li>
               <li><a class="dropdown-item" href="/company/preFindByCityCompanyClient">Find Company by city</a></li>
-             <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Company</a></li>
+             <li><a class="dropdown-item" href="/preUpdateByIdCompanyClient">Update Company</a></li>
               <li><a class="dropdown-item" href="/company/preDeleteIdCompanyClient">Delete Company</a></li>
               <li>
                 </ul>  
