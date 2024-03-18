@@ -63,19 +63,21 @@ public class EmployeeCtr {
 	@GetMapping("/preUpdateByIdEmployee")
 	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
-	    model.addAttribute("idEmployee", employee); 
-	    List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
-	    model.addAttribute("listIdEmployeeType", employeeType);
-	    return "company/updateByIdEmployee";
+	    if (employee != null) {
+	        List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
+	        model.addAttribute("idEmployee", employee); 
+	        model.addAttribute("listIdEmployeeType", employeeType);
+	    }
+	    return "updateByIdEmployee";
 	}
 
 	@PostMapping("/updateByIdEmployee")
-	public String updateByIdEmployee(Model model, @ModelAttribute("employee") Employee employee, @RequestParam Integer idEmployeeType) { // Aggiunto "@RequestParam" per idEmployeeType
+	public String updateByIdEmployee(@ModelAttribute("employee") Employee employee, @RequestParam Integer idEmployeeType) {
 	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 	    employee.setEmployeeType(employeeType); 
 	    employeeRep.save(employee);
 	    return "success";
-	}
+	} 
 ////////////////////////////////// FIND BY ID ///////////////////////////////////////////////////////////
 
 	@GetMapping("/company/preFindByIdEmployee")
@@ -86,8 +88,8 @@ public class EmployeeCtr {
 	@GetMapping("/company/findByIdEmployee")
 	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
-		model.addAttribute("EmployeeId", employee);
-		if (employee != null) {
+		model.addAttribute("idEmployee", employee);
+		if (employee != null) { 
 			return "company/resultsFindByIdEmployee";
 		} else { 
 			String errorMessage = "ops!";

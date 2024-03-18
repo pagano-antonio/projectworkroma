@@ -18,8 +18,8 @@
 			width="200" alt="Weoplespace Sticker"> <span>YOUR DATA</span>
 	</div>
 	<%
-	Employee employee = (Employee) request.getAttribute("EmployeeId");
-	%>
+Employee employee = (Employee) request.getAttribute("idEmployee"); 
+%>
 
 	<table>
 		<thead>
@@ -46,7 +46,7 @@
 				<td><%=employee.getSurname()%></td>
 				<td><%=employee.getUsername()%></td>
 				<td><a
-					href="${pageContext.request.contextPath}/company/preUpdateByIdEmployee?idEmployee=${employee.idEmployee}">
+					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${employee.idEmployee}">
 						<button type="button">Update</button>
 				</a></td>
 				<td><a
