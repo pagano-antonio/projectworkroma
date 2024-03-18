@@ -89,6 +89,7 @@
 					
 <div class="hidden" id="candidate">
 	  <div class="inline-p1">
+	  <input type="number" id="idCandidate" name="idCandidate" value="<%=request.getParameter("idCandidate") %>"hidden>
 			<p>
 				<label for="name">Name:</label>
 			</p>
@@ -357,8 +358,8 @@
 							<tbody>
 							 <% for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) { %>
 								<tr>
-									<td><%= candidateSkill.getSkill().getTitle()%></td>
-									<td><%= candidateSkill.getSkill().getDescription()%></td>
+									<td><input type="text" id="title" name="title" value="<%= candidateSkill.getSkill().getTitle()%>"></td>
+									<td><input type="text" id="description" name="description" value="<%= candidateSkill.getSkill().getDescription()%>"></td>
 								</tr>
 								 <% } %>
 							</tbody>

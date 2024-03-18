@@ -109,7 +109,7 @@ public class CandidateCtr {
 ////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
 
 	@GetMapping("/preUpdateByIdCandidate")
-	public String preUpdateByIdIdCandidate(Model model, @RequestParam Integer idCandidate) {
+	public String preUpdateByIdCandidate(Model model, @RequestParam Integer idCandidate) {
 		Candidate candidate = candidateRep.findById(idCandidate).orElse(null);
 		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
         model.addAttribute("listEducationDegreeType", listEducationDegreeType);
