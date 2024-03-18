@@ -33,6 +33,5 @@
 	<img class="imageLogin" src="resources/css/Immagini/preLogin.gif" alt="preLogin" width="600" height="400">
 </div>
 </div>
-
 </body>
 </html>

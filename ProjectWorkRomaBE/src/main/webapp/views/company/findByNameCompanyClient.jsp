@@ -1,27 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/findBy.css">
-<title>Find by Name Company Client</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Company Client by name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
-	<div class="container">
-    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
-    <span>FIND YOUR DATA</span>
-</div>
-<form action="${pageContext.request.contextPath}/company/findByNameCompanyClient" method="GET">
-	<div class="data-group">
-		<label for="nameCompanyClient">Name Company Client:</label>
-		<input type="text" id="nameCompanyClient" name="nameCompanyClient">
+	<div class="card">
+		<div class="boxFind">
+			<p class="findTitle">Find Company Client</p>
+			<form class="formFind"
+				action="${pageContext.request.contextPath}/company/findByNameCompanyClient"
+				method="GET">
+				<p>
+					<label for="nameCompanyClient"> Company Client name:</label>
+				</p>
+				<input class="inputField" type="text" id="nameCompanyClient"
+					name="nameCompanyClient">
+				<div>
+					<button class="buttonSubmit" type="submit">Submit</button>
+					<button class="buttonReset" type="reset">Reset</button>
+				</div>
+			</form>
+		</div>
+		<div class="boxTitle">
+			<h2 class="title">FIND DATA</h2>
+			<img class="imageLogin"
+				src="webapp/resources/css/Immagini/preLogin.gif" alt="preLogin"
+				width="600" height="400">
+		</div>
 	</div>
-	<div>
-		<input type="submit" value="Submit">
-		<input type="reset" value="Reset">
-	</div>
-
-</form>
 </body>
 </html>
