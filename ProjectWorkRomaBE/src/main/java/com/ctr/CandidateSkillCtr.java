@@ -99,6 +99,8 @@ public class CandidateSkillCtr {
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";
 		}
-
 	}
+	
+	
+	
 }
