@@ -79,7 +79,6 @@
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="minRal">Min Ral:</label>
 					</p>
 					<input type="number" id="minRal" name="minRal"
 						value="<%=jobOffer.getMinRal()%>">

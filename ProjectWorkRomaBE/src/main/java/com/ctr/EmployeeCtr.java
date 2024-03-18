@@ -70,7 +70,7 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/updateByIdEmployee")
-	public String updateByIdEmployee(Model model,@ModelAttribute("employee") Employee employee, Integer idEmployeeType) {
+	public String updateByIdEmployee(Model model,@ModelAttribute ("employee") Employee employee, Integer idEmployeeType) {
 	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 	    employee.setEmployeeType(employeeType); 
 	    employeeRep.save(employee);
