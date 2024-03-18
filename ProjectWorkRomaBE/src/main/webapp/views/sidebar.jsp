@@ -33,6 +33,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/preAddCandidateForm">Add Candidate</a></li>
+              <hr class="dropdown-divider">
               <li><a class="dropdown-item" href="/candidate/preFindByIdCandidate">Find Candidate by ID </a></li>
               <li><a class="dropdown-item" href="/candidate/preFindBySurnameCandidate">Find Candidate by Surname </a></li>
               <li><a class="dropdown-item" href="/candidate/preFindByPhoneCandidate">Find Candidate by Phone Number</a></li>
@@ -42,22 +43,20 @@
               <li><a class="dropdown-item" href="/candidate/preFindByIdCandidateSkill">Find Candidate by ID Skill</a></li>
               <li><a class="dropdown-item" href="/candidate/preFindBySkillCandidate">Find Candidate by Skill</a></li>
               <li><a class="dropdown-item" href="/candidate/preFindByOutcomeJobInterviewCandidate">Find Candidate by Outcome Job Interview </a></li>              
-              <li>
-                <hr class="dropdown-divider">
             </ul>
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Job Offers
             </a>
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/job/preAddJobOffer">Add Job Offers</a></li>
-              
+              <hr class="dropdown-divider">
               <li><a class="dropdown-item" href="/job/preFindByTitleJobOffer">Find Job Offer by Title</a></li>
               <li><a class="dropdown-item" href="/job/preFindByCompanyClientJobOffer">Find Job Offer by Company Client</a></li>
               <li><a class="dropdown-item" href="/job/preFindByContractTypeJobOffer">Find Job Offer by Contract Type</a></li>
               <li><a class="dropdown-item" href="/job/preFindByIdJobOfferSkillJobOffer">Find Job Offer by Skill</a></li>
               <li><a class="dropdown-item" href="/job/preFindByMaxRalJobOffer">Find Job Offer by Max Ral</a></li>
               <li><a class="dropdown-item" href="/job/preFindByMinRalJobOffer">Find Job Offer by Min Ral</a></li>
-              <li><a class="dropdown-item" href="/job/preFindByStartDateAndEndaDateJobOffer">Find Job Offer by Start Date and End Date</a></li>
+              <li><a class="dropdown-item" href="/job/preFindByStartDateAndEndDate">Find Job Offer by Start Date and End Date</a></li>
               <li>
             </ul>  
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,6 +64,7 @@
             </a>
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/company/preAddCompanyClient">Add Company</a></li>
+              <hr class="dropdown-divider">
               <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Find Company by ID</a></li>
               <li><a class="dropdown-item" href="/company/preFindByNameCompanyClient">Find Company by name</a></li>
               <li><a class="dropdown-item" href="/company/preFindByCityCompanyClient">Find Company by city</a></li>
@@ -75,15 +75,12 @@
             </a>
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/preAddEmployee">Add Employee</a></li>
+              <hr class="dropdown-divider">
               <li><a class="dropdown-item" href="/company/preFindByIdEmployee">Find Employee by ID</a></li>
               <li><a class="dropdown-item" href="/company/preFindByIdEmployeeType">Find Employee by type</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
+                
             </ul>
-          </li>
-        
-        </ul>
+
         <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>

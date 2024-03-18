@@ -13,12 +13,13 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+<jsp:include page="sidebarFind.jsp" />
 	<div class="card">
 		<div class="boxFind">
-			<p class="findTitle">Find Candidate by surname</p>
+			<p class="findTitle">Find Candidate</p>
 			<form class="formFind" action="${pageContext.request.contextPath}/candidate/findBySurnameCandidate" method="GET">  
    <p>
-        <label for="surname">Surname Candidate:</label></p>
+        <label for="surname">Surname:</label></p>
         <input class="inputField" type="text" id="surname" name="surname">
   	<button class="buttonSubmit" type="submit">Submit</button>
 				<button class="buttonReset" type="reset">Reset</button>

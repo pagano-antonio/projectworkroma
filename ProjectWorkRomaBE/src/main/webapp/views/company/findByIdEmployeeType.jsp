@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Find Employee Type by ID</title>
@@ -14,14 +15,18 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+	<jsp:include page="sidebarFind.jsp" />
 	<div class="card">
 		<div class="boxFind">
 			<p class="findTitle">Find Employee Type</p>
-			<form class="formFind" action="${pageContext.request.contextPath}/company/findByIdEmployeeType" method="GET">  
-    <p>
-        <label for="title">Employee Type title:</label></p>
-        <input class="inputField" type="text" id="title" name="title">
-   		<div>
+			<form class="formFind"
+				action="${pageContext.request.contextPath}/company/findByIdEmployeeType"
+				method="GET">
+				<p>
+					<label for="title">Employee Type:</label>
+				</p>
+				<input class="inputField" type="text" id="title" name="title" placeholder="Insert title">
+				<div>
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>
 				</div>

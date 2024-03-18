@@ -11,9 +11,10 @@
  	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+<jsp:include page="sidebarFind.jsp" />
 <div class="card">
 <div class="boxFind">
-<p class="findTitle">Find Candidate by City</p>
+<p class="findTitle">Find Candidate</p>
 <form class="formFind" action="${pageContext.request.contextPath}/candidate/findByCityCandidate" method="GET">  
       <p><label for="city">City:</label></p>
         <input class="inputField" type="text" id="city" name="city">

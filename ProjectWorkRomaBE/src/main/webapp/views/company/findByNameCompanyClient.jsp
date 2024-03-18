@@ -15,6 +15,7 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+ <jsp:include page="sidebarFind.jsp" />
 	<div class="card">
 		<div class="boxFind">
 			<p class="findTitle">Find Company Client</p>

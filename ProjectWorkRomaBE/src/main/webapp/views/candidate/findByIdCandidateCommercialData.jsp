@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +14,20 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
-<div class="card">
+	<jsp:include page="sidebarFind.jsp" />
+	<div class="card">
 		<div class="boxFind">
-			<p class="findTitle">Find Candidate by Commercial Data</p>
-			<form class="formFind" action="${pageContext.request.contextPath}/candidate/findByIdCandidateCommercialData" method="GET">  
-<p>
-        <label for="idCandidateCommercialData">Candidate Commercial ID:</label></p>
-        <input class="inputField" type="number" id="idCandidateCommercialData" name="idCandidateCommercialData">
-    
+			<p class="findTitle">Find Candidate </p>
+			<form class="formFind"
+				action="${pageContext.request.contextPath}/candidate/findByIdCandidateCommercialData"
+				method="GET">
+				<p>
+					<label for="idCandidateCommercialData">Candidate Commercial
+						ID:</label>
+				</p>
+				<input class="inputField" type="number"
+					id="idCandidateCommercialData" name="idCandidateCommercialData" >
+
 				<button class="buttonSubmit" type="submit">Submit</button>
 				<button class="buttonReset" type="reset">Reset</button>
 			</form>

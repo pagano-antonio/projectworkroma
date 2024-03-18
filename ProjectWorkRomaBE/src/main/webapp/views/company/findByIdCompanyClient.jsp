@@ -15,6 +15,7 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+	<jsp:include page="sidebarFind.jsp" />
 	<div class="card">
 		<div class="boxFind">
 			<p class="findTitle">Find Company Client</p>
@@ -22,7 +23,7 @@
 				action="${pageContext.request.contextPath}/company/findByIdCompanyClient"
 				method="GET">
 				<p>
-					<label for="idCompanyClient">Id Company Client:</label>
+					<label for="idCompanyClient">Company Client ID:</label>
 				</p>
 				<input class="inputField" type="number" id="idCompanyClient"
 					name="idCompanyClient">

@@ -14,9 +14,10 @@
 	href="${pageContext.request.contextPath}/resources/css/findBy.css">
 </head>
 <body>
+ <jsp:include page="sidebarFind.jsp" />
 	<div class="card">
 		<div class="boxFind">
-			<p class="findTitle">Find Candidate by Skill</p>
+			<p class="findTitle">Find Candidate</p>
 			<form class="formFind"action="${pageContext.request.contextPath}/candidate/findByIdCandidateSkill" method="GET">
 
 		<p><label for="idCandidateSkill">Candidate Skill ID:</label></p>
