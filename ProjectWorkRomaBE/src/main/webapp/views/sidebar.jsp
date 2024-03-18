@@ -42,8 +42,6 @@
               <li><a class="dropdown-item" href="/candidate/preFindByIdCandidateSkill">Find Candidate by ID Skill</a></li>
               <li><a class="dropdown-item" href="/candidate/preFindBySkillCandidate">Find Candidate by Skill</a></li>
               <li><a class="dropdown-item" href="/candidate/preFindByOutcomeJobInterviewCandidate">Find Candidate by Outcome Job Interview </a></li>              
-              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Candidate</a></li>  
-              <li><a class="dropdown-item" href="/candidate/preDeleteByIdCandidate">Delete Candidate</a></li>
               <li>
                 <hr class="dropdown-divider">
             </ul>
@@ -60,7 +58,6 @@
               <li><a class="dropdown-item" href="/job/preFindByMaxRalJobOffer">Find Job Offer by Max Ral</a></li>
               <li><a class="dropdown-item" href="/job/preFindByMinRalJobOffer">Find Job Offer by Min Ral</a></li>
               <li><a class="dropdown-item" href="/job/preFindByStartDateAndEndaDateJobOffer">Find Job Offer by Start Date and End Date</a></li>
-              <li><a class="dropdown-item" href="/job/preDeleteByIdJobOffer">Delete Job Offer</a></li>
               <li>
             </ul>  
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,8 +68,7 @@
               <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Find Company by ID</a></li>
               <li><a class="dropdown-item" href="/company/preFindByNameCompanyClient">Find Company by name</a></li>
               <li><a class="dropdown-item" href="/company/preFindByCityCompanyClient">Find Company by city</a></li>
-             <li><a class="dropdown-item" href="/company/preDeleteIdCompanyClient">Delete Company</a></li>
-              <li>
+             <li>
                 </ul>  
                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Employee
@@ -81,8 +77,6 @@
               <li><a class="dropdown-item" href="/preAddEmployee">Add Employee</a></li>
               <li><a class="dropdown-item" href="/company/preFindByIdEmployee">Find Employee by ID</a></li>
               <li><a class="dropdown-item" href="/company/preFindByIdEmployeeType">Find Employee by type</a></li>
-              <li><a class="dropdown-item" href="/company/preFindByIdCompanyClient">Update Employee</a></li>
-              <li><a class="dropdown-item" href="/company/preDeleteByIdEmployee">Delete Employee</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
