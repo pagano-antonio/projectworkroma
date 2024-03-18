@@ -24,7 +24,7 @@
     
 </form>
 <a href="${pageContext.request.contextPath}/preAddEmployee">
-    <button class="buttonRegister">Sign up</button>
+    <button class="buttonRegister">Sign up</button></a>
 </div>
 <div class="boxTitle">
 	<h2 class="title">
