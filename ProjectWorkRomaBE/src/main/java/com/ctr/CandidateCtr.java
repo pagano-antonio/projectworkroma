@@ -111,7 +111,15 @@ public class CandidateCtr {
 	@GetMapping("/preUpdateByIdCandidate")
 	public String preUpdateByIdIdCandidate(Model model, @RequestParam Integer idCandidate) {
 		Candidate candidate = candidateRep.findById(idCandidate).orElse(null);
-		model.addAttribute("Candidate", candidate);
+		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
+        model.addAttribute("listEducationDegreeType", listEducationDegreeType);
+        List<Employee> listEmployee = employeeRep.findAll();
+        model.addAttribute("listEmployee", listEmployee);
+        List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
+        model.addAttribute("listStateJobInterview", listStateJobInterview);
+        List<ContractType> listContractType= contractTypeRep.findAll();
+        model.addAttribute("listContractType", listContractType);
+		model.addAttribute("idCandidate", candidate);
 		return "updateByIdCandidate";
 	}
 	@PostMapping("/updateByIdCandidate")
@@ -131,7 +139,7 @@ public class CandidateCtr {
 	@GetMapping("/candidate/findByIdCandidate")
 	public String findByIdCandidate(Model model, Integer idCandidate) {
 		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
-		model.addAttribute("IdCandidate", candidate);
+		model.addAttribute("idCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsFindByIdCandidate";
 		} else {

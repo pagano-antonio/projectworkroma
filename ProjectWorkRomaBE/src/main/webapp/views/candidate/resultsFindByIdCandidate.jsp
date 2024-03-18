@@ -29,19 +29,19 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="candidate" items="${IdCandidate}">
+        <c:forEach var="candidate" items="${idCandidate}">
             <tr>
-                <td>${candidate.idCandidate}</td>
-                <td>${candidate.name}</td>
-                <td>${candidate.surname}</td>
-                <td>${candidate.birthday}</td>
-                <td>${candidate.birthPlace}</td>
-                <td>${candidate.address}</td>
-                <td>${candidate.city}</td>
-                <td>${candidate.email}</td>
-                <td>${candidate.phone}</td>
+                <td>${candidate.getIdCandidate()}</td>
+                <td>${candidate.getName()}</td>
+                <td>${candidate.getSurname()}</td>
+                <td>${candidate.getBirthday()}</td>
+                <td>${candidate.getBirthPlace()}</td>
+                <td>${candidate.getAddress()}</td>
+                <td>${candidate.getCity()}</td>
+                <td>${candidate.getEmail()}</td>
+                <td>${candidate.getPhone()}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.getIdCandidate()}">
                         <button type="button">Update</button>
                     </a>
                 </td>
