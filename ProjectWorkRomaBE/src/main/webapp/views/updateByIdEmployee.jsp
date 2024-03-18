@@ -32,10 +32,11 @@
 				<h1 class="title1">Update Employee</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="IdEmployee">ID Employee:</label>
+						<label for="idEmployee">ID Employee:</label>
 					</p>
-					<input type="number" id="IdEmployee" name="IdEmployee"
+					<input type="number" id="idEmployee" name="idEmployee"
 						value="<%=request.getParameter("idEmployee")%>" readonly>
+						
 				</div>
 				<div class="inline-p1">
 					<p>

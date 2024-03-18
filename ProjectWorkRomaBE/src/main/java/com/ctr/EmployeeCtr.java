@@ -64,8 +64,8 @@ public class EmployeeCtr {
 	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
 	    model.addAttribute("idEmployee", employee); 
-	        List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
-	        model.addAttribute("listIdEmployeeType", employeeType);    
+	    List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
+	    model.addAttribute("listIdEmployeeType", employeeType);    
 	    return "updateByIdEmployee";
 	}
 
