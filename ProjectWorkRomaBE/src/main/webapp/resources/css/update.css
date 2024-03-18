@@ -13,6 +13,7 @@
 
 body {
     background-color: #d8cdf3;
+    height: 100vh;
 	background-image: url("Immagini/backgroundimg.png");
 	display: flex;
 	flex-direction: column;
@@ -20,7 +21,7 @@ body {
 	justify-content: center;
 }
 
-h1 {
+.title1 {
 	font-family: "Poppins", sans-serif;
 	font-size: 30px;
 	padding: 16px;
@@ -49,6 +50,8 @@ hr  {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 50px;
+	height:600px;
+	width: 800px;
 }
 
 .box1 {
@@ -79,35 +82,13 @@ hr  {
 	cursor: pointer;
 }
 
-input, textarea, select {
+input, textarea, select, label {
 	padding: 20px;
 	border-radius: 16px;
 	border: 3px;
 	justify-content: space-around;
-}
-
-label, input, select {
+	font-family:"Poppins";
 	display: inline-block;
 	vertical-align: middle;
 	width:220px;
-}
-
-table {
-	width: 100%;
-	margin-bottom: 20px;
-	border-radius: 20px;
-}
-
-thead {
-	color: #ffffff;
-	background-color: #d8cdf3;;
-	font-size: 16px;
-	text-align: center;
-	
-}
-
-tbody {
-	background-color: #ffffff;
-	border: 6px;
-	border-radius: 20px;
 }
