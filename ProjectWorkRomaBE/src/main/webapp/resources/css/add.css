@@ -9,6 +9,7 @@
 .container1 {
 	margin: 0 auto;
 	max-width: 800px;
+	align-items: center;
 }
 
 body {
@@ -36,8 +37,10 @@ hr  {
 
 .inline-p1 {
         display: inline-block;  
-        margin-right: 10px;  
+        margin: 20px; 
+ 
     }
+    
 .card1 {
 	background-color: rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
@@ -49,11 +52,15 @@ hr  {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 50px;
+	width: 900px;
+	
 }
 
 .box1 {
 	justify-content: space-around;
 	justify-content: center;
+	align-items:center;
+	
 }
 
 
@@ -111,3 +118,6 @@ tbody {
 	border: 6px;
 	border-radius: 20px;
 }
+ #skill, #workExperience, #candidate, #jobInterview, #education, #commercialData {
+            display: none; 
+        }

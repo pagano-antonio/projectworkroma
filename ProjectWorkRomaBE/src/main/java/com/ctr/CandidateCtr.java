@@ -14,18 +14,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CandidateCommercialDataRepository;
 import com.dao.CandidateRepository;
+import com.dao.ContractTypeRepository;
 import com.dao.EducationDegreeTypeRepository;
 import com.dao.EducationRepository;
+import com.dao.EmployeeRepository;
 import com.dao.JobInterviewRepository;
 import com.dao.SkillRepository;
+import com.dao.StateJobInterviewRepository;
 import com.dao.WorkExperienceRepository;
 
 import com.model.Candidate;
 import com.model.CandidateCommercialData;
+import com.model.ContractType;
 import com.model.Education;
 import com.model.EducationDegreeType;
+import com.model.Employee;
 import com.model.JobInterview;
 import com.model.Skill;
+import com.model.StateJobInterview;
 import com.model.WorkExperience;
 
 @Controller
@@ -40,26 +46,39 @@ public class CandidateCtr {
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
 	@Autowired
+	private StateJobInterviewRepository stateJobInterviewRep;
+	@Autowired
 	private CandidateCommercialDataRepository candidateCommercialDataRep;
 	@Autowired
 	private SkillRepository skillRep;
 	@Autowired
 	private EducationDegreeTypeRepository educationDegreeTypeRep;
+	@Autowired
+	private EmployeeRepository employeeRep;
+	@Autowired
+	private ContractTypeRepository contractTypeRep;
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddCandidateForm")
 	public String preAddCandidateForm(Model model) {
+		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
+        model.addAttribute("listEducationDegreeType", listEducationDegreeType);
+        List<Employee> listEmployee = employeeRep.findAll();
+        model.addAttribute("listEmployee", listEmployee);
+        List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
+        model.addAttribute("listStateJobInterview", listStateJobInterview);
+        List<ContractType> listContractType= contractTypeRep.findAll();
+        model.addAttribute("listContractType", listContractType);
 		return "addCandidateForm";
 	}
 
 	@PostMapping("/addCandidateForm")
 	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
-		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill, String description) {
-//		List<EducationDegreeType> educationDegree = educationDegreeTypeRep.findByDescription(description);
-//	    model.addAttribute("educationDegreeType", educationDegree);
+		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill, EducationDegreeType educationDegreeType) {
 		candidateRep.save(candidate);
 		educationRep.save(education);
+		educationDegreeTypeRep.save(educationDegreeType);
 		workExperienceRep.save(workExperience);
 		jobInterviewRep.save(jobInterview);
 		candidateCommercialDataRep.save(candidateCommercialData);
