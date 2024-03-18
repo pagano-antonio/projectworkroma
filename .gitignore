@@ -16,3 +16,6 @@ ProjectWorkRomaBE/src/main/resources/application.properties
 *.yml
 *.properties
 *.yml
+ProjectWorkRomaBE/src/main/resources/application.properties
+*.properties
+*.yml
