@@ -61,6 +61,7 @@ body{
   	border: none;
   	border-radius: 3px;
   	color: #fff;
+  	cursor:pointer;
 }
 
 .buttonRegister{
@@ -72,6 +73,7 @@ body{
   	border-radius: 3px;
   	color: #666666;
   	text-decoration: underline;	
+    cursor:pointer;
 }
 
 .boxTitle{

@@ -53,7 +53,6 @@
                 <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/job/preAddJobOffer">Add Job Offers</a></li>
               
-              <li><a class="dropdown-item" href="/job/preFindByIdJobOffer">Find Job Offer</a></li>
               <li><a class="dropdown-item" href="/job/preFindByTitleJobOffer">Find Job Offer by Title</a></li>
               <li><a class="dropdown-item" href="/job/preFindByCompanyClientJobOffer">Find Job Offer by Company Client</a></li>
               <li><a class="dropdown-item" href="/job/preFindByContractTypeJobOffer">Find Job Offer by Contract Type</a></li>
