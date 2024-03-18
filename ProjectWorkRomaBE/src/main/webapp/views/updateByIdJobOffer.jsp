@@ -27,7 +27,7 @@
 			%>
 
 			<form
-				action="${pageContext.request.contextPath}/job/updateByIdJobOffer"
+				action="${pageContext.request.contextPath}/updateByIdJobOffer"
 				method="POST">
 				<h1 class="title1">Update JobOffer</h1>
 				<div class="inline-p1">
