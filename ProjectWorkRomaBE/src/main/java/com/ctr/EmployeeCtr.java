@@ -63,16 +63,14 @@ public class EmployeeCtr {
 	@GetMapping("/preUpdateByIdEmployee")
 	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
-	    if (employee != null) {
+	    model.addAttribute("idEmployee", employee); 
 	        List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
-	        model.addAttribute("idEmployee", employee); 
-	        model.addAttribute("listIdEmployeeType", employeeType);
-	    }
+	        model.addAttribute("listIdEmployeeType", employeeType);    
 	    return "updateByIdEmployee";
 	}
 
 	@PostMapping("/updateByIdEmployee")
-	public String updateByIdEmployee(@ModelAttribute("employee") Employee employee, @RequestParam Integer idEmployeeType) {
+	public String updateByIdEmployee(Model model,@ModelAttribute("employee") Employee employee, Integer idEmployeeType) {
 	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 	    employee.setEmployeeType(employeeType); 
 	    employeeRep.save(employee);
