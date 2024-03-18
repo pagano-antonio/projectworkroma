@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.CompanyClientRepository;
+import com.model.Candidate;
 import com.model.CompanyClient;
 
 @Controller
@@ -52,43 +53,42 @@ public class CompanyClientCtr {
 	}
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
-
+	
+	
 	@GetMapping("/preUpdateByIdCompanyClient")
-	public String preUpdateByIdCompanyClient (Model model,@RequestParam Integer idCompanyClient) {
-		CompanyClient companyClient = companyClientRep.findById(idCompanyClient).orElse(null);
-			model.addAttribute("idCompanyClient", companyClient);
-			return "updateByIdCompanyClient";
+	public String preUpdateByIdCompanyClient(Model model, @RequestParam Integer idCompanyClient) {
+		CompanyClient companyClient = (CompanyClient)companyClientRep.findById(idCompanyClient).orElse(null);
+		model.addAttribute("idCompanyClient", companyClient);
+		companyClientRep.save(companyClient);
+		return "updateByIdCompanyClient";
+		
 	}
-	@PostMapping("/updateByIdCompanyClient")		
-	public String updateByIdCompanyClient(Model model,CompanyClient companyClient) {
-		companyClientRep.save(companyClient);	        
-	        return "success";  
+
+	@PostMapping("/updateByIdCompanyClient")
+	public String updateByIdCompanyClient(Model model, CompanyClient companyClient) {
+		companyClientRep.save(companyClient);
+		return "success";
 	}
  
 ////////////////////////////////////// FIND BY ID  ///////////////////////////////////////
 
 	@GetMapping("/company/preFindByIdCompanyClient")
 	public String preFindByIdCompanyClient() {
-		return "company/findIdCompanyClient";
+		return "company/findByIdCompanyClient";
 	}
 
 	@GetMapping("/company/findByIdCompanyClient")
-	public String findByIdCompanyClient(Model model, @RequestParam int idCompanyClient) {
-		CompanyClient companyClient = (CompanyClient) companyClientRep.findById(idCompanyClient).orElse(null);
+	public String findByIdCompanyClient(Model model, Integer idCompanyClient) {
+		List<CompanyClient> companyClient = companyClientRep.findByIdCompanyClient(idCompanyClient);
+		model.addAttribute("IdCompanyClient", companyClient);
 		if (companyClient != null) {
-			model.addAttribute("idCompanyClient", companyClient);
-			return "company/resultsByIdCompanyClient";
+			return "company/resultsFindByIdCompanyClient";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";
 		}
-	}
 
-	@PostMapping("/company/updateCompanyClient")
-	public String updateCompanyClient(Model model, CompanyClient companyClient) {
-		companyClientRep.save(companyClient);
-		return "success";
 	}
 
 ////////////////////////////////////// FIND BY NAME ///////////////////////////////////////
