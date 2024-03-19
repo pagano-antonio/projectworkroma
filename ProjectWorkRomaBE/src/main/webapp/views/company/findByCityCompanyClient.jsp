@@ -23,10 +23,10 @@
 				action="${pageContext.request.contextPath}/company/findByCityCompanyClient"
 				method="GET">
 				<p>
-					<label for="cityCompanyClient">City:</label>
+					<label for="city">City:</label>
 				</p>
-				<input class="inputField" type="text" id="cityCompanyClient"
-					name="cityCompanyClient">
+				<input class="inputField" type="text" id="city"
+					name="city">
 				<div>
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

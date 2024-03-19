@@ -101,7 +101,7 @@ public class CompanyClientCtr {
 	@GetMapping("/company/findByNameCompanyClient")
 	public String findByName(Model model, @RequestParam String name) {
 		List<CompanyClient> companyClient = companyClientRep.findByName(name);
-		model.addAttribute("CompanyClient", companyClient);
+		model.addAttribute("CompanyClientName", companyClient);
 		if (companyClient != null) {
 			return "company/resultsByNameCompanyClient";
 		} else {
@@ -119,9 +119,9 @@ public class CompanyClientCtr {
 	}
 
 	@GetMapping("/company/findByCityCompanyClient")
-	public String findByCityCompanyClient(Model model, @RequestParam String city) {
+	public String findByCity(Model model, @RequestParam String city) {
 		List<CompanyClient> companyClient = companyClientRep.findByCity(city);
-		model.addAttribute("CompanyClient", companyClient);
+		model.addAttribute("CompanyClientCity", companyClient);
 		if (companyClient != null) {
 			return "company/resultsByCityCompanyClient";
 		} else {

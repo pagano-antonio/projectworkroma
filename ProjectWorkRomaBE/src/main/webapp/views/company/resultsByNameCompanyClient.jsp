@@ -19,20 +19,18 @@
             <th>Address</th>
             <th>City</th>
             <th>Name</th>
-            <th>Job Offers</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="CompanyClient" items="${companyClient}">
+        <c:forEach var="companyClient" items="${CompanyClientName}">
             <tr>
             	
                 <td>${companyClient.idCompanyClient}</td>
-                <td>${companyClient.addres}</td>
+                <td>${companyClient.address}</td>
                 <td>${companyClient.city}</td>
                 <td>${companyClient.name}</td>
-                <td>${companyClient.jobOffers}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/company/preUpdateByIdCompanyClient=${companyClient.idCompanyClient}">
                         <button type="button">Update</button>

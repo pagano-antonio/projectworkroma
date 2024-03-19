@@ -23,10 +23,10 @@
 				action="${pageContext.request.contextPath}/company/findByNameCompanyClient"
 				method="GET">
 				<p>
-					<label for="nameCompanyClient"> Company Client name:</label>
+					<label for="name"> Company Client name:</label>
 				</p>
-				<input class="inputField" type="text" id="nameCompanyClient"
-					name="nameCompanyClient">
+				<input class="inputField" type="text" id="name"
+					name="name">
 				<div>
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>
