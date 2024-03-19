@@ -38,7 +38,9 @@ public class JobInterviewCtr {
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/job/preAddJobInterview")
-	public String preAddJobInterview(Model model) {
+	public String preAddJobInterview(Model model, Integer idCandidate) {
+		Candidate candidate= candidateRep.findById(idCandidate).orElse(null);
+		model.addAttribute("idCandidate", candidate);
 		return "job/addJobInterview";
 	}
 

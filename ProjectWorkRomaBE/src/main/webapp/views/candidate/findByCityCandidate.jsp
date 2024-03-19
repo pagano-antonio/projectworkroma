@@ -26,7 +26,7 @@
 	<h2 class="title">
 		FIND DATA
 	</h2>
-	<img class="imageLogin" src="webapp/resources/css/Immagini/preLogin.gif" alt="preLogin" width="600" height="400">
+	<img class="imageLogin" src="candidate/ricerca.gif" alt="ricerca" width="600" height="400">
 </div>
 </div>
 </body>

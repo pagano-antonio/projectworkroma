@@ -14,7 +14,6 @@ import com.model.Skill;
 @Repository
 public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 
-	List<Candidate> findByIdCandidate(Integer idCandidate);
 
 	List<Candidate> findBySurname(String surname);
 
@@ -27,6 +26,8 @@ public interface CandidateRepository extends JpaRepository<Candidate, Integer>{
 	List<Candidate> findByPhone(BigInteger phone);
 	
 	List<Candidate> findByJobInterviews_StateJobInterview_Title(String title);
+
+	List<Candidate> findByIdCandidate(Integer idCandidate);
 
 }  
 

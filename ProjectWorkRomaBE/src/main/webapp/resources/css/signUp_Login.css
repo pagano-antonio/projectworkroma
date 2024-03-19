@@ -47,7 +47,7 @@ body{
   	text-align: left;
 }
 
-.inputField{
+.inputField, select{
 	width: 100%;
   	padding: 10px;
   	margin-bottom: 15px;
@@ -58,7 +58,7 @@ body{
 .buttonLogin{
 	width: 40%;
   	padding: 10px;
-  	background-color: #d8cdf3;
+  	background-color: #8080c0;
   	border: none;
   	border-radius: 3px;
   	color: #fff;
@@ -84,7 +84,7 @@ body{
 .title{
 	text-align: left;
 	text-wrap: wrap;
-	color:#8000ff;
+	color:#8080c0;
 	font-family: "Poppins";
 }
 

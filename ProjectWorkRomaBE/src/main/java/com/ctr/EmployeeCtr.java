@@ -36,12 +36,15 @@ public class EmployeeCtr {
 
 	@GetMapping("/preAddEmployee")
 	public String preAddEmployee(Model model) {
+		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
+        model.addAttribute("listEmployeeType", listEmployeeType);
 		return "addEmployee";
 	}
 
 	@PostMapping("/addEmployee")
-	public String addEmployee(Model model, Employee e) {
+	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {
 		employeeRep.save(e);
+		employeeTypeRep.save(employeeType);
 		return "preLogin";
 	}
 

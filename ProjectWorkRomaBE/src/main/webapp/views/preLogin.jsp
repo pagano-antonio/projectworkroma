@@ -31,6 +31,7 @@
 <div id="waitingPage" class="welcomeMessage">
     <h1>Welcome!</h1>
     <p>We are getting ready...</p>
+    <img src="resources/css/Immagini/razzo.gif">
 </div>
 
 
@@ -41,17 +42,16 @@
     <input type="text" name="username" class="inputField"/>
     <p>Password:</p> 
     <input type="password" name="password" class="inputField"/>
-    <input type="submit" value="Login" class="buttonLogin"/>
-    
+    <input type="submit" value="Login" class="buttonLogin"/> 
 </form>
-<a href="${pageContext.request.contextPath}/preAddEmployee">
-    <button class="buttonRegister">Sign up</button></a>
+ <a href="${pageContext.request.contextPath}/preAddEmployee">
+    <button class="buttonRegister">Sign in</button></a> 
 </div>
 <div id="welcomeSection" class="boxTitle hidden">
 	<h2 class="title">
 		Welcome Back!
 	</h2>
-	<img class="imageLogin" src="resources/css/Immagini/preLogin.gif" alt="preLogin" width="600" height="400">
+	<img class="imageLogin" src="resources/css/Immagini/preLogin.gif" alt="preLogin" width="1000" height="800">
 </div>
 </div>
 

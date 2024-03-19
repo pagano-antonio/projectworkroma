@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="com.model.Candidate" %>
 <html lang="en">
 <head>   
   <meta charset="UTF-8">
@@ -25,11 +26,13 @@ body {
 		<div class="card1">
 <h1>New Job Interview</h1>
 
+<% Candidate candidate = (Candidate)request.getAttribute("idCandidate"); %>
+
 			<form class="formAdd"action="${pageContext.request.contextPath}/job/addJobInterview" method="POST">  
    <div class="inline-p1">
 					<p>
         <label for="idCandidate">ID Candidate:</label></p>
-        <input type="number" id="idCandidate" name="idCandidate">
+        <input type="number" id="idCandidate" name="idCandidate" value="<%=request.getParameter("idCandidate")%>"readonly>
     </div>
   <div class="inline-p1">
 					<p>

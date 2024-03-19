@@ -36,12 +36,7 @@ Employee employee = (Employee) request.getAttribute("idEmployee");
 		<tbody>   
 			<tr>
 				<td><%=employee.getIdEmployee()%></td>
-				<td><select name="employeeType">
-						<option
-							value="<%=employee.getEmployeeType().getIdEmployeeType()%>">
-							<%=employee.getEmployeeType().getIdEmployeeType()%></option>
-
-				</select></td>
+				<td><%=employee.getEmployeeType().getDescription()%></td>
 				<td><%=employee.getName()%></td>
 				<td><%=employee.getSurname()%></td>
 				<td><%=employee.getUsername()%></td>
