@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="com.model.EmployeeType"%>
+<%@page import="com.model.JobInterview"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,28 +65,51 @@ body {
 					</p>
 					<input type="password" id="password" name="password">
 				</div>
-<!-- 				<div class="inline-p1"> -->
-<!-- 					<p> -->
-<!-- 						<label for="employeeType">Employee type:</label> -->
-<!-- 					</p> -->
-<!-- 					<select name="emloyeeType"> -->
-<%-- 						<c:forEach var="listEmployeeType" items="${listEmployeeType}"> --%>
-<%-- 							<option value="${listEmployeeType.idEmployeeType}"> --%>
-<%-- 								${listEmployeeType.description}</option> --%>
-<!-- 						</c:forEach> -->
-<!-- 					</select> -->
-<!-- 				</div> -->
-<!-- 				<div class="inline-p1"> -->
-<!-- 					<p> -->
-<!-- 						<label for="jobInterview">Job Interview:</label> -->
-<!-- 					</p> -->
-<!-- 					<select name="jobInterview"> -->
-<%-- 						<c:forEach var="listJobInterview" items="${listJobInterview}"> --%>
-<%-- 							<option value="${listJobInterview.idJobInterview}"> --%>
-<%-- 								${listJobInterview.date}-${listJobInterview.notes}-${listJobInterview.outcome}</option> --%>
-<!-- 						</c:forEach> -->
-<!-- 					</select> -->
-<!-- 				</div> -->
+				<div class="inline-p1">
+					<p>
+						<label for="employeeType">Employee type:</label>
+					</p>
+					<select name="employeeType">
+						<c:forEach var="listEmployeeType" items="${listEmployeeType}">
+							<option value="${listEmployeeType.idEmployeeType}">
+								${listEmployeeType.description}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="jobInterview">Job Interview Date:</label>
+					</p>
+					<select name="jobInterview">
+						<c:forEach var="listJobInterview" items="${listJobInterview}">
+							<option value="${listJobInterview.idJobInterview}">
+								${listJobInterview.date}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="jobInterview">Job Interview Notes:</label>
+					</p>	
+					<select name="jobInterview">
+						<c:forEach var="listJobInterview" items="${listJobInterview}">
+							<option value="${listJobInterview.idJobInterview}">
+								${listJobInterview.notes}</option>
+						</c:forEach>
+					</select>
+				</div>
+					<div class="inline-p1">
+					<p>
+						<label for="jobInterview">Job Interview Outcome:</label>
+					</p>
+						<select name="jobInterview">
+						<c:forEach var="listJobInterview" items="${listJobInterview}">
+							<option value="${listJobInterview.idJobInterview}">
+								${listJobInterview.outcome}</option>
+						</c:forEach>
+					</select>
+				</div>
+<hr>
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>
