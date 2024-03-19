@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="com.model.EmployeeType"%>
 <%@page import="com.model.JobInterview"%>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ body {
 					<input type="text" id="surname" name="surname" required
 						minlength="3" maxlength="15">
 				</div>
-				
+
 				<div class="inline-p1">
 					<p>
 						<label for="email">Email:</label>
@@ -90,7 +90,7 @@ body {
 				<div class="inline-p1">
 					<p>
 						<label for="jobInterview">Job Interview Notes:</label>
-					</p>	
+					</p>
 					<select name="jobInterview">
 						<c:forEach var="listJobInterview" items="${listJobInterview}">
 							<option value="${listJobInterview.idJobInterview}">
@@ -98,18 +98,18 @@ body {
 						</c:forEach>
 					</select>
 				</div>
-					<div class="inline-p1">
+				<div class="inline-p1">
 					<p>
 						<label for="jobInterview">Job Interview Outcome:</label>
 					</p>
-						<select name="jobInterview">
+					<select name="jobInterview">
 						<c:forEach var="listJobInterview" items="${listJobInterview}">
 							<option value="${listJobInterview.idJobInterview}">
 								${listJobInterview.outcome}</option>
 						</c:forEach>
 					</select>
 				</div>
-<hr>
+				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

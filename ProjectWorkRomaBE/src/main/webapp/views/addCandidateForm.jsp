@@ -80,9 +80,10 @@
 			<form class="formAdd"
 				action="${pageContext.request.contextPath}/addCandidateForm"
 				method="POST">
-<h1 onclick="toggleSection5()">Candidate &#129171;</h1>
+				<h1 class="nametitle" onclick="toggleSection5()">Candidate
+					&#129171;</h1>
 				<div class="box1">
-					
+
 					<div class="hidden" id="candidate">
 						<div class="inline-p1">
 							<p>
@@ -139,7 +140,8 @@
 				<br>
 				<hr>
 				<div class="box1">
-					<h1 onclick="toggleSection4()">Education &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection4()">Education
+						&#129171;</h1>
 					<div class="hidden" id="education">
 						<div class="inline-p1">
 							<p>
@@ -185,7 +187,8 @@
 				<br>
 				<hr>
 				<div class="box1">
-					<h1 onclick="toggleSection3()">Work Experience &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection3()">Work
+						Experience &#129171;</h1>
 					<div class="hidden" id="workExperience">
 						<div class="inline-p1">
 							<p>
@@ -205,31 +208,33 @@
 							</p>
 							<input type="text" id="company" name="company">
 						</div>
-					<div>
-						<div class="inline-p1">
-							<p>
-								<label for="startDate">StartDate:</label>
-							</p>
-							<input type="date" id="startDate" name="startDate">
+						<div>
+							<div class="inline-p1">
+								<p>
+									<label for="startDate">StartDate:</label>
+								</p>
+								<input type="date" id="startDate" name="startDate">
+							</div>
+							<div class="inline-p1">
+								<p>
+									<label for="endDate">End Date:</label>
+								</p>
+								<input type="date" id="endDate" name="endDate">
+							</div>
+							<div class="inline-p1">
+								<p>
+									<label for="city">City:</label>
+								</p>
+								<input type="text" id="city" name="city">
+							</div>
 						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="endDate">End Date:</label>
-							</p>
-							<input type="date" id="endDate" name="endDate">
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="city">City:</label>
-							</p>
-							<input type="text" id="city" name="city">
-						</div>
-						</div>
-					</div>				
+					</div>
 				</div>
-				<br><hr>
+				<br>
+				<hr>
 				<div class="box1">
-					<h1 onclick="toggleSection()">Job Interview &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection()">Job Interview
+						&#129171;</h1>
 					<div class="hidden" id="jobInterview">
 						<div class="inline-p1">
 							<p>
@@ -244,56 +249,55 @@
 							<input type="number" id="outcome" name="outcome">
 						</div>
 						<div class="inline-p1">
-											<p>
+							<p>
 								<label for="employee">Employee:</label>
 							</p>
 							<select name="employee">
-								<c:forEach var="listEmployee"
-									items="${listEmployee}">
-									<option
-										value="${listEmployee.idEmployee}">
+								<c:forEach var="listEmployee" items="${listEmployee}">
+									<option value="${listEmployee.idEmployee}">
 										${listEmployee.username}</option>
 								</c:forEach>
 							</select>
-							</div>
-							<div class="inline-p1">
-										<p>
+						</div>
+						<div class="inline-p1">
+							<p>
 								<label for="contractType">Contract Type:</label>
 							</p>
 							<select name="contractType">
-								<c:forEach var="listContractType"
-									items="${listContractType}">
-									<option
-										value="${listContractType.idContractType}">
+								<c:forEach var="listContractType" items="${listContractType}">
+									<option value="${listContractType.idContractType}">
 										${listContractType.title}</option>
 								</c:forEach>
-							</select></div>
-										<div class="inline-p1">
-											<p>
+							</select>
+						</div>
+						<div class="inline-p1">
+							<p>
 								<label for="stateJobInterview">State Job Interview:</label>
 							</p>
 							<select name="stateJobInterview">
 								<c:forEach var="listStateJobInterview"
 									items="${listStateJobInterview}">
-									<option
-										value="${listStateJobInterview.idStateJobInterview}">
+									<option value="${listStateJobInterview.idStateJobInterview}">
 										${listStateJobInterview.title}</option>
 								</c:forEach>
-							</select></div> 
+							</select>
+						</div>
 						<br>
 						<div class="inline-p1">
 							<p>
 								<label for="notes">Notes:</label>
 							</p>
 							<textarea name="notes" row="8" cols="80"></textarea>
-						</div></div>
+						</div>
 					</div>
+				</div>
 				<hr>
 
-                <div class="box1">
-				<h1 onclick="toggleSection1()">Commercial Data &#129171;</h1>
-				<div class="hidden" id="commercialData">
-					
+				<div class="box1">
+					<h1 class="nametitle" onclick="toggleSection1()">Commercial
+						Data &#129171;</h1>
+					<div class="hidden" id="commercialData">
+
 						<div class="inline-p1">
 							<p>
 								<label for="businessCost">Business Cost:</label>
@@ -324,21 +328,20 @@
 							</p>
 							<input type="number" id="subsidyFlag" name="subsidyFlag">
 						</div>
-					
-					<br>
-					<div>
-						<p>
-							<label for="notes">Notes:</label>
-						</p>
-						<textarea name="notes" row="40" cols="80"></textarea>
-					</div></div>
-					<br>
+						<div>
+							<p>
+								<label for="notes">Notes:</label>
+							</p>
+							<textarea name="notes" row="40" cols="80"></textarea>
+						</div>
+					</div>
 				</div>
 				<hr>
 
 
 				<div class="box1">
-					<h1 onclick="toggleSection2()">SKill &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection2()">SKill
+						&#129171;</h1>
 					<div class="hidden" id="skill">
 						<table>
 							<thead>
@@ -349,8 +352,28 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td><input type="text" id="title" name="title"></td>
-									<td><input type="text" id="description" name="description"></td>
+									<th><input style="background-color: #e9e9f3" type="text"
+										id="title" name="title"></th>
+									<th><input style="background-color: #e9e9f3" type="text"
+										id="description" name="description"></th>
+								</tr>
+								<tr>
+									<th><input style="background-color: #f8f8fc" type="text"
+										id="title" name="title"></th>
+									<th><input style="background-color: #f8f8fc" type="text"
+										id="description" name="description"></th>
+								</tr>
+								<tr>
+									<th><input style="background-color: #e9e9f3" type="text"
+										id="title" name="title"></th>
+									<th><input style="background-color: #e9e9f3" type="text"
+										id="description" name="description"></th>
+								</tr>
+								<tr>
+									<th><input style="background-color: #f8f8fc" type="text"
+										id="title" name="title"></th>
+									<th><input style="background-color: #f8f8fc" type="text"
+										id="description" name="description"></th>
 								</tr>
 							</tbody>
 						</table>

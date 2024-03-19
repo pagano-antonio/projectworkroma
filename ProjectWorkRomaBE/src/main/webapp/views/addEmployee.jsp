@@ -68,7 +68,7 @@
 		</div>
 		<div class="boxTitle">
 			<img class="imageLogin" src="resources/css/Immagini/lock.gif"
-				alt="lock" width="1000" height="800">
+				alt="lock" width="1000" height="1000">
 		</div>
 	</div>
 

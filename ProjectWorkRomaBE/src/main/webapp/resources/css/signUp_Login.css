@@ -1,105 +1,100 @@
 @charset "ISO-8859-1";
 /*css reset*/
-
-*{
-    box-sizing: border-box;
+* {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	
 }
 
-body{
+body {
 	background-image: url('Immagini/backgroundimg.png');
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card{
-	background-color:rgba(255, 255, 255, 0.6);
-	font-family: "Poppins";
-	height:600px;
-	width: 800px;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 50px;
-    border-radius: 20px;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:25px;
-}
-.boxLogin{
-	
+	align-items: center;
 	justify-content: center;
 }
 
-.loginTitle{
+.card {
+	background-color: rgba(255, 255, 255, 0.6);
+	font-family: "Poppins";
+	height: 700px;
+	width: 800px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	padding: 50px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 25px;
+}
+
+.boxLogin {
+	justify-content: center;
+}
+
+.loginTitle {
 	font-size: 30px;
-  	margin-bottom: 20px;
-  	font-weight: 600;
-  	}
-
-.formLogin{
-	width: 300px;
-  	text-align: left;
+	margin-bottom: 20px;
+	font-weight: 600;
 }
 
-.inputField, select{
+.formLogin {
+	width: 300px;
+	text-align: left;
+}
+
+.inputField, select {
 	width: 100%;
-  	padding: 10px;
-  	margin-bottom: 15px;
-  	border: 1px solid #ccc;
-  	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
-.buttonLogin{
+.buttonLogin {
 	width: 40%;
-  	padding: 10px;
-  	background-color: #8080c0;
-  	border: none;
-  	border-radius: 3px;
-  	color: #fff;
-  	cursor:pointer;
+	padding: 10px;
+	background-color: #8080c0;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
 }
 
-.buttonRegister{
+.buttonRegister {
 	width: 40%;
-  	padding: 10px;
-  	margin-top: 15px;
-  	background-color: transparent;
-  	border: none;
-  	border-radius: 3px;
-  	color: #666666;
-  	text-decoration: underline;	
-    cursor:pointer;
+	padding: 10px;
+	margin-top: 15px;
+	background-color: transparent;
+	border: none;
+	border-radius: 3px;
+	color: #666666;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
-.boxTitle{
+.boxTitle {
 	width: 300px;
 }
 
-.title{
+.title {
 	text-align: left;
 	text-wrap: wrap;
-	color:#8080c0;
+	color: #8080c0;
 	font-family: "Poppins";
 }
 
-.imageLogin{
-	width: 250px;
-	height: 250px;
+.imageLogin {
+	width: 300px;
+	height: 300px;
 }
 
-   /* Style welcome message */
-       .welcomeMessage {
-       text-align: center;
-       }
-       
-        .hidden {
-            display: none;
-        }
+.welcomeMessage {
+	text-align: center;
+}
 
-
+.hidden {
+	display: none;
+}

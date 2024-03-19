@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #d8cdf3;
+	background-color: #8080c0;
 	background-image: url("Immagini/backgroundimg.png");
 	display: flex;
 	flex-direction: column;
@@ -21,26 +21,28 @@ body {
 	justify-content: center;
 }
 
-h1 {
+.nametitle {
 	font-family: "Poppins", sans-serif;
 	font-size: 30px;
 	padding: 16px;
 	cursor: pointer;
 }
 
-hr  {
+.orizzontale {
+	
 	border: none;
 	height: 2px;
 	background-color: #dcdced;
-	margin: 30px 0;
+	margin:30px;
+	width:100%;
+	
 }
 
 .inline-p1 {
-        display: inline-block;  
-        margin: 20px; 
- 
-    }
-    
+	display: inline-block;
+	margin: 20px;
+}
+
 .card1 {
 	background-color: rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
@@ -53,21 +55,18 @@ hr  {
 	justify-content: center;
 	gap: 50px;
 	width: 900px;
-	
 }
 
 .box1 {
 	justify-content: space-around;
 	justify-content: center;
-	align-items:center;
-	
+	align-items: center;
 }
-
 
 .buttonSubmit {
 	width: 40%;
 	padding: 10px;
-	background-color: #d8cdf3;
+	background-color: rgb(128, 128, 192);
 	border: none;
 	border-radius: 6px;
 	color: #fff;
@@ -87,8 +86,8 @@ hr  {
 }
 
 input, textarea, select {
-	padding: 20px;
-	border-radius: 16px;
+	padding: 16px;
+	border-radius: 8px;
 	border: 3px;
 	justify-content: space-around;
 }
@@ -96,28 +95,53 @@ input, textarea, select {
 label, input, select {
 	display: inline-block;
 	vertical-align: middle;
-	width:220px;
+	width: 220px;
 }
 
 table {
 	width: 100%;
 	margin-bottom: 20px;
 	border-radius: 20px;
+	
 }
 
 thead {
 	color: #ffffff;
-	background-color: #d8cdf3;;
+	background-color: #bfbfdf;;
 	font-size: 16px;
 	text-align: center;
 	
+	
 }
-
+td{
+	border-radius: 5px 5px 0 0;
+	padding:10px;
+	
+}
+th{
+	border-radius: 0 0 5px 5px ;
+	
+}
 tbody {
-	background-color: #ffffff;
+	background-color: #f1f1f8;
 	border: 6px;
 	border-radius: 20px;
+	text-align: center;
 }
- #skill, #workExperience, #candidate, #jobInterview, #education, #commercialData {
-            display: none; 
-        }
+tbody tr {
+    border-bottom: 1px solid #dddddd; 
+}
+tbody tr:nth-child(even) {
+    background-color: #f8f8fc; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e9e9f3; 
+}
+
+
+#skill, #workExperience, #candidate, #jobInterview, #education,
+	#commercialData {
+	display: none;
+}
+

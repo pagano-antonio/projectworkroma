@@ -30,11 +30,10 @@
 				</div>
 			</form>
 		</div>
-		<div class="boxTitle">
-			<h2 class="title">FIND DATA</h2>
-			<img class="imageLogin"
-				src="webapp/resources/css/Immagini/preLogin.gif" alt="preLogin"
-				width="600" height="400">
+	<div id="welcomeSection" class="boxTitle hidden">
+			<img class="imageLogin" src="resources/css/Immagini/ricerca.gif"
+				alt="ricerca" width="1000" height="800">
+			<h2 class="welcomeMessage title">Find data</h2>
 		</div>
 	</div>
 </body>

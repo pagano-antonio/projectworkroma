@@ -48,7 +48,7 @@ body {
 					</p>
 					<input type="text" id="city" name="city">
 				</div>
-				<hr>
+				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

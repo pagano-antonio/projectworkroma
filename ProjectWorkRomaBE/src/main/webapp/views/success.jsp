@@ -9,6 +9,6 @@
 </head>
 <body>
  <span>Operazione effettuata correttamente!</span>
-<a href="${pageContext.request.contextPath}/home"></a>
+<a href="${pageContext.request.contextPath}/home">Home</a>
 </body>
 </html>

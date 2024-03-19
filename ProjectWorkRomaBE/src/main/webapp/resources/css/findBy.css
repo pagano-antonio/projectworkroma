@@ -57,7 +57,7 @@ body{
 .buttonSubmit{
 	width: 40%;
   	padding: 10px;
-  	background-color: #d8cdf3;
+  	background-color: #8080c0;
   	border: none;
   	border-radius: 3px;
   	color: #fff;
@@ -76,21 +76,28 @@ body{
   	cursor:pointer;	
 }
 
-.boxTitle{
+.boxTitle {
 	width: 300px;
 }
 
-.title{
+.title {
 	text-align: left;
 	text-wrap: wrap;
-	color:#8000ff;
+	color: #8080c0;
 	font-family: "Poppins";
 }
 
-.imageLogin{
-	width: 250px;
-	height: 250px;
+.imageLogin {
+	width: 300px;
+	height: 300px;
 }
 
+.welcomeMessage {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
 
 

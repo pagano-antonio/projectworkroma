@@ -78,7 +78,7 @@ body {
 					</p>
 					<input type="number" id="idContractType" name="idContractType">
 				</div>
-				<hr>
+				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

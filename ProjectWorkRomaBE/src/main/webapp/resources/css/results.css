@@ -53,7 +53,7 @@ td {
 	padding:20px;
 }
 
-button{
+button, a{
 	width: 40px;
   	padding: 5px;
   	background-color: #d8cdf3;

@@ -158,7 +158,7 @@ hr {
 <div class="dropdown">
   <button class="dropbtn">Employee</button>
   <div class="dropdown-content">
-    <a href="${pageContext.request.contextPath}/preAddEmployee">Add Employee</a>
+    <a href="${pageContext.request.contextPath}/company/preAddEmployee">Add Employee</a>
     <a href="${pageContext.request.contextPath}/company/preFindByIdEmployeeType">Find By Employee Type</a>
   </div>
 </div>
