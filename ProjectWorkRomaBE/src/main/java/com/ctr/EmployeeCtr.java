@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.EmployeeRepository;
 import com.dao.EmployeeTypeRepository;
+import com.dao.JobInterviewRepository;
+import com.model.ContractType;
+import com.model.EducationDegreeType;
 import com.model.Employee;
 import com.model.EmployeeType;
+import com.model.JobInterview;
 
 @Controller
 
@@ -24,6 +28,9 @@ public class EmployeeCtr {
 
 	@Autowired
 	private EmployeeTypeRepository employeeTypeRep;
+	
+	@Autowired
+	private JobInterviewRepository jobInterviewRep;
 
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
@@ -38,6 +45,24 @@ public class EmployeeCtr {
 		return "preLogin";
 	}
 
+	@GetMapping("company/preAddEmployee")
+	public String preAddEmployee1(Model model) {
+		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
+        model.addAttribute("listEmployeeType", listEmployeeType);
+        List<JobInterview> listJobInterview= jobInterviewRep.findAll();
+        model.addAttribute("listJobInterview", listJobInterview);
+		return "company/addEmployee";
+	}
+
+	@PostMapping("/company/addEmployee")
+	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview) {
+		employeeRep.save(e);
+		employeeTypeRep.save(employeeType);
+		jobInterviewRep.save(jobInterview);
+		return "preLogin";
+	}
+	
+	
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
 
 	@GetMapping("/company/preDeleteByIdEmployee")

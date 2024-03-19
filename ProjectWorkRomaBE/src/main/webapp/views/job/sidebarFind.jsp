@@ -59,6 +59,8 @@ body {
   display: block;
   transition: 0.3s;
   background-color:black;
+  font-family:"Poppins";
+  font-size:18px;
 }
 #main {
   transition: margin-right .5s; 
@@ -124,7 +126,7 @@ body {
 <body>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10142;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#x27F6;</a>
   <a href="${pageContext.request.contextPath}/home">Home</a>
 <div class="dropdown">
   <button class="dropbtn">Company</button>
@@ -159,13 +161,13 @@ body {
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginRight = "0"; /* Cambia a marginRight */
+  document.getElementById("main").style.marginRight = "0";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginRight= "0"; /* Cambia a marginRight */
+  document.getElementById("main").style.marginRight= "0"; 
   document.body.style.backgroundColor = "white";
 }
 function closeNav() {
