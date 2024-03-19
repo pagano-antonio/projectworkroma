@@ -11,6 +11,7 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 	rel="stylesheet">
 <style>
+
 body {
   font-family: "Poppins", sans-serif;
   transition: background-color .5s;
@@ -52,15 +53,15 @@ body {
   margin-left: 50px;
 }
 .dropbtn {
- padding: 8px 8px 8px 32px;
-  text-decoration: none;
+  padding: 28px 8px 8px 32px;
   font-size: 25px;
   color: #818181;
-  display: block;
   transition: 0.3s;
   background-color:black;
   font-family:"Poppins";
-  font-size:18px;
+  font-size:16px;
+  text-align:center;
+  border: none;
 }
 #main {
   transition: margin-right .5s; 
@@ -105,7 +106,7 @@ body {
   text-decoration: none;
   display: block;
   font-family:"Poppins";
-  font-size:16px;
+  font-size:14px;
   
 }
 
@@ -121,14 +122,31 @@ body {
   background-color: #d8cdf3;
 }
 
+.home {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 20px; 
+  color: white; 
+  text-decoration: none; 
+}
+hr {
+  margin:  0 0 0 10px; 
+  width: 220px;
+  align-items:center;:center; 
+  color: #818181; 
+  border: none;
+  background-color: #818181; 
+  height: 1px; 
+}
 </style>
 </head>
 <body>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#x27F6;</a>
-  <a class="home" href="${pageContext.request.contextPath}/home">Home</a>
-<div class="dropdown">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h4>&#x27F6;</h4></a>
+ <div class="dropdown">
   <button class="dropbtn">Job</button>
   <div class="dropdown-content">
     <a href="${pageContext.request.contextPath}/job/preAddJobOffer">Add Job Offer</a>
@@ -136,7 +154,7 @@ body {
     <a href="${pageContext.request.contextPath}/job/preFindByStartDateAndEndDate">Find Job Offer by Date</a>
   </div>
 </div>
-
+<hr>
 <div class="dropdown">
   <button class="dropbtn">Employee</button>
   <div class="dropdown-content">
@@ -144,7 +162,7 @@ body {
     <a href="${pageContext.request.contextPath}/company/preFindByIdEmployeeType">Find By Employee Type</a>
   </div>
 </div>
-
+<hr>
 <div class="dropdown">
   <button class="dropbtn">Company</button>
   <div class="dropdown-content">
@@ -153,6 +171,9 @@ body {
     <a href="${pageContext.request.contextPath}/company/preFindByNameComapnyCLient">Find Company by Name</a>
   </div>
 </div>
+<hr>
+  <a class="home" href="${pageContext.request.contextPath}/home">Home</a>
+  
 </div>
 <div id="main">
   <h2 id="openBtn" onclick="openNav()">&#9776;</h2>
