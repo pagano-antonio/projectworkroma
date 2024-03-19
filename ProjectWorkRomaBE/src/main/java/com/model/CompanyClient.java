@@ -3,6 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -29,7 +30,7 @@ public class CompanyClient implements Serializable {
 	private String name;
 
 	// bi-directional many-to-one association to JobOffer
-	@OneToMany(mappedBy = "companyClient")
+	@OneToMany(mappedBy = "companyClient", cascade = CascadeType.ALL)
 	private List<JobOffer> jobOffers;
 
 	public CompanyClient() {

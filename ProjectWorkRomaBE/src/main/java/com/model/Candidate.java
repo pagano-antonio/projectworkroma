@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -40,23 +41,23 @@ public class Candidate implements Serializable {
 	private String surname;
 
 	// bi-directional many-to-one association to CandidateCommercialData
-	@OneToMany(mappedBy = "candidate")
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private List<CandidateCommercialData> candidateCommercialData;
 
 	// bi-directional many-to-one association to CandidateSkill
-	@OneToMany(mappedBy = "candidate")
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private List<CandidateSkill> candidateSkills;
 
 	// bi-directional many-to-one association to Education
-	@OneToMany(mappedBy = "candidate")
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private List<Education> educations;
 
 	// bi-directional many-to-one association to JobInterview
-	@OneToMany(mappedBy = "candidate")
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private List<JobInterview> jobInterviews;
 
 	// bi-directional many-to-one association to WorkExperience
-	@OneToMany(mappedBy = "candidate")
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private List<WorkExperience> workExperiences;
 
 	public Candidate() {

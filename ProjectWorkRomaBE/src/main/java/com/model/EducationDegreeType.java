@@ -3,6 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
@@ -25,7 +26,7 @@ public class EducationDegreeType implements Serializable {
 	private String description;
 
 	// bi-directional many-to-one association to Education
-	@OneToMany(mappedBy = "educationDegreeType")
+	@OneToMany(mappedBy = "educationDegreeType", cascade = CascadeType.ALL)
 	private List<Education> educations;
 
 	public EducationDegreeType() {

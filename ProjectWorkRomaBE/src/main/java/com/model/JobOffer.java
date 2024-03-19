@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -50,7 +51,7 @@ public class JobOffer implements Serializable {
 	private ContractType contractType;
 
 	// bi-directional many-to-one association to JobOfferSkill
-	@OneToMany(mappedBy = "jobOffer")
+	@OneToMany(mappedBy = "jobOffer", cascade = CascadeType.ALL)
 	private List<JobOfferSkill> jobOfferSkills;
 
 	public JobOffer() {
