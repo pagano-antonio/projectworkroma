@@ -25,6 +25,7 @@ body {
 	<div class="container1">
 		<div class="card1">
 <h1>New Job Offer</h1>
+
 			<form class="formAdd"
 				action="${pageContext.request.contextPath}/job/addJobOffer"
 				method="POST">
@@ -77,7 +78,7 @@ body {
 					</p>
 					<input type="number" id="idContractType" name="idContractType">
 				</div>
-				
+				<hr>
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>
