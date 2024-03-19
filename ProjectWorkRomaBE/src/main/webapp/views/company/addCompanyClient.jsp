@@ -1,35 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Employee</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+<title>Add Company Client</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/add.css">
+<style>
+body {
+	height: 100vh;
+}
+</style>
 </head>
-<body>
-<div class="container">
-    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
-    <span>ADD EMPLOYEE</span>
-</div>
-<form action="${pageContext.request.contextPath}/company/addEmployee" method="POST">
-	 <div class="data-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Insert Name" required minlength="3" maxlength="15">
-    </div>
-    <div class="data-group">
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" placeholder="Insert address" required minlength="3" maxlength="15">
-    </div>
-    <div class="data-group">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" placeholder="Insert City">
-    </div>
-	  <div class="submit">
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-    </div>
-</form>
 
+<body>
+	<jsp:include page="sidebarFind.jsp" />
+
+	<div class="container1">
+		<div class="card1">
+			<h1>New Company Client</h1>
+			<form class="formAdd"
+				action="${pageContext.request.contextPath}/company/addCompanyClient"
+				method="POST">
+				<div class="inline-p1">
+					<p>
+						<label for="name">Name:</label>
+					</p>
+					<input type="text" id="name" name="name" required minlength="3"
+						maxlength="15">
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="address">Address:</label>
+					</p>
+					<input type="text" id="address" name="address" required
+						minlength="3" maxlength="15">
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="city">City:</label>
+					</p>
+					<input type="text" id="city" name="city">
+				</div>
+				<div class="submit">
+					<button class="buttonSubmit" type="submit">Submit</button>
+					<button class="buttonReset" type="reset">Reset</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
