@@ -18,8 +18,8 @@ body {
 .card {
 	background-color: rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
-	height: 700px;
-	width: 800px;
+	height: 800px;
+	width: 1000px;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 	padding: 50px;
 	border-radius: 20px;
@@ -27,22 +27,25 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 25px;
+	align-items: center;
 }
 
 .boxLogin {
 	justify-content: center;
+	padding-right: 120px;
+	margin: 140px 0;
+	border-right: 1px solid white;
+	height: 100%;
 }
 
 .loginTitle {
 	font-size: 30px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	font-weight: 600;
 }
 
 .formLogin {
 	width: 300px;
-	text-align: left;
 }
 
 .inputField, select {
@@ -54,25 +57,34 @@ body {
 }
 
 .buttonLogin {
-	width: 40%;
-	padding: 10px;
-	background-color: #8080c0;
-	border: none;
-	border-radius: 3px;
-	color: #fff;
-	cursor: pointer;
+	margin-top: 20px;
+	width: 70%;
+  	padding: 10px;
+  	background-color: #8080c0;
+  	border: none;
+  	border-radius: 3px;
+  	color: #fff;
+  	cursor:pointer;
+}
+
+.buttonLogin:hover{
+	background-color: #B0B0D6;
 }
 
 .buttonRegister {
-	width: 40%;
-	padding: 10px;
-	margin-top: 15px;
-	background-color: transparent;
-	border: none;
-	border-radius: 3px;
-	color: #666666;
-	text-decoration: underline;
-	cursor: pointer;
+	width: 70%;
+  	padding: 10px;
+  	margin-top: 15px;
+  	background-color: transparent;
+  	border: 2px solid #8080c0;
+  	border-radius: 3px;
+  	color: #8080c0;
+  	text-decoration: none;	
+    cursor:pointer;
+}
+
+.buttonRegister:hover{
+	background-color: white;
 }
 
 .boxTitle {
@@ -80,9 +92,10 @@ body {
 }
 
 .title {
-	text-align: left;
+	margin-bottom: 50px;
+	text-align: center;
 	text-wrap: wrap;
-	color: #8080c0;
+	color:#8080c0;
 	font-family: "Poppins";
 }
 
