@@ -310,7 +310,7 @@
 						</table>
 						<button class="buttonOpenW"
 							onclick="window.location.href='${pageContext.request.contextPath }/candidate/preAddWorkExperience">Add
-							new Work Experiece</button>
+							new Work Experience</button>
 					</div>
 				</div>
 				<br>
@@ -503,9 +503,9 @@
 
 							</tbody>
 						</table>
-						<button class="buttonOpenW"
-							onclick="window.location.href='${pageContext.request.contextPath }/job/preAddSkill">Add
-							new Skill</button>
+						<a href="${pageContext.request.contextPath }/job/preAddSkill">
+						<button class="buttonOpenW"	>Add
+							new Skill</button></a>
 					</div>
 				</div>
 				<br>

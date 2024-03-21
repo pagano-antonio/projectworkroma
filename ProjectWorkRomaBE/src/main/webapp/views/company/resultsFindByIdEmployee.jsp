@@ -45,7 +45,7 @@ Employee employee = (Employee) request.getAttribute("idEmployee");
 						<button type="button">Update</button>
 				</a></td>
 				<td><a
-					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${employee.idEmployee}">
+					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${idEmployee.idEmployee}">
 						<button type="button">Delete</button>
 				</a></td>
 			</tr>
