@@ -41,7 +41,7 @@ Employee employee = (Employee) request.getAttribute("idEmployee");
 				<td><%=employee.getSurname()%></td>
 				<td><%=employee.getUsername()%></td>
 				<td><a
-					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${employee.idEmployee}">
+					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${idEmployee.idEmployee}">
 						<button type="button">Update</button>
 				</a></td>
 				<td><a

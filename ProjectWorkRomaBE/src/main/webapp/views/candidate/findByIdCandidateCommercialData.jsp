@@ -32,12 +32,9 @@
 				<button class="buttonReset" type="reset">Reset</button>
 			</form>
 		</div>
-		<div class="boxTitle">
-			<h2 class="title">FIND DATA</h2>
-			<img class="imageLogin"
-				src="webapp/resources/css/Immagini/preLogin.gif" alt="preLogin"
-				width="600" height="400">
-		</div>
+		<div class="boxTitle">	
+	<img class="imageLogin" src="${pageContext.request.contextPath}/resources/css/Immagini/iphone.gif" alt="iphone" width="1000" height="750">
+</div>
 	</div>
 </body>
 </html>
