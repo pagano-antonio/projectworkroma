@@ -62,7 +62,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.buttonOpenW {
+a {
     margin-top: 20px;
     width: 250px;
     padding: 10px;
@@ -73,7 +73,7 @@ body {
     cursor: pointer;
 }
 
-.buttonOpenW:hover {
+a:hover {
     background-color: #B0B0D6;
 }
 .buttonSubmit {

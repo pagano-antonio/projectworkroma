@@ -27,7 +27,7 @@ public class WorkExperienceCtr {
 	
 	@GetMapping("/candidate/preAddWorkExperience")
 	public String preAddWorkExperience(Model model) {
-		return "candidate/AddWorkExperience";
+		return "candidate/addWorkExperience";
 	}
 	
 	@PostMapping("/candidate/addWorkExperience")

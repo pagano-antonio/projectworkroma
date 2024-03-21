@@ -27,8 +27,7 @@ public class CandidateCommercialDataCtr {
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preAddCandidateCommercialData")
-	public String preAddCandidateCommercialData(Model model, Integer idCandidate) {
-		Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
+	public String preAddCandidateCommercialData(Model model) {
 		return "candidate/addCandidateCommercialData";
 	}
 
