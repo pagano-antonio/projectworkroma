@@ -1,103 +1,124 @@
 @charset "ISO-8859-1";
-/*css reset*/
-
-*{
+/* CSS reset */
+* {
     box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	
+    margin: 0;
+    padding: 0;
 }
 
-body{
-	background-image: url('Immagini/backgroundimg.png');
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+body {
+    background-image: url('Immagini/backgroundimg.png');
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.card{
-	background-color:rgba(255, 255, 255, 0.6);
-	font-family: "Poppins";
-	height:600px;
-	width: 800px;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+.card {
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: "Poppins";
+    height: 600px;
+    width: 800px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 50px;
     border-radius: 20px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    gap:25px;
-}
-.boxFind{
-	
-	justify-content: center;
-}
-
-.findTitle{
-	font-size: 24px;
-  	margin-bottom: 20px;
-  	}
-
-.formFind{
-	width: 300px;
-  	text-align: left;
+    gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-.inputField{
-	width: 100%;
-  	padding: 10px;
-  	margin-bottom: 15px;
-  	border: 1px solid #ccc;
-  	border-radius: 5px;
+.card::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    left: calc(50% - 1px);
+    width: 1px;
+    background-color: #ffffff;
 }
 
-.buttonSubmit{
-	width: 40%;
-  	padding: 10px;
-  	background-color: #8080c0;
-  	border: none;
-  	border-radius: 3px;
-  	color: #fff;
-  	cursor:pointer;
+.boxFind {
+    justify-content: center;
+   
 }
 
-.buttonReset{
-	width: 40%;
-  	padding: 10px;
-  	margin-top: 15px;
-  	background-color: transparent;
-  	border: none;
-  	border-radius: 3px;
-  	color:  #666666;
-  	text-decoration: underline;
-  	cursor:pointer;	
+.findTitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+    font-family: "Poppins";
+    font-weight: 600;
+}
+
+.formFind {
+    width: 300px;
+    text-align: left;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttonSubmit {
+    margin-top: 20px;
+    width: 70%;
+    padding: 10px;
+    background-color: #8080c0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonSubmit:hover {
+    background-color: #B0B0D6;
+}
+
+.buttonReset {
+    width: 70%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 2px solid #8080c0;
+    border-radius: 3px;
+    color: #8080c0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttonReset:hover {
+    background-color: white;
 }
 
 .boxTitle {
-	width: 300px;
+    width: 300px;
+    text-align: left;
+    color: #8080c0;
+    font-family: "Poppins";
 }
 
-.title {
-	text-align: left;
-	text-wrap: wrap;
-	color: #8080c0;
-	font-family: "Poppins";
-}
 
 .imageLogin {
-	width: 300px;
-	height: 300px;
+    width: 400px;
+    height: 400px;
+    margin: -50px;
 }
 
 .welcomeMessage {
-	text-align: center;
+    text-align: center;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
-
-
