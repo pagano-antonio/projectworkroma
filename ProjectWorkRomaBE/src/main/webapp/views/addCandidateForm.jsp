@@ -138,7 +138,7 @@
 					</div>
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 				<div class="box1">
 					<h1 class="nametitle" onclick="toggleSection4()">Education
 						&#129171;</h1>
@@ -185,7 +185,7 @@
 
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 				<div class="box1">
 					<h1 class="nametitle" onclick="toggleSection3()">Work
 						Experience &#129171;</h1>
@@ -231,7 +231,7 @@
 					</div>
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 				<div class="box1">
 					<h1 class="nametitle" onclick="toggleSection()">Job Interview
 						&#129171;</h1>
@@ -291,7 +291,7 @@
 						</div>
 					</div>
 				</div>
-				<hr>
+				<hr class="orizzontale">
 
 				<div class="box1">
 					<h1 class="nametitle" onclick="toggleSection1()">Commercial
@@ -336,7 +336,7 @@
 						</div>
 					</div>
 				</div>
-				<hr>
+				<hr class="orizzontale">
 
 
 				<div class="box1">

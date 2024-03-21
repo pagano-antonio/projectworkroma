@@ -308,7 +308,7 @@
 								%>
 							</tbody>
 						</table>
-						<a href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
+						<a class="linkAdd" href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
 							new Work Experience</a>
 					</div>
 				</div>
@@ -390,7 +390,7 @@
 							}
 							%>
 						</table>
-						<a href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
+						<a class="linkAdd" href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
 							new Job Interview</a>
 					</div>
 				</div>
@@ -452,7 +452,7 @@
 								%>
 							</tbody>
 						</table>
-						<a href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
+						<a class="linkAdd" href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
 							new Commercial Data</a>
 					</div>
 
@@ -500,7 +500,7 @@
 
 							</tbody>
 						</table>
-						<a href="${pageContext.request.contextPath }/job/preAddSkill">
+						<a class="linkAdd" href="${pageContext.request.contextPath }/job/preAddSkill">
 						Add
 							new Skill</a>
 					</div>
