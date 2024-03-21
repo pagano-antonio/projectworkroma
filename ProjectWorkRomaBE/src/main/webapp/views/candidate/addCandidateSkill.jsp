@@ -4,13 +4,15 @@
 <head>   
   <meta charset="UTF-8">
   <title>Add Candidate Skill</title>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/add.css">
 </head>
 <body>
-<div class="container">
-    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDV3NzhzMTd3YWxiN2J6dG1ldGF4dXduMmdoNWp6YXI2b3JzenBpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNwGfck2Awo3d2gB32/giphy.gif" width="200" alt="Weoplespace Sticker">
-    <span>ADD CANDIDATE SKILL</span>
-</div>
 <form action="${pageContext.request.contextPath}/candidate/addCandidateSkill" method="POST">  
     <div class="data-group">
         <label for="idCandidate">ID Candidate:</label>
