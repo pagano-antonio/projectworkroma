@@ -207,7 +207,9 @@
 							} else {
 							%>
 							<input type="date" id="date" name="date" value="">
-							<%} %>
+							<%
+							}
+							%>
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -222,7 +224,9 @@
 							} else {
 							%>
 							<input type="text" id="finalGrade" name="finalGrade" value="">
-							<%} %>
+							<%
+							}
+							%>
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -246,103 +250,76 @@
 				<div class="box1">
 					<h1 onclick="toggleSection3()">Work Experience &#129171;</h1>
 					<div class="hidden" id="workExperience">
-						<div class="inline-p1">
-							<p>
-								<label for="title">Title:</label>
-							</p>
+						<table>
+							<thead>
+								<td>Title:</td>
+								<td>Description:</td>
+								<td>Company:</td>
+								<td>StartDate:</td>
+								<td>EndDate:</td>
+								<td>City:</td>
+
+							</thead>
 							<%
 							if (candidate.getWorkExperiences().size() > 0) {
 							%>
-							<input type="text" id="title" name="title"
-								value="<%=candidate.getWorkExperiences().get(0).getTitle()%>">
-								<%
-							} else {
-							%>
-							<input type="text" id="title" name="title"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="description">Description:</label>
-							</p>
-							<%
-							if (candidate.getWorkExperiences().size() > 0) {
-							%>
+							<tbody>
+								<th><input type="text" id="title" name="title"
+									value="<%=candidate.getWorkExperiences().get(0).getTitle()%>"></th>
+								<th>
 							<input type="text" id="description" name="description"
-								value="<%=candidate.getWorkExperiences().get(0).getDescription()%>">
-								<%
-							} else {
-							%><input type="text" id="description" name="description"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="company">Company:</label>
-							</p>
-							<%
-							if (candidate.getWorkExperiences().size() > 0) {
-							%>
-							<input type="text" id="company" name="company"
-								value="<%=candidate.getWorkExperiences().get(0).getCompany()%>">
-								<%
-							} else {
-							%>
-							<input type="text" id="company" name="company"
-								value="">
-								<%} %>
-						</div>
-						<div>
-							<div class="inline-p1">
-								<p>
-									<label for="startDate">StartDate:</label>
-								</p>
-								<%
-							if (candidate.getWorkExperiences().size() > 0) {
-							%>
+									value="<%=candidate.getWorkExperiences().get(0).getDescription()%>">
+								</th>
+								<th>
+								<input type="text" id="company" name="company"
+									value="<%=candidate.getWorkExperiences().get(0).getCompany()%>">
+								</th>
+								<th>
 								<input type="date" id="startDate" name="startDate"
 									value="<%=candidate.getWorkExperiences().get(0).getStartDate()%>">
-									<%
-							} else {
-							%>
-							<input type="date" id="startDate" name="startDate"
-									value="">
-									<%} %>
-							</div>
-							<div class="inline-p1">
-								<p>
-									<label for="endDate">End Date:</label>
-								</p>
-								<%
-							if (candidate.getWorkExperiences().size() > 0) {
-							%>
+								</th>
+								<th>
 								<input type="date" id="endDate" name="endDate"
 									value="<%=candidate.getWorkExperiences().get(0).getEndDate()%>">
-										<%
-							} else {
-							%>
-							<input type="date" id="endDate" name="endDate"
-									value="">
-									<%} %>
-							</div>
-							<div class="inline-p1">
-								<p>
-									<label for="city">City:</label>
-								</p>
-								<%
-							if (candidate.getWorkExperiences().size() > 0) {
-							%>
+								</th>
+								<th>
 								<input type="text" id="city" name="city"
 									value="<%=candidate.getWorkExperiences().get(0).getCity()%>">
-									<%
-							} else {
-							%>
-							<input type="text" id="city" name="city"
-									value="">
-									<%} %>
-							</div>
-						</div>
+								</th>
+
+								<%
+								} else {
+								%>
+								<th>
+								<input type="text" id="title" name="title" value="">
+								</th>
+								<th>
+								<input type="text" id="description" name="description" value="">
+								</th>
+								<th>
+								<input type="text" id="company" name="company" value="">
+								<th>
+								<input type="date" id="startDate" name="startDate" value="">
+								</th>
+								<th>
+								<input type="date" id="endDate" name="endDate" value="">
+								</th>
+								<th>
+								<input type="text" id="city" name="city" value="">
+								</th>
+								<%
+								}
+								%>
+
+
+								<a
+									href="${pageContext.request.contextPath }/candidate/preAddWorkExperience"></a>
+								<button>Add new Work Experience</button>
+
+
+
+								</tbody>
+						</table>
 					</div>
 				</div>
 				<br>
@@ -350,185 +327,142 @@
 				<div class="box1">
 					<h1 onclick="toggleSection()">Job Interview &#129171;</h1>
 					<div class="hidden" id="jobInterview">
-						<div class="inline-p1">
-							<p>
-								<label for="date">Date:</label>
-							</p>
+						<table>
+							<thead>
+								<td>Date:</td>
+								<td>Outcome:</td>
+								<td>Employee:</td>
+								<td>Contract Type:</td>
+								<td>State Job Interview:</td>
+								<td>Notes:</td>
+							</thead>
+							<tbody>
 								<%
-							if (candidate.getJobInterviews().size() > 0) {
-							%>
-							<input type="date" id="date" name="date"
-								value="<%=candidate.getJobInterviews().get(0).getDate()%>">
+								if (candidate.getJobInterviews().size() > 0) {
+								%>
+								<th><input type="date" id="date" name="date"
+									value="<%=candidate.getJobInterviews().get(0).getDate()%>"></th>
+								<th><input type="number" id="outcome" name="outcome"
+									value="<%=candidate.getJobInterviews().get(0).getOutcome()%>">
+								</th>
+
+								<th><select name="idEmployee">
+										<c:forEach var="listEmployee" items="${listEmployee}">
+											<option value="${listEmployee.idEmployee}">
+												${listEmployee.username}</option>
+										</c:forEach>
+								</select></th>
+								<th><select name="idContractType">
+										<c:forEach var="listContractType" items="${listContractType}">
+											<option value="${listContractType.idContractType}">
+												${listContractType.title}</option>
+										</c:forEach>
+								</select></th>
+								<th><select name="idStateJobInterview">
+										<c:forEach var="listStateJobInterview"
+											items="${listStateJobInterview}">
+											<option value="${listStateJobInterview.idStateJobInterview}">
+												${listStateJobInterview.title}</option>
+										</c:forEach>
+								</select></th>
+								<th><textarea name="notes" row="8" cols="80"
+										value="<%=candidate.getJobInterviews().get(0).getNotes()%>"></textarea></th>
+
 								<%
-							} else {
-							%>
-							<input type="date" id="date" name="date"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="outcome">Outcome:</label>
-							</p>	<%
-							if (candidate.getJobInterviews().size() > 0) {
-							%>
-							<input type="number" id="outcome" name="outcome"
-								value="<%=candidate.getJobInterviews().get(0).getOutcome()%>">
-								<%
-							} else {%>
-							<input type="number" id="outcome" name="outcome"
-								value="">
-								<%} %>
-							
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="employee">Employee:</label>
-							</p>	
-							<select name="idEmployee">
-								<c:forEach var="listEmployee" items="${listEmployee}">
-									<option value="${listEmployee.idEmployee}">
-										${listEmployee.username}</option>
-								</c:forEach>
-							</select>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="contractType">Contract Type:</label>
-							</p>
-							<select name="idContractType">
-								<c:forEach var="listContractType" items="${listContractType}">
-									<option value="${listContractType.idContractType}">
-										${listContractType.title}</option>
-								</c:forEach>
-							</select>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="stateJobInterview">State Job Interview:</label>
-							</p>
-							<select name="idStateJobInterview">
-								<c:forEach var="listStateJobInterview"
-									items="${listStateJobInterview}">
-									<option value="${listStateJobInterview.idStateJobInterview}">
-										${listStateJobInterview.title}</option>
-								</c:forEach>
-							</select>
-						</div>
-						<br>
-						<div class="inline-p1">
-							<p>
-								<label for="notes">Notes:</label>
-							</p>
+								} else {
+								%>
+								<th><input type="date" id="date" name="date" value=""></th>
+								<th><input type="number" id="outcome" name="outcome"
+									value=""></th>
+								<th><select name="idEmployee">
+										<c:forEach var="listEmployee" items="${listEmployee}">
+											<option value="${listEmployee.idEmployee}">
+												${listEmployee.username}</option>
+										</c:forEach>
+								</select></th>
+								<th><select name="idContractType">
+										<c:forEach var="listContractType" items="${listContractType}">
+											<option value="${listContractType.idContractType}">
+												${listContractType.title}</option>
+										</c:forEach>
+								</select></th>
+								<th><select name="idStateJobInterview">
+										<c:forEach var="listStateJobInterview"
+											items="${listStateJobInterview}">
+											<option value="${listStateJobInterview.idStateJobInterview}">
+												${listStateJobInterview.title}</option>
+										</c:forEach>
+								</select></th>
+								<th><textarea name="notes" row="8" cols="80" value=""></textarea></th>
+							</tbody>
 							<%
-							if (candidate.getJobInterviews().size() > 0) {
+							}
 							%>
-							<textarea name="notes" row="8" cols="80"
-								value="<%=candidate.getJobInterviews().get(0).getNotes()%>"></textarea>
-								<%}else{ %>
-								<textarea name="notes" row="8" cols="80"
-								value=""></textarea>
-								<%} %>
-								
-						</div>
+							<a
+								href="${pageContext.request.contextPath }/job/preAddJobInterview"></a>
+							<button>Add new Job Interview</button>
+						</table>
 					</div>
 				</div>
 				<hr>
 
 				<div class="box1">
 					<h1 onclick="toggleSection1()">Commercial Data &#129171;</h1>
+
 					<div class="hidden" id="commercialData">
+						<table>
+							<thead>
+								<td>Business Cost:</td>
+								<td>Current Ral:</td>
+								<td>Month Refund:</td>
+								<td>ProposedRal:</td>
+								<td>Subsidy Flag:</td>
+								<td>Notes:</td>
+							</thead>
+							<tbody>
+								<%
+								if (candidate.getCandidateCommercialData().size() > 0) {
+								%>
+								<th><input type="number" id="businessCost"
+									name="businessCost"
+									value="<%=candidate.getCandidateCommercialData().get(0).getBusinessCost()%>"></th>
+								<th><input type="number" id="currentRal" name="currentRal"
+									value="<%=candidate.getCandidateCommercialData().get(0).getCurrentRal()%>"></th>
 
-						<div class="inline-p1">
-							<p>
-								<label for="businessCost">Business Cost:</label>
-							</p>	<%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<input type="number" id="businessCost" name="businessCost"
-								value="<%=candidate.getCandidateCommercialData().get(0).getBusinessCost()%>">
-								<%
-							} else {
-							%>
-								<input type="number" id="businessCost" name="businessCost"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="currentRal">CurrentRal:</label>
-							</p><%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<input type="number" id="currentRal" name="currentRal"
-								value="<%=candidate.getCandidateCommercialData().get(0).getCurrentRal()%>">
-								<%
-							} else {
-							%>
-							<input type="number" id="currentRal" name="currentRal"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="monthRefund">Month Refund:</label>
-							</p><%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<input type="number" id="monthRefund" name="monthRefund"
-								value="<%=candidate.getCandidateCommercialData().get(0).getMonthRefund()%>">
-								<%
-							} else {
-							%><input type="number" id="monthRefund" name="monthRefund"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="proposedRal">ProposedRal:</label>
-							</p><%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<input type="number" id="proposedRal" name="proposedRal"
-								value="<%=candidate.getCandidateCommercialData().get(0).getProposedRal()%>">
-								<%}else{ %>
-								<input type="number" id="proposedRal" name="proposedRal"
-								value="">
-								<%} %>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="subsidyFlag">Subsidy Flag:</label>
-							</p><%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<input type="number" id="subsidyFlag" name="subsidyFlag"
-								value="<%=candidate.getCandidateCommercialData().get(0).getSubsidyFlag()%>">
-								<%
-							} else {%>
-							<input type="number" id="subsidyFlag" name="subsidyFlag"
-								value="">
-								<%} %>
-							
-						</div>
+								<th><input type="number" id="monthRefund"
+									name="monthRefund"
+									value="<%=candidate.getCandidateCommercialData().get(0).getMonthRefund()%>"></th>
+								<th><input type="number" id="proposedRal"
+									name="proposedRal"
+									value="<%=candidate.getCandidateCommercialData().get(0).getProposedRal()%>"></th>
 
-						<br>
-						<div class="inline-p1">
-							<p>
-								<label for="notes">Notes:</label>
-							</p><%
-							if (candidate.getCandidateCommercialData().size() > 0) {
-							%>
-							<textarea name="notes" row="40" cols="80"
-								value="<%=candidate.getCandidateCommercialData().get(0).getNotes()%>"></textarea>
+								<th><input type="number" id="subsidyFlag"
+									name="subsidyFlag"
+									value="<%=candidate.getCandidateCommercialData().get(0).getSubsidyFlag()%>"></th>
+								<th><textarea name="notes" row="40" cols="80"
+										value="<%=candidate.getCandidateCommercialData().get(0).getNotes()%>"></textarea></th>
 								<%
-							} else {
-							%>
-							<textarea name="notes" row="40" cols="80"
-								value=""></textarea>
-								<%} %>
-						</div>
-						<br>
+								} else {
+								%>
+								<th><input type="number" id="businessCost"
+									name="businessCost" value=""></th>
+								<th><input type="number" id="currentRal" name="currentRal"
+									value=""></th>
+								<th><input type="number" id="monthRefund"
+									name="monthRefund" value=""></th>
+								<th><input type="number" id="proposedRal"
+									name="proposedRal" value=""></th>
+								<th><input type="number" id="subsidyFlag"
+									name="subsidyFlag" value="">
+								<th><textarea name="notes" row="40" cols="80" value=""></textarea></th>
+								<%
+								}
+								%>
+							</tbody>
+							<a
+								href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData"></a>
+							<button>Add new Commercial Data</button>
+						</table>
 					</div>
 
 				</div>
@@ -545,7 +479,10 @@
 									<td>Description:</td>
 								</tr>
 							</thead>
-							<tbody><% if(candidate.getCandidateSkills().size()<0) {%>
+							<tbody>
+								<%
+								if (candidate.getCandidateSkills().size() < 0) {
+								%>
 								<%
 								for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) {
 								%>
@@ -555,18 +492,24 @@
 									<td><input type="text" id="description" name="description"
 										value="<%=candidateSkill.getSkill().getDescription()%>"></td>
 								</tr>
-								<% }}else{ %>
+								<%
+								}
+								} else {
+								%>
 								<tr>
-									<td><input type="text" id="title" name="title"
-										value=""></td>
+									<td><input type="text" id="title" name="title" value=""></td>
 									<td><input type="text" id="description" name="description"
 										value=""></td>
-										<%} %>
+									<%
+									}
+									%>
 								</tr>
-								
+
 							</tbody>
 						</table>
-
+						<a
+							href="${pageContext.request.contextPath }/candidate/preAddCandidateSkill"></a>
+						<button>Add new Skill</button>
 					</div>
 				</div>
 				<div class="submit">

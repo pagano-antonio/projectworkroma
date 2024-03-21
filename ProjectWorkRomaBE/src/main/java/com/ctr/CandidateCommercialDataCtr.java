@@ -27,14 +27,15 @@ public class CandidateCommercialDataCtr {
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/candidate/preAddCandidateCommercialData")
-	public String preAddCandidateCommercialData(Model model) {
+	public String preAddCandidateCommercialData(Model model, Integer idCandidate) {
+		Candidate candidate = (Candidate) candidateRep.findById(idCandidate).orElse(null);
 		return "candidate/addCandidateCommercialData";
 	}
 
 	@PostMapping("/candidate/addCandidateCommercialData")
 	public String addCandidateCommercialData(Model model, CandidateCommercialData candidateCommercialData) {
 		candidateCommercialDataRep.save(candidateCommercialData);
-		return "success";
+		return "/preUpdateByIdCandidate";
 	}
 
 //////////////////////////////////////DELETE BY ID  ////////////////////////////////////
