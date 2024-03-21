@@ -17,7 +17,7 @@
 <% EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType"); %>
 <table>
     <thead>
-        <tr>
+        <tr>  
            <th>ID Employee </th>
             <th>ID Employee Type</th>
             <th>Description</th> 
@@ -25,7 +25,7 @@
     </thead>
     <tbody>
         <tr>
-<%--         <td><%= employeeType.getEmployees().getIdEmployee()%></td> --%>
+<%--        <td><%= employeeType.getEmployees().getIdEmployee()%></td>  --%>
             <td><%= employeeType.getIdEmployeeType() %></td>
             <td><%= employeeType.getDescription() %></td>
           <td> <a

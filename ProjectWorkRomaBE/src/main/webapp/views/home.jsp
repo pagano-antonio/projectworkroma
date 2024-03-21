@@ -12,9 +12,9 @@
 
 <body>
 <jsp:include page="sidebar.jsp" />
-<img src="resources/css/Immagini/pc2.gif" width="700" class="imghome">
-
+<div><img src="resources/css/Immagini/pc2.gif" width="700" class="imghome"></div>
 <h1>WELCOME</h1>
+
 
 </body>
 </html>
