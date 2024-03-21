@@ -18,16 +18,25 @@
 <table>
     <thead>
         <tr>
+           <th>ID Employee </th>
             <th>ID Employee Type</th>
             <th>Description</th> 
         </tr>
     </thead>
     <tbody>
         <tr>
+<%--         <td><%= employeeType.getEmployees().getIdEmployee()%></td> --%>
             <td><%= employeeType.getIdEmployeeType() %></td>
             <td><%= employeeType.getDescription() %></td>
-            </td>
-        </tr>
+          <td> <a
+					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployeeType=${idEmployeeType.idEmployee}">
+						<button type="button">Update</button>
+				</a></td>
+				<td><a
+					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${employee.idEmployee}">
+						<button type="button">Delete</button>
+				</a></td>
+			</tr>
     </tbody> 
 </table>
 </body>

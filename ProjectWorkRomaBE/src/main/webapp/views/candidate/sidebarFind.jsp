@@ -147,11 +147,43 @@ hr {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h4>&#x27F6;</h4></a>
  <div class="dropdown">
+  <button class="dropbtn">Candidate</button>
+  <div class="dropdown-content">
+    <a href="${pageContext.request.contextPath}/preAddCandidateForm">Add Candidate</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByIdCandidate">Find Candidate by ID </a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindBySurnameCandidate">Find Candidate by Surname </a>           
+    <a href="${pageContext.request.contextPath}/candidate/preFindByCityCandidate">Find Candidate by City</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByEducationDegreeTypeCandidate">Find Candidate by Education Degree Type</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByIdCandidateSkill">Find Candidate by ID Skill</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindBySkillCandidate">Find Candidate by Skill</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByPhoneCandidate">Find Candidate by Phone Number</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByIdCandidateCommercialData">Find Candidate by Commercial Data</a>
+    <a href="${pageContext.request.contextPath}/candidate/preFindByOutcomeJobInterviewCandidate">Find Candidate by Outcome Job Interview </a>                      
+  </div>
+</div>
+<hr>
+ <div class="dropdown">
+  <button class="dropbtn">Company</button>
+  <div class="dropdown-content">
+    <a href="${pageContext.request.contextPath}/company/preAddCompanyClient">Add Company Client</a>
+    <a href="${pageContext.request.contextPath}/company/preFindByIdCompanyClient">Find Company Client by ID</a>
+    <a href="${pageContext.request.contextPath}/company/preFindByNameCompanyClient">Find Company Client by name</a>  
+     <a href="${pageContext.request.contextPath}/company/preFindByCityCompanyClient">Find Company Client by city</a>  
+  </div>
+</div>
+<hr>
+<div class="dropdown">
   <button class="dropbtn">Job</button>
   <div class="dropdown-content">
     <a href="${pageContext.request.contextPath}/job/preAddJobOffer">Add Job Offer</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByTitleJobOffer">Find Job Offer by Title</a>
     <a href="${pageContext.request.contextPath}/job/preFindByIdJobOfferSkillJobOffer">Find Job Offer by Skill</a>
     <a href="${pageContext.request.contextPath}/job/preFindByStartDateAndEndDate">Find Job Offer by Date</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByCompanyClientJobOffer">Find Job Offer by Company Client</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByContractTypeJobOffer">Find Job Offer by Contract Type</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByMaxRalJobOffer">Find Job Offer by Max Ral</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByMinRalJobOffer">Find Job Offer by Min Ral</a>
+    <a href="${pageContext.request.contextPath}/job/preFindByStartDateAndEndDate">Find Job Offer by Start Date and End Date</a>
   </div>
 </div>
 <hr>
@@ -159,21 +191,13 @@ hr {
   <button class="dropbtn">Employee</button>
   <div class="dropdown-content">
     <a href="${pageContext.request.contextPath}/company/preAddEmployee">Add Employee</a>
-    <a href="${pageContext.request.contextPath}/company/preFindByIdEmployeeType">Find By Employee Type</a>
+    <a href="${pageContext.request.contextPath}/company/preFindByIdEmployee">Find Employee by ID</a>
+    <a href="${pageContext.request.contextPath}/company/preFindByIdEmployeeType">Find By Employee Type</a>  
   </div>
 </div>
 <hr>
-<div class="dropdown">
-  <button class="dropbtn">Company</button>
-  <div class="dropdown-content">
-    <a href="${pageContext.request.contextPath}/company/preAddCompanyClient">Add Company</a>
-    <a href="${pageContext.request.contextPath}/company/preFindByCityCompanyClient">Find Company by City</a>
-    <a href="${pageContext.request.contextPath}/company/preFindByNameComapnyCLient">Find Company by Name</a>
-  </div>
-</div>
-<hr>
+
   <a class="home" href="${pageContext.request.contextPath}/home">Home</a>
-  
 </div>
 <div id="main">
   <h2 id="openBtn" onclick="openNav()">&#9776;</h2>
@@ -182,13 +206,13 @@ hr {
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginRight = "0"; 
+  document.getElementById("main").style.marginRight = "0";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginRight= "0"; 
+  document.getElementById("main").style.marginRight= "0";
   document.body.style.backgroundColor = "white";
 }
 function closeNav() {

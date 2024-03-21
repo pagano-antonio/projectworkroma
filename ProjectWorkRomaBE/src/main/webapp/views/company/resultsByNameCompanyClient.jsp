@@ -32,7 +32,7 @@
                 <td>${companyClient.city}</td>
                 <td>${companyClient.name}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/company/preUpdateByIdCompanyClient=${companyClient.idCompanyClient}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
                         <button type="button">Update</button>
                     </a>
                 </td>

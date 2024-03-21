@@ -17,7 +17,6 @@
         <tr>
         	<th>CandidateSkill ID</th>
         	<th>Skill</th>
-            <th>Candidate ID</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Birthday</th>
@@ -31,22 +30,22 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="idCandidateSkill" items="${idCandidateSkill}">
+        <c:forEach var="candidateSkill" items="${idCandidateSkill}">
             <tr>
             	
-                <td>${idCandidateSkill.idSkill}</td>
-                <td>${idCandidateSkill.skill}</td>
-                <td>${idCandidateSkill.idCandidate}</td>
-                <td>${idCandidateSkill.name}</td>
-                <td>${idCandidateSkill.surname}</td>
-                <td>${idCandidateSkill.birthday}</td>
-                <td>${idCandidateSkill.birthPlace}</td>
-                <td>${idCandidateSkill.address}</td>
-                <td>${idCandidateSkill.city}</td>
-                <td>${idCandidateSkill.email}</td>
-                <td>${idCandidateSkill.phone}</td>
+                <td>${candidateSkill.idCandidateSkill}</td>
+                <td>${candidateSkill.getCandidate().getIdCandidate()}</td>
+                <td>${candidateSkill.skill}</td>
+                <td>${candidateSkill.getCandidate().getName()}</td>
+                <td>${candidateSkill.getCandidate().getSurname()}</td>
+                <td>${candidateSkill.getCandidate().getBirthday()}</td>
+                <td>${candidateSkill.getCandidate().getBirthPlace()}</td>
+                <td>${candidateSkill.getCandidate().getAddress()}</td>
+                <td>${candidateSkill.getCandidate().getCity()}</td>
+                <td>${candidateSkill.getCandidate().getEmail()}</td>
+                <td>${candidateSkill.getCandidate().getPhone()}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidateSkill.getCandidate().getIdCandidate()}">
                         <button type="button">Update</button>
                     </a>
                 </td>

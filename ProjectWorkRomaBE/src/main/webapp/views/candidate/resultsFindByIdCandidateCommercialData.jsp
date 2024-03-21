@@ -44,7 +44,7 @@
                 <td><%=candidateCommercialData.getSubsidyFlag()%></td>
                 <td><%=candidateCommercialData.getNotes()%></td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidateCommercialData?idCandidateCommercialData=${candidateCommercialData.idCandidateCommercialData}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${idCandidateCommercialData.getCandidate().getIdCandidate()}">
                         <button type="button">Update</button>
                     </a>
                 </td>

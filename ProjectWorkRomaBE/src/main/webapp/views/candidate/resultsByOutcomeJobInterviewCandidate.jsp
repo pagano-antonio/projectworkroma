@@ -39,7 +39,7 @@
                 <td>${candidate.email}</td>
                 <td>${candidate.phone}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
                         <button type="button">Update</button>
                     </a>
                 </td>

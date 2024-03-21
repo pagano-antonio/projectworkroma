@@ -23,9 +23,9 @@
 				action="${pageContext.request.contextPath}/company/findByIdEmployeeType"
 				method="GET">
 				<p>
-					<label for="title">Employee Type:</label>
+					<label for="idEmployeeType">Employee Type ID:</label>
 				</p>
-				<input class="inputField" type="text" id="title" name="title" placeholder="Insert title">
+				<input class="inputField" type="number" id="idEmployeeType" name="idEmployeeType" >
 				<div>
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>
