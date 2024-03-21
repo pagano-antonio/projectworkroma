@@ -11,10 +11,28 @@
 </head>
 
 <body>
+
+
 <jsp:include page="sidebar.jsp" />
-<div><img src="resources/css/Immagini/pc2.gif" width="700" class="imghome"></div>
-<h1>WELCOME</h1>
+<div class="card">
+
+<div><img src="resources/css/Immagini/home.gif" class="imghome"></div>
+<div class="welcomeSection">
+<h1 class="welcomeMessage">Welcome!</h1>
+<p>Let's get to work!</p>
+</div>
+
+<div class="utente">
+
+<div class="profilePic"><img src="resources/css/Immagini/img-profile.jpg" class="imgProfile"></div>
+<div class="description">
+<p>Alice Foglia</p>
+<p class="employeeType">Manager</p>
+</div>
+
+</div>
 
 
+</div>
 </body>
 </html>

@@ -7,16 +7,57 @@
     box-sizing: border-box;
 }
 
-.dimension{
-    margin: 0 auto;
-    max-width: 540px;
-    align-items: center;
-}
 
 body{
-	background-color: #d8cdf3;
-	background-image: url("Immagini/backgroundimg.png");
+	background-image: url('Immagini/backgroundimg.png');
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
+.card {
+	background-color: rgba(255, 255, 255, 0.6);
+	font-family: "Poppins";
+	height: 800px;
+	width: 1000px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	border-radius: 20px;
+	text-align: center;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.welcomeMessage {
+	text-align: center;
+}
+
+.welcomeSection {
+	border-bottom: 1px solid white;
+	padding-bottom: 20px;
+}
+
+.imgProfile { 
+	margin: 20px;
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+}
+
+.description {
+	text-align: left;
+}
+
+.employeeType {
+	color: #7A7A7A;
+}
+
+.utente {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
