@@ -32,12 +32,12 @@
                 <td>${companyClient.city}</td>
                 <td>${companyClient.name}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?IdCompanyClient=${companyClient.idCompanyClient}">
+                    <a href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
                         <button type="button">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient?IdCompanyClient=${companyClient.idCompanyClient}">
+                    <a href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
                         <button type="button">Delete</button>  
                     </a>
                 </td>

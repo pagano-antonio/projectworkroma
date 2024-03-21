@@ -49,7 +49,7 @@
 							<td>${candidate.getEmail()}</td>
 							<td>${candidate.getPhone()}</td>
 							<td><a
-								href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.getIdCandidate()}">
+								href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
 									<button type="button"><h3>&#10677;</h3></button>
 							</a></td>
 							<td><a

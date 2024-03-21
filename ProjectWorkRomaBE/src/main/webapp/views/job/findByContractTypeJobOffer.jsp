@@ -30,11 +30,9 @@
 				</div>
 			</form>
 		</div>
-	<div id="welcomeSection" class="boxTitle hidden">
-			<img class="imageLogin" src="resources/css/Immagini/ricerca.gif"
-				alt="ricerca" width="1000" height="800">
-			<h2 class="welcomeMessage title">Find data</h2>
-		</div>
+	<div class="boxTitle">	
+	<img class="imageLogin" src="${pageContext.request.contextPath}/resources/css/Immagini/iphone.gif" alt="iphone" width="1000" height="750">
+</div>
 	</div>
 </body>
 </html>
