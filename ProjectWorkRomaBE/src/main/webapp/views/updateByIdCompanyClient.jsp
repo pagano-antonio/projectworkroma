@@ -57,7 +57,7 @@
 					<input type="text" id="address" name="address"
 						value="<%=companyClient.getAddress()%>">
 				</div>
-					<hr>
+					<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

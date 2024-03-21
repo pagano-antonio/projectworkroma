@@ -14,8 +14,6 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/signUp_Login.css">
 
-
-<!-- Script per gestire il tempo di visualizzazione -->
 <script>
 	// Mostra la pagina di attesa per 3 secondi
 	setTimeout(function() {

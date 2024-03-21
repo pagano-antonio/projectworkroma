@@ -85,7 +85,7 @@
 					<input type="password" id="password" name="password"
 						value="<%=employee.getPassword()%>">
 				</div>
-				<hr>
+				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

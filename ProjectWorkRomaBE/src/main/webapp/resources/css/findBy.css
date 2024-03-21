@@ -18,7 +18,7 @@ body {
 .card {
     background-color: rgba(255, 255, 255, 0.6);
     font-family: "Poppins";
-    height: 600px;
+    height: 700px;
     width: 800px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 50px;
@@ -100,7 +100,35 @@ body {
 .buttonReset:hover {
     background-color: white;
 }
+.buttonUpdate{
+	margin-top: 20px;
+	width: 70%;
+  	padding: 10px;
+  	background-color: #8080c0;
+  	border: none;
+  	border-radius: 3px;
+  	color: #fff;
+  	cursor:pointer;
+}
 
+.buttonUpdate:hover{
+	background-color: #B0B0D6;
+}
+.buttonDelete {
+	width: 70%;
+  	padding: 10px;
+  	margin-top: 15px;
+  	background-color: transparent;
+  	border: 2px solid #8080c0;
+  	border-radius: 3px;
+  	color: #8080c0;
+  	text-decoration: none;	
+    cursor:pointer;
+}
+
+.buttonDelete:hover{
+	background-color: white;
+}
 .boxTitle {
     width: 300px;
     text-align: left;
