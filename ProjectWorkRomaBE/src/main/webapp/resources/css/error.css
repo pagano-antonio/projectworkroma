@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+}    
+    
+    .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Styles for error title */
+.error-title {
+    font-size: 6em;
+    color: white; /* Coral color */
+    margin-bottom: 0.5em;
+} 
+
+/* Styles for error text */
+.error-text {
+    font-size: 1.5em;
+    color: #696969; /* Dim gray color */
+    text-align: center;
+}
+
+/* Animation for blinking text */
+.animate-blink {
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
