@@ -56,10 +56,7 @@
 								href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
 									<button type="button"><h3>&#10683;</h3></button>
 							</a></td>
-						 <td> <a href="${pageContext.request.contextPath}/job/preAddJobInterview?idCandidate=${candidate.idCandidate}">
-									<button type="button"><h3>Start new Job Interview</h3></button>
-							</a>
-							</td>
+						 
 						</tr>
 							
 					</c:forEach>

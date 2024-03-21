@@ -42,11 +42,11 @@ Employee employee = (Employee) request.getAttribute("idEmployee");
 				<td><%=employee.getUsername()%></td>
 				<td><a
 					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${idEmployee.idEmployee}">
-						<button type="button">Update</button>
+						<button type="button"><h3>&#10677;</h3></button>
 				</a></td>
 				<td><a
-					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${employee.idEmployee}">
-						<button type="button">Delete</button>
+					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${idEmployee.idEmployee}">
+						<button type="button"><h3>&#10683;</h3></button>
 				</a></td>
 			</tr>
 		</tbody>
