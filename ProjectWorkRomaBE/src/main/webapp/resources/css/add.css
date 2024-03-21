@@ -32,9 +32,9 @@ body {
 	
 	border: none;
 	height: 2px;
-	background-color: #dcdced;
-	margin:30px;
-	width:100%;
+	background-color: #ffffff;
+	margin:10px;
+	width:700px;
 	
 }
 
@@ -54,7 +54,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 50px;
-	width: 900px;
+	width: 1000px;
 }
 
 .box1 {
@@ -62,27 +62,49 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.buttonOpenW {
+    margin-top: 20px;
+    width: 250px;
+    padding: 10px;
+    background-color: #8080c0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
 
+.buttonOpenW:hover {
+    background-color: #B0B0D6;
+}
 .buttonSubmit {
-	width: 40%;
-	padding: 10px;
-	background-color: rgb(128, 128, 192);
-	border: none;
-	border-radius: 6px;
-	color: #fff;
-	cursor: pointer;
+    margin-top: 20px;
+    width: 250px;
+    padding: 10px;
+    background-color: #8080c0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonSubmit:hover {
+    background-color: #B0B0D6;
 }
 
 .buttonReset {
-	width: 40%;
-	padding: 10px;
-	margin-top: 15px;
-	background-color: transparent;
-	border: none;
-	border-radius: 3px;
-	color: #808080;
-	text-decoration: underline;
-	cursor: pointer;
+    width: 250px;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 2px solid #8080c0;
+    border-radius: 3px;
+    color: #8080c0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttonReset:hover {
+    background-color: white;
 }
 
 input, textarea, select {
@@ -102,6 +124,7 @@ table {
 	width: 100%;
 	margin-bottom: 20px;
 	border-radius: 20px;
+	max-width: 900px;
 	
 }
 
@@ -126,6 +149,7 @@ tbody {
 	background-color: #f1f1f8;
 	border: 6px;
 	border-radius: 20px;
+	font-size: 16px;
 	text-align: center;
 }
 tbody tr {

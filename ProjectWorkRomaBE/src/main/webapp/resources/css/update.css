@@ -27,7 +27,9 @@ body {
 	padding: 16px;
 	cursor: pointer;
 }
-
+.nametitle{
+	cursor:pointer;
+}
 hr  {
 	border: none;
 	height: 2px;
@@ -53,7 +55,15 @@ hr  {
 	height:700px;
 	width: 800px;
 }
-
+.orizzontale {
+	
+	border: none;
+	height: 2px;
+	background-color: #f5f5fa;
+	margin:30px;
+	width:100%;
+	
+}
 .box1 {
 	justify-content: space-around;
 	justify-content: center;
@@ -91,4 +101,34 @@ input, textarea, select, label {
 	display: inline-block;
 	vertical-align: middle;
 	width:220px;
+}
+table {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
+}
+
+thead {
+    color: #ffffff;
+    background-color: #8080c0; 
+    font-size: 16px;
+    text-align: center;
+}
+
+th, td {
+    padding: 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f8fc;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e9e9f3;
 }

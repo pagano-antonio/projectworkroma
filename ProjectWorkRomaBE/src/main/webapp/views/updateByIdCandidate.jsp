@@ -86,13 +86,19 @@
 			<form class="formUpdate"
 				action="${pageContext.request.contextPath}/updateByIdCandidate"
 				method="POST">
-				<h1 onclick="toggleSection5()">Candidate &#129171;</h1>
+				<h1 class="nametitle" onclick="toggleSection5()">Candidate
+					&#129171;</h1>
 				<div class="box1">
 
 					<div class="hidden" id="candidate">
 						<div class="inline-p1">
+							<p>
+								<label for="name">Candidate ID:</label>
+							</p>
 							<input type="number" id="idCandidate" name="idCandidate"
-								value="<%=request.getParameter("idCandidate")%>" hidden>
+								value="<%=request.getParameter("idCandidate")%>" readonly>
+						</div>
+						<div class="inline-p1">
 							<p>
 								<label for="name">Name:</label>
 							</p>
@@ -113,7 +119,7 @@
 							<input type="date" id="birthday" name="birthday"
 								value="<%=candidate.getBirthday()%>">
 						</div>
-						<br>
+
 						<div class="inline-p1">
 							<p>
 								<label for="birthPlace">Birth Place:</label>
@@ -135,7 +141,6 @@
 							<input type="text" id="address" name="address"
 								value="<%=candidate.getAddress()%>">
 						</div>
-						<br>
 						<div class="inline-p1">
 							<p>
 								<label for="email">Email:</label>
@@ -153,11 +158,12 @@
 					</div>
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 
 
 				<div class="box1">
-					<h1 onclick="toggleSection4()">Education &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection4()">Education
+						&#129171;</h1>
 					<div class="hidden" id="education">
 						<div class="inline-p1">
 							<p>
@@ -193,7 +199,7 @@
 							}
 							%>
 						</div>
-						<br>
+
 						<div class="inline-p1">
 							<p>
 								<label for="date">Graduation Date:</label>
@@ -245,10 +251,11 @@
 
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 
 				<div class="box1">
-					<h1 onclick="toggleSection3()">Work Experience &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection3()">Work
+						Experience &#129171;</h1>
 					<div class="hidden" id="workExperience">
 						<table>
 							<thead>
@@ -266,66 +273,51 @@
 							<tbody>
 								<th><input type="text" id="title" name="title"
 									value="<%=candidate.getWorkExperiences().get(0).getTitle()%>"></th>
-								<th>
-							<input type="text" id="description" name="description"
+								<th><input type="text" id="description" name="description"
 									value="<%=candidate.getWorkExperiences().get(0).getDescription()%>">
 								</th>
-								<th>
-								<input type="text" id="company" name="company"
+								<th><input type="text" id="company" name="company"
 									value="<%=candidate.getWorkExperiences().get(0).getCompany()%>">
 								</th>
-								<th>
-								<input type="date" id="startDate" name="startDate"
+								<th><input type="date" id="startDate" name="startDate"
 									value="<%=candidate.getWorkExperiences().get(0).getStartDate()%>">
 								</th>
-								<th>
-								<input type="date" id="endDate" name="endDate"
+								<th><input type="date" id="endDate" name="endDate"
 									value="<%=candidate.getWorkExperiences().get(0).getEndDate()%>">
 								</th>
-								<th>
-								<input type="text" id="city" name="city"
+								<th><input type="text" id="city" name="city"
 									value="<%=candidate.getWorkExperiences().get(0).getCity()%>">
 								</th>
 
 								<%
 								} else {
 								%>
-								<th>
-								<input type="text" id="title" name="title" value="">
+								<th><input type="text" id="title" name="title" value="">
 								</th>
-								<th>
-								<input type="text" id="description" name="description" value="">
+								<th><input type="text" id="description" name="description"
+									value=""></th>
+								<th><input type="text" id="company" name="company" value="">
+								<th><input type="date" id="startDate" name="startDate"
+									value=""></th>
+								<th><input type="date" id="endDate" name="endDate" value="">
 								</th>
-								<th>
-								<input type="text" id="company" name="company" value="">
-								<th>
-								<input type="date" id="startDate" name="startDate" value="">
-								</th>
-								<th>
-								<input type="date" id="endDate" name="endDate" value="">
-								</th>
-								<th>
-								<input type="text" id="city" name="city" value="">
+								<th><input type="text" id="city" name="city" value="">
 								</th>
 								<%
 								}
 								%>
-
-
-								<a
-									href="${pageContext.request.contextPath }/candidate/preAddWorkExperience"></a>
-								<button>Add new Work Experience</button>
-
-
-
-								</tbody>
+							</tbody>
 						</table>
+						<button class="buttonOpenW"
+							onclick="window.location.href='${pageContext.request.contextPath }/candidate/preAddWorkExperience">Add
+							new Work Experiece</button>
 					</div>
 				</div>
 				<br>
-				<hr>
+				<hr class="orizzontale">
 				<div class="box1">
-					<h1 onclick="toggleSection()">Job Interview &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection()">Job Interview
+						&#129171;</h1>
 					<div class="hidden" id="jobInterview">
 						<table>
 							<thead>
@@ -398,16 +390,18 @@
 							<%
 							}
 							%>
-							<a
-								href="${pageContext.request.contextPath }/job/preAddJobInterview"></a>
-							<button>Add new Job Interview</button>
 						</table>
+						<button class="buttonOpenW"
+							onclick="window.location.href='${pageContext.request.contextPath }/job/preAddJobInterview'">Add
+							new Job Interview</button>
 					</div>
 				</div>
-				<hr>
+				<br>
+				<hr class="orizzontale">
 
 				<div class="box1">
-					<h1 onclick="toggleSection1()">Commercial Data &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection1()">Commercial
+						Data &#129171;</h1>
 
 					<div class="hidden" id="commercialData">
 						<table>
@@ -459,18 +453,20 @@
 								}
 								%>
 							</tbody>
-							<a
-								href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData"></a>
-							<button>Add new Commercial Data</button>
 						</table>
+						<button class="buttonOpenW"
+							onclick="window.location.href='${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
+							new Commercial Data</button>
 					</div>
 
 				</div>
-				<hr>
+				<br>
+				<hr class="orizzontale">
 
 
 				<div class="box1">
-					<h1 onclick="toggleSection2()">Skill &#129171;</h1>
+					<h1 class="nametitle" onclick="toggleSection2()">Skill
+						&#129171;</h1>
 					<div class="hidden" id="skill">
 						<table>
 							<thead>
@@ -507,11 +503,13 @@
 
 							</tbody>
 						</table>
-						<a
-							href="${pageContext.request.contextPath }/candidate/preAddCandidateSkill"></a>
-						<button>Add new Skill</button>
+						<button class="buttonOpenW"
+							onclick="window.location.href='${pageContext.request.contextPath }/job/preAddSkill">Add
+							new Skill</button>
 					</div>
 				</div>
+				<br>
+				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Update</button>
 					<button class="buttonReset" type="reset">Reset</button>
