@@ -15,41 +15,62 @@
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/results.css">
+<style>
+body {
+	height: 100vh;
+}
+</style>
 </head>
 <body>
 
-	<table>	<%
+	<jsp:include page="sidebarFind.jsp" />
+	<div class="container1">
+		<div class="card1">
+			<%
 Employee employee = (Employee) request.getAttribute("idEmployee"); 
 %>
-	
-		<thead>
-			<tr>
-				<th>Employee ID</th>
-				<th>Employee Type ID</th>
-				<th>Name</th>
-				<th>Surname</th>
-				<th>Username</th>
-				<th>Update</th>
-				<th>Delete</th>
-			</tr>
-		</thead>
-		<tbody>   
-			<tr>
-				<td><%=employee.getIdEmployee()%></td>
-				<td><%=employee.getEmployeeType().getDescription()%></td>
-				<td><%=employee.getName()%></td>
-				<td><%=employee.getSurname()%></td>
-				<td><%=employee.getUsername()%></td>
-				<td><a
+			<h1>Employee</h1>
+			<div class="inline-p1">
+				<p>
+					<label for="idEmployee">Employee ID:</label>
+				</p>
+				<h4><%=employee.getIdEmployee()%></h4>
+			</div>
+			<div class="inline-p1">
+				<p>
+					<label for="employeeTypedescription">Employee Type
+						description:</label>
+				</p>
+				<h4><%=employee.getEmployeeType().getDescription()%></h4>
+			</div>
+			<div class="inline-p1">
+				<p>
+					<label for="name">Name:</label>
+				</p>
+				<h4><%=employee.getName()%></h4>
+			</div>
+			<div class="inline-p1">
+				<p>
+					<label for="surname">Surname:</label>
+				</p>
+				<h4><%=employee.getSurname()%></h4>
+			</div>
+			<div class="inline-p1">
+				<p>
+					<label for="username">Username:</label>
+				</p>
+				<h4><%=employee.getUsername()%></h4>
+			</div>
+			<div class="inline-p1">
+				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${idEmployee.idEmployee}">
-						<button type="button"><h3>&#10677;</h3></button>
-				</a></td>
-				<td><a
+					<button class="buttonUpdate" type="button">Update</button>
+				</a> <a
 					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${idEmployee.idEmployee}">
-						<button type="button"><h3>&#10683;</h3></button>
-				</a></td>
-			</tr>
-		</tbody>
-	</table>
+					<button class="buttonDelete" type="button">Delete</button>
+				</a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

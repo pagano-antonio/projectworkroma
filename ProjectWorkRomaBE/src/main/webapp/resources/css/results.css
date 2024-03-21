@@ -15,7 +15,7 @@ body{
     justify-content: center;
 }
 
-.card{
+.card1{
 	background-color:rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
 	height:600px;
@@ -28,6 +28,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     gap:25px;
+
 }
 table {
 	width: 600px;
@@ -53,12 +54,38 @@ td {
 	padding:20px;
 }
 
-button, a{
-	width: 40px;
-  	padding: 5px;
+.buttonUpdate{
+	margin-top: 20px;
+	width: 70%;
+  	padding: 10px;
   	background-color: #8080c0;
   	border: none;
   	border-radius: 3px;
   	color: #fff;
   	cursor:pointer;
+}
+
+.buttonUpdate:hover{
+	background-color: #B0B0D6;
+}
+.buttonDelete {
+	width: 70%;
+  	padding: 10px;
+  	margin-top: 15px;
+  	background-color: transparent;
+  	border: 2px solid #8080c0;
+  	border-radius: 3px;
+  	color: #8080c0;
+  	text-decoration: none;	
+    cursor:pointer;
+}
+
+.buttonDelete:hover{
+	background-color: white;
+}
+p, h4{
+	font-family:"Poppins";
+	font-size:16px;
+	padding:10px;
+	 margin-right: 20px;
 }

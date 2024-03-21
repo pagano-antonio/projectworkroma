@@ -52,13 +52,13 @@ public class EmployeeTypeCtr {
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
-	@GetMapping("/company/preUpdateByIdEmployeeType")
+	@GetMapping("/preUpdateByEmployeeType")
 	public String preUpdateByIdEmployeeType(Model model,@RequestParam Integer idEmployeeType) {
 		EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
 			model.addAttribute("idEmployeeType", employeeType);
-			return "company/updateByIdEmployeeType";
+			return "updateByEmployeeType";
 	}
-	@PostMapping("/company/updateByIdEmployeeType")		
+	@PostMapping("/updateByEmployeeType")		
 	public String updateByIdEmployeeType(Model model,EmployeeType employeeType) {
 		employeeTypeRep.save(employeeType);	        
 	        return "success";  

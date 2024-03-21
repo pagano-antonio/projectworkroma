@@ -2,6 +2,9 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.model.Candidate"%>
 <%@ page import="com.model.CandidateSkill"%>
+<%@ page import="com.model.CandidateCommercialData"%>
+<%@ page import="com.model.JobInterview"%>
+<%@ page import="com.model.WorkExperience"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -269,46 +272,48 @@
 							</thead>
 							<%
 							if (candidate.getWorkExperiences().size() > 0) {
+								for (WorkExperience workExperience : candidate.getWorkExperiences()) {
 							%>
 							<tbody>
-								<th><input type="text" id="title" name="title"
-									value="<%=candidate.getWorkExperiences().get(0).getTitle()%>"></th>
-								<th><input type="text" id="description" name="description"
-									value="<%=candidate.getWorkExperiences().get(0).getDescription()%>">
-								</th>
-								<th><input type="text" id="company" name="company"
-									value="<%=candidate.getWorkExperiences().get(0).getCompany()%>">
-								</th>
-								<th><input type="date" id="startDate" name="startDate"
-									value="<%=candidate.getWorkExperiences().get(0).getStartDate()%>">
-								</th>
-								<th><input type="date" id="endDate" name="endDate"
-									value="<%=candidate.getWorkExperiences().get(0).getEndDate()%>">
-								</th>
-								<th><input type="text" id="city" name="city"
-									value="<%=candidate.getWorkExperiences().get(0).getCity()%>">
-								</th>
-
-								<%
-								} else {
-								%>
-								<th><input type="text" id="title" name="title" value="">
-								</th>
-								<th><input type="text" id="description" name="description"
-									value=""></th>
-								<th><input type="text" id="company" name="company" value="">
-								<th><input type="date" id="startDate" name="startDate"
-									value=""></th>
-								<th><input type="date" id="endDate" name="endDate" value="">
-								</th>
-								<th><input type="text" id="city" name="city" value="">
-								</th>
-								<%
-								}
-								%>
+								<tr>
+									<td><input type="text" id="title" name="title"
+										value="<%=workExperience.getTitle()%>"></td>
+									<td><input type="text" id="description" name="description"
+										value="<%=workExperience.getDescription()%>"></td>
+									<td><input type="text" id="company" name="company"
+										value="<%=workExperience.getCompany()%>"></td>
+									<td><input type="date" id="startDate" name="startDate"
+										value="<%=workExperience.getStartDate()%>"></td>
+									<td><input type="date" id="endDate" name="endDate"
+										value="<%=workExperience.getEndDate()%>"></td>
+									<td><input type="text" id="city" name="city"
+										value="<%=workExperience.getCity()%>"></td>
+								</tr>
 							</tbody>
+							<%
+							}
+							} else {
+							%>
+							<tbody>
+								<tr>
+									<td><input type="text" id="title" name="title" value=""></td>
+									<td><input type="text" id="description" name="description"
+										value=""></td>
+									<td><input type="text" id="company" name="company"
+										value=""></td>
+									<td><input type="date" id="startDate" name="startDate"
+										value=""></td>
+									<td><input type="date" id="endDate" name="endDate"
+										value=""></td>
+									<td><input type="text" id="city" name="city" value=""></td>
+								</tr>
+							</tbody>
+							<%
+							}
+							%>
 						</table>
-						<a class="linkAdd" href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
+						<a class="linkAdd"
+							href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
 							new Work Experience</a>
 					</div>
 				</div>
@@ -330,12 +335,12 @@
 							<tbody>
 								<%
 								if (candidate.getJobInterviews().size() > 0) {
+									for (JobInterview jobInterview : candidate.getJobInterviews()) {	
 								%>
 								<th><input type="date" id="date" name="date"
-									value="<%=candidate.getJobInterviews().get(0).getDate()%>"></th>
+									value="<%=jobInterview.getDate()%>"></th>
 								<th><input type="number" id="outcome" name="outcome"
-									value="<%=candidate.getJobInterviews().get(0).getOutcome()%>">
-								</th>
+									value="<%=jobInterview.getOutcome()%>"></th>
 
 								<th><select name="idEmployee">
 										<c:forEach var="listEmployee" items="${listEmployee}">
@@ -357,9 +362,10 @@
 										</c:forEach>
 								</select></th>
 								<th><textarea name="notes" row="8" cols="80"
-										value="<%=candidate.getJobInterviews().get(0).getNotes()%>"></textarea></th>
+										value="<%=jobInterview.getNotes()%>"></textarea></th>
 
 								<%
+									}
 								} else {
 								%>
 								<th><input type="date" id="date" name="date" value=""></th>
@@ -390,7 +396,8 @@
 							}
 							%>
 						</table>
-						<a class="linkAdd" href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
+						<a class="linkAdd"
+							href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
 							new Job Interview</a>
 					</div>
 				</div>
@@ -414,26 +421,28 @@
 							<tbody>
 								<%
 								if (candidate.getCandidateCommercialData().size() > 0) {
+									for(CandidateCommercialData candidateCommercialData : candidate.getCandidateCommercialData()){
 								%>
 								<th><input type="number" id="businessCost"
 									name="businessCost"
-									value="<%=candidate.getCandidateCommercialData().get(0).getBusinessCost()%>"></th>
+									value="<%=candidateCommercialData.getBusinessCost()%>"></th>
 								<th><input type="number" id="currentRal" name="currentRal"
-									value="<%=candidate.getCandidateCommercialData().get(0).getCurrentRal()%>"></th>
+									value="<%=candidateCommercialData.getCurrentRal()%>"></th>
 
 								<th><input type="number" id="monthRefund"
 									name="monthRefund"
-									value="<%=candidate.getCandidateCommercialData().get(0).getMonthRefund()%>"></th>
+									value="<%=candidateCommercialData.getMonthRefund()%>"></th>
 								<th><input type="number" id="proposedRal"
 									name="proposedRal"
-									value="<%=candidate.getCandidateCommercialData().get(0).getProposedRal()%>"></th>
+									value="<%=candidateCommercialData.getProposedRal()%>"></th>
 
 								<th><input type="number" id="subsidyFlag"
 									name="subsidyFlag"
-									value="<%=candidate.getCandidateCommercialData().get(0).getSubsidyFlag()%>"></th>
+									value="<%=candidateCommercialData.getSubsidyFlag()%>"></th>
 								<th><textarea name="notes" row="40" cols="80"
-										value="<%=candidate.getCandidateCommercialData().get(0).getNotes()%>"></textarea></th>
+										value="<%=candidateCommercialData.getNotes()%>"></textarea></th>
 								<%
+								}
 								} else {
 								%>
 								<th><input type="number" id="businessCost"
@@ -452,7 +461,8 @@
 								%>
 							</tbody>
 						</table>
-						<a class="linkAdd" href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
+						<a class="linkAdd"
+							href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
 							new Commercial Data</a>
 					</div>
 
@@ -475,9 +485,8 @@
 							<tbody>
 								<%
 								if (candidate.getCandidateSkills().size() < 0) {
-								%>
-								<%
-								for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) {
+
+									for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) {
 								%>
 								<tr>
 									<td><input type="text" id="title" name="title"
@@ -500,9 +509,9 @@
 
 							</tbody>
 						</table>
-						<a class="linkAdd" href="${pageContext.request.contextPath }/job/preAddSkill">
-						Add
-							new Skill</a>
+						<a class="linkAdd"
+							href="${pageContext.request.contextPath }/job/preAddSkill">
+							Add new Skill</a>
 					</div>
 				</div>
 				<br>

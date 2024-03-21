@@ -76,39 +76,7 @@ body {
 						</c:forEach>
 					</select>
 				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="jobInterview">Job Interview Date:</label>
-					</p>
-					<select name="jobInterview">
-						<c:forEach var="listJobInterview" items="${listJobInterview}">
-							<option value="${listJobInterview.idJobInterview}">
-								${listJobInterview.date}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="jobInterview">Job Interview Notes:</label>
-					</p>
-					<select name="jobInterview">
-						<c:forEach var="listJobInterview" items="${listJobInterview}">
-							<option value="${listJobInterview.idJobInterview}">
-								${listJobInterview.notes}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="jobInterview">Job Interview Outcome:</label>
-					</p>
-					<select name="jobInterview">
-						<c:forEach var="listJobInterview" items="${listJobInterview}">
-							<option value="${listJobInterview.idJobInterview}">
-								${listJobInterview.outcome}</option>
-						</c:forEach>
-					</select>
-				</div>
+				
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

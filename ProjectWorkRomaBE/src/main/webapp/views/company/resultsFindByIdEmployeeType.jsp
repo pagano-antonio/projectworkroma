@@ -34,7 +34,7 @@
             <td><%= employeeType.getIdEmployeeType() %></td>
             <td><%= employeeType.getDescription() %></td>
           <td> <a
-					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployeeType=${idEmployeeType.idEmployeeType}">
+					href="${pageContext.request.contextPath}/preUpdateByEmployeeType?idEmployeeType=${idEmployeeType.idEmployeeType}">
 						<button type="button"><h3>&#10677;</h3></button>
 				</a></td>
 				<td><a

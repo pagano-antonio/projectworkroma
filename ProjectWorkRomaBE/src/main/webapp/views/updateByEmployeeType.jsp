@@ -26,7 +26,7 @@
 			EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType");
 			%>
 
-			<form action="${pageContext.request.contextPath}/updateByIdEmployee"
+			<form action="${pageContext.request.contextPath}/updateByEmployeeType"
 				method="POST">
 				<h1 class="title1">Update Employee</h1>
 				<div class="inline-p1">
