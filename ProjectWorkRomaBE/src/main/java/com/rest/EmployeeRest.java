@@ -54,4 +54,11 @@ import org.springframework.web.bind.annotation.PostMapping;
          public Employee findByIdEmployee(@PathVariable("idEmployee") int idEmployee) {
     		return EmployeeRep.findById(idEmployee).get();
     	}
+        
+///////////////////////////////////////FIND BY USERNAME AND PASS //////////////////////////////////////////////////////////		
+ 
+        @GetMapping("findByUsernameAndPassword/{username}/{password}")
+        public Employee findByUsernameAndPassword(@PathVariable("username") String username,@PathVariable("password") String password) {
+   		return EmployeeRep.findByUsernameAndPassword(username,password);
+   	}
         }
