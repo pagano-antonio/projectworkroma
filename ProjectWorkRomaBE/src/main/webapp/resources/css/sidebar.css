@@ -1,1 +1,103 @@
 @charset "ISO-8859-1";
+
+body {
+	font-family: "Poppins", sans-serif;
+	transition: background-color .5s;
+}
+
+.sidenav {
+	height: 70%;
+	top: 150px;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	border-radius: 20px 0 0 20px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 12px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	left: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.dropdown-btn {
+	padding: 28px 8px 8px 32px;
+	font-size: 25px;
+	color: #818181;
+	transition: 0.3s;
+	background-color: transparent;
+	font-family: "Poppins";
+	font-size: 16px;
+	text-align: center;
+	border: none;
+}
+
+#openBtn {
+	position: absolute;
+	top: 210px;
+	right: 0;
+	background-color: #000;
+	color: #fff;
+	padding: 28px 30px;
+	border-radius: 20px 0 0 20px;
+	cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+#home {
+	padding: 8px 8px 8px 32px;
+	margin-top: 15px;
+	bottom: 20px;
+	font-size: 16px;
+	color: #818181;
+	text-decoration: none;
+}
+ 
+ hr {
+	margin: 0 0 0 10px;
+	width: 220px;
+	align-items: center; 
+	color: #818181;
+	border: none;
+	background-color: #818181;
+	height: 1px;
+}
