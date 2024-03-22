@@ -82,14 +82,15 @@
 
 	<div class="container1">
 
-		<%
-		Candidate candidate = (Candidate) request.getAttribute("idCandidate");
-		%>
 		<div class="card1">
 
 			<form class="formUpdate"
 				action="${pageContext.request.contextPath}/updateByIdCandidate"
 				method="POST">
+
+				<%
+		Candidate candidate = (Candidate) request.getAttribute("idCandidate");
+		%>
 				<h1 class="nametitle" onclick="toggleSection5()">Candidate
 					&#129171;</h1>
 				<div class="box1">
@@ -97,11 +98,10 @@
 					<div class="hidden" id="candidate">
 						<div class="inline-p1">
 							<p>
-								<label for="name">Candidate ID:</label>
+								<label for="idCandidate">Candidate ID:</label>
 							</p>
-							
 							<input type="number" id="idCandidate" name="idCandidate"
-								value="<%=request.getParameter("idCandidate")%>" readonly>
+								value="<%=candidate.getIdCandidate()%>" readonly>
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -124,7 +124,6 @@
 							<input type="date" id="birthday" name="birthday"
 								value="<%=candidate.getBirthday()%>">
 						</div>
-
 						<div class="inline-p1">
 							<p>
 								<label for="birthPlace">Birth Place:</label>
@@ -161,392 +160,277 @@
 								value="<%=candidate.getPhone()%>">
 						</div>
 					</div>
-				</div>
-				<br>
-				<hr class="orizzontale">
-
-
-				<div class="box1">
-					<h1 class="nametitle" onclick="toggleSection4()">Education
-						&#129171;</h1>
-					<div class="hidden" id="education">
-						<div class="inline-p1">
-							<p>
-								<label for="schoolName">School Name:</label>
-							</p>
-							<%
-							if (candidate.getEducations().size() > 0) {
-							%>
-							<input type="text" id="schoolName" name="schoolName"
-								value="<%=candidate.getEducations().get(0).getSchoolName()%>">
-							<%
-							} else {
-							%>
-							<input type="text" id="schoolName" name="schoolName" value="">
-							<%
-							}
-							%>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="place">Place:</label>
-							</p>
-							<%
-							if (candidate.getEducations().size() > 0) {
-							%>
-							<input type="text" id="place" name="place"
-								value="<%=candidate.getEducations().get(0).getPlace()%>">
-							<%
-							} else {
-							%>
-							<input type="text" id="place" name="place" value="">
-							<%
-							}
-							%>
-						</div>
-
-						<div class="inline-p1">
-							<p>
-								<label for="date">Graduation Date:</label>
-							</p>
-							<%
-							if (candidate.getEducations().size() > 0) {
-							%>
-							<input type="date" id="date" name="date"
-								value="<%=candidate.getEducations().get(0).getDate()%>">
-							<%
-							} else {
-							%>
-							<input type="date" id="date" name="date" value="">
-							<%
-							}
-							%>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="finalGrade">Final Grade:</label>
-							</p>
-							<%
-							if (candidate.getEducations().size() > 0) {
-							%>
-							<input type="text" id="finalGrade" name="finalGrade"
-								value="<%=candidate.getEducations().get(0).getFinalGrade()%>">
-							<%
-							} else {
-							%>
-							<input type="text" id="finalGrade" name="finalGrade" value="">
-							<%
-							}
-							%>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="educationDegreeType">Education degree type:</label>
-							</p>
-							<select name="idEducationDegreeType">
-								<c:forEach var="listEducationDegreeType"
-									items="${listEducationDegreeType}">
-									<option
-										value="${listEducationDegreeType.idEducationDegreeType}">
-										${listEducationDegreeType.description}</option>
-								</c:forEach>
-							</select>
-						</div>
-						<div class="inline-p1">
-							<p>
-								<label for="description">Degree description :</label>
-							</p>
-							<%
-							if (candidate.getEducations().size() > 0) {
-								for (Education education : candidate.getEducations()) {
-							%>
-							<input type="text" id="description" name="description"
-								value="<%=education.getEducationDegreeType().getDescription()%>">
-
-
-								<%
-								}
-								} else {
-								%>
-								<input type="text" id="place" name="place" value="">
-								<%
-								}
-								%>
-							
-						</div>
-
-					</div>
-					<br>
-					<hr class="orizzontale">
-
-					<div class="box1">
-						<h1 class="nametitle" onclick="toggleSection3()">Work
-							Experience &#129171;</h1>
-						<div class="hidden" id="workExperience">
-							<table>
-								<thead>
-									<tr>
-									<td>ID:</td>
-										<td>Title:</td>
-										<td>Description:</td>
-										<td>Company:</td>
-										<td>StartDate:</td>
-										<td>EndDate:</td>
-										<td>City:</td>
-										<td>Update:</td>
-										<td>Delete:</td>
-									</tr>
-								</thead>
-								<%
-								if (candidate.getWorkExperiences().size() > 0) {
-									for (WorkExperience workExperience : candidate.getWorkExperiences()) {
-								%>
-								<tbody>
-									<tr>
-									    <td><%=workExperience.getIdWorkExperience()%></td>
-										<td><%=workExperience.getTitle()%></td>
-										<td><%=workExperience.getDescription()%></td>
-										<td><%=workExperience.getCompany()%></td>
-										<td><%=workExperience.getStartDate()%></td>
-										<td><%=workExperience.getEndDate()%></td>
-										<td><%=workExperience.getCity()%></td>
-										<td><a class="linkAdd"
-								href="${pageContext.request.contextPath}/candidate/preUpdateWorkExperience">Update
-								</a></td>
-								<td><a class="linkAdd"
-								href="${pageContext.request.contextPath}/candidate/deleteByWorkExperience?IdWorkExperience=<%=workExperience.getIdWorkExperience()%>">Delete
-								</a></td>
-									</tr>
-									<% } }%>
-								</tbody>
-							
-							</table>
-							<a class="linkAdd"
-								href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
-								new Work Experience</a>
-							
-						</div>
-					</div>
 					<br>
 					<hr class="orizzontale">
 					<div class="box1">
-						<h1 class="nametitle" onclick="toggleSection()">Job Interview
+						<h1 class="nametitle" onclick="toggleSection4()">Education
 							&#129171;</h1>
-						<div class="hidden" id="jobInterview">
-							<table>
-								<thead>
-									<tr>
-										<td>Date:</td>
-										<td>Outcome:</td>
-										<td>Employee:</td>
-										<td>Contract Type:</td>
-										<td>State Job Interview:</td>
-										<td>Notes:</td>
-									</tr>
-								</thead>
-								<tbody>
+						<div class="hidden" id="education">
+							<div class="inline-p1">
+								<table>
+									<thead>
+										<tr>
+										    <td>ID:</td>
+											<td>School Name:</td>
+											<td>Place:</td>
+											<td>Date:</td>
+											<td>Final Grade:</td>
+											<td>Education degree type:</td>
+											<td>Update:</td>
+											<td>Delete:</td>
+										</tr>
+									</thead>
 									<%
-									if (candidate.getJobInterviews().size() > 0) {
-										for (JobInterview jobInterview : candidate.getJobInterviews()) {
+									if (candidate.getEducations().size() > 0) {
+										for (Education education : candidate.getEducations()) {
 									%>
-									<tr>
-										<th><input type="date" id="date" name="date"
-											value="<%=jobInterview.getDate()%>"></th>
-										<th><input type="number" id="outcome" name="outcome"
-											value="<%=jobInterview.getOutcome()%>"></th>
+									<tbody>
+										<tr>
+										    <td><%=candidate.getEducations().get(0).getIdEducation()%></td>
+											<td><%=candidate.getEducations().get(0).getSchoolName()%></td>
+											<td><%=candidate.getEducations().get(0).getPlace()%></td>
+											<td><%=candidate.getEducations().get(0).getDate()%></td>
+											<td><%=candidate.getEducations().get(0).getFinalGrade()%></td>
+											<td><%=candidate.getEducations().get(0).getEducationDegreeType().getDescription()%></td>
 
-										<th><select name="idEmployee">
-												<c:forEach var="listEmployee" items="${listEmployee}">
-													<option value="${listEmployee.idEmployee}">
-														${listEmployee.username}</option>
-												</c:forEach>
-										</select></th>
-										<th><select name="idContractType">
-												<c:forEach var="listContractType"
-													items="${listContractType}">
-													<option value="${listContractType.idContractType}">
-														${listContractType.title}</option>
-												</c:forEach>
-										</select></th>
-										<th><select name="idStateJobInterview">
-												<c:forEach var="listStateJobInterview"
-													items="${listStateJobInterview}">
-													<option
-														value="${listStateJobInterview.idStateJobInterview}">
-														${listStateJobInterview.title}</option>
-												</c:forEach>
-										</select></th>
-										<th><textarea name="notes" row="8" cols="80"
-												value="<%=jobInterview.getNotes()%>"></textarea></th>
-									</tr>
-									<%
-									}
-									} else {
-									%>
-									<tr>
-										<th><input type="date" id="date" name="date" value=""></th>
-										<th><input type="number" id="outcome" name="outcome"
-											value=""></th>
-										<th><select name="idEmployee">
-												<c:forEach var="listEmployee" items="${listEmployee}">
-													<option value="${listEmployee.idEmployee}">
-														${listEmployee.username}</option>
-												</c:forEach>
-										</select></th>
-										<th><select name="idContractType">
-												<c:forEach var="listContractType"
-													items="${listContractType}">
-													<option value="${listContractType.idContractType}">
-														${listContractType.title}</option>
-												</c:forEach>
-										</select></th>
-										<th><select name="idStateJobInterview">
-												<c:forEach var="listStateJobInterview"
-													items="${listStateJobInterview}">
-													<option
-														value="${listStateJobInterview.idStateJobInterview}">
-														${listStateJobInterview.title}</option>
-												</c:forEach>
-										</select></th>
-										<th><textarea name="notes" row="8" cols="80" value=""></textarea></th>
-									</tr>
-								</tbody>
-								<%
-								}
-								%>
-							</table>
-							<a class="linkAdd"
-								href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
-								new Job Interview</a>
-						</div>
-					</div>
-					<br>
-					<hr class="orizzontale">
-
-					<div class="box1">
-						<h1 class="nametitle" onclick="toggleSection1()">Commercial
-							Data &#129171;</h1>
-
-						<div class="hidden" id="commercialData">
-							<table>
-								<thead>
-									<tr>
-										<td>Business Cost:</td>
-										<td>Current Ral:</td>
-										<td>Month Refund:</td>
-										<td>ProposedRal:</td>
-										<td>Subsidy Flag:</td>
-										<td>Notes:</td>
-									</tr>
-								</thead>
-								<tbody>
-									<%
-									if (candidate.getCandidateCommercialData().size() > 0) {
-										for (CandidateCommercialData candidateCommercialData : candidate.getCandidateCommercialData()) {
-									%>
-									<tr>
-										<th><input type="number" id="businessCost"
-											name="businessCost"
-											value="<%=candidateCommercialData.getBusinessCost()%>"></th>
-										<th><input type="number" id="currentRal"
-											name="currentRal"
-											value="<%=candidateCommercialData.getCurrentRal()%>"></th>
-
-										<th><input type="number" id="monthRefund"
-											name="monthRefund"
-											value="<%=candidateCommercialData.getMonthRefund()%>"></th>
-										<th><input type="number" id="proposedRal"
-											name="proposedRal"
-											value="<%=candidateCommercialData.getProposedRal()%>"></th>
-
-										<th><input type="number" id="subsidyFlag"
-											name="subsidyFlag"
-											value="<%=candidateCommercialData.getSubsidyFlag()%>"></th>
-										<th><textarea name="notes" row="40" cols="80"
-												value="<%=candidateCommercialData.getNotes()%>"></textarea></th>
-									</tr>
-									<%
-									}
-									} else {
-									%>
-									<tr>
-										<th><input type="number" id="businessCost"
-											name="businessCost" value=""></th>
-										<th><input type="number" id="currentRal"
-											name="currentRal" value=""></th>
-										<th><input type="number" id="monthRefund"
-											name="monthRefund" value=""></th>
-										<th><input type="number" id="proposedRal"
-											name="proposedRal" value=""></th>
-										<th><input type="number" id="subsidyFlag"
-											name="subsidyFlag" value="">
-										<th><textarea name="notes" row="40" cols="80" value=""></textarea></th>
-									</tr>
-									<%
-									}
-									%>
-								</tbody>
-							</table>
-							<a class="linkAdd"
-								href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
-								new Commercial Data</a>
-						</div>
-
-					</div>
-					<br>
-					<hr class="orizzontale">
-
-
-					<div class="box1">
-						<h1 class="nametitle" onclick="toggleSection2()">Skill
-							&#129171;</h1>
-						<div class="hidden" id="skill">
-							<table>
-								<thead>
-									<tr>
-										<td>Title:</td>
-										<td>Description:</td>
-									</tr>
-								</thead>
-								<tbody>
-									<%
-									if (candidate.getCandidateSkills().size() > 0) {
-
-										for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) {
-									%>
-									<tr>
-										<td><input type="text" id="title" name="title"
-											value="<%=candidateSkill.getSkill().getTitle()%>"></td>
-										<td><input type="text" id="description"
-											name="description"
-											value="<%=candidateSkill.getSkill().getDescription()%>"></td>
-									</tr>
-									<%
-									}
-									} else {
-									%>
-									<tr>
-										<td><input type="text" id="title" name="title" value=""></td>
-										<td><input type="text" id="description"
-											name="description" value=""></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/preUpdateEducation?IdEducation=">Update
+											</a></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/candidate/deleteByIdEducattion?IdEducation=">Delete
+											</a></td>
+										</tr>
 										<%
 										}
+										}
 										%>
-									</tr>
-
-								</tbody>
-							</table>
-							<a class="linkAdd"
-								href="${pageContext.request.contextPath }/job/preAddSkill">
-								Add new Skill</a>
+									</tbody>
+								</table>
+								<br>
+								<a class="linkAdd"
+									href="${pageContext.request.contextPath}/candidate/preAddEducation">Add
+									new Education</a>
+							</div>
 						</div>
-					</div>
-					<br>
-					<hr class="orizzontale">
-					<div class="submit">
-						<button class="buttonSubmit" type="submit">Update</button>
-						<button class="buttonReset" type="reset">Reset</button>
-					</div>
+						<br>
+						<hr class="orizzontale">
+
+						<div class="box1">
+							<h1 class="nametitle" onclick="toggleSection3()">Work
+								Experience &#129171;</h1>
+							<div class="hidden" id="workExperience">
+								<table>
+									<thead>
+										<tr>
+											<td>ID:</td>
+											<td>Title:</td>
+											<td>Description:</td>
+											<td>Company:</td>
+											<td>StartDate:</td>
+											<td>EndDate:</td>
+											<td>City:</td>
+											<td>Update:</td>
+											<td>Delete:</td>
+										</tr>
+									</thead>
+									<%
+									if (candidate.getWorkExperiences().size() > 0) {
+										for (WorkExperience workExperience : candidate.getWorkExperiences()) {
+									%>
+									<tbody>
+										<tr>
+											<td><%=workExperience.getIdWorkExperience()%></td>
+											<td><%=workExperience.getTitle()%></td>
+											<td><%=workExperience.getDescription()%></td>
+											<td><%=workExperience.getCompany()%></td>
+											<td><%=workExperience.getStartDate()%></td>
+											<td><%=workExperience.getEndDate()%></td>
+											<td><%=workExperience.getCity()%></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/candidate/preUpdateWorkExperience">Update
+											</a></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/candidate/deleteByWorkExperience?IdWorkExperience=">Delete
+											</a></td>
+										</tr>
+										<%
+										}
+										}
+										%>
+									</tbody>
+
+								</table>
+								<br>
+								<a class="linkAdd"
+									href="${pageContext.request.contextPath}/candidate/preAddWorkExperience">Add
+									new Work Experience</a>
+
+							</div>
+						</div>
+						<br>
+						<hr class="orizzontale">
+						<div class="box1">
+							<h1 class="nametitle" onclick="toggleSection()">Job
+								Interview &#129171;</h1>
+							<div class="hidden" id="jobInterview">
+								<table>
+									<thead>
+										<tr>
+											<td>ID:</td>
+											<td>Date:</td>
+											<td>Outcome:</td>
+											<td>Employee:</td>
+<!-- 											<td>Contract Type:</td> -->
+											<td>State Job Interview:</td>
+											<td>Notes:</td>
+											<td>Update:</td>
+											<td>Delete:</td>
+										</tr>
+									</thead>
+									<tbody>
+										<%
+										if (candidate.getJobInterviews().size() > 0) {
+											for (JobInterview jobInterview : candidate.getJobInterviews()) {
+										%>
+										<tr>
+											<td><%=jobInterview.getIdJobInterview()%></td>
+											<td><%=jobInterview.getDate()%></td>
+											<td><%=jobInterview.getOutcome()%></td>
+
+											<td><%=jobInterview.getEmployee().getUsername()%></td>
+<%-- 											<th><%=jobInterview.getContractType().getTitle()%></th> --%>
+											<td><%=jobInterview.getStateJobInterview().getTitle()%></td>
+											<td><%=jobInterview.getNotes()%></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/preUpdateByIdJobInterview?IdJobInterview=">Update
+											</a></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?IdJobInterview=">Delete
+											</a></td>
+										</tr>
+
+									</tbody>
+									<%
+									}
+									}
+									%>
+								</table>
+								<br>
+								<a class="linkAdd"
+									href="${pageContext.request.contextPath }/job/preAddJobInterview">Add
+									new Job Interview</a>
+							</div>
+						</div>
+						<br>
+						<hr class="orizzontale">
+
+						<div class="box1">
+							<h1 class="nametitle" onclick="toggleSection1()">Commercial
+								Data &#129171;</h1>
+
+							<div class="hidden" id="commercialData">
+								<table>
+									<thead>
+										<tr>
+											<td>ID:</td>
+											<td>Business Cost:</td>
+											<td>Current Ral:</td>
+											<td>Month Refund:</td>
+											<td>ProposedRal:</td>
+											<td>Subsidy Flag:</td>
+											<td>Notes:</td>
+											<td>Update:</td>
+											<td>Delete:</td>
+										</tr>
+									</thead>
+									<tbody>
+										<%
+										if (candidate.getCandidateCommercialData().size() > 0) {
+											for (CandidateCommercialData candidateCommercialData : candidate.getCandidateCommercialData()) {
+										%>
+										<tr>
+											<td><%=candidateCommercialData.getIdCandidateCommercialData()%></td>
+											<td><%=candidateCommercialData.getBusinessCost()%></td>
+											<td><%=candidateCommercialData.getCurrentRal()%></td>
+											<td><%=candidateCommercialData.getMonthRefund()%></td>
+											<td><%=candidateCommercialData.getProposedRal()%></td>
+											<td><%=candidateCommercialData.getSubsidyFlag()%></td>
+											<td><%=candidateCommercialData.getNotes()%></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/preUpdateByIdCandidateCommercialData?IdCandidateCommercialData=">Update
+											</a></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateCommercialData?IdCandidateCommercialData=">Delete
+											</a></td>
+										</tr>
+										<%
+										}
+										}
+										%>
+
+									</tbody>
+								</table>
+								<br>
+								<a class="linkAdd"
+									href="${pageContext.request.contextPath }/candidate/preAddCandidateCommercialData">Add
+									new Commercial Data</a>
+							</div>
+
+						</div>
+						<br>
+						<hr class="orizzontale">
+
+
+						<div class="box1">
+							<h1 class="nametitle" onclick="toggleSection2()">Skill
+								&#129171;</h1>
+							<div class="hidden" id="skill">
+								<table>
+									<thead>
+										<tr>
+											<td>ID:</td>
+											<td>Title:</td>
+											<td>Description:</td>
+											<td>Update:</td>
+											<td>Delete:</td>
+										</tr>
+									</thead>
+									<tbody>
+										<%
+										if (candidate.getCandidateSkills().size() > 0) {
+
+											for (CandidateSkill candidateSkill : candidate.getCandidateSkills()) {
+										%>
+										<tr>
+											<td><%=candidateSkill.getSkill().getIdSkill()%></td>
+											<td><%=candidateSkill.getSkill().getTitle()%></td>
+											<td><%=candidateSkill.getSkill().getDescription()%></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/preUpdateByIdSkill?IdSkill=">Update
+											</a></td>
+											<td><a class="linkAdd"
+												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?IdSkill=">Delete
+											</a></td>
+										</tr>
+										<%
+										}
+										}
+										
+										%>
+									</tbody>
+								</table>
+								<br>
+								<a class="linkAdd"
+									href="${pageContext.request.contextPath}/job/preAddSkill">
+									Add new Skill</a>
+							</div>
+						</div>
+						<br>
+						<hr class="orizzontale">
+						<div class="submit">
+							<button class="buttonSubmit" type="submit">Update</button>
+							<button class="buttonReset" type="reset">Reset</button>
+						</div>
 			</form>
 		</div>
 	</div>

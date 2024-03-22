@@ -38,16 +38,16 @@ public class WorkExperienceCtr {
 	
 	//////////////////////////////////////  UPDATE   ////////////////////////////////////
 	
-    @GetMapping("/candidate/preUpdateByIdWorkExperience")
+    @GetMapping("/preUpdateByIdWorkExperience")
     public String preUpdateByIdWorkExperience(Model model,@RequestParam Integer idWorkExperience) {
     	WorkExperience workExperience = WorkExperienceRep.findById(idWorkExperience).orElse(null);
             model.addAttribute("idWorkExperience", workExperience);
-            return "candidate/updateByIdWorkExperience";     
+            return "updateByIdWorkExperience";     
       
     }   
 
-    @PostMapping("/candidate/updateByIdWorkExperience")
-    public String updateByIdWorkExperience(Model model,@ModelAttribute ("workExperience") WorkExperience workExperience, Integer idCandidate) {
+    @PostMapping("/updateByIdWorkExperience")
+    public String updateByIdWorkExperience(Model model,@ModelAttribute ("idWorkExperience") WorkExperience workExperience, Integer idCandidate) {
     	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
       workExperience.setCandidate(candidate); 
             WorkExperienceRep.save(workExperience);
