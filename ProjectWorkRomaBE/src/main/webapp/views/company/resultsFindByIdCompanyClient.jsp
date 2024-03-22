@@ -59,8 +59,8 @@
 		</div>
 		<div class="boxTitle">
 			<img class="imageLogin"
-				style="margin: 10px; height: 300px; width: 300px; border-radius: 300px;"
-				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
+				style="margin: -100px; height: 480px; width: 480px; border-radius: 300px;"
+				src="${pageContext.request.contextPath}/resources/css/Immagini/random.gif"
 				alt="img-profile">
 		</div>
 	</div>
