@@ -58,17 +58,17 @@ public class WorkExperienceCtr {
 
 //////////////////////////////////////  DELETE BY ID  ////////////////////////////////////
 
-	@GetMapping("/candidate/preDeleteByIdWorkExperience")
-	public String preDeleteByIdWorkExperience() {
-		return "candidate/deleteByIdWorkExperience";
+	@GetMapping("/candidate/preDeleteByWorkExperience")
+	public String preDeleteByWorkExperience() {
+		return "candidate/deleteByWorkExperience";
 		}
 	
-	@GetMapping("/candidate/deleteByIdWorkExperience")
-	public String deleteByIdWorkExperience(Model model, Integer idWorkExperience) {
+	@GetMapping("/candidate/deleteByWorkExperience")
+	public String deleteByWorkExperience(Model model, Integer idWorkExperience) {
 		WorkExperience workExperience = (WorkExperience) WorkExperienceRep.findById(idWorkExperience).orElse(null);
 		if (workExperience != null) {
 			WorkExperienceRep.delete(workExperience);
-			return "success";
+			return "updateByIdCandidate";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);

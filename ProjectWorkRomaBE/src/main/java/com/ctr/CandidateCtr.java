@@ -57,25 +57,26 @@ public class CandidateCtr {
 	private EmployeeRepository employeeRep;
 	@Autowired
 	private ContractTypeRepository contractTypeRep;
-	
+
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddCandidateForm")
 	public String preAddCandidateForm(Model model) {
 		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
-        model.addAttribute("listEducationDegreeType", listEducationDegreeType);
-        List<Employee> listEmployee = employeeRep.findAll();
-        model.addAttribute("listEmployee", listEmployee);
-        List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
-        model.addAttribute("listStateJobInterview", listStateJobInterview);
-        List<ContractType> listContractType= contractTypeRep.findAll();
-        model.addAttribute("listContractType", listContractType);
+		model.addAttribute("listEducationDegreeType", listEducationDegreeType);
+		List<Employee> listEmployee = employeeRep.findAll();
+		model.addAttribute("listEmployee", listEmployee);
+		List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
+		model.addAttribute("listStateJobInterview", listStateJobInterview);
+		List<ContractType> listContractType = contractTypeRep.findAll();
+		model.addAttribute("listContractType", listContractType);
 		return "addCandidateForm";
 	}
 
 	@PostMapping("/addCandidateForm")
 	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
-		JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill, EducationDegreeType educationDegreeType) {
+			JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,
+			EducationDegreeType educationDegreeType) {
 		candidateRep.save(candidate);
 		educationRep.save(education);
 		educationDegreeTypeRep.save(educationDegreeType);
@@ -112,23 +113,31 @@ public class CandidateCtr {
 	public String preUpdateByIdCandidate(Model model, @RequestParam Integer idCandidate) {
 		Candidate candidate = candidateRep.findById(idCandidate).orElse(null);
 		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
-        model.addAttribute("listEducationDegreeType", listEducationDegreeType);
-        List<Employee> listEmployee = employeeRep.findAll();
-        model.addAttribute("listEmployee", listEmployee);
-        List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
-        model.addAttribute("listStateJobInterview", listStateJobInterview);
-        List<ContractType> listContractType= contractTypeRep.findAll();
-        model.addAttribute("listContractType", listContractType);
+		model.addAttribute("listEducationDegreeType", listEducationDegreeType);
+		List<Employee> listEmployee = employeeRep.findAll();
+		model.addAttribute("listEmployee", listEmployee);
+		List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
+		model.addAttribute("listStateJobInterview", listStateJobInterview);
+		List<ContractType> listContractType = contractTypeRep.findAll();
+		model.addAttribute("listContractType", listContractType);
 		model.addAttribute("idCandidate", candidate);
 		return "updateByIdCandidate";
 	}
+
 	@PostMapping("/updateByIdCandidate")
-	public String updateByIdCandidate(Model model, Candidate candidate) {
+	public String updateByIdCandidate(Model model, Candidate candidate, Education education,
+			WorkExperience workExperience, JobInterview jobInterview, CandidateCommercialData candidateCommercialData,
+			Skill skill, EducationDegreeType educationDegreeType) {
 		candidateRep.save(candidate);
+		educationRep.save(education);
+		educationDegreeTypeRep.save(educationDegreeType);
+		workExperienceRep.save(workExperience);
+		jobInterviewRep.save(jobInterview);
+		candidateCommercialDataRep.save(candidateCommercialData);
+		skillRep.save(skill);
 		return "success";
 	}
 
-	
 ////////////////////////////////////// FIND BY ID //////////////////////////////////
 
 	@GetMapping("/candidate/preFindByIdCandidate")
@@ -237,8 +246,7 @@ public class CandidateCtr {
 
 	@GetMapping("/candidate/findByEducationDegreeTypeCandidate")
 	public String findByEducationDegreeTypeCandidate(Model model, String description) {
-		List<Candidate> candidate = candidateRep
-				.findByEducations_EducationDegreeType_Description(description);
+		List<Candidate> candidate = candidateRep.findByEducations_EducationDegreeType_Description(description);
 		model.addAttribute("EducationDegreeTypeCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsByEducationDegreeTypeCandidate";
@@ -250,7 +258,7 @@ public class CandidateCtr {
 	}
 
 ////////////////////////////////////// FIND BY ID JOB INTERVIEW FOR OUTCOME //////////////////
-	
+
 	@GetMapping("/candidate/preFindByOutcomeJobInterviewCandidate")
 	public String preFindByOutcomeJobInterviewCandidate() {
 		return "candidate/findByOutcomeJobInterviewCandidate";
@@ -259,7 +267,7 @@ public class CandidateCtr {
 	@GetMapping("/candidate/findByOutcomeJobInterviewCandidate")
 	public String findByOutcomeJobInterviewCandidate(Model model, String title, Integer outcome) {
 		List<Candidate> candidate = candidateRep.findByJobInterviews_StateJobInterview_Title(title);
-		//Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
+		// Collections.sort(candidate, Comparator.comparing(JobInterview::getOutcome));
 		model.addAttribute("OutcomeCandidate", candidate);
 		if (candidate != null) {
 			return "candidate/resultsByOutcomeJobInterviewCandidate";

@@ -6,9 +6,9 @@ body {
 }
 
 .sidenav {
-	height: 70%;
-	top: 150px;
-	width: 0;
+	height: 80%;
+	top: 100px;
+	width: 300px;
 	position: fixed;
 	z-index: 1;
 	right: 0;
@@ -22,14 +22,14 @@ body {
 .sidenav a {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 16px;
 	color: #818181;
 	display: block;
 	transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.sidenav a:hover, #home:hover {
+	color: #f1f1f1;
 }
 
 .sidenav .closebtn {
@@ -47,9 +47,10 @@ body {
 	transition: 0.3s;
 	background-color: transparent;
 	font-family: "Poppins";
-	font-size: 16px;
+	font-size: 20px;
 	text-align: center;
 	border: none;
+	cursor: pointer;
 }
 
 #openBtn {
@@ -73,29 +74,30 @@ body {
 }
 
 .dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
+	display: none;
+	background-color: #262626;
+	padding-left: 8px;
 }
 
 .fa-caret-down {
-  float: right;
-  padding-right: 8px;
+	float: right;
+	padding-right: 8px;
 }
 
 #home {
 	padding: 8px 8px 8px 32px;
-	margin-top: 15px;
+	margin-top: 300px;
 	bottom: 20px;
-	font-size: 16px;
+	font-size: 35px;
 	color: #818181;
 	text-decoration: none;
+	text-align: center;
 }
- 
- hr {
+
+hr {
 	margin: 0 0 0 10px;
-	width: 220px;
-	align-items: center; 
+	width: 320px;
+	align-items: center;
 	color: #818181;
 	border: none;
 	background-color: #818181;

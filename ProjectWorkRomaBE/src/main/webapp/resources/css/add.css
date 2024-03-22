@@ -19,6 +19,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	height: 1000px;
 }
 
 .nametitle {
