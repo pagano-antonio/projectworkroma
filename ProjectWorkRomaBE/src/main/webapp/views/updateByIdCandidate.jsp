@@ -247,10 +247,10 @@
 											<td><%=workExperience.getEndDate()%></td>
 											<td><%=workExperience.getCity()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/preUpdateWorkExperience">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByWorkExperience?IdWorkExperience=">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>">Delete
 											</a></td>
 										</tr>
 										<%
