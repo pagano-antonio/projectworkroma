@@ -60,7 +60,7 @@ public class JobInterviewCtr {
 	            model.addAttribute("listIdCandidate", candidate);
 	            model.addAttribute("listIdStateJobInterview", stateJobInterview);
 	            model.addAttribute("listIdEmployee", employee);
-	            return "job/updateByIdJobOfferSkill";     
+	            return "job/updateByIdJobInterview";     
 	      
 	    }   
 
