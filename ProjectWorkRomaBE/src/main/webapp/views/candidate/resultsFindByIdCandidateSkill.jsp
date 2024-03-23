@@ -15,22 +15,25 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-
-<table>
+<div class="card1">
+<div class="title">
+<h1>Results Find Candidate By ID Skill</h1>
+</div>
+<table class="content-table">
     <thead>
         <tr>
-        	<th>CandidateSkill ID</th>
+        	<th>Candidate Skill ID</th>
+        	<th>Candidate ID</th>
         	<th>Skill</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Birthday</th>
-            <th>Birth Place</th>
             <th>Address</th>
             <th>City</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -43,24 +46,24 @@
                 <td>${candidateSkill.getCandidate().getName()}</td>
                 <td>${candidateSkill.getCandidate().getSurname()}</td>
                 <td>${candidateSkill.getCandidate().getBirthday()}</td>
-                <td>${candidateSkill.getCandidate().getBirthPlace()}</td>
                 <td>${candidateSkill.getCandidate().getAddress()}</td>
                 <td>${candidateSkill.getCandidate().getCity()}</td>
                 <td>${candidateSkill.getCandidate().getEmail()}</td>
                 <td>${candidateSkill.getCandidate().getPhone()}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidateSkill.getCandidate().getIdCandidate()}">
-                        <button type="button">Update</button>
+                        <button  class="buttonUpdate" type="button" >Update</button>
                     </a>
                 </td>
                 <td>
                     <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
-                        <button type="button">Delete</button>  
+                        <button class="buttonDelete" type="button">Delete</button>  
                     </a>
                 </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+</div>
 </body>
 </html>

@@ -15,7 +15,11 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<table>
+<div class="card1">
+<div class="title">
+<h1>Results Find Candidate By Job State Interview</h1>
+</div>
+<table class="content-table">
     <thead>
         <tr>
             <th>Candidate ID</th>
@@ -25,8 +29,8 @@
             <th>City</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -35,25 +39,24 @@
                 <td>${candidate.idCandidate}</td>
                 <td>${candidate.name}</td>
                 <td>${candidate.surname}</td>
-                <td>${candidate.birthday}</td>
-                <td>${candidate.birthPlace}</td>
                 <td>${candidate.address}</td>
                 <td>${candidate.city}</td>
                 <td>${candidate.email}</td>
                 <td>${candidate.phone}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
-                        <button type="button">Update</button>
+                        <button class="buttonUpdate" type="button">Update</button>
                     </a>
                 </td>
                 <td>
                     <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
-                        <button type="button">Delete</button>  
+                        <button class="buttonDelete" type="button">Delete</button>  
                     </a>
                 </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+</div>
 </body>
 </html>
