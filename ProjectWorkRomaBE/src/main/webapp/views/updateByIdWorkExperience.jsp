@@ -25,9 +25,10 @@
 			<%
 			WorkExperience workExperience = (WorkExperience) request.getAttribute("idWorkExperience");
 			%>
-			<form action="${pageContext.request.contextPath}/updateByIdWorkExperience"
+			<form
+				action="${pageContext.request.contextPath}/updateByIdWorkExperience"
 				method="POST">
-			
+
 				<h1 class="title1">Update Work Experience</h1>
 				<div class="inline-p1">
 					<p>
@@ -42,6 +43,13 @@
 					</p>
 					<input type="text" id="title" name="title"
 						value="<%=workExperience.getTitle()%>">
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="description">Description:</label>
+					</p>
+					<input type="text" id="description" name="description"
+						value="<%=workExperience.getDescription()%>">
 				</div>
 				<div class="inline-p1">
 					<p>
@@ -71,15 +79,19 @@
 					<input type="date" id="endDate" name="endDate"
 						value="<%=workExperience.getEndDate()%>">
 				</div>
-	<p>
+				
+				<div class="inline-p1">
+					<p>
 						<label for="idCandidate">Candidate:</label>
 					</p>
+
 					<select name="idCandidate">
 						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
-							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.name}
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
 								${listIdCandidate.surname}</option>
 						</c:forEach>
 					</select>
+				</div>
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

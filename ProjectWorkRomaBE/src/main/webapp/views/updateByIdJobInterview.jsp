@@ -33,21 +33,23 @@
 				<h1 class="title1">Update Job Interview</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idJobInterview">Job Interview ID:</label>
+						<label for="idJobInterview">ID:</label>
 					</p>
 					<input type="number" id="idJobInterview" name="idJobInterview"
 						value="<%=request.getParameter("idJobInterview")%>" readonly>
 				</div>
-				
-				<div class="inline-p1">  <!-- non so se è giusto -_- -->
+				<div class="inline-p1">
 					<p>
-						<label for="idCandidate">Candidate ID:</label>
+						<label for="idCandidate">Candidate:</label>
 					</p>
-					<input type="number" id="idCandidate" name="idCandidate"
-						value="<%=request.getParameter("idCandidate")%>" readonly>
-				</div>
-				
-				
+
+					<select name="idCandidate">
+						<c:forEach var="listCandidate" items="${listCandidate}">
+							<option value="${listCandidate.idCandidate}">${listCandidate.idCandidate}-${listCandidate.name}
+								${listCandidate.surname}</option>
+						</c:forEach>
+					</select>
+				</div>				
 				<div class="inline-p1">
 					<p>
 						<label for="date">Date:</label>

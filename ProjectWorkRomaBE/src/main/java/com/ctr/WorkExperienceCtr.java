@@ -63,7 +63,7 @@ public class WorkExperienceCtr {
 
 //////////////////////////////////////  DELETE BY ID  ////////////////////////////////////
 
-	@GetMapping("/deleteByWorkExperience")
+	@GetMapping("/candidate/deleteByWorkExperience")
 	public String deleteByWorkExperience(Model model, Integer idWorkExperience, Integer idCandidate) {
 		WorkExperience workExperience = (WorkExperience) WorkExperienceRep.findById(idWorkExperience).orElse(null);	
 		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
