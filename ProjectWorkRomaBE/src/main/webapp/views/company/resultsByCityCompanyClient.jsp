@@ -19,10 +19,11 @@
 <body>
 
 	<jsp:include page="sidebarFind.jsp" />
-	<div class="container1">
-		<div class="card">
-
-			<table>
+<div class="card1">
+<div class="title">
+<h1>Results Find Company Client By City</h1>
+</div>
+<table class="content-table">
 
 				<thead>
 					<tr>
@@ -44,17 +45,16 @@
 							<td>${companyClient.name}</td>
 							<td><a
 								href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
-									<button type="button">Update</button>
+									<button class="buttonUpdate" type="button">Update</button>
 							</a></td>
 							<td><a
 								href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient=${companyClient.idCompanyClient}">
-									<button type="button">Delete</button>
+									<button class="buttonDelete" type="button">Delete</button>
 							</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-	</div>
 </body>
 </html>

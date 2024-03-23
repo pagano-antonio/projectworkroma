@@ -16,7 +16,11 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-	<table>
+<div class="card1">
+<div class="title">
+<h1>Results Find Job By Date</h1>
+</div>
+<table class="content-table">
 		<thead>
 			<tr>
                 <th>Job Offer ID</th>
@@ -28,8 +32,8 @@
 				<th>Max Ral</th>
 				<th>Company Client ID</th>
 				<th>Contract Type ID</th>
-				<th>Update</th>
-				<th>Delete</th>
+				<th></th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -46,15 +50,16 @@
 					<td>${jobOffer.getContractType().getTitle()}</td>
 					<td><a
 						href="${pageContext.request.contextPath}/preUpdateByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
-							<button type="button">Update</button>
+							<button class="buttonUpdate" type="button">Update</button>
 					</a></td>
 					<td><a
 						href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobOffer=${jobOffer.idJobOffer}">
-							<button type="button">Delete</button>
+							<button class="buttonDelete" type="button">Delete</button>
 					</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 </body>
 </html>
