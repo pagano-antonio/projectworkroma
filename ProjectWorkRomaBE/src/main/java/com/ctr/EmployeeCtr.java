@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.EmployeeRepository;
 import com.dao.EmployeeTypeRepository;
 import com.dao.JobInterviewRepository;
-import com.model.ContractType;
-import com.model.EducationDegreeType;
 import com.model.Employee;
 import com.model.EmployeeType;
 import com.model.JobInterview;
+
 
 @Controller
 
@@ -32,13 +31,15 @@ public class EmployeeCtr {
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
 
+	
+	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddEmployee")
 	public String preAddEmployee(Model model) {
 		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
         model.addAttribute("listEmployeeType", listEmployeeType);
-		return "addEmployee";
+       return "addEmployee";
 	}
 
 	@PostMapping("/addEmployee")

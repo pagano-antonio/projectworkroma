@@ -250,7 +250,7 @@
 												href="${pageContext.request.contextPath}/preUpdateByIdWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>">Delete
+												href="${pageContext.request.contextPath}/deleteByWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>&idCandidate=${idCandidate.getIdCandidate()}">Delete
 											</a></td>
 										</tr>
 										<%

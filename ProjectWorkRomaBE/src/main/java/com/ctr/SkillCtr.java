@@ -1,14 +1,17 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dao.CandidateRepository;
 import com.dao.SkillRepository;
+import com.model.Candidate;
 import com.model.Skill;
 
 
@@ -17,12 +20,18 @@ import com.model.Skill;
 public class SkillCtr {
 	@Autowired
 	private SkillRepository skillRep;
+	
+	@Autowired
+	private CandidateRepository candidateRep;
+
 
 //////////////////////////////////////ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/job/preAddSkill")
 	public String preAddSkill(Model model) {
-		return "job/addSkill";
+		 List<Candidate> listCandidate = candidateRep.findAll();
+	        model.addAttribute("listCandidate", listCandidate);
+				return "job/addSkill";
 	}
 
 	@PostMapping("/job/addSkill")

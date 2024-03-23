@@ -158,9 +158,9 @@
 						<br>
 						<div class="inline-p1">
 							<p>
-								<label for="date">Graduation Date:</label>
+								<label for="education.date">Graduation Date:</label>
 							</p>
-							<input type="date" id="date" name="date">
+							<input type="date" id="education.date" name="education.date">
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -177,7 +177,7 @@
 									items="${listEducationDegreeType}">
 									<option
 										value="${listEducationDegreeType.idEducationDegreeType}">
-										${listEducationDegreeType.description}</option>
+									${listEducationDegreeType.idEducationDegreeType}-${listEducationDegreeType.description}</option>
 								</c:forEach>
 							</select>
 						</div>
@@ -223,9 +223,9 @@
 							</div>
 							<div class="inline-p1">
 								<p>
-									<label for="city">City:</label>
+									<label for="workExperience.city">City:</label>
 								</p>
-								<input type="text" id="city" name="city">
+								<input type="text" id="workExperience.city" name="workExperience.city">
 							</div>
 						</div>
 					</div>
@@ -287,7 +287,7 @@
 							<p>
 								<label for="notes">Notes:</label>
 							</p>
-							<textarea name="notes" row="8" cols="80"></textarea>
+							<textarea name="notes" name="notes"row="8" cols="80"></textarea>
 						</div>
 					</div>
 				</div>
@@ -330,9 +330,9 @@
 						</div>
 						<div>
 							<p>
-								<label for="notes">Notes:</label>
+								<label for="candidateCommercialData.notes">Notes:</label>
 							</p>
-							<textarea name="notes" row="40" cols="80"></textarea>
+							<textarea name="candidateCommercialData.notes" id="candidateCommercialData.notes"row="40" cols="80"></textarea>
 						</div>
 					</div>
 				</div>
@@ -353,28 +353,17 @@
 							<tbody>
 								<tr>
 									<th><input style="background-color: #e9e9f3" type="text"
-										id="title" name="title"></th>
+										id="skill.title" name="skill.title"></th>
 									<th><input style="background-color: #e9e9f3" type="text"
-										id="description" name="description"></th>
+										id="skill.description" name="skill.description"></th>
 								</tr>
 								<tr>
 									<th><input style="background-color: #f8f8fc" type="text"
-										id="title" name="title"></th>
+										id="skill.title" name="skill.title"></th>
 									<th><input style="background-color: #f8f8fc" type="text"
-										id="description" name="description"></th>
+										id="skill.description" name="skill.description"></th>
 								</tr>
-								<tr>
-									<th><input style="background-color: #e9e9f3" type="text"
-										id="title" name="title"></th>
-									<th><input style="background-color: #e9e9f3" type="text"
-										id="description" name="description"></th>
-								</tr>
-								<tr>
-									<th><input style="background-color: #f8f8fc" type="text"
-										id="title" name="title"></th>
-									<th><input style="background-color: #f8f8fc" type="text"
-										id="description" name="description"></th>
-								</tr>
+								
 							</tbody>
 						</table>
 

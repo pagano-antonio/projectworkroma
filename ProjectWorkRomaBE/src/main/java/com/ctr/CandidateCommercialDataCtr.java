@@ -28,7 +28,9 @@ public class CandidateCommercialDataCtr {
 
 	@GetMapping("/candidate/preAddCandidateCommercialData")
 	public String preAddCandidateCommercialData(Model model) {
-		return "candidate/addCandidateCommercialData";
+		 List<Candidate> listCandidate = candidateRep.findAll();
+	        model.addAttribute("listCandidate", listCandidate);
+			return "candidate/addCandidateCommercialData";
 	}
 
 	@PostMapping("/candidate/addCandidateCommercialData")

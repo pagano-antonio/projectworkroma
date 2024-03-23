@@ -17,6 +17,7 @@ import com.dao.EducationRepository;
 import com.model.Candidate;
 import com.model.Education;
 import com.model.EducationDegreeType;
+import com.model.EmployeeType;
 
 
 @Controller  
@@ -33,9 +34,13 @@ public class EducationCtr {
 	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 	
-	@PostMapping("/candidate/preAddCandidateForm")   
-	public String preEducation(Model model) {
-		return "candidate/addCandidateForm";
+	@GetMapping("/candidate/preAddEducation")   
+	public String preAddEducation(Model model) {
+		List<EducationDegreeType> listEducationDegreeType = EducationDegreeTypeRep.findAll();
+        model.addAttribute("listEducationDegreeType", listEducationDegreeType);
+        List<Candidate> listCandidate = candidateRep.findAll();
+        model.addAttribute("listCandidate", listCandidate);
+		return "candidate/addEducation";
 	}
 
 	@PostMapping("/candidate/addEducation") 

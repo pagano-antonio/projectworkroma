@@ -1,10 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.model.Candidate"%>
+
 <!DOCTYPE html>
-<%@ page import="com.model.Candidate" %>
 <html lang="en">
-<head>   
-  <meta charset="UTF-8">
-  <title>Add Job Interview</title>
+<head>
+<meta charset="UTF-8">
+<title>Add Job Interview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -14,7 +17,7 @@
 	href="${pageContext.request.contextPath}/resources/css/add.css">
 <style>
 body {
-	height: 100vh;	
+	height: 100vh;
 }
 </style>
 </head>
@@ -24,42 +27,56 @@ body {
 
 	<div class="container1">
 		<div class="card1">
-<h1>New Job Interview</h1>
+			<h1>New Job Interview</h1>
 
-<% Candidate candidate = (Candidate)request.getAttribute("idCandidate"); %>
-
-			<form class="formAdd"action="${pageContext.request.contextPath}/job/addJobInterview" method="POST">  
-   <div class="inline-p1">
+			<form class="formAdd"
+				action="${pageContext.request.contextPath}/job/addJobInterview"
+				method="POST">
+				<div class="inline-p1">
 					<p>
-        <label for="idCandidate">ID Candidate:</label></p>
-        <input type="number" id="idCandidate" name="idCandidate" value="<%=request.getParameter("idCandidate")%>"readonly>
-    </div>
-  <div class="inline-p1">
+						<label for="candidate">Candidate:</label>
+					</p>
+					<select name="candidate">
+						<c:forEach var="listCandidate" items="${listCandidate}">
+							<option value="${listCandidate.idCandidate}">
+								${listCandidate.idCandidate}-${listCandidate.name}-${listCandidate.surname}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="inline-p1">
 					<p>
-        <label for="date">Date:</label></p>
-        <input type="date" id="date" name="date">
-    </div>
-   <div class="inline-p1">
+						<label for="date">Date:</label>
+					</p>
+					<input type="date" id="date" name="date">
+				</div>
+				<div class="inline-p1">
 					<p>
-        <label for="idStateJobInterview">ID State Job Interview:</label></p>
-        <input type="number" id="idStateJobInterview" name="idStateJobInterview">
-    </div>
-  <div class="inline-p1">
+						<label for="idStateJobInterview">ID State Job Interview:</label>
+					</p>
+					<input type="number" id="idStateJobInterview"
+						name="idStateJobInterview">
+				</div>
+				<div class="inline-p1">
 					<p>
-        <label for="outcome">Outcome:</label></p>
-        <input type="number" id="outcome" name="outcome">
-    </div>
-   <div class="inline-p1">
+						<label for="outcome">Outcome:</label>
+					</p>
+					<input type="number" id="outcome" name="outcome">
+				</div>
+				<div class="inline-p1">
 					<p>
-        <label for="notes">Notes:</label></p>
-        <input type="text" id="notes" name="notes">
-    </div>
-   <div class="inline-p1">
+						<label for="notes">Notes:</label>
+					</p>
+					<input type="text" id="notes" name="notes">
+				</div>
+				<div class="inline-p1">
 					<p>
-        <label for="idEmployee">ID Employee:</label></p>
-        <input type="number" id="idEmployee" name="idEmployee">
-  	</div>
-				<hr>
+						<label for="idEmployee">ID Employee:</label>
+					</p>
+					<input type="number" id="idEmployee" name="idEmployee">
+				</div>
+				<br>
+				<hr class="orizzontale">
+				<br>
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>
 					<button class="buttonReset" type="reset">Reset</button>

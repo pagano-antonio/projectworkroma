@@ -32,7 +32,7 @@
 				<h1 class="title1">Update Employee</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idEmployee">ID Employee:</label>
+						<label for="idEmployee">ID:</label>
 					</p>
 					<input type="number" id="idEmployee" name="idEmployee"
 						value="<%=request.getParameter("idEmployee")%>" readonly>
@@ -40,7 +40,7 @@
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="idEmployeeType">ID Employee Type:</label>
+						<label for="idEmployeeType">Employee Type:</label>
 					</p>
 					<select name="idEmployeeType">
 						<c:forEach var="listIdEmployeeType" 
