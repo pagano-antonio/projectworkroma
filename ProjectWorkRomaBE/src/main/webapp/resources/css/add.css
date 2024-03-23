@@ -6,11 +6,6 @@
 	padding: 0;
 }
 
-.container1 {
-	margin: 0 auto;
-	max-width: 800px;
-	align-items: center;
-}
 
 body {
 	background-color: #8080c0;
@@ -19,7 +14,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 1000px;
+	padding: 50px;
 }
 
 .nametitle {
@@ -32,10 +27,10 @@ body {
 .orizzontale {
 	
 	border: none;
-	height: 2px;
+	height: 1px;
 	background-color: #ffffff;
 	margin:10px;
-	width:700px;
+	width:90%;
 	
 }
 
@@ -72,6 +67,7 @@ body {
     border-radius: 3px;
     color: #fff;
     cursor: pointer;
+     text-decoration: none;
 }
 
 .linkAdd:hover {
@@ -121,48 +117,6 @@ label, input, select {
 	width: 220px;
 }
 
-table {
-	width: 100%;
-	margin-bottom: 20px;
-	border-radius: 20px;
-	max-width: 900px;
-	
-}
-
-thead {
-	color: #ffffff;
-	background-color: #bfbfdf;;
-	font-size: 16px;
-	text-align: center;
-	
-	
-}
-td{
-	border-radius: 5px 5px 0 0;
-	padding:10px;
-	
-}
-th{
-	border-radius: 0 0 5px 5px ;
-	
-}
-tbody {
-	background-color: #f1f1f8;
-	border: 6px;
-	border-radius: 20px;
-	font-size: 16px;
-	text-align: center;
-}
-tbody tr {
-    border-bottom: 1px solid #dddddd; 
-}
-tbody tr:nth-child(even) {
-    background-color: #f8f8fc; 
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #e9e9f3; 
-}
 
 
 #skill, #workExperience, #candidate, #jobInterview, #education,
@@ -170,3 +124,36 @@ tbody tr:nth-child(odd) {
 	display: none;
 }
 
+.content-table{
+	border-collapse: collapse;
+	margin: 15px 0;
+	font-size: 0.9em;
+	width: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+	background-color: #8080c0;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+	padding: 15px 15px;
+}
+
+.content-table tbody tr {
+	border-bottom: 1px solid white;
+}
+
+.content-table tbody tr:nth-of-type(even){
+	background-color:rgba(255, 255, 255, 0.6);
+}
+
+.content-table tbody tr:last-of-type {
+	border-bottom: 2px solid #8080c0;
+}

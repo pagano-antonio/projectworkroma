@@ -19,44 +19,29 @@ body{
 	background-color:rgba(255, 255, 255, 0.6);
 	font-family: "Poppins";
 	height:600px;
-	width: 1206px;
+	width: 1400px;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 50px;
     border-radius: 20px;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    gap:25px;
 
 }
-table {
-	width: 600px;
-	
+
+h1 {
+	margin-bottom: 20px;
 }
 
-th {
-	color: #ffffff;
-	background-color: #8080c0;
-	font-size: 16px;
-	text-align: center;
-	border-radius:  5px 5px 0 0 ;
-	padding:20px;
-	
-	
+.title {
+	border-bottom: 1px solid white;
+	margin-bottom: 20px;
 }
 
-td {
-	background-color: #ffffff;
-	border: 6px;
-	text-align: center;
-	border-radius: 0 0 5px 5px;
-	padding:20px;
-}
 
 .buttonUpdate{
-	margin-top: 20px;
-	width: 70%;
+	width: 100%;
   	padding: 10px;
   	background-color: #8080c0;
   	border: none;
@@ -69,9 +54,8 @@ td {
 	background-color: #B0B0D6;
 }
 .buttonDelete {
-	width: 70%;
+	width: 100%;
   	padding: 10px;
-  	margin-top: 15px;
   	background-color: transparent;
   	border: 2px solid #8080c0;
   	border-radius: 3px;
@@ -88,4 +72,38 @@ p, h4{
 	font-size:16px;
 	padding:10px;
 	 margin-right: 20px;
+}
+
+.content-table{
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+	background-color: #8080c0;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+	padding: 12px 15px;
+}
+
+.content-table tbody tr {
+	border-bottom: 1px solid white;
+}
+
+.content-table tbody tr:nth-of-type(even){
+	background-color:rgba(255, 255, 255, 0.6);
+}
+
+.content-table tbody tr:last-of-type {
+	border-bottom: 2px solid #8080c0;
 }

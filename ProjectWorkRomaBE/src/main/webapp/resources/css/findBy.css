@@ -19,7 +19,7 @@ body {
     background-color: rgba(255, 255, 255, 0.6);
     font-family: "Poppins";
     height: 700px;
-    width: 800px;
+    width: 1000px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 50px;
     border-radius: 20px;
@@ -129,18 +129,11 @@ body {
 .buttonDelete:hover{
 	background-color: white;
 }
-.boxTitle {
-    width: 300px;
-    text-align: left;
-    color: #8080c0;
-    font-family: "Poppins";
-}
+
 
 
 .imageLogin {
     width: 400px;
-    height: 400px;
-    margin: -50px;
 }
 
 .welcomeMessage {

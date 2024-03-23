@@ -160,14 +160,15 @@
 								value="<%=candidate.getPhone()%>">
 						</div>
 					</div>
+					</div>
 					<br>
 					<hr class="orizzontale">
 					<div class="box1">
 						<h1 class="nametitle" onclick="toggleSection4()">Education
 							&#129171;</h1>
 						<div class="hidden" id="education">
-							<div class="inline-p1">
-								<table>
+				
+								<table class="content-table">
 									<thead>
 										<tr>
 										    <td>ID:</td>
@@ -176,8 +177,8 @@
 											<td>Date:</td>
 											<td>Final Grade:</td>
 											<td>Education degree type:</td>
-											<td>Update:</td>
-											<td>Delete:</td>
+											<td></td>
+											<td></td>
 										</tr>
 									</thead>
 									<%
@@ -194,10 +195,10 @@
 											<td><%=candidate.getEducations().get(0).getEducationDegreeType().getDescription()%></td>
 
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateEducation?IdEducation=">Update
+												href="${pageContext.request.contextPath}/preUpdateEducation?IdEducation=<%=education.getIdEducation()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdEducattion?IdEducation=">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdEducattion?IdEducation=<%=education.getIdEducation()%>">Delete
 											</a></td>
 										</tr>
 										<%
@@ -212,6 +213,7 @@
 									new Education</a>
 							</div>
 						</div>
+				
 						<br>
 						<hr class="orizzontale">
 
@@ -219,7 +221,8 @@
 							<h1 class="nametitle" onclick="toggleSection3()">Work
 								Experience &#129171;</h1>
 							<div class="hidden" id="workExperience">
-								<table>
+		
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -267,13 +270,14 @@
 
 							</div>
 						</div>
+		
 						<br>
 						<hr class="orizzontale">
 						<div class="box1">
 							<h1 class="nametitle" onclick="toggleSection()">Job
 								Interview &#129171;</h1>
 							<div class="hidden" id="jobInterview">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -302,10 +306,10 @@
 											<td><%=jobInterview.getStateJobInterview().getTitle()%></td>
 											<td><%=jobInterview.getNotes()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateByIdJobInterview?IdJobInterview=">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdJobInterview?idJobInterview=<%=jobInterview.getIdJobInterview()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?IdJobInterview=">Delete
+												href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobInterview=<%=jobInterview.getIdJobInterview()%>">Delete
 											</a></td>
 										</tr>
 
@@ -329,7 +333,7 @@
 								Data &#129171;</h1>
 
 							<div class="hidden" id="commercialData">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -385,7 +389,7 @@
 							<h1 class="nametitle" onclick="toggleSection2()">Skill
 								&#129171;</h1>
 							<div class="hidden" id="skill">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -406,10 +410,10 @@
 											<td><%=candidateSkill.getSkill().getTitle()%></td>
 											<td><%=candidateSkill.getSkill().getDescription()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateByIdSkill?IdSkill=">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdSkill?IdSkill=<%=candidateSkill.getIdCandidateSkill()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?IdSkill=">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?IdSkill=<%=candidateSkill.getIdCandidateSkill()%>">Delete
 											</a></td>
 										</tr>
 										<%

@@ -74,7 +74,6 @@
 <body>
 	<jsp:include page="sidebar.jsp" />
 
-	<div class="container1">
 		<div class="card1">
 
 			<form class="formAdd"
@@ -328,7 +327,7 @@
 							</p>
 							<input type="number" id="subsidyFlag" name="subsidyFlag">
 						</div>
-						<div>
+						<div class="inline-p1">
 							<p>
 								<label for="candidateCommercialData.notes">Notes:</label>
 							</p>
@@ -375,6 +374,5 @@
 				</div>
 			</form>
 		</div>
-	</div>
 </body>
 </html>

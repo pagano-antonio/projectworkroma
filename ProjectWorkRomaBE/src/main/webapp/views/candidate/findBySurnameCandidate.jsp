@@ -26,7 +26,7 @@
 			</form>
 		</div>
 	<div class="boxTitle">	
-	<img class="imageLogin" src="${pageContext.request.contextPath}/resources/css/Immagini/iphone.gif" alt="iphone" width="1000" height="750">
+	<img class="imageLogin" src="${pageContext.request.contextPath}/resources/css/Immagini/iphone.gif" alt="iphone" >
 </div>
 	</div>
 </body>

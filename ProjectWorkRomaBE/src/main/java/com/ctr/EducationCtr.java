@@ -51,7 +51,7 @@ public class EducationCtr {
 	
 //////////////////////////////////////UPDATE   ////////////////////////////////////
 	
-	@GetMapping("/candidate/preUpdateByIdEducation")
+	@GetMapping("/preUpdateByIdEducation")
 	public String preUpdateByIdEducation(Model model,@RequestParam Integer idEducation) {
 		Education education = EducationRep.findById(idEducation).orElse(null);
 		model.addAttribute("idEducation", education);
@@ -59,11 +59,11 @@ public class EducationCtr {
 		List<Candidate> candidate = candidateRep.findAll();
 		model.addAttribute("listIdEducationDegreeType", educationDegreeType);
 		model.addAttribute("listIdCandidate", candidate); 
-		return "candidate/updateByIdEducation";     
+		return "updateByIdEducation";     
 		
 		}   
 	
-	@PostMapping("/candidate/updateByIdEducation")
+	@PostMapping("/updateByIdEducation")
 	public String updateByIdEducation(Model model,@ModelAttribute ("education") Education education, Integer  idEducationDegreeType, Integer idCandidate) {
 		EducationDegreeType educationDegreeType = (EducationDegreeType)EducationDegreeTypeRep.findById(idEducationDegreeType).orElse(null);
 		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);

@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.model.JobInterview"%>
+<%@ page import="com.model.Candidate"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,7 @@
 		<div class="card1">
 			<%
 			JobInterview jobInterview = (JobInterview) request.getAttribute("idJobInterview");
+			Candidate candidate=(Candidate)request.getAttribute("idCandidate");
 			%>
 
 			<form
