@@ -50,7 +50,7 @@ public class JobInterviewCtr {
 
 //////////////////////////////////////UPDATE METHOD //////////////////////////////////////////////////////////
 
-	  @GetMapping("/job/preUpdateByIdJobInterview")
+	  @GetMapping("/preUpdateByIdJobInterview")
 	    public String preUpdateByIdIdJobInterview(Model model,@RequestParam Integer idJobInterview) {
 	    	JobInterview jobInterview = jobInterviewRep.findById(idJobInterview).orElse(null);
 	            model.addAttribute("idJobInterview", jobInterview);
@@ -60,11 +60,11 @@ public class JobInterviewCtr {
 	            model.addAttribute("listIdCandidate", candidate);
 	            model.addAttribute("listIdStateJobInterview", stateJobInterview);
 	            model.addAttribute("listIdEmployee", employee);
-	            return "job/updateByIdJobInterview";     
+	            return "updateByIdJobInterview";     
 	      
 	    }   
 
-	    @PostMapping("/job/updateByIdJobInterview")
+	    @PostMapping("/updateByIdJobInterview")
 	    public String updateByIdJobInterview(Model model,@ModelAttribute ("jobInterview") JobInterview jobInterview, Integer  idCandidate, Integer idStateJobInterview, Integer idEmployee) {
 	    	Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
 	    	StateJobInterview stateJobInterview = (StateJobInterview)stateJobInterviewRep.findById(idStateJobInterview).orElse(null);
