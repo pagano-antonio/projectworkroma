@@ -160,14 +160,15 @@
 								value="<%=candidate.getPhone()%>">
 						</div>
 					</div>
+					</div>
 					<br>
 					<hr class="orizzontale">
 					<div class="box1">
 						<h1 class="nametitle" onclick="toggleSection4()">Education
 							&#129171;</h1>
 						<div class="hidden" id="education">
-							<div class="inline-p1">
-								<table>
+				
+								<table class="content-table">
 									<thead>
 										<tr>
 										    <td>ID:</td>
@@ -176,8 +177,8 @@
 											<td>Date:</td>
 											<td>Final Grade:</td>
 											<td>Education degree type:</td>
-											<td>Update:</td>
-											<td>Delete:</td>
+											<td></td>
+											<td></td>
 										</tr>
 									</thead>
 									<%
@@ -212,6 +213,7 @@
 									new Education</a>
 							</div>
 						</div>
+				
 						<br>
 						<hr class="orizzontale">
 
@@ -219,7 +221,8 @@
 							<h1 class="nametitle" onclick="toggleSection3()">Work
 								Experience &#129171;</h1>
 							<div class="hidden" id="workExperience">
-								<table>
+		
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -267,13 +270,14 @@
 
 							</div>
 						</div>
+		
 						<br>
 						<hr class="orizzontale">
 						<div class="box1">
 							<h1 class="nametitle" onclick="toggleSection()">Job
 								Interview &#129171;</h1>
 							<div class="hidden" id="jobInterview">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -329,7 +333,7 @@
 								Data &#129171;</h1>
 
 							<div class="hidden" id="commercialData">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
@@ -385,7 +389,7 @@
 							<h1 class="nametitle" onclick="toggleSection2()">Skill
 								&#129171;</h1>
 							<div class="hidden" id="skill">
-								<table>
+								<table class="content-table">
 									<thead>
 										<tr>
 											<td>ID:</td>
