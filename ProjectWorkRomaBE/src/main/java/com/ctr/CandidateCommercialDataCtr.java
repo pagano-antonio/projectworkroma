@@ -67,7 +67,7 @@ public class CandidateCommercialDataCtr {
 		model.addAttribute("candidateCommercialData", candidateCommercialData);
 		List<Candidate> candidate = candidateRep.findAll();
 		model.addAttribute("listIdCandidate", candidate);
-		return "candidate/updateByIdCandidateCommercialData";
+		return "updateByIdCandidateCommercialData";
 
 	}  
 
@@ -99,3 +99,5 @@ public class CandidateCommercialDataCtr {
 	        }
 	    }
 	}
+
+
