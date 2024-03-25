@@ -155,3 +155,10 @@ body {
 .hidden {
     display: none;
 }
+
+
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}

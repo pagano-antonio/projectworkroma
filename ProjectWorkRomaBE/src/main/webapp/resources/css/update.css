@@ -111,6 +111,14 @@ input, textarea, select, label {
 	vertical-align: middle;
 	width:220px;
 }
+
+
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}
+
 table {
     width: 100%;
     border-radius: 20px;
