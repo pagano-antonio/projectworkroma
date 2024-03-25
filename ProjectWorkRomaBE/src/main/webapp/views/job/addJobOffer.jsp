@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,12 +55,19 @@ body {
 					</p>
 					<input type="date" id="endDate" name="endDate">
 				</div>
+				
 				<div class="inline-p1">
 					<p>
 						<label for="idCompanyClient">ID Company Client:</label>
 					</p>
-					<input type="number" id="idCompanyClient" name="idCompanyClient">
+					<select name="idCompanyClient">
+						<c:forEach var="listIdCompanyClient" items="${listIdCompanyClient}">
+							<option value="${listIdCompanyClient.idCompanyClient}">
+								${listIdCompanyClient.idCompanyClient} - ${listIdCompanyClient.name} - ${listIdCompanyClient.city}</option>
+						</c:forEach>
+					</select>
 				</div>
+				
 				<div class="inline-p1">
 					<p>
 						<label for="minRal">Min Ral:</label>
@@ -72,12 +80,19 @@ body {
 					</p>
 					<input type="number" id="maxRal" name="maxRal">
 				</div>
-				<div class="inline-p1">
+				
+					<div class="inline-p1">
 					<p>
 						<label for="idContractType">ID Contract Type:</label>
 					</p>
-					<input type="number" id="idContractType" name="idContractType">
+					<select name="idContractType">
+						<c:forEach var="listIdContractType" items="${listIdContractType}">
+							<option value="${listIdContractType.idContractType}">
+								${listIdContractType.idContractType} - ${listIdContractType.title} - ${listIdContractType.description}</option>
+						</c:forEach>
+					</select>
 				</div>
+				
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

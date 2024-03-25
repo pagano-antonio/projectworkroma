@@ -38,6 +38,10 @@ public class JobOfferCtr {
 
     @GetMapping("/job/preAddJobOffer")
     public String preAddJobOffer(Model model) {
+    	List<CompanyClient> companyClient = companyClientRep.findAll();
+        List<ContractType> contractType = contractTypeRep.findAll();
+        model.addAttribute("listIdCompanyClient", companyClient);
+        model.addAttribute("listIdContractType", contractType); 
         return "job/addJobOffer";
     }
 
