@@ -10,6 +10,8 @@ import com.dao.EmployeeRepository;
 import com.model.Employee;
 import com.model.EmployeeType;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class LoginCtr {
 
@@ -25,12 +27,12 @@ public class LoginCtr {
 	}
 
 	@GetMapping("/login")
-	public String vaiAlLogin(@RequestParam String username, @RequestParam String password, Model model) {
+	public String vaiAlLogin(@RequestParam String username, @RequestParam String password, Model model,HttpSession session) {
 		Employee employee = employeeRep.findByUsernameAndPassword(username, password);
 		if (employee != null) {
 			EmployeeType employeeType = employee.getEmployeeType();
-			model.addAttribute("employeeType", employeeType);
-			model.addAttribute("employee", employee);
+			session.setAttribute("employeeType", employeeType);
+			session.setAttribute("employee", employee);
 			return "home";
 		} else {
 			return "error";

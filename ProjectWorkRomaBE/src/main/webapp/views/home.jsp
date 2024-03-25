@@ -38,8 +38,8 @@
 				<img src="resources/css/Immagini/img-profile.jpg" class="imgProfile">
 			</div>
 			 <div class="description">
-        <% Employee employee = (Employee)request.getAttribute("employee"); %>
-        <% EmployeeType employeeType = (EmployeeType)request.getAttribute("employeeType"); %>
+        <% Employee employee = (Employee)request.getSession().getAttribute("employee"); %>
+        <% EmployeeType employeeType = (EmployeeType)request.getSession().getAttribute("employeeType"); %>
         <p><%= employee.getName() %>
         <%= employee.getSurname() %></p>
         <p class="employeeType"><%= employeeType.getDescription() %></p>
