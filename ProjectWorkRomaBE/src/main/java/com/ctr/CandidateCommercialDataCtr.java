@@ -41,17 +41,15 @@ public class CandidateCommercialDataCtr {
 
 //////////////////////////////////////DELETE BY ID  ////////////////////////////////////
 
-	@GetMapping("/candidate/preDeleteByIdCandidateCommercialData")
-	public String preDeleteByIdCandidateCommercialData() {
-		return "candidate/deleteByIdCandidateCommercialData";
-	}
 
 	@GetMapping("/candidate/deleteByIdCandidateCommercialData")
-	public String deleteByIdCandidateCommercialData(Model model, Integer idCandidateCommercialData) {
+	public String deleteByIdCandidateCommercialData(Model model, Integer idCandidateCommercialData, Integer idCandidate) {
 		CandidateCommercialData candidateCommercialData = (CandidateCommercialData) candidateCommercialDataRep.findById(idCandidateCommercialData).orElse(null);
+		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
+		model.addAttribute("idCandidate", candidate.get(0));
 		if (candidateCommercialData != null) {
 			candidateCommercialDataRep.delete(candidateCommercialData);
-			return "success";
+			return "updateByIdCandidate";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);

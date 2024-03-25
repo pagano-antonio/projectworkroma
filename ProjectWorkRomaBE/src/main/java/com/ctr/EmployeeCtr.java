@@ -43,7 +43,7 @@ public class EmployeeCtr {
 	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
-		return "preLogin";
+		return "success";
 	}
 
 	@GetMapping("company/preAddEmployee")
@@ -57,7 +57,7 @@ public class EmployeeCtr {
 
 	@PostMapping("/company/addEmployee")
 	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview) {
-		employeeRep.save(e);
+		employeeRep.save(e); 
 		employeeTypeRep.save(employeeType);
 		jobInterviewRep.save(jobInterview);
 		return "preLogin";

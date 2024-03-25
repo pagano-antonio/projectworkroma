@@ -26,9 +26,10 @@
 				</p>
 				<input class="inputField" type="number" id="idCandidate"
 					name="idCandidate">
-
+                
 				<button class="buttonSubmit" type="submit">Submit</button>
 				<button class="buttonReset" type="reset">Reset</button>
+				
 			</form>
 		</div>
 		<div class="boxTitle">	

@@ -17,7 +17,7 @@
 <body>
 <div class="card1">
 <div class="title">
-<h1>Results Find Candidate By Education Degree Type</h1>
+<h1>Find Candidate By Education Degree Type</h1>
 </div>
 <table class="content-table">
     <thead>
