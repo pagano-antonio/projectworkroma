@@ -91,7 +91,7 @@
 			</div>
 		<hr>
 		
-		<a id="home" href="${pageContext.request.contextPath}/preLogin">Logout</a>
+		<a id="home" href="${pageContext.request.contextPath}/home">Home</a>
 	</div>
 	<div id="main">
 		<h2 id="openBtn" onclick="openNav()">&#9776;</h2>
@@ -128,4 +128,3 @@
 
 </body>
 </html>
-

@@ -78,7 +78,7 @@
 </head>
 <body>
 
-	<jsp:include page="sidebar.jsp" />
+	<jsp:include page="sidebarFind.jsp" />
 
 	<div class="container1">
 
