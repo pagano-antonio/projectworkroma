@@ -75,12 +75,6 @@ body {
 					</p>
 					<input type="text" id="notes2" name="notes2">
 				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="idEmployee">ID Employee:</label>
-					</p>
-					<input type="number" id="idEmployee" name="idEmployee">
-				</div>
 				
 				<div class="inline-p1">
 					<p>
