@@ -61,7 +61,7 @@ body {
 				</p>
 				<h4><%=employee.getUsername()%></h4>
 			</div>
-			<div class="inline-p1">
+			<div class="buttons">
 				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=${idEmployee.idEmployee}">
 					<button class="buttonUpdate" type="button">Update</button>
@@ -73,7 +73,6 @@ body {
 		</div>
 		<div class="boxTitle">
 			<img class="imageLogin"
-				style="margin: 10px; height: 300px; width: 300px; border-radius: 300px;"
 				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
 				alt="img-profile">
 		</div>

@@ -29,8 +29,8 @@
             <th>City</th>
             <th>Email</th>
             <th>Phone</th>
-            <th></th>
-            <th></th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>

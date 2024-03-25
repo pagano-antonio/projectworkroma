@@ -23,8 +23,7 @@
 <table class="content-table">
     <thead>
         <tr>
-        	<th>Candidate Skill ID</th>
-        	<th>Candidate ID</th>
+        	<th>ID:</th>
         	<th>Skill</th>
             <th>Name</th>
             <th>Surname</th>
@@ -41,9 +40,10 @@
         <c:forEach var="candidateSkill" items="${idCandidateSkill}">
             <tr>
             	
-                <td>${candidateSkill.idCandidateSkill}</td>
-                <td>${candidateSkill.getCandidate().getIdCandidate()}</td>
-                <td>${candidateSkill.skill}</td>
+                <td>${candidateSkill.idCandidateSkill}</td>           
+                <td hidden>${candidateSkill.skill.getIdSkill()}</td>
+                <td>${candidateSkill.skill.getDescription()}</td>
+                <td hidden>${candidateSkill.getCandidate().getIdCandidate()}</td>
                 <td>${candidateSkill.getCandidate().getName()}</td>
                 <td>${candidateSkill.getCandidate().getSurname()}</td>
                 <td>${candidateSkill.getCandidate().getBirthday()}</td>
@@ -57,7 +57,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateSkill?idCandidateSkill=${candidateSkill.idCandidateSkill}">
                         <button class="buttonDelete" type="button">Delete</button>  
                     </a>
                 </td>

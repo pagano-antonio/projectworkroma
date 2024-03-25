@@ -45,7 +45,7 @@
 				</p>
 				<h4>${companyClient.address}</h4>
 			</div>
-			<div class="inline-p1">
+			<div class="buttons">
 				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
 					<button class="buttonUpdate" type="button">Update</button>
@@ -59,7 +59,6 @@
 		</div>
 		<div class="boxTitle">
 			<img class="imageLogin"
-				style="margin: 10px; height: 300px; width: 300px; border-radius: 300px;"
 				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
 				alt="img-profile">
 		</div>
