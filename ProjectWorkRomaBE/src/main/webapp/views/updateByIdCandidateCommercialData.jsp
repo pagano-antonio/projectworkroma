@@ -26,22 +26,27 @@
 			%>
 
 			<form
-				action="${pageContext.request.contextPath}/candidate/updateByIdCandidateCommercialData"
+				action="${pageContext.request.contextPath}/updateByIdCandidateCommercialData"
 				method="POST">
 				<h1 class="title1">Update Candidate Commercial Data</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idCandidateCommercialData">Candidate Commercial Data ID:</label>
+						<label for="idCandidateCommercialData">ID:</label>
 					</p>
 					<input type="number" id="idCandidateCommercialData" name="idCandidateCommercialData"
 						value="<%=candidateCommercialData.getIdCandidateCommercialData()%>" readonly>
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="name">idCandidate:</label>
+						<label for="idCandidate">Candidate:</label>
 					</p>
-					<input type="number" id="idCandidate" name="idCandidate"
-						value="<%=candidateCommercialData.getCandidate().getIdCandidate()%>">
+
+					<select name="idCandidate">
+						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
+								${listIdCandidate.surname}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="inline-p1">
 					<p>

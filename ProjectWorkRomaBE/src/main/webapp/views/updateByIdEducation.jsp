@@ -1,10 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ page import="com.model.Education"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,7 +5,7 @@
 <%@ page import="com.model.EducationDegreeType"%>
 <%@ page import="com.model.Candidate"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +33,7 @@
 				<h1 class="title1">Update Education</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idEducation ">ID Education:</label>
+						<label for="idEducation ">ID:</label>
 					</p>
 					<input type="number" id="idEducation" name="idEducation"
 						value="<%=request.getParameter("idEducation")%>" readonly>
@@ -48,11 +41,15 @@
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="idCandidate">ID Candidate:</label>
+						<label for="idCandidate">Candidate:</label>
 					</p>
-					<input type="number" id="idCandidate" name="idCandidate"
-						value="<%=request.getParameter("idCandidate")%>" readonly>
-						
+
+					<select name="idCandidate">
+						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
+								${listIdCandidate.surname}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="inline-p1">
 					<p>
@@ -61,7 +58,7 @@
 					<select name="idEducationDegreeType">
 						<c:forEach var="listIdEducationDegreeType" 
 						items="${listIdEducationDegreeType}">
-							<option value="${listIdEducationDegreeType.idEducationDegreeType}">${listIdEducationDegreeType.description}
+							<option value="${listIdEducationDegreeType.idEducationDegreeType}">${listIdEducationDegreeType.idEducationDegreeType}) ${listIdEducationDegreeType.description}
 							</option>
 						</c:forEach>
 					</select>
@@ -93,8 +90,7 @@
 					</p>
 					<input type="text" id="finalGrade" name="finalGrade"
 						value="<%=education.getFinalGrade()%>">
-				</div>
-					</div> 
+				</div>					
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

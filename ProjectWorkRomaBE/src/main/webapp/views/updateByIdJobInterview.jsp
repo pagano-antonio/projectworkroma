@@ -45,7 +45,7 @@
 
 					<select name="idCandidate">
 						<c:forEach var="listCandidate" items="${listCandidate}">
-							<option value="${listCandidate.idCandidate}">${listCandidate.idCandidate}-${listCandidate.name}
+							<option value="${listCandidate.idCandidate}">${listCandidate.idCandidate}) ${listCandidate.name}
 								${listCandidate.surname}</option>
 						</c:forEach>
 					</select>
@@ -65,7 +65,7 @@
 					<select name="idStateJobInterview">
 						<c:forEach var="listIdStateJobInterview" 
 						items="${listIdStateJobInterview}">
-							<option value="${listIdStateJobInterview.idStateJobInterview}">${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}
+							<option value="${listIdStateJobInterview.idStateJobInterview}">${listIdStateJobInterview.idStateJobInterview}) ${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}
 							</option>
 						</c:forEach>
 					</select>
@@ -87,7 +87,7 @@
 					<select name="idEmployee">
 						<c:forEach var="listIdEmployee" 
 						items="${listIdEmployee}">
-							<option value="${listIdEmployee.idEmployee}">${listIdEmployee.username}
+							<option value="${listIdEmployee.idEmployee}">${listIdEmployee.idEmployee}) ${listIdEmployee.username}
 							</option>
 						</c:forEach>
 					</select>

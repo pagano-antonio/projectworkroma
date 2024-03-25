@@ -71,27 +71,36 @@ hr  {
 
 
 .buttonSubmit {
-	width: 40%;
-	padding: 10px;
-	background-color:  #8080c0;
-	border: none;
-	border-radius: 6px;
-	color: #fff;
-	cursor: pointer;
+    margin-top: 20px;
+    width: 30%;
+    padding: 10px;
+    background-color: #8080c0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttonSubmit:hover {
+    background-color: #B0B0D6;
 }
 
 .buttonReset {
-	width: 40%;
-	padding: 10px;
-	margin-top: 15px;
-	background-color: transparent;
-	border: none;
-	border-radius: 3px;
-	color: #808080;
-	text-decoration: underline;
-	cursor: pointer;
+    width: 30%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left:30px;
+    background-color: transparent;
+    border: 2px solid #8080c0;
+    border-radius: 3px;
+    color: #8080c0;
+    text-decoration: none;
+    cursor: pointer;
 }
 
+.buttonReset:hover {
+    background-color: white;
+}
 input, textarea, select, label {
 	padding: 20px;
 	border-radius: 16px;

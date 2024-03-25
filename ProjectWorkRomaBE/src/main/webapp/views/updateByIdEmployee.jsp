@@ -36,15 +36,14 @@
 					</p>
 					<input type="number" id="idEmployee" name="idEmployee"
 						value="<%=request.getParameter("idEmployee")%>" readonly>
-						
+
 				</div>
 				<div class="inline-p1">
 					<p>
 						<label for="idEmployeeType">Employee Type:</label>
 					</p>
 					<select name="idEmployeeType">
-						<c:forEach var="listIdEmployeeType" 
-						items="${listIdEmployeeType}">
+						<c:forEach var="listIdEmployeeType" items="${listIdEmployeeType}">
 							<option value="${listIdEmployeeType.idEmployeeType}">${listIdEmployeeType.description}
 							</option>
 						</c:forEach>
@@ -85,6 +84,7 @@
 					<input type="password" id="password" name="password"
 						value="<%=employee.getPassword()%>">
 				</div>
+							
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

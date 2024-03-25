@@ -31,7 +31,7 @@
 				<h1 class="title1">Update Skill</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idSkill">Skill ID:</label>
+						<label for="idSkill">ID:</label>
 					</p>
 					<input type="number" id="idSkill" name="idSkill"
 						value="<%=request.getParameter("idSkill")%>" readonly>
