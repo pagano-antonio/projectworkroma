@@ -1,0 +1,154 @@
+@charset "ISO-8859-1";
+/* Regole comuni per input e select */
+input[type=text], input[type=date], input[type=number], input[type=email],input[type=tel],input[type=password], select {
+	width: 80%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #F2F1EB;
+	border-radius: 24px;
+	box-sizing: border-box;
+	font-family: poppins;
+	font-weight: bold;
+	text-align: center;
+	color:#88AB8E;
+}
+
+/* Regole per pulsanti submit e reset */
+input[type=submit], input[type=reset] {
+	width: 30%;
+	background-color: #a38cff;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 24px;
+	cursor: pointer;
+	font-family: poppins, sans-serif;
+}
+select:hover {
+	background-color: #ede6ff;
+	color:#5900b3;
+}
+/* Hover effetto per pulsanti */
+input[type=submit]:hover, input[type=reset]:hover {
+	background-color: #c3a9ff;
+}
+
+/* Regole per form e h2 */
+form, h2, h3,h4 {
+	font-family: Roboto Rounded;
+	padding: 20px;
+	margin: 0;
+	border-radius: 24px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-family: Roboto Rounded;
+	padding: 20px;
+	background-color: #c3a9ff;
+	color: #ffffff;
+	text-align: center;
+}
+h3 {
+	font-family: Roboto Rounded;
+	padding: 20px;
+	background-color: #d2bfff;
+	color: #ffffff;
+}
+h4 {
+	font-family: Roboto Rounded;
+	padding: 10px;
+	background-color: #efe8ff;
+	color: #8080c0;
+}
+th, td, form {
+	border: 3px solid #ffffff;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 16px;
+	padding: 8px;
+	font-family: Roboto Rounded;
+	font-weight: bold;
+	color:#400080;
+}
+
+td {
+	color: #7a10da;
+	background-color: #dacaff;
+}
+
+th {
+	background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+} 
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+button {
+	width: 50%;
+	margin: 1px 0;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 14px;
+	cursor: pointer;
+	font-family: Roboto Rounded;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #88AB8E;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	display: flex;
+	justify-content: center;
+}
+
+button:hover {
+	background-color: #88AB8E;
+	/* Cambia il colore quando si passa sopra con il mouse */
+	color: #AFC8AD;
+}
+
+.container {
+	display: flex; /* Imposta il layout flessibile */
+	align-items: center; /* Allinea gli elementi verticalmente al centro */
+}
+
+.container img {
+	margin-right: 10px;
+	/* Aggiunge un margine a destra all'immagine per separarlo dal testo */
+}
+
+.container span {
+	text-align: center;
+	color: #a38cff;
+	font-size: 60px;
+	font-weight: bold;
+	padding: 8px;
+}
+
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}
+
+
+.dropdown-item{}
+.dropdown-menu{}
+.container-fluid{}
+.results-group {}
+.data-group{}
+.action{}
+.submit{}

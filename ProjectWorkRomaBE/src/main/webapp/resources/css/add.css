@@ -38,6 +38,10 @@ body {
 	display: inline-block;
 	margin: 20px;
 }
+#divSelect{
+	position: relative;
+}
+
 
 .card1 {
 	background-color: rgba(255, 255, 255, 0.6);
@@ -118,6 +122,12 @@ label, input, select{
 	width: 220px;
 }
 
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}
+
 
 
 #skill, #workExperience, #candidate, #jobInterview, #education,
@@ -158,3 +168,8 @@ label, input, select{
 .content-table tbody tr:last-of-type {
 	border-bottom: 2px solid #8080c0;
 }
+
+
+
+
+
