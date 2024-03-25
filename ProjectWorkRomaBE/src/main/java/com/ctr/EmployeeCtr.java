@@ -75,7 +75,7 @@ public class EmployeeCtr {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
 		if (employee != null) {
 			employeeRep.delete(employee);
-			return "company/resultsByIdEmployeeType";
+			return "success";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
