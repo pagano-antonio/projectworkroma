@@ -20,10 +20,12 @@
 <body>
 
 	<jsp:include page="sidebarFind.jsp" />
-	<div class="card1">
+
 		<div class="title">
 			<h1>Find Employee Type By ID</h1>
-		</div><%
+		</div>
+			<div class="card1">
+			<%
 					EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType");
 					%>
 		<table class="content-table">
