@@ -46,7 +46,11 @@ public class JobOfferCtr {
     }
 
     @PostMapping("/job/addJobOffer")
-    public String addJobOffer(Model model, JobOffer jobOffer) {
+    public String addJobOffer(Model model, JobOffer jobOffer, Integer  idCompanyClient, Integer idContractType) {
+    	CompanyClient companyClient = (CompanyClient)companyClientRep.findById(idCompanyClient).orElse(null);
+    	ContractType contractType = (ContractType)contractTypeRep.findById(idContractType).orElse(null);
+      jobOffer.setCompanyClient(companyClient);
+      jobOffer.setContractType(contractType); 
         jobOfferRep.save(jobOffer);
         return "success";
     }
