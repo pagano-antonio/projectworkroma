@@ -139,10 +139,13 @@ body {
 	background-color: white;
 }
 
-
+.boxTitle {
+	   justify-content: center;
+}
 
 .imageLogin {
     width: 400px;
+    border-radius: 500px;
 }
 
 .welcomeMessage {
