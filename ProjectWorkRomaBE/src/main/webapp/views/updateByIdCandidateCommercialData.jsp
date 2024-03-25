@@ -18,7 +18,7 @@
 	href="${pageContext.request.contextPath}/resources/css/update.css">
 </head>
 <body>
-	<jsp:include page="sidebar.jsp" />
+	<jsp:include page="sidebarFind.jsp" />
 	<div class="container1">
 		<div class="card1">
 			<%

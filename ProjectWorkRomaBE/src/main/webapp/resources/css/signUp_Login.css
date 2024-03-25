@@ -56,6 +56,13 @@ body {
 	border-radius: 5px;
 }
 
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}
+
+
 .buttonLogin {
 	margin-top: 20px;
 	width: 70%;

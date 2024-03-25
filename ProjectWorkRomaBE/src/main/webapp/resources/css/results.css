@@ -88,7 +88,7 @@ p, h4{
 .content-table thead tr {
 	background-color: #8080c0;
 	color: white;
-	text-align: left;
+	text-align: center;
 	font-weight: bold;
 }
 
@@ -99,6 +99,7 @@ p, h4{
 
 .content-table tbody tr {
 	border-bottom: 1px solid white;
+	text-align: center;
 }
 
 .content-table tbody tr:nth-of-type(even){

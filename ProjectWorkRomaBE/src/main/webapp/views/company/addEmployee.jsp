@@ -65,7 +65,7 @@ body {
 					</p>
 					<input type="password" id="password" name="password">
 				</div>
-				<div class="inline-p1">
+				<div id="divSelect" class="inline-p1">
 					<p>
 						<label for="employeeType">Employee type:</label>
 					</p>
