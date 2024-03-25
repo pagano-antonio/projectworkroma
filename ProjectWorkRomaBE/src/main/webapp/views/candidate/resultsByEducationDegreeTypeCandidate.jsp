@@ -15,10 +15,11 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<div class="card1">
+
 <div class="title">
 <h1>Find Candidate By Education Degree Type</h1>
 </div>
+<div class="card1">
 <table class="content-table">
     <thead>
         <tr>

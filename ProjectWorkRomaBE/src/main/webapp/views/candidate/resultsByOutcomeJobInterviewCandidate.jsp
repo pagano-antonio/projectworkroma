@@ -14,11 +14,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
-<body>
-<div class="card1">
+<body>     
 <div class="title">
 <h1>Results Find Candidate By Job State Interview</h1>
 </div>
+<div class="card1">
 <table class="content-table">
     <thead>
         <tr>
