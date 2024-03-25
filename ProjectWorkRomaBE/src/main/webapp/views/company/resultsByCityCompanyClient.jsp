@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Results Find by City Company Client</title>
+<title>Find by City Company Client</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -21,7 +21,7 @@
 	<jsp:include page="sidebarFind.jsp" />
 <div class="card1">
 <div class="title">
-<h1>Results Find Company Client By City</h1>
+<h1>Find Company Client By City</h1>
 </div>
 <table class="content-table">
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Results Find by Name Company Client</title>
+<title>Find by Name Company Client</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -22,7 +22,7 @@
 			<p class="findTitle">Company Client</p>
 			<div class="inline-p1">
 				<p>
-					<label for="idCompanyClient">Company Client ID:</label>
+					<label for="idCompanyClient">ID:</label>
 				</p>
 				<c:forEach var="companyClient" items="${CompanyClientName}">
 					<h4>${companyClient.idCompanyClient}</h4>

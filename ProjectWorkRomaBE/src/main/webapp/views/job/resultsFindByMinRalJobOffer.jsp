@@ -18,7 +18,7 @@
 <body>
 <div class="card1">
 <div class="title">
-<h1>Results Find Job By Min RAL</h1>
+<h1>Find Job By Min RAL</h1>
 </div>
 <table class="content-table">
     <thead>

@@ -20,7 +20,7 @@
 <body>
 <div class="card1">
 <div class="title">
-<h1>Results Find Job By Skill</h1>
+<h1>Find Job By Skill</h1>
 </div>
 <table class="content-table">
 		<thead>

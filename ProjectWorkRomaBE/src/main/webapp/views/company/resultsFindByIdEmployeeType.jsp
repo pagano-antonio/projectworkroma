@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Results Find Employee By ID</title>
+<title>Find By ID Employee Type</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -27,7 +27,7 @@
 			<p class="findTitle">Employee Type</p>
 			<div class="inline-p1">
 				<p>
-					<label for="idEmployeeType">Employee Type ID:</label>
+					<label for="idEmployeeType">ID:</label>
 				</p>
 
 				<h4><%= employeeType.getIdEmployeeType() %></h4>
