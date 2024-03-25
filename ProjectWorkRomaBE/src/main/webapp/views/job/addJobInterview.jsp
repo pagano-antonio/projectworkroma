@@ -52,9 +52,9 @@ body {
 				
 				<div class="inline-p1">
 					<p>
-						<label for="idStateJobInterview">ID State Job Interview:</label>
+						<label for="stateJobInterview">ID State Job Interview:</label>
 					</p>
-					<select name="idStateJobInterview">
+					<select name="stateJobInterview">
 						<c:forEach var="listIdStateJobInterview" items="${listIdStateJobInterview}">
 							<option value="${listIdStateJobInterview.idStateJobInterview}">
 								${listIdStateJobInterview.idStateJobInterview} - ${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}</option>
@@ -78,9 +78,9 @@ body {
 				
 				<div class="inline-p1">
 					<p>
-						<label for="idEmployee">ID Employee:</label>
+						<label for="employee">ID Employee:</label>
 					</p>
-					<select name="idEmployee">
+					<select name="employee">
 						<c:forEach var="listIdEmployee" items="${listIdEmployee}">
 							<option value="${listIdEmployee.idEmployee}">
 								${listIdEmployee.idEmployee} - ${listIdEmployee.username}</option>
