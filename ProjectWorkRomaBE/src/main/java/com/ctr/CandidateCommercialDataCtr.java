@@ -48,7 +48,12 @@ public class CandidateCommercialDataCtr {
 		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
 		model.addAttribute("idCandidate", candidate.get(0));
 		if (candidateCommercialData != null) {
-			candidateCommercialDataRep.delete(candidateCommercialData);
+			System.out.println(idCandidateCommercialData);
+			System.out.println(candidateCommercialData);
+			System.out.println(idCandidate);
+			candidateCommercialData.setCandidate(null);
+			candidateCommercialDataRep.save(candidateCommercialData);
+			candidateCommercialDataRep.deleteById(idCandidateCommercialData);
 			return "updateByIdCandidate";
 		} else {
 			String errorMessage = "ops!";

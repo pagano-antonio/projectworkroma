@@ -30,6 +30,8 @@ public class EmployeeCtr {
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
 
+
+
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddEmployee")
@@ -57,7 +59,7 @@ public class EmployeeCtr {
 
 	@PostMapping("/company/addEmployee")
 	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview) {
-		employeeRep.save(e); 
+		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
 		jobInterviewRep.save(jobInterview);
 		return "preLogin";

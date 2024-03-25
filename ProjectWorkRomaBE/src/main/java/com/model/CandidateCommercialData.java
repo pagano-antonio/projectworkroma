@@ -2,6 +2,7 @@ package com.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -37,7 +38,7 @@ public class CandidateCommercialData implements Serializable {
 	private byte subsidyFlag;
 
 	// bi-directional many-to-one association to Candidate
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idCandidate")
 	private Candidate candidate;
 
@@ -107,5 +108,13 @@ public class CandidateCommercialData implements Serializable {
 	public void setCandidate(Candidate candidate) {
 		this.candidate = candidate;
 	}
+
+	@Override
+	public String toString() {
+		return "CandidateCommercialData [idCandidateCommercialData=" + idCandidateCommercialData + ", businessCost="
+				+ businessCost + ", currentRal=" + currentRal + ", monthRefund=" + monthRefund + ", notes=" + notes
+				+ ", proposedRal=" + proposedRal + ", subsidyFlag=" + subsidyFlag +"]";
+	}
+	
 
 }
