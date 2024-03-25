@@ -16,31 +16,46 @@
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/results.css">
+	<style>
+	.card1{
+	width:500px;
+	}
+	.content-table{
+	width:200px;
+	}
+	</style>
 </head>
 <body>
 
 	<jsp:include page="sidebarFind.jsp" />
 
-		<div class="title">
-			<h1>Find Employee Type By ID</h1>
-		</div>
-			<div class="card1">
-			<%
+	<div class="title">
+		<h1>Find Employee Type By ID</h1>
+	</div>
+	<div class="card1">
+		<%
 					EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType");
 					%>
 		<table class="content-table">
-		<tr>
+			
+				<tr>
 					<th>ID:</th>
-					<th>Description:</th></tr>
-			<tr>		<td><%=employeeType.getIdEmployeeType()%></td>
-					<td><%=employeeType.getDescription()%></td></tr>
-					</table>
-					
+					<th>Description:</th>
+				</tr>
+			
+			
+				<tr>
+					<td><%=employeeType.getIdEmployeeType()%></td>
+					<td><%=employeeType.getDescription()%></td>
+				</tr>
+			
+		</table>
+
 		<table class="content-table">
 
 			<thead>
 				<tr>
-					
+
 
 					<th>Employees</th>
 					<th>Update</th>
@@ -50,7 +65,7 @@
 			<tbody>
 
 				<tr>
-					
+
 
 					<%
 					if (employeeType.getEmployees().size() > 0) {
