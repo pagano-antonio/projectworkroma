@@ -104,14 +104,15 @@ body {
     background-color: white;
 }
 
-input, textarea, select {
+input, textarea, select{
 	padding: 16px;
 	border-radius: 8px;
 	border: 3px;
 	justify-content: space-around;
 }
 
-label, input, select {
+
+label, input, select{
 	display: inline-block;
 	vertical-align: middle;
 	width: 220px;

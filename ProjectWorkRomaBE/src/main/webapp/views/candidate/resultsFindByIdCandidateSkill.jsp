@@ -57,7 +57,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateSkill?idCandidateSkill=${candidateSkill.idCandidateSkill}">
                         <button class="buttonDelete" type="button">Delete</button>  
                     </a>
                 </td>
