@@ -58,12 +58,12 @@ body {
 				
 				<div class="inline-p1">
 					<p>
-						<label for="idCompanyClient">ID Company Client:</label>
+						<label for="idCompanyClient">Company Client:</label>
 					</p>
 					<select name="idCompanyClient">
 						<c:forEach var="listIdCompanyClient" items="${listIdCompanyClient}">
 							<option value="${listIdCompanyClient.idCompanyClient}">
-								${listIdCompanyClient.idCompanyClient} - ${listIdCompanyClient.name} - ${listIdCompanyClient.city}</option>
+								${listIdCompanyClient.idCompanyClient}) ${listIdCompanyClient.name} (${listIdCompanyClient.city}, ${listIdCompanyClient.address})</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -83,12 +83,12 @@ body {
 				
 					<div class="inline-p1">
 					<p>
-						<label for="idContractType">ID Contract Type:</label>
+						<label for="idContractType">Contract Type:</label>
 					</p>
 					<select name="idContractType">
 						<c:forEach var="listIdContractType" items="${listIdContractType}">
 							<option value="${listIdContractType.idContractType}">
-								${listIdContractType.idContractType} - ${listIdContractType.title} - ${listIdContractType.description}</option>
+								${listIdContractType.idContractType}) ${listIdContractType.title}: ${listIdContractType.description}</option>
 						</c:forEach>
 					</select>
 				</div>
