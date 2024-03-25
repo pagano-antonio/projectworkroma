@@ -81,17 +81,15 @@ public class JobInterviewCtr {
 
 //////////////////////////////////////DELETE BY ID //////////////////////////////////////////////////////////
 
-	@GetMapping("/job/preDeleteByIdJobInterview")
-	public String preDeleteByIdJobInterview() {
-		return "job/deleteByIdJobInterview";
-	}
 
 	@GetMapping("/job/deleteByIdJobInterview")
-	public String deleteByIdJobInterview(Model model, Integer idJobInterview) {
+	public String deleteByIdJobInterview(Model model, Integer idJobInterview, Integer idCandidate) {
 		JobInterview jobInterview = (JobInterview) jobInterviewRep.findById(idJobInterview).orElse(null);
+		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
+		model.addAttribute("idCandidate", candidate.get(0));
 		if (jobInterview != null) {
 			jobInterviewRep.delete(jobInterview);
-			return "success";
+			return "updateByIdCandidate";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
