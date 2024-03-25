@@ -26,7 +26,7 @@
 				method="GET">
 				<p>
 
-					<label for="idEmployee">Employee ID:</label>
+					<label for="idEmployee">ID:</label>
 				</p>
 				<input class="inputField" type="number" id="idEmployee"
 					name="idEmployee">

@@ -61,9 +61,9 @@ public class CandidateCommercialDataCtr {
 
 ////////////////////////////////////// UPDATE //////////////////////////////////////////////////////
 
-	@GetMapping("/candidate/preUpdateByIdCandidateCommercialData")
-	public String preUpdateByIdCandidateCommercialData(Model model, @RequestParam Integer idCandidateCommercilData) {
-		CandidateCommercialData candidateCommercialData = candidateCommercialDataRep.findById(idCandidateCommercilData).orElse(null);
+	@GetMapping("/preUpdateByIdCandidateCommercialData")
+	public String preUpdateByIdCandidateCommercialData(Model model, @RequestParam Integer idCandidateCommercialData) {
+		CandidateCommercialData candidateCommercialData = candidateCommercialDataRep.findById(idCandidateCommercialData).orElse(null);
 		model.addAttribute("candidateCommercialData", candidateCommercialData);
 		List<Candidate> candidate = candidateRep.findAll();
 		model.addAttribute("listIdCandidate", candidate);
@@ -71,7 +71,7 @@ public class CandidateCommercialDataCtr {
 
 	}  
 
-	@PostMapping("/candidate/updateByIdCandidateCommercialData")
+	@PostMapping("/updateByIdCandidateCommercialData")
 	public String updateByIdCandidateCommercialData(Model model, @ModelAttribute ("candidateCommercialData") CandidateCommercialData candidateCommercialData, Integer  idCandidate) { 
 		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
 		candidateCommercialData.setCandidate(candidate);

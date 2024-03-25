@@ -154,12 +154,11 @@
 							</p>
 							<input type="text" id="place" name="place">
 						</div>
-						<br>
 						<div class="inline-p1">
 							<p>
-								<label for="education.date">Graduation Date:</label>
+								<label for="Education.date">Graduation Date:</label>
 							</p>
-							<input type="date" id="education.date" name="education.date">
+							<input type="date" id="Education.date" name="Education.date">
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -176,7 +175,7 @@
 									items="${listEducationDegreeType}">
 									<option
 										value="${listEducationDegreeType.idEducationDegreeType}">
-									${listEducationDegreeType.idEducationDegreeType}-${listEducationDegreeType.description}</option>
+									${listEducationDegreeType.idEducationDegreeType}) ${listEducationDegreeType.description}</option>
 								</c:forEach>
 							</select>
 						</div>
@@ -222,9 +221,9 @@
 							</div>
 							<div class="inline-p1">
 								<p>
-									<label for="workExperience.city">City:</label>
+									<label for="WorkExperience.city">City:</label>
 								</p>
-								<input type="text" id="workExperience.city" name="workExperience.city">
+								<input type="text" id="WorkExperience.city" name="WorkExperience.city">
 							</div>
 						</div>
 					</div>
@@ -237,7 +236,7 @@
 					<div class="hidden" id="jobInterview">
 						<div class="inline-p1">
 							<p>
-								<label for="date">Date:</label>
+								<label for="jobInterview.date">Date:</label>
 							</p>
 							<input type="date" id="date" name="date">
 						</div>
@@ -254,7 +253,7 @@
 							<select name="employee">
 								<c:forEach var="listEmployee" items="${listEmployee}">
 									<option value="${listEmployee.idEmployee}">
-										${listEmployee.username}</option>
+										${listEmployee.idEmployee}) ${listEmployee.username}</option>
 								</c:forEach>
 							</select>
 						</div>
@@ -277,7 +276,7 @@
 								<c:forEach var="listStateJobInterview"
 									items="${listStateJobInterview}">
 									<option value="${listStateJobInterview.idStateJobInterview}">
-										${listStateJobInterview.title}</option>
+										${listStateJobInterview.idStateJobInterview}) ${listStateJobInterview.title}</option>
 								</c:forEach>
 							</select>
 						</div>
@@ -352,15 +351,15 @@
 							<tbody>
 								<tr>
 									<th><input style="background-color: #e9e9f3" type="text"
-										id="skill.title" name="skill.title"></th>
+										id="Skill.title" name="Skill.title"></th>
 									<th><input style="background-color: #e9e9f3" type="text"
-										id="skill.description" name="skill.description"></th>
+										id="Skill.description" name="Skill.description"></th>
 								</tr>
 								<tr>
 									<th><input style="background-color: #f8f8fc" type="text"
-										id="skill.title" name="skill.title"></th>
+										id="Skill.title" name="Skill.title"></th>
 									<th><input style="background-color: #f8f8fc" type="text"
-										id="skill.description" name="skill.description"></th>
+										id="Skill.description" name="Skill.description"></th>
 								</tr>
 								
 							</tbody>

@@ -195,10 +195,10 @@
 											<td><%=candidate.getEducations().get(0).getEducationDegreeType().getDescription()%></td>
 
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateEducation?IdEducation=<%=education.getIdEducation()%>">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdEducation?idEducation=<%=education.getIdEducation()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdEducattion?IdEducation=<%=education.getIdEducation()%>">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdEducation?idEducation=<%=education.getIdEducation()%>">Delete
 											</a></td>
 										</tr>
 										<%
@@ -361,10 +361,10 @@
 											<td><%=candidateCommercialData.getSubsidyFlag()%></td>
 											<td><%=candidateCommercialData.getNotes()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateByIdCandidateCommercialData?IdCandidateCommercialData=">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdCandidateCommercialData?idCandidateCommercialData=<%=candidateCommercialData.getIdCandidateCommercialData()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateCommercialData?IdCandidateCommercialData=">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateCommercialData?IdCandidateCommercialData=<%=candidateCommercialData.getIdCandidateCommercialData()%>">Delete
 											</a></td>
 										</tr>
 										<%
