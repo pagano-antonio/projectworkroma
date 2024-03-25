@@ -58,7 +58,7 @@
 				<select name="employeeType">
 					<c:forEach var="listEmployeeType" items="${listEmployeeType}">
 						<option value="${listEmployeeType.idEmployeeType}">
-							${listEmployeeType.description}</option>
+							${listEmployeeType.idEmployeeType}) ${listEmployeeType.description}</option>
 					</c:forEach>
 				</select>
 

@@ -43,7 +43,7 @@
 
 					<select name="idCandidate">
 						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
-							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}) ${listIdCandidate.name}
 								${listIdCandidate.surname}</option>
 						</c:forEach>
 					</select>

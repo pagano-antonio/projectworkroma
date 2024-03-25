@@ -62,7 +62,7 @@ body {
 						<c:forEach var="listEducationDegreeType"
 							items="${listEducationDegreeType}">
 							<option value="${listEducationDegreeType.idEducationDegreeType}">
-								${listEducationDegreeType.idEducationDegreeType}-${listEducationDegreeType.description}</option>
+								${listEducationDegreeType.idEducationDegreeType}) ${listEducationDegreeType.description}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -73,7 +73,7 @@ body {
 					<select name="candidate">
 						<c:forEach var="listCandidate" items="${listCandidate}">
 							<option value="${listCandidate.idCandidate}">
-								${listCandidate.idCandidate}-${listCandidate.name}-${listCandidate.surname}</option>
+								${listCandidate.idCandidate}) ${listCandidate.name} ${listCandidate.surname}</option>
 						</c:forEach>
 					</select>
 				</div>
