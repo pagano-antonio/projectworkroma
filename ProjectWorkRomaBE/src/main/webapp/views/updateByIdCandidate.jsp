@@ -243,12 +243,12 @@
 									<tbody>
 										<tr>
 											<td><%=workExperience.getIdWorkExperience()%></td>
-											<td><%=workExperience.getTitle()%></td>
-											<td><%=workExperience.getDescription()%></td>
+											<td><%=workExperience.getTitle2()%></td>
+											<td><%=workExperience.getDescription2()%></td>
 											<td><%=workExperience.getCompany()%></td>
 											<td><%=workExperience.getStartDate()%></td>
 											<td><%=workExperience.getEndDate()%></td>
-											<td><%=workExperience.getCity()%></td>
+											<td><%=workExperience.getCity2()%></td>
 											<td><a class="linkAdd"
 												href="${pageContext.request.contextPath}/preUpdateByIdWorkExperience?idWorkExperience=<%=workExperience.getIdWorkExperience()%>">Update
 											</a></td>
@@ -298,13 +298,13 @@
 										%>
 										<tr>
 											<td><%=jobInterview.getIdJobInterview()%></td>
-											<td><%=jobInterview.getDate()%></td>
+											<td><%=jobInterview.getDate2()%></td>
 											<td><%=jobInterview.getOutcome()%></td>
 
 											<td><%=jobInterview.getEmployee().getUsername()%></td>
 <%-- 											<th><%=jobInterview.getContractType().getTitle()%></th> --%>
 											<td><%=jobInterview.getStateJobInterview().getTitle()%></td>
-											<td><%=jobInterview.getNotes()%></td>
+											<td><%=jobInterview.getNotes2()%></td>
 											<td><a class="linkAdd"
 												href="${pageContext.request.contextPath}/preUpdateByIdJobInterview?idJobInterview=<%=jobInterview.getIdJobInterview()%>">Update
 											</a></td>

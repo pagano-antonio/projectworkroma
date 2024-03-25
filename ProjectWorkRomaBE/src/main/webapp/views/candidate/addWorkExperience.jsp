@@ -42,15 +42,15 @@ body {
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="title">Title:</label>
+						<label for="title2">Title:</label>
 					</p>
-					<input type="text" id="title" name="title">
+					<input type="text" id="title2" name="title2">
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="description">Description:</label>
+						<label for="description2">Description:</label>
 					</p>
-					<input type="text" id="description" name="description">
+					<input type="text" id="description2" name="description2">
 				</div>
 				<div class="inline-p1">
 					<p>
@@ -72,9 +72,9 @@ body {
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="city">City:</label>
+						<label for="city2">City:</label>
 					</p>
-					<input type="text" id="city" name="city">
+					<input type="text" id="city2" name="city2">
 				</div>
 
 				<hr class="orizzontale">

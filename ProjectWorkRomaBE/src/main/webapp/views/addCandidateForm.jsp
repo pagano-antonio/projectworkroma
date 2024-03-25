@@ -156,9 +156,9 @@
 						</div>
 						<div class="inline-p1">
 							<p>
-								<label for="Education.date">Graduation Date:</label>
+								<label for="date">Graduation Date:</label>
 							</p>
-							<input type="date" id="Education.date" name="Education.date">
+							<input type="date" id="date" name="date">
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -190,15 +190,15 @@
 					<div class="hidden" id="workExperience">
 						<div class="inline-p1">
 							<p>
-								<label for="title">Title:</label>
+								<label for="title2">Title:</label>
 							</p>
-							<input type="text" id="title" name="title">
+							<input type="text" id="title2" name="title2">
 						</div>
 						<div class="inline-p1">
 							<p>
-								<label for="description">Description:</label>
+								<label for="description2">Description:</label>
 							</p>
-							<input type="text" id="description" name="description">
+							<input type="text" id="description2" name="description2">
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -221,9 +221,9 @@
 							</div>
 							<div class="inline-p1">
 								<p>
-									<label for="WorkExperience.city">City:</label>
+									<label for="city2">City:</label>
 								</p>
-								<input type="text" id="WorkExperience.city" name="WorkExperience.city">
+								<input type="text" id="city2" name="city2">
 							</div>
 						</div>
 					</div>
@@ -236,9 +236,9 @@
 					<div class="hidden" id="jobInterview">
 						<div class="inline-p1">
 							<p>
-								<label for="jobInterview.date">Date:</label>
+								<label for="date2">Date:</label>
 							</p>
-							<input type="date" id="date" name="date">
+							<input type="date" id="date2" name="date2">
 						</div>
 						<div class="inline-p1">
 							<p>
@@ -283,9 +283,9 @@
 						<br>
 						<div class="inline-p1">
 							<p>
-								<label for="notes">Notes:</label>
+								<label for="notes2">Notes:</label>
 							</p>
-							<textarea name="notes" name="notes"row="8" cols="80"></textarea>
+							<textarea name="notes2" name="notes2"row="8" cols="80"></textarea>
 						</div>
 					</div>
 				</div>
@@ -328,9 +328,9 @@
 						</div>
 						<div class="inline-p1">
 							<p>
-								<label for="candidateCommercialData.notes">Notes:</label>
+								<label for="notes">Notes:</label>
 							</p>
-							<textarea name="candidateCommercialData.notes" id="candidateCommercialData.notes"row="40" cols="80"></textarea>
+							<textarea name="notes" id="notes"row="40" cols="80"></textarea>
 						</div>
 					</div>
 				</div>
@@ -350,18 +350,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th><input style="background-color: #e9e9f3" type="text"
-										id="Skill.title" name="Skill.title"></th>
-									<th><input style="background-color: #e9e9f3" type="text"
-										id="Skill.description" name="Skill.description"></th>
-								</tr>
-								<tr>
-									<th><input style="background-color: #f8f8fc" type="text"
-										id="Skill.title" name="Skill.title"></th>
-									<th><input style="background-color: #f8f8fc" type="text"
-										id="Skill.description" name="Skill.description"></th>
-								</tr>
-								
+									<th><input  type="text"
+										id="title" name="title"></th>
+									<th><input  type="text"
+										id="description" name="description"></th>
+								</tr>							
 							</tbody>
 						</table>
 

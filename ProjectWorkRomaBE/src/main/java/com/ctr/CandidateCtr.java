@@ -78,11 +78,14 @@ public class CandidateCtr {
 			JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,
 			EducationDegreeType educationDegreeType) {
 		candidateRep.save(candidate);
+		
 		educationRep.save(education);
 		educationDegreeTypeRep.save(educationDegreeType);
 		workExperienceRep.save(workExperience);
 		jobInterviewRep.save(jobInterview);
+		
 		candidateCommercialDataRep.save(candidateCommercialData);
+		candidateCommercialData.setCandidate(candidate);
 		skillRep.save(skill);
 		return "success";
 	}

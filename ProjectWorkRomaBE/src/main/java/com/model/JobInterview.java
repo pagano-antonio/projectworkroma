@@ -3,6 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -24,10 +25,10 @@ public class JobInterview implements Serializable {
 	@Id
 	private int idJobInterview;
 
-
-	private Date date;
-
-	private String notes;
+	@Column(name = "date")
+	private Date date2;
+	@Column(name = "notes")
+	private String notes2;
 
 	private int outcome;
 
@@ -57,20 +58,20 @@ public class JobInterview implements Serializable {
 		this.idJobInterview = idJobInterview;
 	}
 
-	public Date getDate() {
-		return this.date;
+	public Date getDate2() {
+		return this.date2;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate2(Date date2) {
+		this.date2 = date2;
 	}
 
-	public String getNotes() {
-		return this.notes;
+	public String getNotes2() {
+		return this.notes2;
 	}
 
-	public void setNotes(String notes) {
-		this.notes = notes;
+	public void setNotes2(String notes2) {
+		this.notes2 = notes2;
 	}
 
 	public int getOutcome() {

@@ -28,7 +28,6 @@ public class JobOffer implements Serializable {
 	private int idJobOffer;
 
 	private String description;
-
 	
 	private Date endDate;
 

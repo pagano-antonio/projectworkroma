@@ -41,22 +41,22 @@
 					<p>
 						<label for="title">Title:</label>
 					</p>
-					<input type="text" id="title" name="title"
-						value="<%=workExperience.getTitle()%>">
+					<input type="text" id="title2" name="title2"
+						value="<%=workExperience.getTitle2()%>">
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="description">Description:</label>
+						<label for="description2">Description:</label>
 					</p>
-					<input type="text" id="description" name="description"
-						value="<%=workExperience.getDescription()%>">
+					<input type="text" id="description2" name="description2"
+						value="<%=workExperience.getDescription2()%>">
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="city">City:</label>
+						<label for="city2">City:</label>
 					</p>
-					<input type="text" id="city" name="city"
-						value="<%=workExperience.getCity()%>">
+					<input type="text" id="city2" name="city2"
+						value="<%=workExperience.getCity2()%>">
 				</div>
 				<div class="inline-p1">
 					<p>

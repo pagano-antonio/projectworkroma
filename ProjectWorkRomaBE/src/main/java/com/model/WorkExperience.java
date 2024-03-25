@@ -3,6 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -23,18 +24,19 @@ public class WorkExperience implements Serializable {
 
 	@Id
 	private int idWorkExperience;
-
-	private String city;
+	
+	@Column(name = "city")
+	private String city2;
 
 	private String company;
-
-	private String description;
+	@Column(name = "description")
+	private String description2;
 
 	private Date endDate;
 
 	private Date startDate;
-
-	private String title;
+	@Column(name = "title")
+	private String title2;
 
 	// bi-directional many-to-one association to Candidate
 	@ManyToOne
@@ -52,12 +54,12 @@ public class WorkExperience implements Serializable {
 		this.idWorkExperience = idWorkExperience;
 	}
 
-	public String getCity() {
-		return this.city;
+	public String getCity2() {
+		return this.city2;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setCity2(String city2) {
+		this.city2 = city2;
 	}
 
 	public String getCompany() {
@@ -68,12 +70,12 @@ public class WorkExperience implements Serializable {
 		this.company = company;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getDescription2() {
+		return this.description2;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescription2(String description2) {
+		this.description2 = description2;
 	}
 
 	public Date getEndDate() {
@@ -92,12 +94,12 @@ public class WorkExperience implements Serializable {
 		this.startDate = startDate;
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getTitle2() {
+		return this.title2;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitle2(String title2) {
+		this.title2 = title2;
 	}
 
 	public Candidate getCandidate() {
