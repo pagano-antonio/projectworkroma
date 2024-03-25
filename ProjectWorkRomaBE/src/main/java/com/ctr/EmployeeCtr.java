@@ -71,9 +71,9 @@ public class EmployeeCtr {
 	}
 
 	@GetMapping("/company/deleteByIdEmployee")
-	public String deleteByIdEmployee(Model model, Integer idEmployee) {
+	public String deleteByIdEmployee(Model model, Integer idEmployee, Integer idEmployeeType) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
-		if (idEmployee != null) {
+		if (employee != null) {
 			employeeRep.delete(employee);
 			return "company/resultsByIdEmployeeType";
 		} else {

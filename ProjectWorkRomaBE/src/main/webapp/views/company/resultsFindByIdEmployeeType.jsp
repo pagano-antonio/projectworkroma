@@ -60,7 +60,7 @@
 							<button class="buttonUpdate" type="button">Update</button>
 					</a></td>
 					<td><a
-						href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=<%=employee.getIdEmployee()%>">
+						href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=<%=employee.getIdEmployee()%>&idEmployeeType=<%=employeeType.getIdEmployeeType()%>">
 							<button class="buttonDelete" type="button">Delete</button>
 					</a></td>
 				</tr>

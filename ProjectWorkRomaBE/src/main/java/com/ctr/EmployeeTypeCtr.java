@@ -78,7 +78,7 @@ public class EmployeeTypeCtr {
 	    EmployeeType employeeType = (EmployeeType) employeeTypeRep.findById(idEmployeeType).orElse(null);
 	    model.addAttribute("idEmployeeType", employeeType); 
 	    List<Employee> employees = employeeRep.findAll();
-	    model.addAttribute("idEmployee", employees);
+	    model.addAttribute("idEmployee", employees.get(0));
 	    if(employeeType != null) {
 	        return "company/resultsFindByIdEmployeeType";
 	    } else {
