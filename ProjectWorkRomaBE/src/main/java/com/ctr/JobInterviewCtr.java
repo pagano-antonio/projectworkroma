@@ -38,7 +38,11 @@ public class JobInterviewCtr {
 	@GetMapping("/job/preAddJobInterview")
 	public String preAddJobInterview(Model model) {
 		List<Candidate> listCandidate = candidateRep.findAll();
+		List<StateJobInterview> stateJobInterview = stateJobInterviewRep.findAll();
+		List<Employee> employee = employeeRep.findAll();
+		model.addAttribute("listIdStateJobInterview", stateJobInterview);
 		model.addAttribute("listCandidate", listCandidate);
+		model.addAttribute("listIdEmployee", employee);
 		return "job/addJobInterview";
 	}
 

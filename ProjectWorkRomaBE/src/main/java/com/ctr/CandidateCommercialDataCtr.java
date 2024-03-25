@@ -36,7 +36,7 @@ public class CandidateCommercialDataCtr {
 	@PostMapping("/candidate/addCandidateCommercialData")
 	public String addCandidateCommercialData(Model model, CandidateCommercialData candidateCommercialData) {
 		candidateCommercialDataRep.save(candidateCommercialData);
-		return "/preUpdateByIdCandidate";
+		return "success";
 	}
 
 //////////////////////////////////////DELETE BY ID  ////////////////////////////////////
