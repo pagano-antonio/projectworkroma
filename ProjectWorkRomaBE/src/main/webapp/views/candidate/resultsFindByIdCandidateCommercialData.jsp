@@ -76,7 +76,7 @@
 				</p>
 				<h4><%=candidateCommercialData.getNotes()%></h4>
 			</div>
-			<div class="inline-p1">
+			<div class="buttons">
 
 				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${idCandidateCommercialData.getCandidate().getIdCandidate()}">

@@ -76,7 +76,7 @@
 				</p>
 				<h4>${candidate.phone}</h4>
 			</div>
-			<div class="inline-p1">
+			<div class="buttons">
 				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdCandidate?idCandidate=${candidate.idCandidate}">
 					<button class="buttonUpdate" type="button">Update</button>
