@@ -34,8 +34,7 @@ body {
 					<p>
 						<label for="schoolName">School Name:</label>
 					</p>
-					<input type="text" id="schoolName" name="schoolName"
-						placeholder="Insert your school name">
+					<input type="text" id="schoolName" name="schoolName">
 				</div>
 				<div class="inline-p1">
 					<p>
@@ -57,7 +56,7 @@ body {
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="educationDegreeType">Employee type:</label>
+						<label for="educationDegreeType">Education Degree type:</label>
 					</p>
 					<select name="educationDegreeType">
 						<c:forEach var="listEducationDegreeType"
