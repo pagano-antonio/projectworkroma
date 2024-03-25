@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="com.model.Employee"%>
+<%@ page import="com.model.EmployeeType"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +28,17 @@
 		</div>
 
 		<div class="utente">
-
+			
 			<div class="profilePic">
 				<img src="resources/css/Immagini/img-profile.jpg" class="imgProfile">
 			</div>
-			<div class="description">
-				<p>Alice Foglia</p>
-				<p class="employeeType">Manager</p>
-			</div>
-
+			 <div class="description">
+        <% Employee employee = (Employee)request.getAttribute("employee"); %>
+        <% EmployeeType employeeType = (EmployeeType)request.getAttribute("employeeType"); %>
+        <p><%= employee.getName() %></p>
+        <p><%= employee.getSurname() %></p>
+        <p class="employeeType"><%= employeeType.getDescription() %></p>
+    </div>
 		</div>
 
 
