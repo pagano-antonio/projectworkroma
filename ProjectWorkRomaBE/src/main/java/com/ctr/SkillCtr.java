@@ -53,17 +53,15 @@ public class SkillCtr {
 
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
 
-	@GetMapping("/job/preDeleteByIdSkill")
-	public String preDeleteByIdSkill() {
-		return "job/deleteByIdSkill";
-	}
 
 	@GetMapping("/job/deleteByIdSkill")
-	public String deleteByIdSkill(Model model, Integer idSkill) {
+	public String deleteByIdSkill(Model model, Integer idSkill, Integer idCandidate) {
 		Skill skill = (Skill) skillRep.findById(idSkill).orElse(null);
+		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
+		model.addAttribute("idCandidate", candidate.get(0));
 		if (skill != null) {
 			skillRep.delete(skill);
-			return "success";
+			return "updateByIdCandidate";
 		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);

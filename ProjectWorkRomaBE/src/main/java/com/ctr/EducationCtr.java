@@ -77,17 +77,15 @@ public class EducationCtr {
 	
 ////////////////////////////////////// DELETE BY ID  ////////////////////////////////////
 
-	@GetMapping("/candidate/preDeleteByIdEducation")
-	public String preDeleteByIdEducation() {
-	    return "candidate/deleteByIdEducation";
-	}
 	
 	@GetMapping("/candidate/deleteByIdEducation")
-	public String deleteByIdEducation(Model model, Integer idEducation) {
+	public String deleteByIdEducation(Model model, Integer idEducation, Integer idCandidate) {
 		Education education = (Education) EducationRep.findById(idEducation).orElse(null);
+		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
+		model.addAttribute("idCandidate", candidate.get(0));
 		if (education != null) {
 		EducationRep.delete(education);
-		return "success";
+		return "updateByIdCandidate";
 	} else {
 		String errorMessage = "ops!";
 		model.addAttribute("errorMessage", errorMessage);

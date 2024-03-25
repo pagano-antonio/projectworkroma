@@ -198,7 +198,7 @@
 												href="${pageContext.request.contextPath}/preUpdateByIdEducation?idEducation=<%=education.getIdEducation()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdEducation?idEducation=<%=education.getIdEducation()%>">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdEducation?idEducation=<%=education.getIdEducation()%>&idCandidate=${idCandidate.getIdCandidate()}">Delete
 											</a></td>
 										</tr>
 										<%
@@ -284,7 +284,6 @@
 											<td>Date:</td>
 											<td>Outcome:</td>
 											<td>Employee:</td>
-<!-- 											<td>Contract Type:</td> -->
 											<td>State Job Interview:</td>
 											<td>Notes:</td>
 											<td>Update:</td>
@@ -300,16 +299,14 @@
 											<td><%=jobInterview.getIdJobInterview()%></td>
 											<td><%=jobInterview.getDate2()%></td>
 											<td><%=jobInterview.getOutcome()%></td>
-
 											<td><%=jobInterview.getEmployee().getUsername()%></td>
-<%-- 											<th><%=jobInterview.getContractType().getTitle()%></th> --%>
 											<td><%=jobInterview.getStateJobInterview().getTitle()%></td>
 											<td><%=jobInterview.getNotes2()%></td>
 											<td><a class="linkAdd"
 												href="${pageContext.request.contextPath}/preUpdateByIdJobInterview?idJobInterview=<%=jobInterview.getIdJobInterview()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/job/deleteByIdJobOffer?idJobInterview=<%=jobInterview.getIdJobInterview()%>">Delete
+												href="${pageContext.request.contextPath}/job/deleteByIdJobInterview?idJobInterview=<%=jobInterview.getIdJobInterview()%>&idCandidate=${idCandidate.getIdCandidate()}">Delete
 											</a></td>
 										</tr>
 
@@ -364,7 +361,7 @@
 												href="${pageContext.request.contextPath}/preUpdateByIdCandidateCommercialData?idCandidateCommercialData=<%=candidateCommercialData.getIdCandidateCommercialData()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateCommercialData?IdCandidateCommercialData=<%=candidateCommercialData.getIdCandidateCommercialData()%>">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateCommercialData?idCandidateCommercialData=<%=candidateCommercialData.getIdCandidateCommercialData()%>&idCandidate=${idCandidate.getIdCandidate()}">Delete
 											</a></td>
 										</tr>
 										<%
@@ -410,10 +407,10 @@
 											<td><%=candidateSkill.getSkill().getTitle()%></td>
 											<td><%=candidateSkill.getSkill().getDescription()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateByIdSkill?idSkill=<%=candidateSkill.getIdCandidateSkill()%>">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdSkill?idSkill=<%=candidateSkill.getSkill().getIdSkill()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?idSkill=<%=candidateSkill.getIdCandidateSkill()%>">Delete
+												href="${pageContext.request.contextPath}/job/deleteByIdSkill?idSkill=<%=candidateSkill.getSkill().getIdSkill()%>&idCandidate=${idCandidate.getIdCandidate()}">Delete
 											</a></td>
 										</tr>
 										<%
