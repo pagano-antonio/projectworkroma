@@ -8,6 +8,7 @@
 
 body{
 	background-image: url('Immagini/backgroundimg.png');
+	font-family: "Poppins";
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
