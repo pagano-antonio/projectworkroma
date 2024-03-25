@@ -55,7 +55,7 @@
 						<label for="date">Date:</label>
 					</p>
 					<input type="date" id="date" name="date"
-						value="<%=jobInterview.getDate()%>">
+						value="<%=jobInterview.getDate2()%>">
 				</div>
 				
 				<div class="inline-p1">
@@ -98,7 +98,7 @@
 						<label for="notes">Notes:</label>
 					</p>
 					<input type="text" id="notes" name="notes"
-						value="<%=jobInterview.getNotes()%>">
+						value="<%=jobInterview.getNotes2()%>">
 				</div>
 				
 				
