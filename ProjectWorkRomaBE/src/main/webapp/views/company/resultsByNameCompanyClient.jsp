@@ -49,10 +49,11 @@
 				<a
 					href="${pageContext.request.contextPath}/preUpdateByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
 					<button class="buttonUpdate" type="button">Update</button>
-				</a> <a
-					href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient=${companyClient.idCompanyClient}">
-					<button class="buttonDelete" type="button">Delete</button>
-				</a>
+				</a> 
+				<a href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
+    <button class="buttonDelete" type="button">Delete</button>
+</a>
+
 				</c:forEach>
 			</div>
 		</div>
