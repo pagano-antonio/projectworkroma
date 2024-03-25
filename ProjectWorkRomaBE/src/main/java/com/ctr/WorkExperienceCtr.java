@@ -67,7 +67,7 @@ public class WorkExperienceCtr {
 	public String deleteByWorkExperience(Model model, Integer idWorkExperience, Integer idCandidate) {
 		WorkExperience workExperience = (WorkExperience) WorkExperienceRep.findById(idWorkExperience).orElse(null);	
 		List<Candidate> candidate = candidateRep.findByIdCandidate(idCandidate);
-		model.addAttribute("idCandidate", candidate);
+		model.addAttribute("idCandidate", candidate.get(0));
 		if (workExperience != null) {
 			WorkExperienceRep.delete(workExperience);
 			return "updateByIdCandidate";

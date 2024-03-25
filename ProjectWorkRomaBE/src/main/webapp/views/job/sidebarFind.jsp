@@ -31,7 +31,7 @@
 			<button class="dropdown-btn">Candidate
 			<i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-container">
-				<a href="${pageContext.request.contextPath}/preAddCandidateForm">Add
+				<a href="${pageContext.request.contextPath}/candidate/preAddCandidate">Add
 					Candidate</a> <a
 					href="${pageContext.request.contextPath}/candidate/preFindByIdCandidate">Find
 					Candidate by ID </a> <a

@@ -17,7 +17,6 @@ import com.model.Employee;
 import com.model.EmployeeType;
 import com.model.JobInterview;
 
-
 @Controller
 
 public class EmployeeCtr {
@@ -27,19 +26,17 @@ public class EmployeeCtr {
 
 	@Autowired
 	private EmployeeTypeRepository employeeTypeRep;
-	
+
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
 
-	
-	
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddEmployee")
 	public String preAddEmployee(Model model) {
 		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
-        model.addAttribute("listEmployeeType", listEmployeeType);
-       return "addEmployee";
+		model.addAttribute("listEmployeeType", listEmployeeType);
+		return "addEmployee";
 	}
 
 	@PostMapping("/addEmployee")
@@ -52,9 +49,9 @@ public class EmployeeCtr {
 	@GetMapping("company/preAddEmployee")
 	public String preAddEmployee1(Model model) {
 		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
-        model.addAttribute("listEmployeeType", listEmployeeType);
-        List<JobInterview> listJobInterview= jobInterviewRep.findAll();
-        model.addAttribute("listJobInterview", listJobInterview);
+		model.addAttribute("listEmployeeType", listEmployeeType);
+		List<JobInterview> listJobInterview = jobInterviewRep.findAll();
+		model.addAttribute("listJobInterview", listJobInterview);
 		return "company/addEmployee";
 	}
 
@@ -65,8 +62,7 @@ public class EmployeeCtr {
 		jobInterviewRep.save(jobInterview);
 		return "preLogin";
 	}
-	
-	
+
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
 
 	@GetMapping("/company/preDeleteByIdEmployee")
@@ -91,20 +87,21 @@ public class EmployeeCtr {
 
 	@GetMapping("/preUpdateByIdEmployee")
 	public String preUpdateByIdEmployee(Model model, @RequestParam Integer idEmployee) {
-	    Employee employee = employeeRep.findById(idEmployee).orElse(null);
-	    model.addAttribute("idEmployee", employee); 
-	    List<EmployeeType> employeeType = employeeTypeRep.findAll(); 
-	    model.addAttribute("listIdEmployeeType", employeeType);    
-	    return "updateByIdEmployee";
+		Employee employee = employeeRep.findById(idEmployee).orElse(null);
+		model.addAttribute("idEmployee", employee);
+		List<EmployeeType> employeeType = employeeTypeRep.findAll();
+		model.addAttribute("listIdEmployeeType", employeeType);
+		return "updateByIdEmployee";
 	}
 
 	@PostMapping("/updateByIdEmployee")
-	public String updateByIdEmployee(Model model,@ModelAttribute ("employee") Employee employee, Integer idEmployeeType) {
-	    EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
-	    employee.setEmployeeType(employeeType); 
-	    employeeRep.save(employee);
-	    return "success";
-	} 
+	public String updateByIdEmployee(Model model, @ModelAttribute("employee") Employee employee,
+			Integer idEmployeeType) {
+		EmployeeType employeeType = employeeTypeRep.findById(idEmployeeType).orElse(null);
+		employee.setEmployeeType(employeeType);
+		employeeRep.save(employee);
+		return "success";
+	}
 ////////////////////////////////// FIND BY ID ///////////////////////////////////////////////////////////
 
 	@GetMapping("/company/preFindByIdEmployee")
@@ -116,9 +113,9 @@ public class EmployeeCtr {
 	public String findByIdEmployee(Model model, @RequestParam Integer idEmployee) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
 		model.addAttribute("idEmployee", employee);
-		if (employee != null) { 
+		if (employee != null) {
 			return "company/resultsFindByIdEmployee";
-		} else { 
+		} else {
 			String errorMessage = "ops!";
 			model.addAttribute("errorMessage", errorMessage);
 			return "error";

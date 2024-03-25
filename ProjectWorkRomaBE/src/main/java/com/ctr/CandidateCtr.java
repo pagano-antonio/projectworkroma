@@ -60,33 +60,14 @@ public class CandidateCtr {
 
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
-	@GetMapping("/preAddCandidateForm")
-	public String preAddCandidateForm(Model model) {
-		List<EducationDegreeType> listEducationDegreeType = educationDegreeTypeRep.findAll();
-		model.addAttribute("listEducationDegreeType", listEducationDegreeType);
-		List<Employee> listEmployee = employeeRep.findAll();
-		model.addAttribute("listEmployee", listEmployee);
-		List<StateJobInterview> listStateJobInterview = stateJobInterviewRep.findAll();
-		model.addAttribute("listStateJobInterview", listStateJobInterview);
-		List<ContractType> listContractType = contractTypeRep.findAll();
-		model.addAttribute("listContractType", listContractType);
-		return "addCandidateForm";
+	@GetMapping("/candidate/preAddCandidate")
+	public String preAddCandidate(Model model) {
+		return "candidate/addCandidate";
 	}
 
-	@PostMapping("/addCandidateForm")
-	public String addCandidateForm(Model model, Candidate candidate, Education education, WorkExperience workExperience,
-			JobInterview jobInterview, CandidateCommercialData candidateCommercialData, Skill skill,
-			EducationDegreeType educationDegreeType) {
-		candidateRep.save(candidate);
-		
-		educationRep.save(education);
-		educationDegreeTypeRep.save(educationDegreeType);
-		workExperienceRep.save(workExperience);
-		jobInterviewRep.save(jobInterview);
-		
-		candidateCommercialDataRep.save(candidateCommercialData);
-		candidateCommercialData.setCandidate(candidate);
-		skillRep.save(skill);
+	@PostMapping("/candidate/addCandidate")
+	public String addCandidate(Model model, Candidate candidate) {
+		candidateRep.save(candidate);	
 		return "success";
 	}
 

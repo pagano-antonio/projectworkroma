@@ -73,20 +73,23 @@ public class SkillCtr {
 
 //////////////////////////////////////  UPDATE   /////////////////////////////////////////
 
-	@GetMapping("/job/preUpdateByIdSkill")
+	@GetMapping("/preUpdateByIdSkill")
 	public String preUpdateByIdSkill(Model model,@RequestParam Integer idSkill) {
 		Skill skill = skillRep.findById(idSkill).orElse(null);
 			model.addAttribute("idSkill", skill);
+			List<Candidate> candidate = candidateRep.findAll();
+			model.addAttribute("listIdCandidate", candidate);
 			List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
 			List<JobOfferSkill> jobOfferSkill = jobOfferSkillRep.findAll();
 			model.addAttribute("candidateSkill", candidateSkill);
 			model.addAttribute("jobOfferSkill", jobOfferSkill);
-			return "job/updateByIdSkill";
+			return "updateByIdSkill";
 	}
-	@PostMapping("/job/updateByIdSkill")		
-	public String updateByIdSkill(Model model,@ModelAttribute ("Skill") Skill skill, Integer idCandidateSkill, Integer idJobOfferSkill) {
-		List<CandidateSkill> candidateSkill = (List<CandidateSkill>)candidateSkillRep.findById(idCandidateSkill).orElse(null);
-		List<JobOfferSkill> jobOfferSkill = (List<JobOfferSkill>)jobOfferSkillRep.findById(idJobOfferSkill).orElse(null);
+	@PostMapping("/updateByIdSkill")		
+	public String updateByIdSkill(Model model,@ModelAttribute ("Skill") Skill skill, Integer idCandidateSkill, Integer idCandidate, Integer idJobOfferSkill) {
+		List<CandidateSkill> candidateSkill = candidateSkillRep.findAll();
+		List<JobOfferSkill> jobOfferSkill =  jobOfferSkillRep.findAll();
+		Candidate candidate = (Candidate)candidateRep.findById(idCandidate).orElse(null);
 		skill.setCandidateSkills(candidateSkill);
 		skill.setJobOfferSkills(jobOfferSkill);
 		skillRep.save(skill);

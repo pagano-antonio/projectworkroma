@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.model.Skill"%>
+<%@ page import="com.model.Candidate"%>
 
 <!DOCTYPE html>
 <html>
@@ -35,6 +36,18 @@
 					</p>
 					<input type="number" id="idSkill" name="idSkill"
 						value="<%=request.getParameter("idSkill")%>" readonly>
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="idCandidate">Candidate:</label>
+					</p>
+
+					<select name="idCandidate">
+						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
+								${listIdCandidate.surname}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="inline-p1">
 					<p>

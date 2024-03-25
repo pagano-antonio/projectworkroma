@@ -65,7 +65,7 @@
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="name">Schoool Name:</label>
+						<label for="name">School Name:</label>
 					</p>
 					<input type="text" id="schoolName" name="schoolName"
 						value="<%=education.getSchoolName()%>">

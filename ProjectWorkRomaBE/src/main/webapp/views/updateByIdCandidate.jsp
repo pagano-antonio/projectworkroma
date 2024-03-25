@@ -410,10 +410,10 @@
 											<td><%=candidateSkill.getSkill().getTitle()%></td>
 											<td><%=candidateSkill.getSkill().getDescription()%></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/preUpdateByIdSkill?IdSkill=<%=candidateSkill.getIdCandidateSkill()%>">Update
+												href="${pageContext.request.contextPath}/preUpdateByIdSkill?idSkill=<%=candidateSkill.getIdCandidateSkill()%>">Update
 											</a></td>
 											<td><a class="linkAdd"
-												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?IdSkill=<%=candidateSkill.getIdCandidateSkill()%>">Delete
+												href="${pageContext.request.contextPath}/candidate/deleteByIdSkill?idSkill=<%=candidateSkill.getIdCandidateSkill()%>">Delete
 											</a></td>
 										</tr>
 										<%

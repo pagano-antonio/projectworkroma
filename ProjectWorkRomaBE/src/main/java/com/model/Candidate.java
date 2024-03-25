@@ -7,6 +7,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
@@ -41,7 +42,7 @@ public class Candidate implements Serializable {
 	private String surname;
 
 	// bi-directional many-to-one association to CandidateCommercialData
-	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<CandidateCommercialData> candidateCommercialData;
 
 	// bi-directional many-to-one association to CandidateSkill
