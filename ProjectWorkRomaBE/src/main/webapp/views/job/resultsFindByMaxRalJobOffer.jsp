@@ -16,10 +16,11 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<div class="card1">
+
 <div class="title">
 <h1>Results Find Job By Max RAL</h1>
 </div>
+<div class="card1">
 <table class="content-table">
     <thead>
         <tr>
