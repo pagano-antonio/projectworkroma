@@ -88,7 +88,7 @@
 	</div>
 	<div class="boxTitle">
 		<img class="imageLogin"
-				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
+				src="${pageContext.request.contextPath}/resources/css/Immagini/panel.gif"
 				alt="img-profile">
 	</div>
 	</div>
