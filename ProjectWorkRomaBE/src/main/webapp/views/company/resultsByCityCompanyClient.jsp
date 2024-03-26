@@ -48,7 +48,7 @@
 									<button class="buttonUpdate" type="button">Update</button>
 							</a></td>
 							<td><a
-								href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient=${companyClient.idCompanyClient}">
+								href="${pageContext.request.contextPath}/company/deleteByIdCompanyClient?idCompanyClient=${companyClient.idCompanyClient}">
 									<button class="buttonDelete" type="button">Delete</button>
 							</a></td>
 						</tr>

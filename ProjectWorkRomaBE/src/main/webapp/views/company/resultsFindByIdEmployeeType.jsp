@@ -2,59 +2,92 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.model.EmployeeType"%>
+<%@ page import="com.model.Employee"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find By ID Employee Type</title>
+<title>Results Find Employee By ID</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/findBy.css">
+	href="${pageContext.request.contextPath}/resources/css/results.css">
+	<style>
+	.card1{
+	width:500px;
+	}
+	.content-table{
+	width:200px;
+	}
+	</style>
 </head>
 <body>
 
 	<jsp:include page="sidebarFind.jsp" />
-	<div class="card">
-		<div class="boxFind">
-			<% EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType"); %>
+
+	<div class="title">
+		<h1>Find Employee Type By ID</h1>
+	</div>
+	<div class="card1">
+		<%
+					EmployeeType employeeType = (EmployeeType) request.getAttribute("idEmployeeType");
+					%>
+		<table class="content-table">
+			
+				<tr>
+					<th>ID:</th>
+					<th>Description:</th>
+				</tr>
+			
+			
+				<tr>
+					<td><%=employeeType.getIdEmployeeType()%></td>
+					<td><%=employeeType.getDescription()%></td>
+				</tr>
+			
+		</table>
+
+		<table class="content-table">
+
+			<thead>
+				<tr>
 
 
-			<p class="findTitle">Employee Type</p>
-			<div class="inline-p1">
-				<p>
-					<label for="idEmployeeType">ID:</label>
-				</p>
+					<th>Employees</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
 
-				<h4><%= employeeType.getIdEmployeeType() %></h4>
-			</div>
-			<div class="inline-p1">
-				<p>
-					<label for="description">Description:</label>
-				</p>
+				<tr>
 
-				<h4><%= employeeType.getDescription() %></h4>
-			</div>
-			<div class="inline-p1">
-				<a
-					href="${pageContext.request.contextPath}/preUpdateByEmployeeType?idEmployeeType=${idEmployeeType.idEmployeeType}">
-					<button class="buttonUpdate" type="button">Update</button>
-				</a><a
-					href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=${idEmployeeType.idEmployeeType}">
-					<button class="buttonDelete" type="button">Delete</button>
-				</a>
-			</div>
-		</div>
-		<div class="boxTitle">
-		<img class="imageLogin"
-				style="margin: 10px; height: 300px; width: 300px; border-radius: 300px;"
-				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
-				alt="img-profile">
-		</div>
+
+					<%
+					if (employeeType.getEmployees().size() > 0) {
+						for (Employee employee : employeeType.getEmployees()) {
+					%>
+					<td><%=employee.getUsername()%></td>
+					<td><a
+						href="${pageContext.request.contextPath}/preUpdateByIdEmployee?idEmployee=<%=employee.getIdEmployee()%>">
+							<button class="buttonUpdate" type="button">Update</button>
+					</a></td>
+					<td><a
+						href="${pageContext.request.contextPath}/company/deleteByIdEmployee?idEmployee=<%=employee.getIdEmployee()%>&idEmployeeType=<%=employeeType.getIdEmployeeType()%>">
+							<button class="buttonDelete" type="button">Delete</button>
+					</a></td>
+				</tr>
+				<%
+				}
+				}
+				%>
+
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

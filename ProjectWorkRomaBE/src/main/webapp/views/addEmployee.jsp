@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script>
+    function showPreview(select) {
+        var selectedImage = select.value;
+        var previewImage = document.getElementById('profilePreview');
+        previewImage.src = "${pageContext.request.contextPath}/resources/css/Immagini/" + selectedImage;
+    }
+</script>
+
+
 <meta charset="ISO-8859-1">
 <title>Sign in</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,25 +68,31 @@
 				<select name="employeeType">
 					<c:forEach var="listEmployeeType" items="${listEmployeeType}">
 						<option value="${listEmployeeType.idEmployeeType}">
+							${listEmployeeType.idEmployeeType})
 							${listEmployeeType.description}</option>
 					</c:forEach>
 				</select>
 
 				<p>
-					<label for="photo">Photo:</label>
+					<label for="photo">Choose Profile Picture:</label>
 				</p>
-				<input class="inputField" type="file" id="photo" name="photo"
-					accept="image/*"> 
-					
-					<input type="submit" value="Register" class="buttonLogin" />
+				<select name="profilePic" onchange="showPreview(this)">
+					<option value="woman1.png">woman brunette</option>
+					<option value="woman2.png">woman blonde</option>
+					<option value="man1.png">man 1</option>
+					<option value="man2.png">man 2</option>
+				</select> 
+				
+				
+				<input type="submit" value="Register" class="buttonLogin" />
 
 			</form>
 			<a href="${pageContext.request.contextPath}/preLogin">
 				<button class="buttonRegister">Login</button>
 		</div>
 		<div class="boxTitle">
-			<img class="imageLogin" src="resources/css/Immagini/lock.gif"
-				alt="lock" width="1000" height="1000">
+			<img id="profilePreview" src="resources/css/Immagini/woman1.png" alt="Profile Preview" class="imgPreview" 
+ width="350" >
 		</div>
 	</div>
 

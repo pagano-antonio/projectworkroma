@@ -40,12 +40,14 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/addEmployee")
-	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {
+	public String addEmployee(Model model, Employee e, EmployeeType employeeType, @RequestParam("profilePic") String profilePic) {	
+	    e.setProfilePic(profilePic);
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
-		return "success";
+		return "preLogin";
 	}
 
+	
 	@GetMapping("company/preAddEmployee")
 	public String preAddEmployee1(Model model) {
 		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
@@ -56,11 +58,12 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/company/addEmployee")
-	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview) {
-		employeeRep.save(e); 
+	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview, @RequestParam("profilePic") String profilePic) {
+		e.setProfilePic(profilePic);
+		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
 		jobInterviewRep.save(jobInterview);
-		return "preLogin";
+		return "success";
 	}
 
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////
@@ -71,9 +74,9 @@ public class EmployeeCtr {
 	}
 
 	@GetMapping("/company/deleteByIdEmployee")
-	public String deleteByIdEmployee(Model model, Integer idEmployee) {
+	public String deleteByIdEmployee(Model model, Integer idEmployee, Integer idEmployeeType) {
 		Employee employee = (Employee) employeeRep.findById(idEmployee).orElse(null);
-		if (idEmployee != null) {
+		if (employee != null) {
 			employeeRep.delete(employee);
 			return "success";
 		} else {

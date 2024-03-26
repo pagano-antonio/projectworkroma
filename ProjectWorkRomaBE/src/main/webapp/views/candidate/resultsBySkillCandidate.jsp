@@ -15,10 +15,10 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<div class="card1">
 <div class="title">
-<h1>Results Find Candidate By Skill</h1>
+<h1>Find Candidate By Skill</h1>
 </div>
+<div class="card1">
 <table class="content-table">
     <thead>
         <tr>
@@ -29,8 +29,8 @@
             <th>City</th>
             <th>Email</th>
             <th>Phone</th>
-            <th></th>
-            <th></th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>

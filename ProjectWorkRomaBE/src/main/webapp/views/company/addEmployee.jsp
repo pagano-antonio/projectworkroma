@@ -65,14 +65,14 @@ body {
 					</p>
 					<input type="password" id="password" name="password">
 				</div>
-				<div class="inline-p1">
+				<div id="divSelect" class="inline-p1">
 					<p>
 						<label for="employeeType">Employee type:</label>
 					</p>
 					<select name="employeeType">
 						<c:forEach var="listEmployeeType" items="${listEmployeeType}">
 							<option value="${listEmployeeType.idEmployeeType}">
-								${listEmployeeType.idEmployeeType}-${listEmployeeType.description}</option>
+								${listEmployeeType.idEmployeeType}) ${listEmployeeType.description}</option>
 						</c:forEach>
 					</select>
 				</div>

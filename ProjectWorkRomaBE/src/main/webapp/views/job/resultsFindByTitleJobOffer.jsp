@@ -18,10 +18,11 @@
 </head>
 <body>
 	<jsp:include page="sidebarFind.jsp" />
-<div class="card1">
+
 <div class="title">
 <h1>Find Job By Title</h1>
 </div>
+<div class="card1">
 <table class="content-table">
 				<thead>
 					<tr>

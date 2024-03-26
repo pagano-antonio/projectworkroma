@@ -138,6 +138,13 @@ button:hover {
 	padding: 8px;
 }
 
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
+}
+
+
 .dropdown-item{}
 .dropdown-menu{}
 .container-fluid{}

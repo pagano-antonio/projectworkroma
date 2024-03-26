@@ -15,7 +15,7 @@
 <body>
 
 	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h4>&#x27F6;</h4></a>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h3>&#x27F6;</h3></a>
 	
 				<button class="dropdown-btn">Employee
 				<i class="fa fa-caret-down"></i></button>
@@ -31,7 +31,7 @@
 			<button class="dropdown-btn">Candidate
 			<i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-container">
-				<a href="${pageContext.request.contextPath}/candidate/preAddCandidateForm">Add
+				<a href="${pageContext.request.contextPath}/candidate/preAddCandidate">Add
 					Candidate</a> <a
 					href="${pageContext.request.contextPath}/candidate/preFindByIdCandidate">Find
 					Candidate by ID </a> <a

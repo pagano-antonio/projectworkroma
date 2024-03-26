@@ -34,8 +34,7 @@ body {
 					<p>
 						<label for="schoolName">School Name:</label>
 					</p>
-					<input type="text" id="schoolName" name="schoolName"
-						placeholder="Insert your school name">
+					<input type="text" id="schoolName" name="schoolName">
 				</div>
 				<div class="inline-p1">
 					<p>
@@ -57,13 +56,13 @@ body {
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="educationDegreeType">Employee type:</label>
+						<label for="educationDegreeType">Education Degree type:</label>
 					</p>
 					<select name="educationDegreeType">
 						<c:forEach var="listEducationDegreeType"
 							items="${listEducationDegreeType}">
 							<option value="${listEducationDegreeType.idEducationDegreeType}">
-								${listEducationDegreeType.idEducationDegreeType}-${listEducationDegreeType.description}</option>
+								${listEducationDegreeType.idEducationDegreeType}) ${listEducationDegreeType.description}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -74,7 +73,7 @@ body {
 					<select name="candidate">
 						<c:forEach var="listCandidate" items="${listCandidate}">
 							<option value="${listCandidate.idCandidate}">
-								${listCandidate.idCandidate}-${listCandidate.name}-${listCandidate.surname}</option>
+								${listCandidate.idCandidate}) ${listCandidate.name} ${listCandidate.surname}</option>
 						</c:forEach>
 					</select>
 				</div>

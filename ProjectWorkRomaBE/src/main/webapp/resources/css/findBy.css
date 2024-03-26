@@ -28,7 +28,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -45,8 +44,18 @@ body {
     background-color: #ffffff;
 }
 
+.inline-p1 {
+	display: flex;
+	gap: 10px;
+}
+
+.buttons {
+	margin-top: 20px;
+}
+
 .boxFind {
-    justify-content: center;
+    justify-content: left;
+    width: 50%;
    
 }
 
@@ -72,7 +81,7 @@ body {
 
 .buttonSubmit {
     margin-top: 20px;
-    width: 70%;
+    width: 50%;
     padding: 10px;
     background-color: #8080c0;
     border: none;
@@ -86,7 +95,7 @@ body {
 }
 
 .buttonReset {
-    width: 70%;
+    width: 50%;
     padding: 10px;
     margin-top: 15px;
     background-color: transparent;
@@ -130,10 +139,13 @@ body {
 	background-color: white;
 }
 
-
+.boxTitle {
+	   justify-content: center;
+}
 
 .imageLogin {
     width: 400px;
+    border-radius: 500px;
 }
 
 .welcomeMessage {
@@ -142,4 +154,11 @@ body {
 
 .hidden {
     display: none;
+}
+
+
+select{
+	appearance: none;
+  -webkit-appearance: none;
+	position: relative;
 }

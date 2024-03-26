@@ -20,7 +20,7 @@
 </head>
 <body>
 
-	<jsp:include page="sidebar.jsp" />
+	<jsp:include page="sidebarFind.jsp" />
 	<div class="container1">
 		<div class="card1">
 
@@ -46,7 +46,7 @@
 
 					<select name="idCandidate">
 						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
-							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}-${listIdCandidate.name}
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}) ${listIdCandidate.name}
 								${listIdCandidate.surname}</option>
 						</c:forEach>
 					</select>

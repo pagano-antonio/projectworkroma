@@ -15,15 +15,15 @@
 	href="${pageContext.request.contextPath}/resources/css/results.css">
 </head>
 <body>
-<div class="card1">
+
 <div class="title">
 <h1> Find Candidate By ID Skill</h1>
 </div>
+<div class="card1">
 <table class="content-table">
     <thead>
         <tr>
-        	<th>Candidate Skill ID</th>
-        	<th>Candidate ID</th>
+        	<th>ID:</th>
         	<th>Skill</th>
             <th>Name</th>
             <th>Surname</th>
@@ -40,9 +40,10 @@
         <c:forEach var="candidateSkill" items="${idCandidateSkill}">
             <tr>
             	
-                <td>${candidateSkill.idCandidateSkill}</td>
-                <td>${candidateSkill.getCandidate().getIdCandidate()}</td>
-                <td>${candidateSkill.skill}</td>
+                <td>${candidateSkill.idCandidateSkill}</td>           
+                <td hidden>${candidateSkill.skill.getIdSkill()}</td>
+                <td>${candidateSkill.skill.getDescription()}</td>
+                <td hidden>${candidateSkill.getCandidate().getIdCandidate()}</td>
                 <td>${candidateSkill.getCandidate().getName()}</td>
                 <td>${candidateSkill.getCandidate().getSurname()}</td>
                 <td>${candidateSkill.getCandidate().getBirthday()}</td>
@@ -56,7 +57,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidate?idCandidate=${candidate.idCandidate}">
+                    <a href="${pageContext.request.contextPath}/candidate/deleteByIdCandidateSkill?idCandidateSkill=${candidateSkill.idCandidateSkill}">
                         <button class="buttonDelete" type="button">Delete</button>  
                     </a>
                 </td>

@@ -49,13 +49,20 @@ body {
 					</p>
 					<input type="date" id="date2" name="date2">
 				</div>
+				
 				<div class="inline-p1">
 					<p>
-						<label for="idStateJobInterview">ID State Job Interview:</label>
+						<label for="stateJobInterview">ID State Job Interview:</label>
 					</p>
-					<input type="number" id="idStateJobInterview"
-						name="idStateJobInterview">
+					<select name="stateJobInterview">
+						<c:forEach var="listIdStateJobInterview" items="${listIdStateJobInterview}">
+							<option value="${listIdStateJobInterview.idStateJobInterview}">
+								${listIdStateJobInterview.idStateJobInterview} - ${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}</option>
+						</c:forEach>
+					</select>
 				</div>
+				
+				
 				<div class="inline-p1">
 					<p>
 						<label for="outcome">Outcome:</label>
@@ -68,12 +75,20 @@ body {
 					</p>
 					<input type="text" id="notes2" name="notes2">
 				</div>
+				
 				<div class="inline-p1">
 					<p>
-						<label for="idEmployee">ID Employee:</label>
+						<label for="employee">ID Employee:</label>
 					</p>
-					<input type="number" id="idEmployee" name="idEmployee">
+					<select name="employee">
+						<c:forEach var="listIdEmployee" items="${listIdEmployee}">
+							<option value="${listIdEmployee.idEmployee}">
+								${listIdEmployee.idEmployee} - ${listIdEmployee.username}</option>
+						</c:forEach>
+					</select>
 				</div>
+				
+				
 				<br>
 				<hr class="orizzontale">
 				<br>

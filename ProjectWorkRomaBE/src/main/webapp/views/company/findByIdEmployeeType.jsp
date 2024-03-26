@@ -23,7 +23,7 @@
 				action="${pageContext.request.contextPath}/company/findByIdEmployeeType"
 				method="GET">
 				<p>
-					<label for="idEmployeeType">Employee Type ID:</label>
+					<label for="idEmployeeType">ID:</label>
 				</p>
 				<input class="inputField" type="number" id="idEmployeeType" name="idEmployeeType" >
 				<div>
