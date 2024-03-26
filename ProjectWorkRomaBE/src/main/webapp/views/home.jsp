@@ -31,19 +31,20 @@
 			<h1 class="welcomeMessage">Welcome!</h1>
 			<p>Let's get to work!</p>
 		</div>
-
+		<% Employee employee = (Employee)request.getSession().getAttribute("employee"); %>
+		<% EmployeeType employeeType = (EmployeeType)request.getSession().getAttribute("employeeType"); %>
 		<div class="utente">
-			
+
 			<div class="profilePic">
-				<img src="resources/css/Immagini/img-profile.jpg" class="imgProfile">
+				<img src="resources/css/Immagini/<%=employee.getProfilePic()%>"
+					class="imgProfile">
 			</div>
-			 <div class="description">
-        <% Employee employee = (Employee)request.getSession().getAttribute("employee"); %>
-        <% EmployeeType employeeType = (EmployeeType)request.getSession().getAttribute("employeeType"); %>
-        <p><%= employee.getName() %>
-        <%= employee.getSurname() %></p>
-        <p class="employeeType"><%= employeeType.getDescription() %></p>
-    </div>
+			<div class="description">
+
+				<p><%= employee.getName() %>
+					<%= employee.getSurname() %></p>
+				<p class="employeeType"><%= employeeType.getDescription() %></p>
+			</div>
 		</div>
 
 

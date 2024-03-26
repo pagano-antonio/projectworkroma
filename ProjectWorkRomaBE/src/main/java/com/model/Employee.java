@@ -35,6 +35,8 @@ public class Employee implements Serializable {
 
 	private String username;
 	
+	private String profilePic;
+	
 	// bi-directional many-to-one association to EmployeeType
 	@JsonIgnore
 	@ManyToOne
@@ -125,6 +127,14 @@ public class Employee implements Serializable {
 		jobInterview.setEmployee(null);
 
 		return jobInterview;
+	}
+
+	public String getProfilePic() {
+		return profilePic;
+	}
+
+	public void setProfilePic(String profilePic) {
+		this.profilePic = profilePic;
 	}
 
 

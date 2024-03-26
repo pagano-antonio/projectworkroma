@@ -58,17 +58,22 @@
 				<select name="employeeType">
 					<c:forEach var="listEmployeeType" items="${listEmployeeType}">
 						<option value="${listEmployeeType.idEmployeeType}">
-							${listEmployeeType.idEmployeeType}) ${listEmployeeType.description}</option>
+							${listEmployeeType.idEmployeeType})
+							${listEmployeeType.description}</option>
 					</c:forEach>
 				</select>
 
 				<p>
-					<label for="photo">Photo:</label>
+					<label for="photo">Choose Profile Picture:</label>
 				</p>
-				<input class="inputField" type="file" id="photo" name="photo"
-					accept="image/*"> 
-					
-					<input type="submit" value="Register" class="buttonLogin" />
+				<select name="profilePic">
+					<option value="${pageContext.request.contextPath}/resources/css/Immagini/woman.jpg">woman</option>
+					<option value="${pageContext.request.contextPath}/img2.jpg">Image 2</option>
+					<option value="${pageContext.request.contextPath}/img3.jpg">Image 3</option>
+					<option value="${pageContext.request.contextPath}/img4.jpg">Image 4</option>
+				</select> 
+				
+				<input type="submit" value="Register" class="buttonLogin" />
 
 			</form>
 			<a href="${pageContext.request.contextPath}/preLogin">

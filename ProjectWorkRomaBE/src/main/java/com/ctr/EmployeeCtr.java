@@ -40,7 +40,8 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/addEmployee")
-	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {	
+	public String addEmployee(Model model, Employee e, EmployeeType employeeType, @RequestParam("profilePic") String profilePic) {	
+	    e.setProfilePic(profilePic);
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
 		return "preLogin";
@@ -57,7 +58,8 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/company/addEmployee")
-	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview) {
+	public String addEmployee1(Model model, Employee e, EmployeeType employeeType, JobInterview jobInterview, @RequestParam("profilePic") String profilePic) {
+		e.setProfilePic(profilePic);
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
 		jobInterviewRep.save(jobInterview);
