@@ -34,7 +34,7 @@ public class Employee implements Serializable {
 	private String surname;
 
 	private String username;
-
+	
 	// bi-directional many-to-one association to EmployeeType
 	@JsonIgnore
 	@ManyToOne
@@ -126,5 +126,6 @@ public class Employee implements Serializable {
 
 		return jobInterview;
 	}
+
 
 }
