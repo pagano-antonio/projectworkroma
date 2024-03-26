@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script>
+    function showPreview(select) {
+        var selectedImage = select.value;
+        var previewImage = document.getElementById('profilePreview');
+        previewImage.src = "${pageContext.request.contextPath}/resources/css/Immagini/" + selectedImage;
+    }
+</script>
+
+
 <meta charset="ISO-8859-1">
 <title>Sign in</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,12 +76,15 @@
 				<p>
 					<label for="photo">Choose Profile Picture:</label>
 				</p>
-				<select name="profilePic">
-					<option value="${pageContext.request.contextPath}/resources/css/Immagini/woman.jpg">woman</option>
-					<option value="${pageContext.request.contextPath}/img2.jpg">Image 2</option>
-					<option value="${pageContext.request.contextPath}/img3.jpg">Image 3</option>
-					<option value="${pageContext.request.contextPath}/img4.jpg">Image 4</option>
+				<select name="profilePic" onchange="showPreview(this)">
+					<option value="woman1.png">woman brunette</option>
+					<option value="woman2.png">woman blonde</option>
+					<option value="man1.png">man 1</option>
+					<option value="man2.png">man 2</option>
 				</select> 
+				
+				<img id="profilePreview" src="resources/css/Immagini/woman1.png" alt="Profile Preview" class="imgPreview">
+
 				
 				<input type="submit" value="Register" class="buttonLogin" />
 
