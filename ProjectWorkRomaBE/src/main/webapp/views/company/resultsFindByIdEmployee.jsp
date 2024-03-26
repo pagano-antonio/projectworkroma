@@ -73,7 +73,7 @@ body {
 		</div>
 		<div class="boxTitle">
 			<img class="imageLogin"
-				src="${pageContext.request.contextPath}/resources/css/Immagini/img-profile.jpg"
+				src="${pageContext.request.contextPath}/resources/css/Immagini/<%=employee.getProfilePic()%>"
 				alt="img-profile">
 		</div>
 	</div>
