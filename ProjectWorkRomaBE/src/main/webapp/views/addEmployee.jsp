@@ -77,10 +77,24 @@
 					<label for="photo">Choose Profile Picture:</label>
 				</p>
 				<select name="profilePic" onchange="showPreview(this)">
-					<option value="woman1.png">woman brunette</option>
-					<option value="woman2.png">woman blonde</option>
+					<option value="woman.png">woman </option>
+					<option value="woman1.png">woman 1</option>
+					<option value="woman2.png">woman 2</option>
+					<option value="woman3.png">woman 3</option>
+					<option value="woman4.png">woman 4</option>
+					<option value="woman5.png">woman 5</option>
+					<option value="woman6.png">woman 6</option>
+					<option value="woman7.png">woman 7</option>
+					<option value="woman8.png">woman 8</option>
+						<option value="man.png">man </option>
 					<option value="man1.png">man 1</option>
 					<option value="man2.png">man 2</option>
+					<option value="man3.png">man 3</option>
+					<option value="man4.png">man 4</option>
+					<option value="man5.png">man 5</option>
+					<option value="man6.png">man 6</option>
+					<option value="man7.png">man 7</option>
+					<option value="man8.png">man 8</option>
 				</select> 
 				
 				
