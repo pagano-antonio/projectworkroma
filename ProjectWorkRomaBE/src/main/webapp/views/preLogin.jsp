@@ -54,7 +54,7 @@
 		</div>
 		<div id="welcomeSection" class="boxTitle hidden">
 			<img class="imageLogin" src="resources/css/Immagini/preLogin.gif"
-				alt="preLogin" width="1000" height="800">
+				alt="preLogin" width="2000" height="1000">
 			<h2 class="welcomeMessage title">Welcome Back!</h2>
 		</div>
 	</div>
