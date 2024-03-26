@@ -83,8 +83,6 @@
 					<option value="man2.png">man 2</option>
 				</select> 
 				
-				<img id="profilePreview" src="resources/css/Immagini/woman1.png" alt="Profile Preview" class="imgPreview">
-
 				
 				<input type="submit" value="Register" class="buttonLogin" />
 
@@ -93,8 +91,8 @@
 				<button class="buttonRegister">Login</button>
 		</div>
 		<div class="boxTitle">
-			<img class="imageLogin" src="resources/css/Immagini/lock.gif"
-				alt="lock" width="1000" height="1000">
+			<img id="profilePreview" src="resources/css/Immagini/woman1.png" alt="Profile Preview" class="imgPreview" 
+ width="350" >
 		</div>
 	</div>
 
