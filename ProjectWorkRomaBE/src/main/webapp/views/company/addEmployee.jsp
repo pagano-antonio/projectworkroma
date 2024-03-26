@@ -6,6 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+    function showPreview(select) {
+        var selectedImage = select.value;
+        var previewImage = document.getElementById('profilePreview');
+        previewImage.src = "${pageContext.request.contextPath}/resources/css/Immagini/" + selectedImage;
+    }
+</script>
 <meta charset="ISO-8859-1">
 <title>Sign in</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +82,22 @@ body {
 								${listEmployeeType.idEmployeeType}) ${listEmployeeType.description}</option>
 						</c:forEach>
 					</select>
+					</div>
+					<div id="divSelect" class="inline-p1">
+					<p>
+					<label for="photo">Choose Profile Picture:</label>
+				</p>
+				<select name="profilePic" onchange="showPreview(this)">
+					<option value="woman1.png">woman brunette</option>
+					<option value="woman2.png">woman blonde</option>
+					<option value="man1.png">man 1</option>
+					<option value="man2.png">man 2</option>
+				</select> 
+				</div>
+				
+				<div id="divSelect" class="inline-p1">
+				<img id="profilePreview" src="resources/css/Immagini/woman1.png" alt="Profile Preview" class="imgPreview" 
+ width="80" margin="0px" >
 				</div>
 				
 				<hr class="orizzontale">
