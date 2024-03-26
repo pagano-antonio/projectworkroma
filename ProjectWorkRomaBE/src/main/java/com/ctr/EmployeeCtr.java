@@ -30,8 +30,6 @@ public class EmployeeCtr {
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
 
-
-
 ////////////////////////////////////// ADD METHOD //////////////////////////////////////////////////////////
 
 	@GetMapping("/preAddEmployee")
@@ -42,12 +40,13 @@ public class EmployeeCtr {
 	}
 
 	@PostMapping("/addEmployee")
-	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {
+	public String addEmployee(Model model, Employee e, EmployeeType employeeType) {	
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
-		return "success";
+		return "preLogin";
 	}
 
+	
 	@GetMapping("company/preAddEmployee")
 	public String preAddEmployee1(Model model) {
 		List<EmployeeType> listEmployeeType = employeeTypeRep.findAll();
@@ -62,7 +61,7 @@ public class EmployeeCtr {
 		employeeRep.save(e);
 		employeeTypeRep.save(employeeType);
 		jobInterviewRep.save(jobInterview);
-		return "preLogin";
+		return "success";
 	}
 
 //////////////////////////////////////  DELETE BY ID   ////////////////////////////////////

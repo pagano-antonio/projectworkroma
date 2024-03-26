@@ -187,12 +187,12 @@
 									%>
 									<tbody>
 										<tr>
-										    <td><%=candidate.getEducations().get(0).getIdEducation()%></td>
-											<td><%=candidate.getEducations().get(0).getSchoolName()%></td>
-											<td><%=candidate.getEducations().get(0).getPlace()%></td>
-											<td><%=candidate.getEducations().get(0).getDate()%></td>
-											<td><%=candidate.getEducations().get(0).getFinalGrade()%></td>
-											<td><%=candidate.getEducations().get(0).getEducationDegreeType().getDescription()%></td>
+										    <td><%=education.getIdEducation()%></td>
+											<td><%=education.getSchoolName()%></td>
+											<td><%=education.getPlace()%></td>
+											<td><%=education.getDate()%></td>
+											<td><%=education.getFinalGrade()%></td>
+											<td><%=education.getEducationDegreeType().getDescription()%></td>
 
 											<td><a class="linkAdd"
 												href="${pageContext.request.contextPath}/preUpdateByIdEducation?idEducation=<%=education.getIdEducation()%>">Update
