@@ -18,7 +18,7 @@
 <body>
 
 <div class="title">
-<h1>Results Find Job By Max RAL</h1>
+<h1>Find Job By Max RAL</h1>
 </div>
 <div class="card1">
 <table class="content-table">

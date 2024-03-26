@@ -18,7 +18,7 @@
 <body>
 
 <div class="title">
-<h1>Results Find Job By Date</h1>
+<h1>Find Job By Date</h1>
 </div>
 <div class="card1">
 <table class="content-table">

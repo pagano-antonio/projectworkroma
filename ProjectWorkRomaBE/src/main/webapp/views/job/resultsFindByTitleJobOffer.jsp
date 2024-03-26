@@ -20,7 +20,7 @@
 	<jsp:include page="sidebarFind.jsp" />
 
 <div class="title">
-<h1>Results Find Job By Title</h1>
+<h1>Find Job By Title</h1>
 </div>
 <div class="card1">
 <table class="content-table">
