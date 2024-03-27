@@ -37,6 +37,18 @@
 					<input type="number" id="IdWorkExperience" name="IdWorkExperience"
 						value="<%=request.getParameter("idWorkExperience")%>" readonly>
 				</div>
+					<div class="inline-p1">
+					<p>
+						<label for="idCandidate">Candidate:</label>
+					</p>
+
+					<select name="idCandidate">
+						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
+							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}) ${listIdCandidate.name}
+								${listIdCandidate.surname}</option>
+						</c:forEach>
+					</select>
+				</div>
 				<div class="inline-p1">
 					<p>
 						<label for="title">Title:</label>
@@ -80,18 +92,7 @@
 						value="<%=workExperience.getEndDate()%>">
 				</div>
 				
-				<div class="inline-p1">
-					<p>
-						<label for="idCandidate">Candidate:</label>
-					</p>
-
-					<select name="idCandidate">
-						<c:forEach var="listIdCandidate" items="${listIdCandidate}">
-							<option value="${listIdCandidate.idCandidate}">${listIdCandidate.idCandidate}) ${listIdCandidate.name}
-								${listIdCandidate.surname}</option>
-						</c:forEach>
-					</select>
-				</div>
+			
 				<hr class="orizzontale">
 				<div class="submit">
 					<button class="buttonSubmit" type="submit">Submit</button>

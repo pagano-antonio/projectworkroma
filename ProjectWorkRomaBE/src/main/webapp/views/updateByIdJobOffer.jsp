@@ -76,6 +76,16 @@
 						</c:forEach>
 					</select>
 				</div>
+					<div class="inline-p1">
+					<p>
+						<label for="idContractType">Contract Type:</label>
+					</p>
+					<select name="idContractType">
+						<c:forEach var="listIdContractType" items="${listIdContractType}">
+							<option value="${listIdContractType.idContractType}">${listIdContractType.idContractType}) ${listIdContractType.title}:
+								${listIdContractType.description}</option>
+						</c:forEach>
+					</select>
 				<div class="inline-p1">
 					<p><label for="maxRal">Min Ral:</label></p>
 					<input type="number" id="minRal" name="minRal"
@@ -88,16 +98,7 @@
 					<input type="number" id="maxRal" name="maxRal"
 						value="<%=jobOffer.getMaxRal()%>">
 				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="idContractType">Contract Type:</label>
-					</p>
-					<select name="idContractType">
-						<c:forEach var="listIdContractType" items="${listIdContractType}">
-							<option value="${listIdContractType.idContractType}">${listIdContractType.idContractType}) ${listIdContractType.title}:
-								${listIdContractType.description}</option>
-						</c:forEach>
-					</select>
+			
 				</div>
 				<hr class="orizzontale">
 				<div class="submit">

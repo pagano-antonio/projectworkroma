@@ -32,6 +32,29 @@ body {
 				method="POST">
 				<div class="inline-p1">
 					<p>
+						<label for="candidate">Candidate:</label>
+					</p>
+					<select name="candidate">
+						<c:forEach var="listCandidate" items="${listCandidate}">
+							<option value="${listCandidate.idCandidate}">
+								${listCandidate.idCandidate}) ${listCandidate.name} ${listCandidate.surname}</option>
+						</c:forEach>
+					</select>
+				</div>
+					<div class="inline-p1">
+					<p>
+						<label for="educationDegreeType">Education Degree type:</label>
+					</p>
+					<select name="educationDegreeType">
+						<c:forEach var="listEducationDegreeType"
+							items="${listEducationDegreeType}">
+							<option value="${listEducationDegreeType.idEducationDegreeType}">
+								${listEducationDegreeType.idEducationDegreeType}) ${listEducationDegreeType.description}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="inline-p1">
+					<p>
 						<label for="schoolName">School Name:</label>
 					</p>
 					<input type="text" id="schoolName" name="schoolName">
@@ -54,29 +77,7 @@ body {
 					</p>
 					<input type="text" id="finalGrade" name="finalGrade">
 				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="educationDegreeType">Education Degree type:</label>
-					</p>
-					<select name="educationDegreeType">
-						<c:forEach var="listEducationDegreeType"
-							items="${listEducationDegreeType}">
-							<option value="${listEducationDegreeType.idEducationDegreeType}">
-								${listEducationDegreeType.idEducationDegreeType}) ${listEducationDegreeType.description}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="candidate">Candidate:</label>
-					</p>
-					<select name="candidate">
-						<c:forEach var="listCandidate" items="${listCandidate}">
-							<option value="${listCandidate.idCandidate}">
-								${listCandidate.idCandidate}) ${listCandidate.name} ${listCandidate.surname}</option>
-						</c:forEach>
-					</select>
-				</div>
+				
 				<br>
 				<hr class="orizzontale">
 				<br>

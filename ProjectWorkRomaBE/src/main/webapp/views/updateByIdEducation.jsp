@@ -53,7 +53,7 @@
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="idEducationDegreeType">ID Education Degree Type:</label>
+						<label for="idEducationDegreeType">Education Degree Type:</label>
 					</p>
 					<select name="idEducationDegreeType">
 						<c:forEach var="listIdEducationDegreeType" 

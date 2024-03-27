@@ -48,33 +48,34 @@ body {
 				</div>
 				<div class="inline-p1">
 					<p>
-						<label for="currentRal">CurrentRal:</label>
+						<label for="currentRal">Current Ral:</label>
 					</p>
 					<input type="number" id="currentRal" name="currentRal">
 				</div>
 				<div class="inline-p1">
 					<p>
+						<label for="proposedRal">Proposed Ral:</label>
+					</p>
+					<input type="number" id="proposedRal" name="proposedRal">
+				</div>
+					<div class="inline-p1">
+					<p>
 						<label for="monthRefund">Month Refund:</label>
 					</p>
 					<input type="number" id="monthRefund" name="monthRefund">
 				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="notes">Notes:</label>
-					</p>
-					<input type="text" id="notes" name="notes">
-				</div>
-				<div class="inline-p1">
-					<p>
-						<label for="proposedRal">ProposedRal:</label>
-					</p>
-					<input type="number" id="proposedRal" name="proposedRal">
-				</div>
+				
 				<div class="inline-p1">
 					<p>
 						<label for="subsidyFlag">Subsidy Flag:</label>
 					</p>
 					<input type="number" id="subsidyFlag" name="subsidyFlag">
+				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="notes">Notes:</label>
+					</p>
+					<textarea id="notes" name="notes"></textarea>
 				</div>
 				<br>
 				<hr class="orizzontale">

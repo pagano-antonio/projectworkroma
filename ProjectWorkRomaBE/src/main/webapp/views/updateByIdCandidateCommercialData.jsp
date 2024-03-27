@@ -87,8 +87,8 @@
 					<p>
 						<label for="notes">Notes:</label>
 					</p>
-					<input type="text" id="notes" name="notes"
-						value="<%=candidateCommercialData.getNotes()%>">
+					<textarea id="notes" name="notes"
+						value="<%=candidateCommercialData.getNotes()%>"></textarea>
 				</div>
 					<hr class="orizzontale">
 				<div class="submit">

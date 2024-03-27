@@ -80,7 +80,7 @@
             </div>
               			<div id="divSelect" class="inline-p1">
 					<p>
-					<label for="photo">Choose Profile Picture:</label>
+					<label for="photo">Avatar:</label>
 				</p>
 				<select name="profilePic" onchange="showPreview(this)">
 					<option value="woman.png">woman </option>

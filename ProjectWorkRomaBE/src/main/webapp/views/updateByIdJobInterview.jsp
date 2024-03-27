@@ -49,37 +49,7 @@
 								${listCandidate.surname}</option>
 						</c:forEach>
 					</select>
-				</div>				
-				<div class="inline-p1">
-					<p>
-						<label for="date2">Date:</label>
-					</p>
-					<input type="date" id="date2" name="date2"
-						value="<%=jobInterview.getDate2()%>">
-				</div>
-				
-				<div class="inline-p1">
-					<p>
-						<label for="idStateJobInterview">State Job Interview:</label>
-					</p>
-					<select name="idStateJobInterview">
-						<c:forEach var="listIdStateJobInterview" 
-						items="${listIdStateJobInterview}">
-							<option value="${listIdStateJobInterview.idStateJobInterview}">${listIdStateJobInterview.idStateJobInterview}) ${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}
-							</option>
-						</c:forEach>
-					</select>
-				</div>
-				
-				
-				<div class="inline-p1">
-					<p>
-						<label for="outcome">Outcome:</label>
-					</p>
-					<input type="number" id="outcome" name="outcome"
-						value="<%=jobInterview.getOutcome()%>">
-				</div>
-				
+				</div>	
 				<div class="inline-p1">
 					<p>
 						<label for="idEmployee">Employee:</label>
@@ -91,14 +61,43 @@
 							</option>
 						</c:forEach>
 					</select>
+				</div>		
+					<div class="inline-p1">
+					<p>
+						<label for="idStateJobInterview">State Job Interview:</label>
+					</p>
+					<select name="idStateJobInterview">
+						<c:forEach var="listIdStateJobInterview" 
+						items="${listIdStateJobInterview}">
+							<option value="${listIdStateJobInterview.idStateJobInterview}">${listIdStateJobInterview.idStateJobInterview}) ${listIdStateJobInterview.title}: ${listIdStateJobInterview.description}
+							</option>
+						</c:forEach>
+					</select>
 				</div>
+					
+				<div class="inline-p1">
+					<p>
+						<label for="date2">Date:</label>
+					</p>
+					<input type="date" id="date2" name="date2"
+						value="<%=jobInterview.getDate2()%>">
+				</div>				
+				<div class="inline-p1">
+					<p>
+						<label for="outcome">Outcome:</label>
+					</p>
+					<input type="number" id="outcome" name="outcome"
+						value="<%=jobInterview.getOutcome()%>">
+				</div>
+				
+				
 				
 				<div class="inline-p1">
 					<p>
 						<label for="notes2">Notes:</label>
 					</p>
-					<input type="text" id="notes2" name="notes2"
-						value="<%=jobInterview.getNotes2()%>">
+					<textarea id="notes2" name="notes2"
+						value="<%=jobInterview.getNotes2()%>"></textarea>
 				</div>
 				
 				

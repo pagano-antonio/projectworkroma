@@ -31,7 +31,7 @@
 				<h1 class="title1">Update Company Client</h1>
 				<div class="inline-p1">
 					<p>
-						<label for="idCompanyClient">Company Client ID:</label>
+						<label for="idCompanyClient">ID:</label>
 					</p>
 					<input type="number" id="idCompanyClient" name="idCompanyClient"
 						value="<%=request.getParameter("idCompanyClient")%>" readonly>

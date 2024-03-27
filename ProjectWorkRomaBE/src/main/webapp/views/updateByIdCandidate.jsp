@@ -98,7 +98,7 @@
 					<div class="hidden" id="candidate">
 						<div class="inline-p1">
 							<p>
-								<label for="idCandidate">Candidate ID:</label>
+								<label for="idCandidate">ID:</label>
 							</p>
 							<input type="number" id="idCandidate" name="idCandidate"
 								value="<%=candidate.getIdCandidate()%>" readonly>
@@ -177,8 +177,8 @@
 											<td>Date:</td>
 											<td>Final Grade:</td>
 											<td>Education degree type:</td>
-											<td></td>
-											<td></td>
+											<td>Update</td>
+											<td>Delete</td>
 										</tr>
 									</thead>
 									<%

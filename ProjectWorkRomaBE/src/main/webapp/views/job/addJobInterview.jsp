@@ -39,10 +39,21 @@ body {
 					<select name="candidate">
 						<c:forEach var="listCandidate" items="${listCandidate}">
 							<option value="${listCandidate.idCandidate}">
-								${listCandidate.idCandidate}-${listCandidate.name}-${listCandidate.surname}</option>
+								${listCandidate.idCandidate}) ${listCandidate.name} ${listCandidate.surname}</option>
 						</c:forEach>
 					</select>
 				</div>
+				<div class="inline-p1">
+					<p>
+						<label for="employee">Employee:</label>
+					</p>
+					<select name="employee">
+						<c:forEach var="listIdEmployee" items="${listIdEmployee}">
+							<option value="${listIdEmployee.idEmployee}">
+								${listIdEmployee.idEmployee}) ${listIdEmployee.username}</option>
+						</c:forEach>
+					</select>
+				</div>		
 				<div class="inline-p1">
 					<p>
 						<label for="date2">Date:</label>
@@ -52,12 +63,12 @@ body {
 				
 				<div class="inline-p1">
 					<p>
-						<label for="stateJobInterview">ID State Job Interview:</label>
+						<label for="stateJobInterview">State Job Interview:</label>
 					</p>
 					<select name="stateJobInterview">
 						<c:forEach var="listIdStateJobInterview" items="${listIdStateJobInterview}">
 							<option value="${listIdStateJobInterview.idStateJobInterview}">
-								${listIdStateJobInterview.idStateJobInterview} - ${listIdStateJobInterview.title} - ${listIdStateJobInterview.description}</option>
+								${listIdStateJobInterview.idStateJobInterview}) ${listIdStateJobInterview.title}: ${listIdStateJobInterview.description}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -68,27 +79,13 @@ body {
 						<label for="outcome">Outcome:</label>
 					</p>
 					<input type="number" id="outcome" name="outcome">
-				</div>
+				</div>		
 				<div class="inline-p1">
 					<p>
 						<label for="notes2">Notes:</label>
 					</p>
-					<input type="text" id="notes2" name="notes2">
+					<textarea id="notes2" name="notes2"></textarea>
 				</div>
-				
-				<div class="inline-p1">
-					<p>
-						<label for="employee">ID Employee:</label>
-					</p>
-					<select name="employee">
-						<c:forEach var="listIdEmployee" items="${listIdEmployee}">
-							<option value="${listIdEmployee.idEmployee}">
-								${listIdEmployee.idEmployee} - ${listIdEmployee.username}</option>
-						</c:forEach>
-					</select>
-				</div>
-				
-				
 				<br>
 				<hr class="orizzontale">
 				<br>
